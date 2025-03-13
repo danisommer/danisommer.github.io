@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Zaki Sommer - Backend Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2a6bc2;
+            --secondary-color: #1e4d8e;
+            --accent-color: #f7df1e;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f5f5f5;
+            --text-light: #f5f5f5;
+            --text-dark: #333333;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary-color: #4a8cf7;
+            --secondary-color: #7dacf8;
+            --dark-bg: #121212;
+            --light-bg: #1a1a1a;
+            --text-light: #f5f5f5;
+            --text-dark: #eeeeee;
+            --card-bg: #2a2a2a;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-img {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-bg);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .about-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        .about-btn {
+            margin-top: 1.5rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: var(--card-bg);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .skill-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-level {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: var(--light-bg);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--light-bg);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: var(--card-bg);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--primary-color);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.5rem;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 10px;
+        }
+
+        .project-desc {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-btn {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h3 {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-50px);
+            transition: all 0.3s;
+        }
+
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .project-details h2 {
+            margin-bottom: 1rem;
+        }
+
+        .project-details-img {
+            width: 100%;
+            height: 250px;
+            background-color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 3rem;
+            border-radius: 10px;
+        }
+
+        .project-details-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details p {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-details-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Mobile Nav */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: var(--dark-bg);
+            z-index: 1001;
+            transition: all 0.3s;
+            padding: 2rem;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .close-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .mobile-links a {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: relative;
+            margin-left: 1rem;
+        }
+
+        .language-btn {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--card-bg);
+            border-radius: 5px;
+            box-shadow: var(--card-shadow);
+            padding: 0.5rem 0;
+            width: 120px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            transform: translateY(10px);
+            z-index: 10;
+        }
+
+        .language-selector:hover .language-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-option {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .language-option:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-img {
+                width: 50%;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 20px;
+                margin-top: 0;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-img {
+                display: none;
+            }
+
+            .nav-links, .language-selector, .theme-toggle {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Daniel Z. Sommer</a>
+            <nav class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">Sobre</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#experience">Experiência</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contact">Contato</a>
+            </nav>
+            <div class="header-actions">
+                <div class="language-selector">
+                    <button class="language-btn">
+                        <span>PT</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="language-dropdown">
+                        <div class="language-option">
+                            <span>Português</span>
+                        </div>
+                        <div class="language-option">
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav">
+        <button class="close-nav">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-links">
+            <a href="#home">Home</a>
+            <a href="#about">Sobre</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#experience">Experiência</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contact">Contato</a>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Daniel Zaki Sommer</h1>
+                <h2 class="hero-subtitle">Backend Developer</h2>
+                <p class="hero-text">
+                    Estudante de Sistemas de Informação na UTFPR e Estagiário de Desenvolvimento Java na Meisters Solutions, 
+                    especializado em desenvolvimento de sistemas E-Commerce utilizando Java (Spring), Docker, SQL e Hybris.
+                </p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">Ver Projetos</a>
+                    <a href="#contact" class="btn btn-outline">Contato</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="/api/placeholder/400/400" alt="Daniel Zaki Sommer">
+                </div>
+                <div class="about-content">
+                    <h2>Olá, sou Daniel Zaki Sommer</h2>
+                    <p>
+                        Sou um estudante do 5º semestre de Sistemas de Informação na UTFPR e Estagiário de Desenvolvimento Java na Meisters Solutions.
+                        Me especializo no desenvolvimento de sistemas E-Commerce utilizando Java (Spring), Docker, SQL e Hybris, além de desenvolver
+                        integrações com SCPI (SAP Cloud Platform Integration).
+                    </p>
+                    <p>
+                        Aprimorei minhas habilidades através de cursos sobre APIs REST, Docker, e adquiri experiência em trabalho em equipe
+                        e comunicação em ambientes colaborativos. Minha interação com clientes internacionais melhorou meu inglês, e construí projetos 
+                        pessoais como sistema de gerenciamento de inventário, sistema de votação, site de streaming de vídeo e painel de monitoramento 
+                        de sistema em tempo real.
+                    </p>
+                    <a href="#" class="btn about-btn">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">Minhas Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Linguagens e Frameworks</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Java (Spring)</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Groovy</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python (Django)</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Node.js</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>React.js</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Angular.js</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>React Native</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>C/C++</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Bancos de Dados</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>MySQL</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>PostgreSQL</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>MongoDB</span>
+                            <span class="skill-level">Básico</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>AWS</span>
+                            <span class="skill-level">Básico</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Idiomas</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Inglês</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Português</span>
+                            <span class="skill-level">Fluente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Outras Ferramentas</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Git/Github</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Bitbucket</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Docker</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Excel</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>Linux</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>SAP CPI</span>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>SAP Commerce Cloud</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        <div class="skill-item">
+                            <span>SAP Business One</span>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience section">
+        <div class="container">
+            <h2 class="section-title">Experiência</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Java Development Intern</h3>
+                        <p class="timeline-date">Julho 2024 - Presente</p>
+                        <p>Meisters Solutions</p>
+                        <ul>
+                            <li>Especializado em desenvolvimento de sistemas E-Commerce utilizando Java (Spring), Docker, SQL e SAP Hybris.</li>
+                            <li>Desenvolvimento de integrações com SCPI (SAP Cloud Platform Integration).</li>
+                            <li>Aprimoramento de habilidades técnicas através de cursos sobre APIs REST, Git e Docker.</li>
+                            <li>Experiência em trabalho em equipe, comunicação e colaboração com clientes internacionais, melhorando a proficiência em inglês.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Graduação em Sistemas de Informação</h3>
+                        <p class="timeline-date">2022 - Presente</p>
+                        <p>UTFPR - Universidade Tecnológica Federal do Paraná</p>
+                        <ul>
+                            <li>Atualmente no 5º semestre do curso de Sistemas de Informação.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cursos Adicionais</h3>
+                        <p class="timeline-date">2022 - 2024</p>
+                        <ul>
+                            <li>Java COMPLETO: Do Zero ao Profissional - Udemy</li>
+                            <li>The Ultimate Fullstack Web Development Bootcamp - Udemy</li>
+                            <li>REST API's RESTFul do 0 à AWS c. Spring Boot 3 Java e Docker - Udemy</li>
+                            <li>SAP Business One B1 Complete Training With Implementation - Udemy</li>
+                            <li>Introdução SAP Commerce (Hybris) - Udemy</li>
+                            <li>Introduction to SAP Hybris - Udemy</li>
+                            <li>SAP CPI Course (SAP Cloud Platform Integration) - Udemy</li>
+                            <li>Linux Workshop - PET-CoCE</li>
+                            <li>Excel Course - Simplifica Treinamentos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="java">Java</button>
+                <button class="filter-btn" data-filter="js">JavaScript</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="cpp">C/C++</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="java">
+                    <div class="project-img">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Gerenciamento de Tarefas</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">HTML/CSS/JS</span>
+                        </div>
+                        <p class="project-desc">
+                            Sistema de gerenciamento de tarefas construído com Java (Spring Boot) e MySQL para backend, usando HTML, CSS e JavaScript para frontend.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="task-management">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="js">
+                    <div class="project-img">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Gerenciamento de Inventário</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Express.js</span>
+                            <span class="project-tag">React.js</span>
+                            <span class="project-tag">MySQL</span>
+                        </div>
+                        <p class="project-desc">
+                            Desenvolvido usando Node.js (Express.js) e MySQL para backend, e React.js para frontend. Inclui autenticação com bcrypt e JWT.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="inventory-management">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="cpp">
+                    <div class="project-img">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Projeto de Jogo de Plataforma</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">SFML</span>
+                            <span class="project-tag">OOP</span>
+                            <span class="project-tag">UML</span>
+                        </div>
+                        <p class="project-desc">
+                            Jogo de plataforma completo em C++ usando SFML, empregando Programação Orientada a Objetos e modelos UML.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="platform-game">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python">
+                    <div class="project-img">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">App de Transcrição de Cartão de Ponto</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">PDF</span>
+                            <span class="project-tag">CSV</span>
+                        </div>
+                        <p class="project-desc">
+                            Desenvolvido em Python para converter dados de cartão de ponto de PDFs para CSV.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="timecard-app">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python cpp">
+                    <div class="project-img">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">App de Dashboard</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">C++</span>
+                            <span class="project-tag">GUI</span>
+                        </div>
+                        <p class="project-desc">
+                            Monitoramento de métricas de sistema em tempo real com uma GUI Python e backend C++.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="dashboard-app">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="js">
+                    <div class="project-img">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Votação</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Express.js</span>
+                            <span class="project-tag">React.js</span>
+                            <span class="project-tag">MySQL</span>
+                        </div>
+                        <p class="project-desc">
+                            Criado com Node.js (Express.js) e MySQL para backend, e React.js para frontend. Inclui funcionalidades CRUD para enquetes.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="voting-system">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="java js">
+                    <div class="project-img">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Site de Streaming de Vídeo</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">React.js</span>
+                        </div>
+                        <p class="project-desc">
+                            Contribuição para backend em Java (Spring Boot) com MongoDB, e frontend em React.js.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="video-streaming">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:danielsommer@alunos.utfpr.edu.br">danielsommer@alunos.utfpr.edu.br</a></p>
+                            <p><a href="mailto:danibee2005@gmail.com">danibee2005@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <p><a href="http://www.linkedin.com/in/danisommer" target="_blank">www.linkedin.com/in/danisommer</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/danisommer" target="_blank">github.com/danisommer</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn form-btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Daniel Z. Sommer</h3>
+                    <p>Backend Developer especializado em Java, Python e JavaScript com experiência em desenvolvimento de sistemas E-Commerce.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">Sobre</a>
+                        <a href="#skills">Habilidades</a>
+                        <a href="#experience">Experiência</a>
+                        <a href="#projects">Projetos</a>
+                        <a href="#contact">Contato</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="http://www.linkedin.com/in/danisommer" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/danisommer" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Daniel Zaki Sommer. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Project Modals -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="close-modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-details">
+                <!-- Project details will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const header = document.querySelector('header');
+        const themeToggle = document.querySelector('.theme-toggle');
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const closeNav = document.querySelector('.close-nav');
+        const overlay = document.querySelector('.overlay');
+        const backToTop = document.querySelector('.back-to-top');
+        const navLinks = document.querySelectorAll('.nav-links a, .mobile-links a');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectLinks = document.querySelectorAll('.project-link[data-project]');
+        const projectModal = document.getElementById('projectModal');
+        const closeModal = document.querySelector('.close-modal');
+        const projectDetails = document.querySelector('.project-details');
+        const contactForm = document.getElementById('contactForm');
+
+        // Project Data
+        const projectsData = {
+            'task-management': {
+                title: 'Sistema de Gerenciamento de Tarefas',
+                image: '<i class="fas fa-tasks"></i>',
+                tags: ['Java', 'Spring Boot', 'MySQL', 'HTML/CSS/JS', 'CRUD'],
+                description: `
+                    <p>Sistema completo de gerenciamento de tarefas construído com Java (Spring Boot) e MySQL para backend, e HTML, CSS e JavaScript para o frontend.</p>
+                    <p>Recursos incluem:</p>
+                    <ul>
+                        <li>Operações CRUD completas para gerenciamento de tarefas</li>
+                        <li>Funcionalidades de busca e filtro de tarefas</li>
+                        <li>Notificações por e-mail para lembretes de tarefas</li>
+                        <li>Interface responsiva para desktop e dispositivos móveis</li>
+                        <li>Autenticação e autorização de usuários</li>
+                    </ul>
+                    <p>Este projeto foi desenvolvido como uma solução para gerenciar tarefas de forma eficiente, permitindo aos usuários organizar seu trabalho e aumentar sua produtividade.</p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                ]
+            },
+            'inventory-management': {
+                title: 'Sistema de Gerenciamento de Inventário',
+                image: '<i class="fas fa-boxes"></i>',
+                tags: ['Node.js', 'Express.js', 'React.js', 'MySQL', 'bcrypt', 'JWT'],
+                description: `
+                    <p>Sistema de gerenciamento de inventário desenvolvido usando Node.js (Express.js) e MySQL para backend, e React.js para frontend.</p>
+                    <p>Características principais:</p>
+                    <ul>
+                        <li>Autenticação segura com bcrypt e JWT</li>
+                        <li>Configuração CORS para segurança</li>
+                        <li>Dashboard interativo para visualização rápida do inventário</li>
+                        <li>Gerenciamento completo de produtos com histórico de transações</li>
+                        <li>Relatórios detalhados e exportáveis</li>
+                    </ul>
+                    <p>Implementado para empresas que buscam otimizar o controle de estoque e melhorar a eficiência operacional.</p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' },
+                    { icon: 'fas fa-external-link-alt', text: 'Demo', url: '#' }
+                ]
+            },
+            'platform-game': {
+                title: 'Projeto de Jogo de Plataforma',
+                image: '<i class="fas fa-gamepad"></i>',
+                tags: ['C++', 'SFML', 'OOP', 'UML', 'Game Development'],
+                description: `
+                    <p>Jogo de plataforma 2D desenvolvido em C++ utilizando a biblioteca SFML.</p>
+                    <p>Características:</p>
+                    <ul>
+                        <li>Controles responsivos e física realista</li>
+                        <li>Sistema de inimigos com IA básica</li>
+                        <li>Múltiplos níveis com dificuldade progressiva</li>
+                        <li>Sistema de coleta de itens e pontuação</li>
+                        <li>Arquitetura orientada a objetos bem estruturada</li>
+                    </ul>
+                    <p>Este projeto demonstra conhecimentos avançados em C++, padrões de design, e desenvolvimento de jogos.</p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                ]
+            },
+            'timecard-app': {
+                title: 'App de Transcrição de Cartão de Ponto',
+                image: '<i class="fas fa-file-alt"></i>',
+                tags: ['Python', 'PDF Processing', 'CSV', 'Data Extraction'],
+                description: `
+                    <p>Aplicativo Python que extrai dados de cartão de ponto em PDFs e converte para formato CSV.</p>
+                    <p>Funcionalidades:</p>
+                    <ul>
+                        <li>Extração de texto de arquivos PDF</li>
+                        <li>Processamento de dados usando expressões regulares</li>
+                        <li>Cálculo automático de horas trabalhadas</li>
+                        <li>Exportação para CSV facilmente importável em Excel</li>
+                        <li>Interface simples para facilitar o uso</li>
+                    </ul>
+                    <p>Desenvolvido para otimizar processos de RH, reduzindo significativamente o tempo de processamento manual de cartões de ponto.</p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                ]
+            },
+            'dashboard-app': {
+                title: 'App de Dashboard',
+                image: '<i class="fas fa-chart-line"></i>',
+                tags: ['Python', 'C++', 'GUI', 'Data Visualization'],
+                description: `
+                    <p>Aplicativo de monitoramento de métricas de sistema em tempo real com frontend Python e backend C++.</p>
+                    <p>Recursos principais:</p>
+                    <ul>
+                        <li>Monitoramento de CPU, memória e uso de disco</li>
+                        <li>Visualizações gráficas em tempo real</li>
+                        <li>Alertas configuráveis para níveis críticos</li>
+                        <li>Histórico de métricas com análise de tendências</li>
+                        <li>Comunicação eficiente entre componentes Python e C++</li>
+                    </ul>
+                    <p>Criado para oferecer uma visão clara e objetiva do desempenho do sistema em tempo real.</p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                ]
+            },
+            'voting-system': {
+                title: 'Sistema de Votação',
+                image: '<i class="fas fa-vote-yea"></i>',
+                tags: ['Node.js', 'Express.js', 'React.js', 'MySQL', 'RESTful API'],
+                description: `
+                    <p>Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend.</p>
+                    <p>Funcionalidades:</p>
+                    <ul>
+                        <li>Criação e gerenciamento de enquetes</li>
+                        <li>Diferentes tipos de votação (múltipla escolha, ranking)</li>
+                        <li>Verificação para evitar votos duplicados</li>
+                        <li>Estatísticas e gráficos em tempo real</li>
+                        <li>Exportação de resultados em diversos formatos</li>
+                    </ul>
+                    <p>Implementado para facilitar processos democráticos em organizações, clubes e eventos.</p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' },
+                    { icon: 'fas fa-external-link-alt', text: 'Demo', url: '#' }
+                ]
+            },
+            'video-streaming': {
+                title: 'Site de Streaming de Vídeo',
+                image: '<i class="fas fa-video"></i>',
+                tags: ['Java', 'Spring Boot', 'MongoDB', 'React.js', 'AWS S3'],
+                description: `
+                    <p>Plataforma de streaming de vídeo com backend Java (Spring Boot) e MongoDB, com frontend React.js.</p>
+                    <p>Características:</p>
+                    <ul>
+                        <li>Streaming adaptativo para diferentes velocidades de conexão</li>
+                        <li>Upload e processamento de vídeos</li>
+                        <li>Sistema de usuários com perfis e preferências</li>
+                        <li>Recomendações baseadas em histórico de visualização</li>
+                        <li>Integração com armazenamento AWS S3</li>
+                    </ul>
+                    <p>Desenvolvido como um projeto colaborativo para criar uma alternativa de código aberto para plataformas de streaming de vídeo.</p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                ]
+            }
+        };
+
+        // Theme Toggle
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            // Update theme toggle icon
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                const icon = themeToggle.querySelector('i');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        // Mobile Navigation
+        mobileToggle.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeNav.addEventListener('click', closeNavigation);
+        overlay.addEventListener('click', closeNavigation);
+
+        function closeNavigation() {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Scroll Events
+        window.addEventListener('scroll', () => {
+            // Header shadow on scroll
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                backToTop.classList.add('active');
+            } else {
+                header.style.boxShadow = 'none';
+                backToTop.classList.remove('active');
+            }
+
+            // Activate nav links based on scroll position
+            const scrollPosition = window.scrollY;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Smooth Scrolling for Navigation Links with Improved Transition
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const targetPosition = targetElement.offsetTop;
+                
+                // Close mobile navigation if open
+                closeNavigation();
+                
+                // Scroll with better offset calculation and smoother animation
+                window.scrollTo({
+                    top: targetPosition - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Highlight the section being scrolled to
+                setTimeout(() => {
+                    // Add a subtle highlight effect
+                    targetElement.classList.add('section-highlight');
+                    
+                    // Remove the highlight class after animation completes
+                    setTimeout(() => {
+                        targetElement.classList.remove('section-highlight');
+                    }, 1000);
+                }, 500); // Timeout gives scrolling time to almost complete
+            });
+        });
+
+        // Back to Top
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Project Filtering
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.dataset.category.split(' ');
+                        if (categories.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Project Modal
+        projectLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const projectId = link.dataset.project;
+                const project = projectsData[projectId];
+                
+                if (project) {
+                    // Populate modal content
+                    let modalContent = `
+                        <h2>${project.title}</h2>
+                        <div class="project-details-img">${project.image}</div>
+                        <div class="project-details-tags">
+                            ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                        </div>
+                        <div class="project-details-desc">
+                            ${project.description}
+                        </div>
+                        <div class="project-details-links">
+                            ${project.links.map(link => `
+                                <a href="${link.url}" target="_blank" class="btn">
+                                    <i class="${link.icon}"></i>
+                                    <span>${link.text}</span>
+                                </a>
+                            `).join('')}
+                        </div>
+                    `;
+                    
+                    projectDetails.innerHTML = modalContent;
+                    projectModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close Modal
+        closeModal.addEventListener('click', () => {
+            projectModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close modal when clicking outside
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                projectModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Contact Form Submission
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            // For demonstration, we'll just log it and show an alert
+            console.log('Form submission:', { name, email, subject, message });
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Show success message
+            alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+        });
+
+        // Initialize AOS animation library if present
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        }
+    </script>
