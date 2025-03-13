@@ -279,22 +279,22 @@
             margin-top: 1.5rem;
         }
 
-        /* Skills Section */
-        .skills {
+/* Skills Section */
+.skills {
             background-color: var(--card-bg);
         }
 
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .skill-category {
             background-color: var(--card-bg);
             border-radius: 10px;
             box-shadow: var(--card-shadow);
-            padding: 2rem;
+            padding: 2.5rem;
             transition: var(--transition);
         }
 
@@ -309,22 +309,58 @@
 
         .skill-items {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            grid-template-columns: repeat(1, 1fr); /* Mudando para uma coluna */
+            gap: 1.2rem;
         }
 
         .skill-item {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0.8rem;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-radius: 8px;
+            transition: var(--transition);
+            flex-wrap: wrap;
             gap: 0.5rem;
         }
 
+        .skill-item:hover {
+            background-color: rgba(0, 0, 0, 0.06);
+        }
+
+        .skill-item span:first-child {
+            font-weight: 500;
+            padding-right: 1rem;
+            overflow-wrap: break-word;
+            word-break: normal; /* Changed from break-word to prevent unwanted wrapping */
+            flex: 1;
+            min-width: 100px; /* Set a reasonable minimum width */
+            white-space: nowrap; /* Prevent text from wrapping for short skill names */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Add ellipsis if text overflows */
+        }
+
         .skill-level {
+            flex-shrink: 0;
             font-size: 0.8rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 10px;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
             background-color: var(--primary-color);
             color: var(--text-light);
+            white-space: nowrap;
+        }
+                
+        /* Para telas maiores, voltamos para 2 colunas dentro da categoria */
+        @media (min-width: 768px) {
+            .skill-items {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* Aumentar o tamanho mínimo das categorias */
+            .skills-container {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
         }
 
         /* Experience Section */
@@ -449,15 +485,34 @@
             justify-content: center;
             color: var(--text-light);
             font-size: 3rem;
+            overflow: hidden;
         }
 
-        .project-content {
-            padding: 1.5rem;
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.05);
         }
 
         .project-title {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-title i {
+            color: var(--primary-color);
+        }
+
+        .project-content {
+            padding: 1.5rem;
         }
 
         .project-tags {
@@ -592,7 +647,7 @@
         }
 
         .footer-links a {
-            color: var(--text-light);
+            color: var (--text-light);
             opacity: 0.8;
         }
 
@@ -687,14 +742,15 @@
         .project-details-img {
             width: 100%;
             height: 250px;
-            background-color: var(--primary-color);
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-light);
-            font-size: 3rem;
             border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .project-details-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-details-tags {
@@ -801,10 +857,15 @@
             visibility: visible;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         /* Language Selector */
         .language-selector {
             position: relative;
-            margin-left: 1rem;
         }
 
         .language-btn {
@@ -1026,16 +1087,17 @@
             <h2 class="section-title">Sobre Mim</h2>
             <div class="about-container">
                 <div class="about-img">
-                    <img src="/api/placeholder/400/400" alt="Daniel Zaki Sommer">
+                    <img src="/images/profile_picture.jpg" alt="Daniel Zaki Sommer">
                 </div>
                 <div class="about-content">
                     <h2>Olá, sou Daniel Zaki Sommer</h2>
                     <p>
-                        Sou um estudante do 5º semestre de Sistemas de Informação na UTFPR e Estagiário de
-                        Desenvolvimento Java na Meisters Solutions.
-                        Me especializo no desenvolvimento de sistemas E-Commerce utilizando Java (Spring), Docker, SQL e
-                        Hybris, além de desenvolver
-                        integrações com SCPI (SAP Cloud Platform Integration).
+                        Sou estudante do 5º semestre de Sistemas de Informação na UTFPR e 
+                        Estagiário de Desenvolvimento Java na Meisters Solutions. Tenho 
+                        experiência no desenvolvimento de sistemas para E-Commerce, 
+                        atuando no backend com Java (Spring), SQL, Docker e SAP Hybris 
+                        e no frontend com TypeScript e Spartacus. Além disso, realizo 
+                        integrações utilizando SAP Cloud Platform Integration (SCPI).
                     </p>
                     <p>
                         Aprimorei minhas habilidades através de cursos sobre APIs REST, Docker, e adquiri experiência em
@@ -1198,7 +1260,7 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>Graduação em Sistemas de Informação</h3>
-                        <p class="timeline-date">2022 - Presente</p>
+                        <p class="timeline-date">2023 - Presente</p>
                         <p>UTFPR - Universidade Tecnológica Federal do Paraná</p>
                         <ul>
                             <li>Atualmente no 5º semestre do curso de Sistemas de Informação.</li>
@@ -1239,10 +1301,13 @@
             <div class="projects-grid">
                 <div class="project-card" data-category="java">
                     <div class="project-img">
-                        <i class="fas fa-tasks"></i>
+                        <img src="images/projects/task-management.jpg" alt="Sistema de Gerenciamento de Tarefas">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Sistema de Gerenciamento de Tarefas</h3>
+                        <h3 class="project-title">
+                            <i class="fas fa-tasks"></i>
+                            Sistema de Gerenciamento de Tarefas
+                        </h3>
                         <div class="project-tags">
                             <span class="project-tag">Java</span>
                             <span class="project-tag">Spring Boot</span>
@@ -1268,10 +1333,13 @@
 
                 <div class="project-card" data-category="js">
                     <div class="project-img">
-                        <i class="fas fa-boxes"></i>
+                        <img src="images/projects/inventory-management.jpg" alt="Sistema de Gerenciamento de Inventário">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Sistema de Gerenciamento de Inventário</h3>
+                        <h3 class="project-title">
+                            <i class="fas fa-boxes"></i>
+                            Sistema de Gerenciamento de Inventário
+                        </h3>
                         <div class="project-tags">
                             <span class="project-tag">Node.js</span>
                             <span class="project-tag">Express.js</span>
@@ -1297,10 +1365,13 @@
 
                 <div class="project-card" data-category="cpp">
                     <div class="project-img">
-                        <i class="fas fa-gamepad"></i>
+                        <img src="images/projects/platform-game.jpg" alt="Projeto de Jogo de Plataforma">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Projeto de Jogo de Plataforma</h3>
+                        <h3 class="project-title">
+                            <i class="fas fa-gamepad"></i>
+                            Projeto de Jogo de Plataforma
+                        </h3>
                         <div class="project-tags">
                             <span class="project-tag">C++</span>
                             <span class="project-tag">SFML</span>
@@ -1326,10 +1397,13 @@
 
                 <div class="project-card" data-category="python">
                     <div class="project-img">
-                        <i class="fas fa-file-alt"></i>
+                        <img src="images/projects/timecard-app.jpg" alt="App de Transcrição de Cartão de Ponto">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">App de Transcrição de Cartão de Ponto</h3>
+                        <h3 class="project-title">
+                            <i class="fas fa-file-alt"></i>
+                            App de Transcrição de Cartão de Ponto
+                        </h3>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">PDF</span>
@@ -1353,10 +1427,13 @@
 
                 <div class="project-card" data-category="python cpp">
                     <div class="project-img">
-                        <i class="fas fa-chart-line"></i>
+                        <img src="images/projects/dashboard-app.jpg" alt="App de Dashboard">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">App de Dashboard</h3>
+                        <h3 class="project-title">
+                            <i class="fas fa-chart-line"></i>
+                            App de Dashboard
+                        </h3>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">C++</span>
@@ -1380,10 +1457,13 @@
 
                 <div class="project-card" data-category="js">
                     <div class="project-img">
-                        <i class="fas fa-vote-yea"></i>
+                        <img src="images/projects/voting-system.jpg" alt="Sistema de Votação">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Sistema de Votação</h3>
+                        <h3 class="project-title">
+                            <i class="fas fa-vote-yea"></i>
+                            Sistema de Votação
+                        </h3>
                         <div class="project-tags">
                             <span class="project-tag">Node.js</span>
                             <span class="project-tag">Express.js</span>
@@ -1409,10 +1489,13 @@
 
                 <div class="project-card" data-category="java js">
                     <div class="project-img">
-                        <i class="fas fa-video"></i>
+                        <img src="images/projects/video-streaming.jpg" alt="Site de Streaming de Vídeo">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Site de Streaming de Vídeo</h3>
+                        <h3 class="project-title">
+                            <i class="fas fa-video"></i>
+                            Site de Streaming de Vídeo
+                        </h3>
                         <div class="project-tags">
                             <span class="project-tag">Java</span>
                             <span class="project-tag">Spring Boot</span>
@@ -1574,8 +1657,8 @@
         // Project Data
         const projectsData = {
             'task-management': {
-                title: 'Sistema de Gerenciamento de Tarefas',
-                image: '<i class="fas fa-tasks"></i>',
+                title: '<i class="fas fa-tasks"></i> Sistema de Gerenciamento de Tarefas',
+                image: '<img src="images/projects/task-management.jpg" alt="Sistema de Gerenciamento de Tarefas">',
                 tags: ['Java', 'Spring Boot', 'MySQL', 'HTML/CSS/JS', 'CRUD'],
                 description: `
                     <p>Sistema completo de gerenciamento de tarefas construído com Java (Spring Boot) e MySQL para backend, e HTML, CSS e JavaScript para o frontend.</p>
@@ -1594,8 +1677,8 @@
                 ]
             },
             'inventory-management': {
-                title: 'Sistema de Gerenciamento de Inventário',
-                image: '<i class="fas fa-boxes"></i>',
+                title: '<i class="fas fa-boxes"></i> Sistema de Gerenciamento de Inventário',
+                image: '<img src="images/projects/inventory-management.jpg" alt="Sistema de Gerenciamento de Inventário">',
                 tags: ['Node.js', 'Express.js', 'React.js', 'MySQL', 'bcrypt', 'JWT'],
                 description: `
                     <p>Sistema de gerenciamento de inventário desenvolvido usando Node.js (Express.js) e MySQL para backend, e React.js para frontend.</p>
@@ -1615,8 +1698,8 @@
                 ]
             },
             'platform-game': {
-                title: 'Projeto de Jogo de Plataforma',
-                image: '<i class="fas fa-gamepad"></i>',
+                title: '<i class="fas fa-gamepad"></i> Projeto de Jogo de Plataforma',
+                image: '<img src="images/projects/platform-game.jpg" alt="Projeto de Jogo de Plataforma">',
                 tags: ['C++', 'SFML', 'OOP', 'UML', 'Game Development'],
                 description: `
                     <p>Jogo de plataforma 2D desenvolvido em C++ utilizando a biblioteca SFML.</p>
@@ -1635,8 +1718,8 @@
                 ]
             },
             'timecard-app': {
-                title: 'App de Transcrição de Cartão de Ponto',
-                image: '<i class="fas fa-file-alt"></i>',
+                title: '<i class="fas fa-file-alt"></i> App de Transcrição de Cartão de Ponto',
+                image: '<img src="images/projects/timecard-app.jpg" alt="App de Transcrição de Cartão de Ponto">',
                 tags: ['Python', 'PDF Processing', 'CSV', 'Data Extraction'],
                 description: `
                     <p>Aplicativo Python que extrai dados de cartão de ponto em PDFs e converte para formato CSV.</p>
@@ -1655,8 +1738,8 @@
                 ]
             },
             'dashboard-app': {
-                title: 'App de Dashboard',
-                image: '<i class="fas fa-chart-line"></i>',
+                title: '<i class="fas fa-chart-line"></i> App de Dashboard',
+                image: '<img src="images/projects/dashboard-app.jpg" alt="App de Dashboard">',
                 tags: ['Python', 'C++', 'GUI', 'Data Visualization'],
                 description: `
                     <p>Aplicativo de monitoramento de métricas de sistema em tempo real com frontend Python e backend C++.</p>
@@ -1675,8 +1758,8 @@
                 ]
             },
             'voting-system': {
-                title: 'Sistema de Votação',
-                image: '<i class="fas fa-vote-yea"></i>',
+                title: '<i class="fas fa-vote-yea"></i> Sistema de Votação',
+                image: '<img src="images/projects/voting-system.jpg" alt="Sistema de Votação">',
                 tags: ['Node.js', 'Express.js', 'React.js', 'MySQL', 'RESTful API'],
                 description: `
                     <p>Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend.</p>
@@ -1696,8 +1779,8 @@
                 ]
             },
             'video-streaming': {
-                title: 'Site de Streaming de Vídeo',
-                image: '<i class="fas fa-video"></i>',
+                title: '<i class="fas fa-video"></i> Site de Streaming de Vídeo',
+                image: '<img src="images/projects/video-streaming.jpg" alt="Site de Streaming de Vídeo">',
                 tags: ['Java', 'Spring Boot', 'MongoDB', 'React.js', 'AWS S3'],
                 description: `
                     <p>Plataforma de streaming de vídeo com backend Java (Spring Boot) e MongoDB, com frontend React.js.</p>
@@ -1933,3 +2016,6 @@
             });
         }
     </script>
+</body>
+
+</html>
