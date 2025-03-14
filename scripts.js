@@ -1,4 +1,3 @@
-
 // DOM Elements
 const header = document.querySelector('header');
 const themeToggle = document.querySelector('.theme-toggle');
@@ -571,7 +570,7 @@ const translations = {
         'about-greeting': 'Olá, sou Daniel Zaki Sommer',
         'about-p1': 'Sou estudante do 5º semestre de Sistemas de Informação na UTFPR e Estagiário de Desenvolvimento Java na Meisters Solutions. Tenho experiência no desenvolvimento de sistemas para E-Commerce, atuando no backend com Java (Spring), SQL, Docker e SAP Hybris e no frontend com TypeScript e Spartacus. Além disso, realizo integrações utilizando SAP Cloud Platform Integration (SCPI).',
         'about-p2': 'Aprimorei minhas habilidades através de cursos sobre APIs REST, Docker, e adquiri experiência em trabalho em equipe e comunicação em ambientes colaborativos. Minha interação com clientes internacionais melhorou meu inglês, e construí projetos pessoais como sistema de gerenciamento de inventário, sistema de votação, site de streaming de vídeo e painel de monitoramento de sistema em tempo real.',
-        'about-btn': 'Download CV',
+        'about-btn': 'Ver CV',
         
         // Skills section
         'skills-title': 'Minhas Habilidades',
@@ -701,7 +700,7 @@ const translations = {
         'about-greeting': 'Hi, I am Daniel Zaki Sommer',
         'about-p1': 'I am a 5th semester Information Systems student at UTFPR and Java Development Intern at Meisters Solutions. I have experience in developing E-Commerce systems, working with Java (Spring), SQL, Docker, and SAP Hybris on the backend, and TypeScript and Spartacus on the frontend. I also perform integrations using SAP Cloud Platform Integration (SCPI).',
         'about-p2': 'I enhanced my skills through courses on REST APIs and Docker, and I gained experience in teamwork and communication in collaborative environments. My interaction with international clients improved my English, and I built personal projects such as inventory management system, voting system, video streaming website, and real-time system monitoring dashboard.',
-        'about-btn': 'Download Resume',
+        'about-btn': 'See Resume',
         
         // Skills section
         'skills-title': 'My Skills',
@@ -817,7 +816,8 @@ let currentLang = localStorage.getItem('language') || 'pt';
 function updateLanguage(lang) {
     // Update current language
     currentLang = lang;
-    
+    localStorage.setItem('language', currentLang);
+
     // Update language toggle buttons
     document.querySelectorAll('.lang-option').forEach(option => {
         option.classList.toggle('active', option.dataset.lang === currentLang);
@@ -830,6 +830,20 @@ function updateLanguage(lang) {
             element.textContent = translations[currentLang][key];
         }
     });
+    
+    // Check if projects modal is open and update its content if needed
+    if (projectModal && projectModal.classList.contains('active')) {
+        const projectId = document.querySelector('.project-details').dataset.project;
+        if (projectId && projectsData[projectId]) {
+            updateProjectModalContent(projectId);
+        }
+    }
+    
+    // Force redraw of the page to ensure changes are applied
+    document.body.style.display = 'none';
+    setTimeout(() => {
+        document.body.style.display = '';
+    }, 10);
     
     // Update projects
     const projectCards = document.querySelectorAll('.project-card');
@@ -918,11 +932,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize language
     updateLanguage(currentLang);
     
-    // Set language option click handlers
+    // Set language option click handlers - Fixed implementation
     document.querySelectorAll('.language-option').forEach(option => {
         option.addEventListener('click', function() {
-            const lang = this.querySelector('span').textContent === 'English' ? 'en' : 'pt';
+            const lang = this.querySelector('span').textContent.trim() === 'English' ? 'en' : 'pt';
+            console.log('Changing language to:', lang); // Add debugging
             updateLanguage(lang);
+            
+            // Update UI to show active language
+            document.querySelectorAll('.language-option').forEach(opt => {
+                opt.classList.toggle('active', opt.querySelector('span').textContent.trim() === (lang === 'en' ? 'English' : 'Português'));
+            });
+            
+            // Update language button text
+            document.querySelector('.language-btn span').textContent = lang.toUpperCase();
+            
+            // Close dropdown if needed
+            document.querySelector('.language-dropdown').style.display = 'none';
+            setTimeout(() => {
+                document.querySelector('.language-dropdown').style.removeProperty('display');
+            }, 100);
         });
     });
 });
