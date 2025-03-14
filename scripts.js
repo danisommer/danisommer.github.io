@@ -617,7 +617,8 @@ const translations = {
         'footer-links': 'Links Rápidos',
         'footer-social': 'Redes Sociais',
         'footer-copyright': '© 2025 Daniel Zaki Sommer. Todos os direitos reservados.',
-   
+        'footer-description': 'Backend Developer especializado em Java, Python e JavaScript com experiência em desenvolvimento de sistemas E-Commerce.',
+
                 // Experience section - Timeline items
         'exp-job-title': 'Java Development Intern',
         'exp-job-date': 'Julho 2024 - Presente',
@@ -747,6 +748,7 @@ const translations = {
         'footer-links': 'Quick Links',
         'footer-social': 'Social Media',
         'footer-copyright': '© 2025 Daniel Zaki Sommer. All rights reserved.',
+        'footer-description': 'Backend Developer specialized in Java, Python, and JavaScript with experience in E-Commerce systems development.',
 
         'exp-job-title': 'Java Development Intern',
         'exp-job-date': 'July 2024 - Present',
@@ -830,6 +832,8 @@ function updateLanguage(lang) {
             element.textContent = translations[currentLang][key];
         }
     });
+    
+    updateProjectCardTitles();
     
     // Check if projects modal is open and update its content if needed
     if (projectModal && projectModal.classList.contains('active')) {
@@ -1151,4 +1155,85 @@ contactForm.addEventListener('submit', (e) => {
 
     // Show success message in current language
     alert(translations[currentLang]['contact-success']);
+});
+
+// Function to update all project card titles when language changes
+function updateProjectCardTitles() {
+    // Map of project cards to their title keys
+    const projectTitleMap = [
+        { index: 0, key: 'project-auto-control-title' },
+        { index: 1, key: 'project-dashboard-title' },
+        { index: 2, key: 'project-platform-game-title' },
+        { index: 3, key: 'project-video-streaming-title' },
+        { index: 4, key: 'project-task-management-title' },
+        { index: 5, key: 'project-inventory-title' },
+        { index: 6, key: 'project-timecard-title' },
+        { index: 7, key: 'project-login-title' },
+        { index: 8, key: 'project-voting-title' }
+    ];
+    
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectTitleMap.forEach(item => {
+        if (projectCards[item.index]) {
+            const titleElement = projectCards[item.index].querySelector('.project-title');
+            if (titleElement && translations[currentLang][item.key]) {
+                // Preserve the icon
+                const icon = titleElement.querySelector('i').outerHTML;
+                titleElement.innerHTML = icon + ' ' + translations[currentLang][item.key];
+            }
+        }
+    });
+}
+
+// Language dropdown toggle
+const languageBtn = document.querySelector('.language-btn');
+if (languageBtn) {
+    languageBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const dropdown = document.querySelector('.language-dropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+}
+
+// Language option selection
+document.querySelectorAll('.language-option').forEach(option => {
+    option.addEventListener('click', function() {
+        const lang = this.querySelector('span').textContent.trim() === 'English' ? 'en' : 'pt';
+        console.log('Changing language to:', lang);
+        
+        // Update language
+        currentLang = lang;
+        localStorage.setItem('language', currentLang);
+        
+        // Update UI to show active language
+        document.querySelector('.language-btn span').textContent = lang.toUpperCase();
+        
+        // Close dropdown
+        document.querySelector('.language-dropdown').style.display = 'none';
+        
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.dataset.i18n;
+            if (translations[currentLang] && translations[currentLang][key]) {
+                element.textContent = translations[currentLang][key];
+            }
+        });
+        
+        // Update project details if modal is open
+        if (projectModal.classList.contains('active')) {
+            const projectId = document.querySelector('.project-details').dataset.project;
+            if (projectId && projectsData[projectId]) {
+                updateProjectModalContent(projectId);
+            }
+        }
+    });
+});
+
+// Close dropdown when clicking elsewhere
+document.addEventListener('click', function() {
+    const dropdown = document.querySelector('.language-dropdown');
+    if (dropdown && dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+    }
 });
