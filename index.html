@@ -423,6 +423,7 @@
             background-color: var(--card-bg);
             border-radius: 10px;
             box-shadow: var(--card-shadow);
+            padding-left: 30px; 
         }
 
         .timeline-date {
@@ -1291,16 +1292,50 @@
 
     <section id="projects" class="projects section">
         <div class="container">
-            <h2 class="section-title">Meus Projetos</h2>
+            <h2 class="section-title">Meus Projetos Pessoais</h2>
             <div class="filter-container">
                 <button class="filter-btn active" data-filter="all">Todos</button>
                 <button class="filter-btn" data-filter="java">Java</button>
-                <button class="filter-btn" data-filter="js">JavaScript</button>
+                <button class="filter-btn" data-filter="kotlin">Kotlin</button>
+                <button class="filter-btn" data-filter="sql">SQL</button>
                 <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="js">JavaScript</button>
                 <button class="filter-btn" data-filter="cpp">C/C++</button>
+
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="java">
+                <div class="project-card" data-category="kotlin java sql">
+                    <div class="project-img">
+                        <img src="images/projects" alt="Aplicativo de Autocontrole Empresarial">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">
+                            <i class="fas fa-tasks"></i>
+                            Aplicativo de Autocontrole Empresarial
+                        </h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Kotlin</span>
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">SQL</span>
+                        </div>
+                        <p class="project-desc">
+                            ...
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="auto-control-app">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer/AutoControlApp" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="java sql js">
                     <div class="project-img">
                         <img src="images/projects/task-management.jpg" alt="Sistema de Gerenciamento de Tarefas">
                     </div>
@@ -1324,7 +1359,7 @@
                                 <i class="fas fa-info-circle"></i>
                                 <span>Detalhes</span>
                             </a>
-                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                            <a href="https://github.com/danisommer/TASK-MANAGEMENT-SYSTEM" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
@@ -1332,7 +1367,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="js">
+                <div class="project-card" data-category="js sql">
                     <div class="project-img">
                         <img src="images/projects/inventory-management.jpg" alt="Sistema de Gerenciamento de Inventário">
                     </div>
@@ -1356,7 +1391,7 @@
                                 <i class="fas fa-info-circle"></i>
                                 <span>Detalhes</span>
                             </a>
-                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                            <a href="https://github.com/danisommer/API-ESTOQUES" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
@@ -1388,7 +1423,7 @@
                                 <i class="fas fa-info-circle"></i>
                                 <span>Detalhes</span>
                             </a>
-                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                            <a href="https://github.com/danisommer/JOGO-PLATAFORMA" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
@@ -1418,7 +1453,7 @@
                                 <i class="fas fa-info-circle"></i>
                                 <span>Detalhes</span>
                             </a>
-                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                            <a href="https://github.com/danisommer/LEITOR-DE-CARTAO-PONTO" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
@@ -1448,7 +1483,7 @@
                                 <i class="fas fa-info-circle"></i>
                                 <span>Detalhes</span>
                             </a>
-                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                            <a href="https://github.com/danisommer/python-dashboard" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
@@ -1456,7 +1491,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="js">
+                <div class="project-card" data-category="js sql">
                     <div class="project-img">
                         <img src="images/projects/voting-system.jpg" alt="Sistema de Votação">
                     </div>
@@ -1480,7 +1515,7 @@
                                 <i class="fas fa-info-circle"></i>
                                 <span>Detalhes</span>
                             </a>
-                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                            <a href="https://github.com/danisommer/PAGINA-ENQUETE" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
@@ -1511,7 +1546,7 @@
                                 <i class="fas fa-info-circle"></i>
                                 <span>Detalhes</span>
                             </a>
-                            <a href="https://github.com/danisommer" target="_blank" class="project-link">
+                            <a href="https://github.com/HunterNicky/TikTube" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
@@ -1654,9 +1689,32 @@
         const closeModal = document.querySelector('.close-modal');
         const projectDetails = document.querySelector('.project-details');
         const contactForm = document.getElementById('contactForm');
+        const footerLinks = document.querySelectorAll('.footer-links a');
+        const heroButtons = document.querySelectorAll('.hero-btns a');
+
 
         // Project Data
         const projectsData = {
+            'auto-control-app': {
+                title: '<i class="fas fa-tasks"></i> Aplicativo de Autocontrole Empresarial',
+                image: '<img src="images/projects" alt="Aplicativo de Autocontrole Empresarial">',
+                tags: ['Kotlin', 'Android', 'Java', 'SQL'],
+                description: `
+                    <p</p>
+                    <p>Recursos incluem:</p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <p></p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/AutoControlApp' }
+                ]
+            },
             'task-management': {
                 title: '<i class="fas fa-tasks"></i> Sistema de Gerenciamento de Tarefas',
                 image: '<img src="images/projects/task-management.jpg" alt="Sistema de Gerenciamento de Tarefas">',
@@ -1674,7 +1732,7 @@
                     <p>Este projeto foi desenvolvido como uma solução para gerenciar tarefas de forma eficiente, permitindo aos usuários organizar seu trabalho e aumentar sua produtividade.</p>
                 `,
                 links: [
-                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/TASK-MANAGEMENT-SYSTEM' }
                 ]
             },
             'inventory-management': {
@@ -1694,8 +1752,7 @@
                     <p>Implementado para empresas que buscam otimizar o controle de estoque e melhorar a eficiência operacional.</p>
                 `,
                 links: [
-                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' },
-                    { icon: 'fas fa-external-link-alt', text: 'Demo', url: '#' }
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/API-ESTOQUES' },
                 ]
             },
             'platform-game': {
@@ -1715,7 +1772,7 @@
                     <p>Este projeto demonstra conhecimentos avançados em C++, padrões de design, e desenvolvimento de jogos.</p>
                 `,
                 links: [
-                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/JOGO-PLATAFORMA' }
                 ]
             },
             'timecard-app': {
@@ -1735,7 +1792,7 @@
                     <p>Desenvolvido para otimizar processos de RH, reduzindo significativamente o tempo de processamento manual de cartões de ponto.</p>
                 `,
                 links: [
-                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/LEITOR-DE-CARTAO-PONTO' }
                 ]
             },
             'dashboard-app': {
@@ -1755,7 +1812,7 @@
                     <p>Criado para oferecer uma visão clara e objetiva do desempenho do sistema em tempo real.</p>
                 `,
                 links: [
-                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/python-dashboard' }
                 ]
             },
             'voting-system': {
@@ -1775,8 +1832,7 @@
                     <p>Implementado para facilitar processos democráticos em organizações, clubes e eventos.</p>
                 `,
                 links: [
-                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' },
-                    { icon: 'fas fa-external-link-alt', text: 'Demo', url: '#' }
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/PAGINA-ENQUETE' },
                 ]
             },
             'video-streaming': {
@@ -1796,7 +1852,7 @@
                     <p>Desenvolvido como um projeto colaborativo para criar uma alternativa de código aberto para plataformas de streaming de vídeo.</p>
                 `,
                 links: [
-                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer' }
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/HunterNicky/TikTube' }
                 ]
             }
         };
@@ -1905,6 +1961,48 @@
                 }, 500); // Timeout gives scrolling time to almost complete
             });
         });
+
+        function setupSmoothScrolling(links) {
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Only handle links that point to page sections
+                    const href = this.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        
+                        const targetId = href;
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            const targetPosition = targetElement.offsetTop;
+
+                            // Close mobile navigation if open
+                            closeNavigation();
+
+                            // Scroll with smooth behavior
+                            window.scrollTo({
+                                top: targetPosition - 80,
+                                behavior: 'smooth'
+                            });
+
+                            // Highlight the section being scrolled to
+                            setTimeout(() => {
+                                targetElement.classList.add('section-highlight');
+
+                                setTimeout(() => {
+                                    targetElement.classList.remove('section-highlight');
+                                }, 1000);
+                            }, 500);
+                        }
+                    }
+                });
+            });
+        }
+
+        // Apply smooth scrolling to all navigation elements
+        setupSmoothScrolling(navLinks);
+        setupSmoothScrolling(footerLinks);
+        setupSmoothScrolling(heroButtons);
 
         // Back to Top
         backToTop.addEventListener('click', () => {
