@@ -567,7 +567,7 @@ const translations = {
         
         // About section
         'about-title': 'Sobre Mim',
-        'about-greeting': 'Olá, sou Daniel Zaki Sommer',
+        'about-greeting': 'Olá, sou o Daniel',
         'about-p1': 'Sou estudante do 5º semestre de Sistemas de Informação na UTFPR e Estagiário de Desenvolvimento Java na Meisters Solutions. Tenho experiência no desenvolvimento de sistemas para E-Commerce, atuando no backend com Java (Spring), SQL, Docker e SAP Hybris e no frontend com TypeScript e Spartacus. Além disso, realizo integrações utilizando SAP Cloud Platform Integration (SCPI).',
         'about-p2': 'Aprimorei minhas habilidades através de cursos sobre APIs REST, Docker, e adquiri experiência em trabalho em equipe e comunicação em ambientes colaborativos. Minha interação com clientes internacionais melhorou meu inglês, e construí projetos pessoais como sistema de gerenciamento de inventário, sistema de votação, site de streaming de vídeo e painel de monitoramento de sistema em tempo real.',
         'about-btn': 'Ver CV',
@@ -698,7 +698,7 @@ const translations = {
         
         // About section
         'about-title': 'About Me',
-        'about-greeting': 'Hi, I am Daniel Zaki Sommer',
+        'about-greeting': 'Hi, I am Daniel',
         'about-p1': 'I am a 5th semester Information Systems student at UTFPR and Java Development Intern at Meisters Solutions. I have experience in developing E-Commerce systems, working with Java (Spring), SQL, Docker, and SAP Hybris on the backend, and TypeScript and Spartacus on the frontend. I also perform integrations using SAP Cloud Platform Integration (SCPI).',
         'about-p2': 'I enhanced my skills through courses on REST APIs and Docker, and I gained experience in teamwork and communication in collaborative environments. My interaction with international clients improved my English, and I built personal projects such as inventory management system, voting system, video streaming website, and real-time system monitoring dashboard.',
         'about-btn': 'See Resume',
@@ -832,7 +832,7 @@ function updateLanguage(lang) {
             element.textContent = translations[currentLang][key];
         }
     });
-    
+
     updateProjectCardTitles();
     
     // Check if projects modal is open and update its content if needed
