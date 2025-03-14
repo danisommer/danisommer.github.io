@@ -675,6 +675,13 @@ const translations = {
         'project-voting-title': 'Sistema de Votação',
         'project-voting-desc': 'Criado com Node.js (Express.js) e MySQL para backend, e React.js para frontend. Inclui funcionalidades CRUD para enquetes.',
         
+        'project-dashboard-app-title': 'App de Dashboard',
+        'project-timecard-app-title': 'App de Transcrição de Cartão de Ponto',
+        'project-auto-control-title': 'Aplicativo de Autocontrole Empresarial',
+        'project-inventory-management-title': 'Sistema de Gerenciamento de Inventário',
+        'project-login-page-title': 'Página de Login',
+        'project-voting-system-title': 'Sistema de Votação',
+
         // Project modal content
         'modal-resources': 'Recursos incluem:',
         'modal-features': 'Características principais:',
@@ -804,6 +811,13 @@ const translations = {
         
         'project-voting-title': 'Voting System',
         'project-voting-desc': 'Created with Node.js (Express.js) and MySQL for backend, and React.js for frontend. Includes CRUD functionalities for polls.',
+        
+        'project-dashboard-app-title': 'Dashboard App',
+        'project-timecard-app-title': 'Timecard Transcription App',
+        'project-auto-control-title': 'Business Self-Control App',
+        'project-inventory-management-title': 'Inventory Management System',
+        'project-login-page-title': 'Login Page',
+        'project-voting-system-title': 'Voting System', 
         
         // Project modal content
         'modal-resources': 'Resources include:',
