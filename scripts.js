@@ -481,19 +481,19 @@ projectLinks.forEach(link => {
         if (project) {
             // Populate modal content
             let modalContent = `
-                <h2>${project.title}</h2>
+                <h2>${translations[currentLang][project.titleKey]}</h2>
                 <div class="project-details-img">${project.image}</div>
                 <div class="project-details-tags">
                     ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                 </div>
                 <div class="project-details-desc">
-                    ${project.description}
+                    ${currentLang === 'en' ? project.descriptionEn : project.descriptionPt}
                 </div>
                 <div class="project-details-links">
                     ${project.links.map(link => `
                         <a href="${link.url}" target="_blank" class="btn">
                             <i class="${link.icon}"></i>
-                            <span>${link.text}</span>
+                            <span>${translations[currentLang][link.textKey]}</span>
                         </a>
                     `).join('')}
                 </div>
@@ -814,37 +814,100 @@ const translations = {
 // Current language
 let currentLang = localStorage.getItem('language') || 'pt';
 
-// Function to update all text elements with translations
 function updateLanguage(lang) {
+    // Update current language
     currentLang = lang;
-    localStorage.setItem('language', lang);
     
-    // Update UI elements with translations
+    // Update language toggle buttons
+    document.querySelectorAll('.lang-option').forEach(option => {
+        option.classList.toggle('active', option.dataset.lang === currentLang);
+    });
+    
+    // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-            // Handle special cases for innerHTML (like for elements that might contain HTML)
-            if (element.tagName === 'BUTTON' || element.tagName === 'A' || element.tagName === 'LABEL') {
-                element.innerHTML = translations[lang][key];
-            } else {
-                element.textContent = translations[lang][key];
+        const key = element.dataset.i18n;
+        if (translations[currentLang] && translations[currentLang][key]) {
+            element.textContent = translations[currentLang][key];
+        }
+    });
+    
+    // Update projects
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        const project = projectsData[index];
+        if (project && project.titleKey) {
+            const titleElement = card.querySelector('.project-title');
+            if (titleElement) {
+                titleElement.textContent = translations[currentLang][project.titleKey];
             }
         }
     });
     
-    // Update language selector text
-    document.querySelector('.language-btn span').textContent = lang.toUpperCase();
+    // Update experience items
+    const experienceItems = document.querySelectorAll('.timeline-item');
+    experienceItems.forEach((item, index) => {
+        const experience = experienceData[index];
+        if (experience) {
+            // Update role title
+            const roleElement = item.querySelector('.timeline-title');
+            if (roleElement && experience.roleKey) {
+                roleElement.textContent = translations[currentLang][experience.roleKey];
+            }
+            
+            // Update description
+            const descElement = item.querySelector('.timeline-description');
+            if (descElement) {
+                descElement.innerHTML = currentLang === 'en' ? 
+                    experience.descriptionEn : experience.descriptionPt;
+            }
+        }
+    });
     
-    // Update page title
-    document.title = lang === 'en' ? 
-        'Daniel Zaki Sommer - Backend Developer' : 
-        'Daniel Zaki Sommer - Desenvolvedor Backend';
+    // If project modal is open, update its content
+    const projectModal = document.querySelector('.project-modal');
+    if (projectModal && projectModal.classList.contains('active')) {
+        const projectDetailsElem = document.querySelector('.project-details');
+        if (projectDetailsElem && projectDetailsElem.dataset.projectId) {
+            const projectId = parseInt(projectDetailsElem.dataset.projectId);
+            updateProjectModal(projectId);
+        }
+    }
     
-    // Update form placeholders
-    document.getElementById('name').placeholder = lang === 'en' ? 'Your Name' : 'Seu Nome';
-    document.getElementById('email').placeholder = lang === 'en' ? 'Your Email' : 'Seu Email';
-    document.getElementById('subject').placeholder = lang === 'en' ? 'Subject' : 'Assunto';
-    document.getElementById('message').placeholder = lang === 'en' ? 'Your Message' : 'Sua Mensagem';
+    // Save language preference to localStorage
+    localStorage.setItem('preferredLanguage', currentLang);
+}
+
+// Helper function to update modal content
+function updateProjectModal(projectId) {
+    const project = projectsData[projectId];
+    if (!project) return;
+    
+    const modalContent = document.querySelector('.project-details');
+    if (!modalContent) return;
+    
+    // Update modal title
+    const titleElement = modalContent.querySelector('h2');
+    if (titleElement && project.titleKey) {
+        titleElement.textContent = translations[currentLang][project.titleKey];
+    }
+    
+    // Update description
+    const descElement = modalContent.querySelector('.project-details-desc');
+    if (descElement) {
+        descElement.innerHTML = currentLang === 'en' ? 
+            project.descriptionEn : project.descriptionPt;
+    }
+    
+    // Update link texts
+    const links = modalContent.querySelectorAll('.project-details-links .btn');
+    project.links.forEach((link, i) => {
+        if (links[i] && link.textKey) {
+            const textSpan = links[i].querySelector('span');
+            if (textSpan) {
+                textSpan.textContent = translations[currentLang][link.textKey];
+            }
+        }
+    });
 }
 
 // Initialize language from local storage
