@@ -1397,6 +1397,37 @@
                     </div>
                 </div>
 
+                <div class="project-card" data-category="java js">
+                    <div class="project-img">
+                        <img src="images/projects/video-streaming.jpg" alt="Site de Streaming de Vídeo">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">
+                            <i class="fas fa-video"></i>
+                            Site de Streaming de Vídeo
+                        </h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">React.js</span>
+                        </div>
+                        <p class="project-desc">
+                            Contribuição para backend em Java (Spring Boot) com MongoDB, e frontend em React.js.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="video-streaming">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/HunterNicky/TikTube" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card" data-category="java sql js">
                     <div class="project-img">
                         <img src="images/projects/task-management.jpg" alt="Sistema de Gerenciamento de Tarefas">
@@ -1491,8 +1522,38 @@
                     </div>
                 </div>
 
-
-
+                <div class="project-card" data-category="js sql">
+                    <div class="project-img">
+                        <img src="images/projects/login-page.jpg" alt="Página de Login">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Página de Login
+                        </h3>
+                        <div class="project-tags">
+                            <span class="project-tag">React.js</span>
+                            <span class="project-tag">Express.js</span>
+                            <span class="project-tag">SQLite</span>
+                            <span class="project-tag">JWT</span>
+                            <span class="project-tag">bcrypt</span>
+                        </div>
+                        <p class="project-desc">
+                            Desenvolvida com React.js no frontend e Express.js com SQLite no backend. Inclui autenticação segura com bcrypt e JWT.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link" data-project="login-page">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Detalhes</span>
+                            </a>
+                            <a href="https://github.com/danisommer/PAGINA-LOGIN" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="project-card" data-category="js sql">
                     <div class="project-img">
                         <img src="images/projects/voting-system.jpg" alt="Sistema de Votação">
@@ -1525,36 +1586,6 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="java js">
-                    <div class="project-img">
-                        <img src="images/projects/video-streaming.jpg" alt="Site de Streaming de Vídeo">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">
-                            <i class="fas fa-video"></i>
-                            Site de Streaming de Vídeo
-                        </h3>
-                        <div class="project-tags">
-                            <span class="project-tag">Java</span>
-                            <span class="project-tag">Spring Boot</span>
-                            <span class="project-tag">MongoDB</span>
-                            <span class="project-tag">React.js</span>
-                        </div>
-                        <p class="project-desc">
-                            Contribuição para backend em Java (Spring Boot) com MongoDB, e frontend em React.js.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link" data-project="video-streaming">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
-                            <a href="https://github.com/HunterNicky/TikTube" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1694,7 +1725,6 @@
         const footerLinks = document.querySelectorAll('.footer-links a');
         const heroButtons = document.querySelectorAll('.hero-btns a');
 
-
         // Project Data
         const projectsData = {
             'auto-control-app': {
@@ -1725,11 +1755,12 @@
                     <p>Sistema completo de gerenciamento de tarefas construído com Java (Spring Boot) e MySQL para backend, e HTML, CSS e JavaScript para o frontend.</p>
                     <p>Recursos incluem:</p>
                     <ul>
-                        <li>Operações CRUD completas para gerenciamento de tarefas</li>
-                        <li>Funcionalidades de busca e filtro de tarefas</li>
-                        <li>Notificações por e-mail para lembretes de tarefas</li>
-                        <li>Interface responsiva para desktop e dispositivos móveis</li>
-                        <li>Autenticação e autorização de usuários</li>
+                        <li>Backend em Java com Spring Boot e banco de dados MySQL.</li>
+                        <li>Implementação de APIs RESTful para operações CRUD.</li>
+                        <li>Frontend desenvolvido com HTML, CSS e JavaScript.</li>
+                        <li>Funcionalidades: adição, edição, marcação de conclusão e exclusão de tarefas.</li>
+                        <li>Filtros por nome, data e status, além de notificações automáticas por e-mail.</li>
+                        <li>Habilidades: Java (Spring Boot), MySQL, CRUD, API REST, Git, HTML, CSS, JavaScript.</li>
                     </ul>
                     <p>Este projeto foi desenvolvido como uma solução para gerenciar tarefas de forma eficiente, permitindo aos usuários organizar seu trabalho e aumentar sua produtividade.</p>
                 `,
@@ -1745,16 +1776,37 @@
                     <p>Sistema de gerenciamento de inventário desenvolvido usando Node.js (Express.js) e MySQL para backend, e React.js para frontend.</p>
                     <p>Características principais:</p>
                     <ul>
-                        <li>Autenticação segura com bcrypt e JWT</li>
-                        <li>Configuração CORS para segurança</li>
-                        <li>Dashboard interativo para visualização rápida do inventário</li>
-                        <li>Gerenciamento completo de produtos com histórico de transações</li>
-                        <li>Relatórios detalhados e exportáveis</li>
+                        <li>Desenvolvimento de um sistema de gerenciamento de estoque.</li>
+                        <li>Backend utilizando Node.js e Express.js, com banco de dados MySQL.</li>
+                        <li>Frontend em React.js com Axios para requisições HTTP.</li>
+                        <li>Autenticação segura com bcrypt (criptografia de senha) e JWT (gerenciamento de sessão).</li>
+                        <li>Funcionalidades CRUD para gerenciamento de usuários e materiais.</li>
+                        <li>Configuração de CORS para acesso de diferentes origens.</li>
+                        <li>Testes extensivos com Postman para garantir o funcionamento da API.</li>
+                        <li>Habilidades: Node.js, Express.js, React.js, MySQL, JWT, Postman, Git.</li>
                     </ul>
                     <p>Implementado para empresas que buscam otimizar o controle de estoque e melhorar a eficiência operacional.</p>
                 `,
                 links: [
                     { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/API-ESTOQUES' },
+                ]
+            },
+            'login-page': {
+                title: '<i class="fas fa-sign-in-alt"></i> Página de Login',
+                image: '<img src="images/projects/login-page.jpg" alt="Página de Login">',
+                tags: ['React.js', 'Express.js', 'SQLite', 'JWT', 'bcrypt'],
+                description: `
+                    <p>Página de login desenvolvida com React.js no frontend e Express.js com SQLite no backend.</p>
+                    <p>Características principais:</p>
+                    <ul>
+                        <li>Criação de uma página de login utilizando React.js no frontend.</li>
+                        <li>Backend desenvolvido com Express.js e SQLite.</li>
+                        <li>Habilidades: React.js, Express.js, SQLite, HTML5, CSS, Git.</li>
+                    </ul>
+                    <p>Ideal para projetos que necessitam de um sistema seguro e eficiente de login e gerenciamento de usuários.</p>
+                `,
+                links: [
+                    { icon: 'fab fa-github', text: 'GitHub', url: 'https://github.com/danisommer/PAGINA-LOGIN' },
                 ]
             },
             'platform-game': {
@@ -1765,11 +1817,9 @@
                     <p>Jogo de plataforma 2D desenvolvido em C++ utilizando a biblioteca SFML.</p>
                     <p>Características:</p>
                     <ul>
-                        <li>Controles responsivos e física realista</li>
-                        <li>Sistema de inimigos com IA básica</li>
-                        <li>Múltiplos níveis com dificuldade progressiva</li>
-                        <li>Sistema de coleta de itens e pontuação</li>
-                        <li>Arquitetura orientada a objetos bem estruturada</li>
+                        <li>Desenvolvimento de um jogo de plataforma em C++.</li>
+                        <li>Utilização da biblioteca SFML para gráficos e física do jogo.</li>
+                        <li>Habilidades: C++, SFML, Git, GitHub, POO, Desenvolvimento de Software.</li>
                     </ul>
                     <p>Este projeto demonstra conhecimentos avançados em C++, padrões de design, e desenvolvimento de jogos.</p>
                 `,
@@ -1785,11 +1835,9 @@
                     <p>Aplicativo Python que extrai dados de cartão de ponto em PDFs e converte para formato CSV.</p>
                     <p>Funcionalidades:</p>
                     <ul>
-                        <li>Extração de texto de arquivos PDF</li>
-                        <li>Processamento de dados usando expressões regulares</li>
-                        <li>Cálculo automático de horas trabalhadas</li>
-                        <li>Exportação para CSV facilmente importável em Excel</li>
-                        <li>Interface simples para facilitar o uso</li>
+                        <li>Programa em Python para leitura de arquivos PDF e inserção de dados em uma planilha Excel.</li>
+                        <li>Automação do processamento de dados e exportação eficiente para Excel.</li>
+                        <li>Habilidades: Python, Microsoft Excel, Git, GitHub, Desenvolvimento de Software.</li>
                     </ul>
                     <p>Desenvolvido para otimizar processos de RH, reduzindo significativamente o tempo de processamento manual de cartões de ponto.</p>
                 `,
@@ -1805,11 +1853,9 @@
                     <p>Aplicativo de monitoramento de métricas de sistema em tempo real com frontend Python e backend C++.</p>
                     <p>Recursos principais:</p>
                     <ul>
-                        <li>Monitoramento de CPU, memória e uso de disco</li>
-                        <li>Visualizações gráficas em tempo real</li>
-                        <li>Alertas configuráveis para níveis críticos</li>
-                        <li>Histórico de métricas com análise de tendências</li>
-                        <li>Comunicação eficiente entre componentes Python e C++</li>
+                        <li>Desenvolvimento de um painel para monitoramento de métricas do sistema em tempo real.</li>
+                        <li>Interface gráfica desenvolvida em Python com backend em C++.</li>
+                        <li>Habilidades: Sistemas Operacionais, C++, Linux, Python, Desenvolvimento de Software.</li>
                     </ul>
                     <p>Criado para oferecer uma visão clara e objetiva do desempenho do sistema em tempo real.</p>
                 `,
@@ -1825,11 +1871,9 @@
                     <p>Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend.</p>
                     <p>Funcionalidades:</p>
                     <ul>
-                        <li>Criação e gerenciamento de enquetes</li>
-                        <li>Diferentes tipos de votação (múltipla escolha, ranking)</li>
-                        <li>Verificação para evitar votos duplicados</li>
-                        <li>Estatísticas e gráficos em tempo real</li>
-                        <li>Exportação de resultados em diversos formatos</li>
+                        <li>Desenvolvimento de uma página para enquetes com React.js no frontend.</li>
+                        <li>Backend construído com Express.js e MySQL.</li>
+                        <li>Habilidades: React.js, Express.js, MySQL, JavaScript, HTML5, CSS, Git.</li>
                     </ul>
                     <p>Implementado para facilitar processos democráticos em organizações, clubes e eventos.</p>
                 `,
@@ -1845,11 +1889,9 @@
                     <p>Plataforma de streaming de vídeo com backend Java (Spring Boot) e MongoDB, com frontend React.js.</p>
                     <p>Características:</p>
                     <ul>
-                        <li>Streaming adaptativo para diferentes velocidades de conexão</li>
-                        <li>Upload e processamento de vídeos</li>
-                        <li>Sistema de usuários com perfis e preferências</li>
-                        <li>Recomendações baseadas em histórico de visualização</li>
-                        <li>Integração com armazenamento AWS S3</li>
+                        <li>Participação no desenvolvimento do frontend de um clone funcional do YouTube.</li>
+                        <li>Frontend desenvolvido em React.js e backend em Java com MongoDB.</li>
+                        <li>Habilidades: React.js, Java, MongoDB, HTML5, CSS, Git, GitHub, POO.</li>
                     </ul>
                     <p>Desenvolvido como um projeto colaborativo para criar uma alternativa de código aberto para plataformas de streaming de vídeo.</p>
                 `,
@@ -2116,6 +2158,300 @@
                 once: true
             });
         }
+
+        const translations = {
+            'pt': {
+                // Headers and nav
+                'nav-home': 'Home',
+                'nav-about': 'Sobre',
+                'nav-skills': 'Habilidades',
+                'nav-experience': 'Experiência',
+                'nav-projects': 'Projetos',
+                'nav-contact': 'Contato',
+                
+                // Hero section
+                'hero-title': 'Daniel Zaki Sommer',
+                'hero-subtitle': 'Backend Developer',
+                'hero-text': 'Estudante de Sistemas de Informação na UTFPR e Estagiário de Desenvolvimento Java na Meisters Solutions, especializado em desenvolvimento de sistemas E-Commerce utilizando Java (Spring), Docker, SQL e Hybris.',
+                'hero-btn-projects': 'Ver Projetos',
+                'hero-btn-contact': 'Contato',
+                
+                // About section
+                'about-title': 'Sobre Mim',
+                'about-greeting': 'Olá, sou Daniel Zaki Sommer',
+                'about-p1': 'Sou estudante do 5º semestre de Sistemas de Informação na UTFPR e Estagiário de Desenvolvimento Java na Meisters Solutions. Tenho experiência no desenvolvimento de sistemas para E-Commerce, atuando no backend com Java (Spring), SQL, Docker e SAP Hybris e no frontend com TypeScript e Spartacus. Além disso, realizo integrações utilizando SAP Cloud Platform Integration (SCPI).',
+                'about-p2': 'Aprimorei minhas habilidades através de cursos sobre APIs REST, Docker, e adquiri experiência em trabalho em equipe e comunicação em ambientes colaborativos. Minha interação com clientes internacionais melhorou meu inglês, e construí projetos pessoais como sistema de gerenciamento de inventário, sistema de votação, site de streaming de vídeo e painel de monitoramento de sistema em tempo real.',
+                'about-btn': 'Download CV',
+                
+                // Skills section
+                'skills-title': 'Minhas Habilidades',
+                'skills-languages': 'Linguagens e Frameworks',
+                'skills-databases': 'Bancos de Dados',
+                'skills-languages-heading': 'Idiomas',
+                'skills-tools': 'Outras Ferramentas',
+                'skill-level-basic': 'Básico',
+                'skill-level-intermediate': 'Intermediário',
+                'skill-level-advanced': 'Avançado',
+                'skill-level-fluent': 'Fluente',
+                
+                // Experience section
+                'experience-title': 'Experiência',
+                'exp-job-title': 'Java Development Intern',
+                'exp-job-date': 'Julho 2024 - Presente',
+                'exp-job-company': 'Meisters Solutions',
+                'exp-job-li1': 'Especializado em desenvolvimento de sistemas E-Commerce utilizando Java (Spring), Docker, SQL e SAP Hybris no backend, e TypeScript (Spartacus) no frontend.',
+                'exp-job-li2': 'Desenvolvimento de integrações com SCPI (SAP Cloud Platform Integration).',
+                'exp-job-li3': 'Aprimoramento de habilidades técnicas através de cursos sobre APIs REST, Git e Docker.',
+                'exp-job-li4': 'Experiência em trabalho em equipe, comunicação e colaboração com clientes internacionais, melhorando a proficiência em inglês.',
+                'exp-edu-title': 'Graduação em Sistemas de Informação',
+                'exp-edu-date': '2023 - Presente',
+                'exp-edu-school': 'UTFPR - Universidade Tecnológica Federal do Paraná',
+                'exp-edu-desc': 'Atualmente no 5º semestre do curso de Sistemas de Informação.',
+                'exp-courses-title': 'Cursos Adicionais',
+                'exp-courses-date': '2022 - 2024',
+                
+                // Projects section
+                'projects-title': 'Meus Projetos Pessoais',
+                'projects-btn-all': 'Todos',
+                'project-details': 'Detalhes',
+                
+                // Contact section
+                'contact-title': 'Entre em Contato',
+                'contact-info': 'Informações de Contato',
+                'contact-form-name': 'Nome',
+                'contact-form-subject': 'Assunto',
+                'contact-form-message': 'Mensagem',
+                'contact-form-submit': 'Enviar Mensagem',
+                'contact-success': 'Mensagem enviada com sucesso! Entrarei em contato em breve.',
+                
+                // Footer
+                'footer-links': 'Links Rápidos',
+                'footer-social': 'Redes Sociais',
+                'footer-copyright': '© 2025 Daniel Zaki Sommer. Todos os direitos reservados.'
+            },
+            'en': {
+                // Headers and nav
+                'nav-home': 'Home',
+                'nav-about': 'About',
+                'nav-skills': 'Skills',
+                'nav-experience': 'Experience',
+                'nav-projects': 'Projects',
+                'nav-contact': 'Contact',
+                
+                // Hero section
+                'hero-title': 'Daniel Zaki Sommer',
+                'hero-subtitle': 'Backend Developer',
+                'hero-text': 'Information Systems student at UTFPR and Java Development Intern at Meisters Solutions, specialized in E-Commerce systems development using Java (Spring), Docker, SQL, and Hybris.',
+                'hero-btn-projects': 'View Projects',
+                'hero-btn-contact': 'Contact',
+                
+                // About section
+                'about-title': 'About Me',
+                'about-greeting': 'Hi, I am Daniel Zaki Sommer',
+                'about-p1': 'I am a 5th semester Information Systems student at UTFPR and Java Development Intern at Meisters Solutions. I have experience in developing E-Commerce systems, working with Java (Spring), SQL, Docker, and SAP Hybris on the backend, and TypeScript and Spartacus on the frontend. I also perform integrations using SAP Cloud Platform Integration (SCPI).',
+                'about-p2': 'I enhanced my skills through courses on REST APIs and Docker, and I gained experience in teamwork and communication in collaborative environments. My interaction with international clients improved my English, and I built personal projects such as inventory management system, voting system, video streaming website, and real-time system monitoring dashboard.',
+                'about-btn': 'Download Resume',
+                
+                // Skills section
+                'skills-title': 'My Skills',
+                'skills-languages': 'Languages and Frameworks',
+                'skills-databases': 'Databases',
+                'skills-languages-heading': 'Languages',
+                'skills-tools': 'Other Tools',
+                'skill-level-basic': 'Basic',
+                'skill-level-intermediate': 'Intermediate',
+                'skill-level-advanced': 'Advanced',
+                'skill-level-fluent': 'Fluent',
+                
+                // Experience section
+                'experience-title': 'Experience',
+                'exp-job-title': 'Java Development Intern',
+                'exp-job-date': 'July 2024 - Present',
+                'exp-job-company': 'Meisters Solutions',
+                'exp-job-li1': 'Specialized in E-Commerce systems development using Java (Spring), Docker, SQL, and SAP Hybris on the backend, and TypeScript (Spartacus) on the frontend.',
+                'exp-job-li2': 'Development of integrations with SCPI (SAP Cloud Platform Integration).',
+                'exp-job-li3': 'Enhancement of technical skills through courses on REST APIs, Git, and Docker.',
+                'exp-job-li4': 'Experience in teamwork, communication, and collaboration with international clients, improving English proficiency.',
+                'exp-edu-title': 'Bachelor in Information Systems',
+                'exp-edu-date': '2023 - Present',
+                'exp-edu-school': 'UTFPR - Federal University of Technology - Paraná',
+                'exp-edu-desc': 'Currently in the 5th semester of Information Systems program.',
+                'exp-courses-title': 'Additional Courses',
+                'exp-courses-date': '2022 - 2024',
+                
+                // Projects section
+                'projects-title': 'My Personal Projects',
+                'projects-btn-all': 'All',
+                'project-details': 'Details',
+                
+                // Contact section
+                'contact-title': 'Get in Touch',
+                'contact-info': 'Contact Information',
+                'contact-form-name': 'Name',
+                'contact-form-subject': 'Subject',
+                'contact-form-message': 'Message',
+                'contact-form-submit': 'Send Message',
+                'contact-success': 'Message sent successfully! I will get back to you soon.',
+                
+                // Footer
+                'footer-links': 'Quick Links',
+                'footer-social': 'Social Media',
+                'footer-copyright': '© 2025 Daniel Zaki Sommer. All rights reserved.'
+            }
+        };
+        
+        // Current language
+        let currentLang = localStorage.getItem('language') || 'pt';
+        
+        // Function to update all text elements with translations
+        function updateLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update UI elements with translations
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    // Handle special cases for innerHTML (like for elements that might contain HTML)
+                    if (element.tagName === 'BUTTON' || element.tagName === 'A' || element.tagName === 'LABEL') {
+                        element.innerHTML = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Update language selector text
+            document.querySelector('.language-btn span').textContent = lang.toUpperCase();
+            
+            // Update page title
+            document.title = lang === 'en' ? 
+                'Daniel Zaki Sommer - Backend Developer' : 
+                'Daniel Zaki Sommer - Desenvolvedor Backend';
+            
+            // Update form placeholders
+            document.getElementById('name').placeholder = lang === 'en' ? 'Your Name' : 'Seu Nome';
+            document.getElementById('email').placeholder = lang === 'en' ? 'Your Email' : 'Seu Email';
+            document.getElementById('subject').placeholder = lang === 'en' ? 'Subject' : 'Assunto';
+            document.getElementById('message').placeholder = lang === 'en' ? 'Your Message' : 'Sua Mensagem';
+        }
+        
+        // Initialize language from local storage
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add data-i18n attributes to elements
+            addTranslationAttributes();
+            
+            // Initialize language
+            updateLanguage(currentLang);
+            
+            // Set language option click handlers
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.querySelector('span').textContent === 'English' ? 'en' : 'pt';
+                    updateLanguage(lang);
+                });
+            });
+        });
+        
+        // Function to add data-i18n attributes to elements
+        function addTranslationAttributes() {
+            // Navigation
+            document.querySelectorAll('.nav-links a')[0].setAttribute('data-i18n', 'nav-home');
+            document.querySelectorAll('.nav-links a')[1].setAttribute('data-i18n', 'nav-about');
+            document.querySelectorAll('.nav-links a')[2].setAttribute('data-i18n', 'nav-skills');
+            document.querySelectorAll('.nav-links a')[3].setAttribute('data-i18n', 'nav-experience');
+            document.querySelectorAll('.nav-links a')[4].setAttribute('data-i18n', 'nav-projects');
+            document.querySelectorAll('.nav-links a')[5].setAttribute('data-i18n', 'nav-contact');
+            
+            // Mobile navigation
+            document.querySelectorAll('.mobile-links a')[0].setAttribute('data-i18n', 'nav-home');
+            document.querySelectorAll('.mobile-links a')[1].setAttribute('data-i18n', 'nav-about');
+            document.querySelectorAll('.mobile-links a')[2].setAttribute('data-i18n', 'nav-skills');
+            document.querySelectorAll('.mobile-links a')[3].setAttribute('data-i18n', 'nav-experience');
+            document.querySelectorAll('.mobile-links a')[4].setAttribute('data-i18n', 'nav-projects');
+            document.querySelectorAll('.mobile-links a')[5].setAttribute('data-i18n', 'nav-contact');
+            
+            // Hero section
+            document.querySelector('.hero-subtitle').setAttribute('data-i18n', 'hero-subtitle');
+            document.querySelector('.hero-text').setAttribute('data-i18n', 'hero-text');
+            document.querySelectorAll('.hero-btns a')[0].setAttribute('data-i18n', 'hero-btn-projects');
+            document.querySelectorAll('.hero-btns a')[1].setAttribute('data-i18n', 'hero-btn-contact');
+            
+            // Section titles
+            document.querySelectorAll('.section-title')[0].setAttribute('data-i18n', 'about-title');
+            document.querySelectorAll('.section-title')[1].setAttribute('data-i18n', 'skills-title');
+            document.querySelectorAll('.section-title')[2].setAttribute('data-i18n', 'experience-title');
+            document.querySelectorAll('.section-title')[3].setAttribute('data-i18n', 'projects-title');
+            document.querySelectorAll('.section-title')[4].setAttribute('data-i18n', 'contact-title');
+            
+            // About section
+            document.querySelector('.about-content h2').setAttribute('data-i18n', 'about-greeting');
+            document.querySelectorAll('.about-content p')[0].setAttribute('data-i18n', 'about-p1');
+            document.querySelectorAll('.about-content p')[1].setAttribute('data-i18n', 'about-p2');
+            document.querySelector('.about-btn').setAttribute('data-i18n', 'about-btn');
+            
+            // Skills section
+            document.querySelectorAll('.skill-category h3')[0].setAttribute('data-i18n', 'skills-languages');
+            document.querySelectorAll('.skill-category h3')[1].setAttribute('data-i18n', 'skills-databases');
+            document.querySelectorAll('.skill-category h3')[2].setAttribute('data-i18n', 'skills-languages-heading');
+            document.querySelectorAll('.skill-category h3')[3].setAttribute('data-i18n', 'skills-tools');
+            
+            // Projects section
+            document.querySelector('.filter-btn.active').setAttribute('data-i18n', 'projects-btn-all');
+            
+            // Contact section
+            document.querySelector('.contact-info h3').setAttribute('data-i18n', 'contact-info');
+            document.querySelector('label[for="name"]').setAttribute('data-i18n', 'contact-form-name');
+            document.querySelector('label[for="subject"]').setAttribute('data-i18n', 'contact-form-subject');
+            document.querySelector('label[for="message"]').setAttribute('data-i18n', 'contact-form-message');
+            document.querySelector('.form-btn').setAttribute('data-i18n', 'contact-form-submit');
+            
+            // Footer
+            document.querySelectorAll('.footer-col h3')[1].setAttribute('data-i18n', 'footer-links');
+            document.querySelectorAll('.footer-col h3')[2].setAttribute('data-i18n', 'footer-social');
+            document.querySelector('.copyright p').setAttribute('data-i18n', 'footer-copyright');
+            
+            // Footer links
+            document.querySelectorAll('.footer-links a')[0].setAttribute('data-i18n', 'nav-home');
+            document.querySelectorAll('.footer-links a')[1].setAttribute('data-i18n', 'nav-about');
+            document.querySelectorAll('.footer-links a')[2].setAttribute('data-i18n', 'nav-skills');
+            document.querySelectorAll('.footer-links a')[3].setAttribute('data-i18n', 'nav-experience');
+            document.querySelectorAll('.footer-links a')[4].setAttribute('data-i18n', 'nav-projects');
+            document.querySelectorAll('.footer-links a')[5].setAttribute('data-i18n', 'nav-contact');
+            
+            // Update skill levels
+            document.querySelectorAll('.skill-level').forEach(level => {
+                if (level.textContent === 'Básico') {
+                    level.setAttribute('data-i18n', 'skill-level-basic');
+                } else if (level.textContent === 'Intermediário') {
+                    level.setAttribute('data-i18n', 'skill-level-intermediate');
+                } else if (level.textContent === 'Avançado') {
+                    level.setAttribute('data-i18n', 'skill-level-advanced');
+                } else if (level.textContent === 'Fluente') {
+                    level.setAttribute('data-i18n', 'skill-level-fluent');
+                }
+            });
+        }
+        
+        // Contact Form Submission - Update alert message
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Here you would typically send the data to a server
+            console.log('Form submission:', { name, email, subject, message });
+
+            // Reset form
+            contactForm.reset();
+
+            // Show success message in current language
+            alert(translations[currentLang]['contact-success']);
+        });
     </script>
 </body>
 
