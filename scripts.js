@@ -691,7 +691,7 @@ const translations = {
 
     // Project cards
     "project-auto-control-title": "Aplicativo de Autocontrole Empresarial",
-    "project-auto-control-desc": "...",
+    "project-auto-control-desc": "Um aplicativo de controle de negócios para Android desenvolvido com Kotlin e Java usando banco de dados SQL. Gerencia dados e processos empresariais com uma interface intuitiva, otimizando as operações diárias.",
     "project-details": "Detalhes",
     "project-github": "GitHub",
 
@@ -852,7 +852,7 @@ const translations = {
 
     // Project cards
     "project-auto-control-title": "Business Self-Control App",
-    "project-auto-control-desc": "...",
+    "project-auto-control-desc": "A business control app for Android developed with Kotlin and Java using an SQL database. It manages business data and processes with an intuitive interface, optimizing daily operations.",
     "project-details": "Details",
     "project-github": "GitHub",
 
@@ -924,6 +924,7 @@ function updateLanguage(lang) {
   });
 
   updateProjectCardTitles();
+  updateProjectDescriptions(); 
 
   // Check if projects modal is open and update its content if needed
   if (projectModal && projectModal.classList.contains("active")) {
@@ -1437,6 +1438,33 @@ function addTranslationAttributes() {
     .setAttribute("data-i18n", "project-github");
 }
 
+function updateProjectDescriptions() {
+  // Map of project cards to their description keys
+  const projectDescMap = [
+    { index: 0, key: "project-auto-control-desc" },
+    { index: 1, key: "project-dashboard-desc" },
+    { index: 2, key: "project-platform-game-desc" },
+    { index: 3, key: "project-video-streaming-desc" },
+    { index: 4, key: "project-task-management-desc" },
+    { index: 5, key: "project-inventory-desc" },
+    { index: 6, key: "project-timecard-desc" },
+    { index: 7, key: "project-login-desc" },
+    { index: 8, key: "project-voting-desc" },
+  ];
+
+  const projectCards = document.querySelectorAll(".project-card");
+
+  projectDescMap.forEach((item) => {
+    if (projectCards[item.index]) {
+      const descElement = 
+        projectCards[item.index].querySelector(".project-desc");
+      if (descElement && translations[currentLang][item.key]) {
+        descElement.textContent = translations[currentLang][item.key];
+      }
+    }
+  });
+}
+
 // Function to update all project card titles when language changes
 function updateProjectCardTitles() {
   // Map of project cards to their title keys
@@ -1734,7 +1762,6 @@ document.querySelectorAll(".language-dropdown-mobile .language-option").forEach(
 
 // Improve mobile dropdown visibility with CSS classes
 document.addEventListener("DOMContentLoaded", () => {
-    // ...existing code...
     
     // Make sure the language dropdown mobile has proper styling
     // This ensures it's properly hidden/shown
