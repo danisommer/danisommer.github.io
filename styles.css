@@ -297,7 +297,8 @@ header {
 
 .skill-items {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Mudando para uma coluna */
+    grid-template-columns: repeat(1, 1fr);
+    /* Mudando para uma coluna */
     gap: 1.2rem;
 }
 
@@ -321,12 +322,16 @@ header {
     font-weight: 500;
     padding-right: 1rem;
     overflow-wrap: break-word;
-    word-break: normal; /* Changed from break-word to prevent unwanted wrapping */
+    word-break: normal;
+    /* Changed from break-word to prevent unwanted wrapping */
     flex: 1;
-    min-width: 100px; /* Set a reasonable minimum width */
-    white-space: nowrap; /* Prevent text from wrapping for short skill names */
+    min-width: 100px;
+    /* Set a reasonable minimum width */
+    white-space: nowrap;
+    /* Prevent text from wrapping for short skill names */
     overflow: hidden;
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    text-overflow: ellipsis;
+    /* Add ellipsis if text overflows */
 }
 
 .skill-level {
@@ -338,13 +343,13 @@ header {
     color: var(--text-light);
     white-space: nowrap;
 }
-        
+
 /* Para telas maiores, voltamos para 2 colunas dentro da categoria */
 @media (min-width: 768px) {
     .skill-items {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     /* Aumentar o tamanho mínimo das categorias */
     .skills-container {
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -495,7 +500,7 @@ header {
     background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: var(--card-shadow);
-    padding-left: 30px; 
+    padding-left: 30px;
 }
 
 .timeline-date {
