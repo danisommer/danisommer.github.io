@@ -1359,6 +1359,5 @@ function initSkillsCarousel() {
 
 // Initialize carousel on DOM content loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // ...existing DOMContentLoaded code...
     initSkillsCarousel();
 });
