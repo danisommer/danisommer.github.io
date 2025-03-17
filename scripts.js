@@ -568,14 +568,6 @@ contactForm.addEventListener('submit', (e) => {
     sessionStorage.setItem('formSubmitted', 'true');
 });
 
-// Check for form submission status on page load
-document.addEventListener('DOMContentLoaded', () => {
-    if (sessionStorage.getItem('formSubmitted') === 'true') {
-        alert(translations[currentLang]['contact-success']);
-        sessionStorage.removeItem('formSubmitted');
-    }
-});
-
 // Initialize AOS animation library if present
 if (typeof AOS !== "undefined") {
   AOS.init({
