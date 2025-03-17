@@ -946,7 +946,7 @@ function updateProjectModal(projectId) {
 document.addEventListener('DOMContentLoaded', () => {
     // Add data-i18n attributes to elements
     addTranslationAttributes();
-    
+    initSkillsCarousel();
     // Initialize language
     updateLanguage(currentLang);
     
@@ -1250,4 +1250,115 @@ document.addEventListener('click', function() {
     if (dropdown && dropdown.style.display === 'block') {
         dropdown.style.display = 'none';
     }
+});
+
+// Skills Carousel
+function initSkillsCarousel() {
+    const carousel = document.querySelector('.skills-carousel');
+    const skillCategories = document.querySelectorAll('.skill-category');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    
+    if (!carousel || skillCategories.length === 0) return;
+    
+    let currentIndex = 0;
+    
+    // Create indicators
+    skillCategories.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('carousel-indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
+    
+    // Set initial active state
+    updateCarouselState();
+    
+    // Event listeners
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Swipe functionality for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    carousel.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        if (touchStartX - touchEndX > 50) {
+            nextSlide();
+        } else if (touchEndX - touchStartX > 50) {
+            prevSlide();
+        }
+    }
+    
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarouselState();
+        }
+    }
+    
+    function nextSlide() {
+        if (currentIndex < skillCategories.length - 1) {
+            currentIndex++;
+            updateCarouselState();
+        }
+    }
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarouselState();
+    }
+    
+    function updateCarouselState() {
+        // Update carousel position
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update active class on slides
+        skillCategories.forEach((category, index) => {
+            category.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update indicators
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Enable/disable buttons
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === skillCategories.length - 1;
+    }
+    
+    // Auto rotation (optional)
+    let autoRotate = setInterval(() => {
+        if (currentIndex < skillCategories.length - 1) {
+            nextSlide();
+        } else {
+            currentIndex = 0;
+            updateCarouselState();
+        }
+    }, 5000); // Change slide every 5 seconds
+    
+    // Stop auto rotation on hover/interaction
+    carousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
+    prevBtn.addEventListener('mouseenter', () => clearInterval(autoRotate));
+    nextBtn.addEventListener('mouseenter', () => clearInterval(autoRotate));
+    indicatorsContainer.addEventListener('mouseenter', () => clearInterval(autoRotate));
+}
+
+// Initialize carousel on DOM content loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing DOMContentLoaded code...
+    initSkillsCarousel();
 });

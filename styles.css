@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #2a6bc2;
     --secondary-color: #1e4d8e;
@@ -276,9 +275,7 @@ header {
 }
 
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2.5rem;
+    display: block;
 }
 
 .skill-category {
@@ -351,6 +348,91 @@ header {
     /* Aumentar o tamanho mínimo das categorias */
     .skills-container {
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+/* Skills Carousel */
+.skills-carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.skills-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.skills-carousel .skill-category {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 2.5rem;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.skills-carousel .skill-category.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.carousel-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.carousel-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.carousel-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.carousel-indicator.active {
+    background-color: var(--primary-color);
+    width: 30px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .skills-carousel .skill-category {
+        padding: 1.5rem;
     }
 }
 
@@ -970,6 +1052,10 @@ footer {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .skills-carousel .skill-category {
+        padding: 1.5rem;
     }
 }
 
