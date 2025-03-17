@@ -1635,3 +1635,150 @@ function initSkillsCarousel() {
 document.addEventListener("DOMContentLoaded", function () {
   initSkillsCarousel();
 });
+
+// Add after existing DOM element declarations
+const themeToggleMobile = document.querySelector(".theme-toggle-mobile");
+const languageBtnMobile = document.querySelector(".language-btn-mobile");
+const languageDropdownMobile = document.querySelector(".language-dropdown-mobile");
+
+// Add mobile theme toggle functionality
+themeToggleMobile.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Update theme toggle icons (both desktop and mobile)
+    const desktopIcon = themeToggle.querySelector("i");
+    const mobileIcon = themeToggleMobile.querySelector("i");
+    
+    if (document.body.classList.contains("dark-mode")) {
+        desktopIcon.classList.remove("fa-moon");
+        desktopIcon.classList.add("fa-sun");
+        mobileIcon.classList.remove("fa-moon");
+        mobileIcon.classList.add("fa-sun");
+        localStorage.setItem("theme", "dark");
+    } else {
+        desktopIcon.classList.remove("fa-sun");
+        desktopIcon.classList.add("fa-moon");
+        mobileIcon.classList.remove("fa-sun");
+        mobileIcon.classList.add("fa-moon");
+        localStorage.setItem("theme", "light");
+    }
+});
+
+// Add mobile language toggle functionality
+languageBtnMobile.addEventListener("click", (e) => {
+    e.stopPropagation();
+    languageDropdownMobile.classList.toggle("active");
+});
+
+// Make language options in mobile menu work
+document.querySelectorAll(".language-dropdown-mobile .language-option").forEach((option) => {
+    option.addEventListener("click", function() {
+        const lang = this.querySelector("span").textContent.trim() === "English" ? "en" : "pt";
+        updateLanguage(lang);
+        
+        // Update both desktop and mobile UI
+        document.querySelector(".language-btn span").textContent = lang.toUpperCase();
+        document.querySelector(".language-btn-mobile span").textContent = lang.toUpperCase();
+        
+        // Close the dropdown
+        languageDropdownMobile.classList.remove("active");
+    });
+});
+
+// Close the mobile language dropdown when clicking elsewhere
+document.addEventListener("click", function() {
+    languageDropdownMobile.classList.remove("active");
+});
+
+// Update the theme syncing on page load
+document.addEventListener("DOMContentLoaded", () => {
+    // Existing theme code...
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        const desktopIcon = themeToggle.querySelector("i");
+        const mobileIcon = themeToggleMobile.querySelector("i");
+        desktopIcon.classList.remove("fa-moon");
+        desktopIcon.classList.add("fa-sun");
+        mobileIcon.classList.remove("fa-moon");
+        mobileIcon.classList.add("fa-sun");
+    }
+    
+    // Set initial language on mobile button too
+    document.querySelector(".language-btn-mobile span").textContent = currentLang.toUpperCase();
+});
+
+// Make language options in mobile menu work
+document.querySelectorAll(".language-dropdown-mobile .language-option").forEach((option) => {
+    option.addEventListener("click", function(e) {
+        e.stopPropagation(); // Prevent event bubbling
+        const lang = this.querySelector("span").textContent.trim() === "English" ? "en" : "pt";
+        
+        // Update language
+        updateLanguage(lang);
+        
+        // Update both desktop and mobile UI
+        document.querySelector(".language-btn span").textContent = lang.toUpperCase();
+        document.querySelector(".language-btn-mobile span").textContent = lang.toUpperCase();
+        
+        // Close the dropdown
+        languageDropdownMobile.classList.remove("active");
+        
+        // Close mobile navigation if open
+        closeNavigation();
+        
+        // Log for debugging
+        console.log("Mobile language changed to:", lang);
+    });
+});
+
+// Improve mobile dropdown visibility with CSS classes
+document.addEventListener("DOMContentLoaded", () => {
+    // ...existing code...
+    
+    // Make sure the language dropdown mobile has proper styling
+    // This ensures it's properly hidden/shown
+    const dropdownMobile = document.querySelector(".language-dropdown-mobile");
+    if (dropdownMobile) {
+        dropdownMobile.classList.add("language-dropdown-mobile");
+        
+        // Ensure the dropdown is initially hidden
+        if (!dropdownMobile.classList.contains("active")) {
+            dropdownMobile.style.display = "none";
+        }
+    }
+    
+    // Modify click handler for mobile language button
+    const langBtnMobile = document.querySelector(".language-btn-mobile");
+    if (langBtnMobile) {
+        langBtnMobile.addEventListener("click", function(e) {
+            e.stopPropagation();
+            const dropdown = document.querySelector(".language-dropdown-mobile");
+            // Force toggle display property instead of just using classList
+            dropdown.style.display = 
+                dropdown.style.display === "block" || dropdown.classList.contains("active") ? 
+                "none" : "block";
+            dropdown.classList.toggle("active");
+            console.log("Mobile dropdown toggled:", dropdown.style.display);
+        }, true); // Use capture phase
+    }
+    
+    // Set initial language on mobile button
+    document.querySelector(".language-btn-mobile span").textContent = currentLang.toUpperCase();
+});
+
+// Modify document click handler to properly handle both dropdowns
+document.addEventListener("click", function() {
+    // Desktop dropdown
+    const dropdown = document.querySelector(".language-dropdown");
+    if (dropdown && dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+    }
+    
+    // Mobile dropdown
+    const dropdownMobile = document.querySelector(".language-dropdown-mobile");
+    if (dropdownMobile && (dropdownMobile.style.display === "block" || dropdownMobile.classList.contains("active"))) {
+        dropdownMobile.style.display = "none";
+        dropdownMobile.classList.remove("active");
+    }
+});

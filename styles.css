@@ -1051,6 +1051,62 @@ footer {
         display: none;
     }
 
+    .mobile-controls {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        justify-content: center;
+    }
+    
+    .theme-toggle-mobile {
+        background: none;
+        border: none;
+        color: var(--text-light);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .theme-toggle-mobile:hover {
+        color: var(--accent-color);
+    }
+    
+    .language-selector-mobile {
+        position: relative;
+    }
+    
+    .language-btn-mobile {
+        background: none;
+        border: none;
+        color: var(--text-light);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-size: 1rem;
+    }
+    
+    .language-dropdown-mobile {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--card-bg);
+        border-radius: 5px;
+        box-shadow: var(--card-shadow);
+        padding: 0.5rem 0;
+        width: 120px;
+        z-index: 10;
+        display: none;
+    }
+    
+    .language-dropdown-mobile.active {
+        display: block;
+    }
+
     .mobile-toggle {
         display: block;
     }
