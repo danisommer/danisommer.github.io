@@ -1460,7 +1460,10 @@ function initSkillsCarousel() {
   const indicatorsContainer = document.querySelector(".carousel-indicators");
 
   if (!carousel || skillCategories.length === 0) return;
-
+  
+  // Clear existing indicators to prevent duplicates
+  indicatorsContainer.innerHTML = '';
+  
   let currentIndex = 0;
 
   // Create indicators
