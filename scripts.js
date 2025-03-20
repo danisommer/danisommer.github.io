@@ -915,6 +915,11 @@ function updateLanguage(lang) {
     option.classList.toggle("active", option.dataset.lang === currentLang);
   });
 
+  document.querySelector(".language-btn span").textContent = currentLang.toUpperCase();
+  if (document.querySelector(".language-btn-mobile span")) {
+    document.querySelector(".language-btn-mobile span").textContent = currentLang.toUpperCase();
+  }
+
   // Update all elements with data-i18n attribute
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
