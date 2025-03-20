@@ -22,7 +22,7 @@ const projectsData = {
   "auto-control-app": {
     titleKey: "project-auto-control-title",
     image:
-      '<img src="images/projects" alt="Aplicativo de Autocontrole Empresarial">',
+      '<img src="images/projects/auto-control-app.jpg" alt="Aplicativo de Autocontrole Empresarial">',
     tags: ["Kotlin", "Android", "Java", "SQL"],
     descriptionPt: `<p>Aplicativo para controle empresarial desenvolvido com Kotlin e Java para Android, utilizando banco de dados SQL.</p>
             <p>Recursos incluem:</p>
