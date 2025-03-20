@@ -614,27 +614,6 @@ const translations = {
     "skill-level-advanced": "Avançado",
     "skill-level-fluent": "Fluente",
 
-    // Experience section
-    "experience-title": "Experiência",
-    "exp-job-title": "Java Development Intern",
-    "exp-job-date": "Julho 2024 - Presente",
-    "exp-job-company": "Meisters Solutions",
-    "exp-job-li1":
-      "Especializado em desenvolvimento de sistemas E-Commerce utilizando Java (Spring), Docker, SQL e SAP Hybris no backend, e TypeScript (Spartacus) no frontend.",
-    "exp-job-li2":
-      "Desenvolvimento de integrações com SCPI (SAP Cloud Platform Integration).",
-    "exp-job-li3":
-      "Aprimoramento de habilidades técnicas através de cursos sobre APIs REST, Git e Docker.",
-    "exp-job-li4":
-      "Experiência em trabalho em equipe, comunicação e colaboração com clientes internacionais, melhorando a proficiência em inglês.",
-    "exp-edu-title": "Graduação em Sistemas de Informação",
-    "exp-edu-date": "2023 - Presente",
-    "exp-edu-school": "UTFPR - Universidade Tecnológica Federal do Paraná",
-    "exp-edu-desc":
-      "Atualmente no 5º semestre do curso de Sistemas de Informação.",
-    "exp-courses-title": "Cursos Adicionais",
-    "exp-courses-date": "2022 - 2024",
-
     // Projects section
     "projects-title": "Meus Projetos Pessoais",
     "projects-btn-all": "Todos",
@@ -667,7 +646,7 @@ const translations = {
     "exp-job-li2":
       "Desenvolvimento de integrações com SCPI (SAP Cloud Platform Integration).",
     "exp-job-li3":
-      "Aprimoramento de habilidades técnicas através de cursos sobre APIs REST, Git e Docker.",
+      "Trabalhei em um app de Delivery com React Native.",
     "exp-job-li4":
       "Experiência em trabalho em equipe, comunicação e colaboração com clientes internacionais, melhorando a proficiência em inglês.",
 
@@ -777,27 +756,6 @@ const translations = {
     "skill-level-advanced": "Advanced",
     "skill-level-fluent": "Fluent",
 
-    // Experience section
-    "experience-title": "Experience",
-    "exp-job-title": "Java Development Intern",
-    "exp-job-date": "July 2024 - Present",
-    "exp-job-company": "Meisters Solutions",
-    "exp-job-li1":
-      "Specialized in E-Commerce systems development using Java (Spring), Docker, SQL, and SAP Hybris on the backend, and TypeScript (Spartacus) on the frontend.",
-    "exp-job-li2":
-      "Development of integrations with SCPI (SAP Cloud Platform Integration).",
-    "exp-job-li3":
-      "Enhancement of technical skills through courses on REST APIs, Git, and Docker.",
-    "exp-job-li4":
-      "Experience in teamwork, communication, and collaboration with international clients, improving English proficiency.",
-    "exp-edu-title": "Bachelor in Information Systems",
-    "exp-edu-date": "2023 - Present",
-    "exp-edu-school": "UTFPR - Federal University of Technology - Paraná",
-    "exp-edu-desc":
-      "Currently in the 5th semester of Information Systems program.",
-    "exp-courses-title": "Additional Courses",
-    "exp-courses-date": "2022 - 2024",
-
     // Projects section
     "projects-title": "My Personal Projects",
     "projects-btn-all": "All",
@@ -828,7 +786,7 @@ const translations = {
     "exp-job-li2":
       "Development of integrations with SCPI (SAP Cloud Platform Integration).",
     "exp-job-li3":
-      "Enhancement of technical skills through courses on REST APIs, Git, and Docker.",
+      "Worked on a Delivery App using React Native.",
     "exp-job-li4":
       "Experience in teamwork, communication, and collaboration with international clients, improving English proficiency.",
 
