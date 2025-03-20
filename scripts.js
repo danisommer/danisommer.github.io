@@ -590,7 +590,7 @@ const translations = {
     "hero-title": "Daniel Zaki Sommer",
     "hero-subtitle": "Backend Developer",
     "hero-text":
-      "Estudante de Sistemas de Informação na UTFPR e Estagiário de Desenvolvimento Java na Meisters Solutions, especializado em desenvolvimento de sistemas E-Commerce utilizando Java (Spring), Docker, SQL e Hybris.",
+      "Estudante de Sistemas de Informação na UTFPR e estagiário em Desenvolvimento Java na Meisters Solutions, especializado no desenvolvimento de sistemas de E-Commerce com Java (Spring), Docker, SQL e Hybris. Experiente no desenvolvimento mobile com React Native e em tecnologias de frontend como TypeScript (Spartacus). ",
     "hero-btn-projects": "Ver Projetos",
     "hero-btn-contact": "Contato",
 
@@ -598,9 +598,9 @@ const translations = {
     "about-title": "Sobre Mim",
     "about-greeting": "Olá, sou o Daniel",
     "about-p1":
-      "Sou estudante do 5º semestre de Sistemas de Informação na UTFPR e Estagiário de Desenvolvimento Java na Meisters Solutions. Tenho experiência no desenvolvimento de sistemas para E-Commerce, atuando no backend com Java (Spring), SQL, Docker e SAP Hybris e no frontend com TypeScript e Spartacus. Além disso, realizo integrações utilizando SAP Cloud Platform Integration (SCPI).",
+      "Sou estudante do 5º semestre de Sistemas de Informação na UTFPR e estagiário em Desenvolvimento Java na Meisters Solutions. Tenho experiência no desenvolvimento de sistemas de E-Commerce, focado em backend (Java, Spring, SQL, Docker, SAP Hybris) e contribuindo para o frontend (TypeScript - Spartacus). Também atuei no desenvolvimento de um app de Delivery com React Native e na integração do SAP Business One via SCPI.",
     "about-p2":
-      "Aprimorei minhas habilidades através de cursos sobre APIs REST, Docker, e adquiri experiência em trabalho em equipe e comunicação em ambientes colaborativos. Minha interação com clientes internacionais melhorou meu inglês, e construí projetos pessoais como sistema de gerenciamento de inventário, sistema de votação, site de streaming de vídeo e painel de monitoramento de sistema em tempo real.",
+      "Trabalho bem em equipe, possuo boa comunicação e experiência com clientes internacionais, o que aprimorou meu inglês. Além da experiência profissional, concluí diversos cursos e desenvolvi projetos pessoais, como um sistema de controle, um jogo em C++, um site de streaming e um dashboard de monitoramento.",
     "about-btn": "Ver CV",
 
     // Skills section
@@ -753,7 +753,7 @@ const translations = {
     "hero-title": "Daniel Zaki Sommer",
     "hero-subtitle": "Backend Developer",
     "hero-text":
-      "Information Systems student at UTFPR and Java Development Intern at Meisters Solutions, specialized in E-Commerce systems development using Java (Spring), Docker, SQL, and Hybris.",
+      "Information Systems student at UTFPR and Java Development Intern at Meisters Solutions, specializing in E-Commerce systems development with Java (Spring), Docker, SQL, and Hybris. Experienced in mobile development with React Native and frontend technologies like TypeScript (Spartacus).",
     "hero-btn-projects": "View Projects",
     "hero-btn-contact": "Contact",
 
@@ -761,9 +761,9 @@ const translations = {
     "about-title": "About Me",
     "about-greeting": "Hi, I am Daniel",
     "about-p1":
-      "I am a 5th semester Information Systems student at UTFPR and Java Development Intern at Meisters Solutions. I have experience in developing E-Commerce systems, working with Java (Spring), SQL, Docker, and SAP Hybris on the backend, and TypeScript and Spartacus on the frontend. I also perform integrations using SAP Cloud Platform Integration (SCPI).",
+      "I am a 5th-semester Information Systems student at UTFPR and a Java Development Intern at Meisters Solutions. I have experience in E-Commerce system development, focusing on backend (Java, Spring, SQL, Docker, SAP Hybris) and contributing to the frontend (TypeScript - Spartacus). I also worked on a Delivery App using React Native and integrated SAP Business One through SCPI.",
     "about-p2":
-      "I enhanced my skills through courses on REST APIs and Docker, and I gained experience in teamwork and communication in collaborative environments. My interaction with international clients improved my English, and I built personal projects such as inventory management system, voting system, video streaming website, and real-time system monitoring dashboard.",
+      "I excel in teamwork, communication, and have experience working with international clients, which improved my English. In addition to my professional experience, I have completed various courses and developed personal projects, including a control system, a C++ game, a streaming website, and a monitoring dashboard.",
     "about-btn": "See Resume",
 
     // Skills section
@@ -818,7 +818,7 @@ const translations = {
     "footer-social": "Social Media",
     "footer-copyright": "© 2025 Daniel Zaki Sommer. All rights reserved.",
     "footer-description":
-      "Backend Developer specialized in Java, Python, and JavaScript with experience in E-Commerce systems development.",
+      "Backend Developer with experience in E-Commerce systems development, skilled in collaborating with international teams.",
 
     "exp-job-title": "Java Development Intern",
     "exp-job-date": "July 2024 - Present",
