@@ -1290,152 +1290,60 @@ function addTranslationAttributes() {
     .querySelectorAll(".filter-btn")[6]
     .setAttribute("data-i18n", "filter-cpp");
 
-  // Project cards - Add translation attributes to individual project cards
-  const projectCards = document.querySelectorAll(".project-card");
 
-  // Auto Control App
-  projectCards[0].querySelector(".project-title").lastChild.textContent =
-    " Aplicativo de Autocontrole Empresarial";
-  projectCards[0]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-auto-control-title");
-  projectCards[0]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-auto-control-desc");
-  projectCards[0]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[0]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
+  const projectTitleMap = [
+    { id: "auto-control-app", key: "project-auto-control-title" },
+    { id: "dashboard-app", key: "project-dashboard-app-title" },
+    { id: "platform-game", key: "project-platform-game-title" },
+    { id: "video-streaming", key: "project-video-streaming-title" },
+    { id: "task-management", key: "project-task-management-title" },
+    { id: "inventory-management", key: "project-inventory-management-title" },
+    { id: "timecard-app", key: "project-timecard-app-title" },
+    { id: "login-page", key: "project-login-page-title" },
+    { id: "voting-system", key: "project-voting-system-title" },
+  ];
 
-  // Dashboard App
-  projectCards[1].querySelector(".project-title").lastChild.textContent =
-    " App de Dashboard";
-  projectCards[1]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-dashboard-title");
-  projectCards[1]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-dashboard-desc");
-  projectCards[1]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[1]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
+  projectTitleMap.forEach(item => {
+      // Look for an element with data-project matching the given id.
+      const projectLink = document.querySelector(`.project-link[data-project="${item.id}"]`);
+      if (projectLink) {
+          // Get the closest project card from the link.
+          const projectCard = projectLink.closest(".project-card");
+          if (projectCard) {
+              const titleEl = projectCard.querySelector(".project-title");
+              if (titleEl) {
+                  titleEl.setAttribute("data-i18n", item.key);
+              }
+          }
+      }
+  });
 
-  // Platform Game
-  projectCards[2].querySelector(".project-title").lastChild.textContent =
-    " Projeto de Jogo de Plataforma";
-  projectCards[2]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-platform-game-title");
-  projectCards[2]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-platform-game-desc");
-  projectCards[2]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[2]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
+  const projectDescMap = [
+    { id: "auto-control-app", key: "project-auto-control-desc" },
+    { id: "dashboard-app", key: "project-dashboard-desc" },
+    { id: "platform-game", key: "project-platform-game-desc" },
+    { id: "video-streaming", key: "project-video-streaming-desc" },
+    { id: "task-management", key: "project-task-management-desc" },
+    { id: "inventory-management", key: "project-inventory-management-desc" },
+    { id: "timecard-app", key: "project-timecard-desc" },
+    { id: "login-page", key: "project-login-desc" },
+    { id: "voting-system", key: "project-voting-desc" },
+  ];
 
-  // Video Streaming
-  projectCards[3].querySelector(".project-title").lastChild.textContent =
-    " Site de Streaming de Vídeo";
-  projectCards[3]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-video-streaming-title");
-  projectCards[3]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-video-streaming-desc");
-  projectCards[3]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[3]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
-
-  // Task Management
-  projectCards[4].querySelector(".project-title").lastChild.textContent =
-    " Sistema de Gerenciamento de Tarefas";
-  projectCards[4]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-task-management-title");
-  projectCards[4]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-task-management-desc");
-  projectCards[4]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[4]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
-
-  // Inventory Management
-  projectCards[5].querySelector(".project-title").lastChild.textContent =
-    " Sistema de Gerenciamento de Inventário";
-  projectCards[5]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-inventory-title");
-  projectCards[5]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-inventory-desc");
-  projectCards[5]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[5]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
-
-  // Timecard App
-  projectCards[6].querySelector(".project-title").lastChild.textContent =
-    " App de Transcrição de Cartão de Ponto";
-  projectCards[6]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-timecard-title");
-  projectCards[6]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-timecard-desc");
-  projectCards[6]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[6]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
-
-  // Login Page
-  projectCards[7].querySelector(".project-title").lastChild.textContent =
-    " Página de Login";
-  projectCards[7]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-login-title");
-  projectCards[7]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-login-desc");
-  projectCards[7]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[7]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
-
-  // Voting System
-  projectCards[8].querySelector(".project-title").lastChild.textContent =
-    " Sistema de Votação";
-  projectCards[8]
-    .querySelector(".project-title")
-    .lastChild.setAttribute("data-i18n", "project-voting-title");
-  projectCards[8]
-    .querySelector(".project-desc")
-    .setAttribute("data-i18n", "project-voting-desc");
-  projectCards[8]
-    .querySelectorAll(".project-link span")[0]
-    .setAttribute("data-i18n", "project-details");
-  projectCards[8]
-    .querySelectorAll(".project-link span")[1]
-    .setAttribute("data-i18n", "project-github");
+  projectDescMap.forEach(item => {
+      // Look for an element with data-project matching the given id.
+      const projectLink = document.querySelector(`.project-link[data-project="${item.id}"]`);
+      if (projectLink) {
+          // Get the closest project card from the link.
+          const projectCard = projectLink.closest(".project-card");
+          if (projectCard) {
+              const descEl = projectCard.querySelector(".project-desc");
+              if (descEl) {
+                  descEl.setAttribute("data-i18n", item.key);
+              }
+          }
+      }
+  });
 }
 
 function updateProjectDescriptions() {
@@ -1465,34 +1373,25 @@ function updateProjectDescriptions() {
   });
 }
 
-// Function to update all project card titles when language changes
+// This function iterates over the projectTitleMap and updates each project card title based on the current language.
 function updateProjectCardTitles() {
-  // Map of project cards to their title keys
   const projectTitleMap = [
-    { index: 0, key: "project-auto-control-title" },
-    { index: 1, key: "project-dashboard-title" },
-    { index: 2, key: "project-platform-game-title" },
-    { index: 3, key: "project-video-streaming-title" },
-    { index: 4, key: "project-task-management-title" },
-    { index: 5, key: "project-inventory-title" },
-    { index: 6, key: "project-timecard-title" },
-    { index: 7, key: "project-login-title" },
-    { index: 8, key: "project-voting-title" },
+      { key: "project-auto-control-title" },
+      { key: "project-dashboard-title" },
+      { key: "project-platform-game-title" },
+      { key: "project-video-streaming-title" },
+      { key: "project-task-management-title" },
+      { key: "project-inventory-title" },
+      { key: "project-timecard-title" },
+      { key: "project-login-title" },
+      { key: "project-voting-title" },
   ];
 
-  const projectCards = document.querySelectorAll(".project-card");
-
-  projectTitleMap.forEach((item) => {
-    if (projectCards[item.index]) {
-      const titleElement =
-        projectCards[item.index].querySelector(".project-title");
-      if (titleElement && translations[currentLang][item.key]) {
-        // Preserve the icon
-        const icon = titleElement.querySelector("i").outerHTML;
-        titleElement.innerHTML =
-          icon + " " + translations[currentLang][item.key];
+  projectTitleMap.forEach(item => {
+      const titleEl = document.querySelector(`[data-i18n="${item.key}"]`);
+      if (titleEl && translations[currentLang] && translations[currentLang][item.key]) {
+          titleEl.textContent = translations[currentLang][item.key];
       }
-    }
   });
 }
 
