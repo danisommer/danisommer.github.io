@@ -585,6 +585,7 @@ const translations = {
     "nav-experience": "Experiência",
     "nav-projects": "Projetos",
     "nav-contact": "Contato",
+    "experience-title": "Experiência",
 
     // Hero section
     "hero-title": "Daniel Zaki Sommer",
@@ -727,6 +728,8 @@ const translations = {
     "nav-experience": "Experience",
     "nav-projects": "Projects",
     "nav-contact": "Contact",
+    "experience-title": "Experience",
+
 
     // Hero section
     "hero-title": "Daniel Zaki Sommer",
