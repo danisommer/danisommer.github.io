@@ -718,6 +718,9 @@ const translations = {
     "project-details": "Detalhes",
     "project-github": "GitHub",
 
+    "project-progressive-metronome-title": "Metronomo Progressivo",
+    "project-progressive-metronome-desc": "O Progressive Speed Metronome é uma ferramenta online que ajuda músicos a desenvolver velocidade técnica, aumentando o tempo automaticamente até atingir o BPM desejado. Permite personalizar tempo, compasso, incrementos e oferece feedback visual. É responsivo e feito com HTML, JavaScript, Tone.js e Tailwind CSS.",
+
     "project-dashboard-title": "App de Dashboard",
     "project-dashboard-desc":
       "Monitoramento de métricas de sistema em tempo real com uma GUI Python e backend C++.",
@@ -859,6 +862,9 @@ const translations = {
     "project-auto-control-desc": "A business control app for Android developed with Kotlin and Java using an SQL database. It manages business data and processes with an intuitive interface, optimizing daily operations.",
     "project-details": "Details",
     "project-github": "GitHub",
+
+    "project-progressive-metronome-title": "Progressive Metronome",
+    "project-progressive-metronome-desc": "The Progressive Speed Metronome is an online tool that helps musicians develop technical speed by automatically increasing the tempo until reaching the desired BPM. It allows customization of tempo, time signature, increments, and provides visual feedback. It's responsive and built with HTML, JavaScript, Tone.js, and Tailwind CSS.",
 
     "project-dashboard-title": "Dashboard App",
     "project-dashboard-desc":
