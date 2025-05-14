@@ -52,6 +52,49 @@ const projectsData = {
       },
     ],
   },
+  
+  // Add Progressive Metronome project data
+  "progressive-metronome": {
+    titleKey: "project-progressive-metronome-title",
+    image:
+      '<img src="images/projects/progressive-metronome.png" alt="Progressive Metronome">',
+    tags: ["HTML/CSS/JS", "Tone.js", "Tailwind CSS", "Web Audio API"],
+    descriptionPt: `<p>O Progressive Speed Metronome é uma ferramenta web interativa projetada para músicos que desejam melhorar sua velocidade técnica.</p>
+            <p>Recursos incluem:</p>
+            <ul>
+                <li>Aumenta automaticamente o tempo até atingir o BPM alvo desejado.</li>
+                <li>Interface responsiva e amigável desenvolvida com HTML, CSS e JavaScript.</li>
+                <li>Utiliza Tone.js para sincronização precisa de tempo e geração de sons.</li>
+                <li>Personalize o tempo inicial e final, compasso e incrementos de progressão.</li>
+                <li>Feedback visual do andamento atual e progresso em direção ao objetivo.</li>
+                <li>Design moderno com Tailwind CSS para uma experiência de usuário otimizada.</li>
+            </ul>
+            <p>Ferramenta perfeita para praticar escalas, exercícios técnicos e passagens musicais difíceis, ajudando músicos a desenvolver velocidade gradualmente e de forma disciplinada.</p>`,
+    descriptionEn: `<p>The Progressive Speed Metronome is an interactive web tool designed for musicians who want to improve their technical speed.</p>
+            <p>Features include:</p>
+            <ul>
+                <li>Automatically increases tempo until reaching the desired target BPM.</li>
+                <li>Responsive and user-friendly interface developed with HTML, CSS, and JavaScript.</li>
+                <li>Uses Tone.js for precise time synchronization and sound generation.</li>
+                <li>Customize starting and ending tempo, time signature, and progression increments.</li>
+                <li>Visual feedback of current tempo and progress towards the goal.</li>
+                <li>Modern design with Tailwind CSS for an optimized user experience.</li>
+            </ul>
+            <p>Perfect tool for practicing scales, technical exercises, and difficult musical passages, helping musicians develop speed gradually and in a disciplined manner.</p>`,
+    links: [
+      {
+        icon: "fab fa-github",
+        textKey: "project-github",
+        url: "https://github.com/danisommer/METRONOME-SITE",
+      },
+      {
+        icon: "fas fa-globe",
+        textKey: "project-live-demo",
+        url: "https://danisommer.github.io/METRONOME-SITE/",
+      },
+    ],
+  },
+  
   "task-management": {
     titleKey: "project-task-management-title",
     image:
