@@ -719,7 +719,7 @@ const translations = {
     "project-github": "GitHub",
 
     "project-progressive-metronome-title": "Metronomo Progressivo",
-    "project-progressive-metronome-desc": "O Progressive Speed Metronome é uma ferramenta online que ajuda músicos a desenvolver velocidade técnica, aumentando o tempo automaticamente até atingir o BPM desejado. Permite personalizar tempo, compasso, incrementos e oferece feedback visual. É responsivo e feito com HTML, JavaScript, Tone.js e Tailwind CSS.",
+    "project-progressive-metronome-desc": "O Metronomo Progressivo é uma ferramenta online que ajuda músicos a desenvolver velocidade técnica, aumentando o tempo automaticamente até atingir o BPM desejado. Permite personalizar tempo, compasso, incrementos e oferece feedback visual. É responsivo e feito com HTML, JavaScript, Tone.js e Tailwind CSS.",
 
     "project-dashboard-title": "App de Dashboard",
     "project-dashboard-desc":
@@ -751,7 +751,7 @@ const translations = {
 
     "project-voting-title": "Sistema de Votação",
     "project-voting-desc":
-      "Criado com Node.js (Express.js) e MySQL para backend, e React.js para frontend. Inclui funcionalidades CRUD para enquetes.",
+      "Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend. Inclui autenticação de usuários, verificação de votos para evitar duplicidade, dashboard para visualização de resultados em tempo real e API RESTful para integração.",
 
     "project-dashboard-app-title": "App de Dashboard",
     "project-timecard-app-title": "App de Transcrição de Cartão de Ponto",
@@ -765,6 +765,7 @@ const translations = {
     "modal-resources": "Recursos incluem:",
     "modal-features": "Características principais:",
     "modal-functionalities": "Funcionalidades:",
+    "project-live-demo": "Demo Online",
   },
   en: {
     // Headers and nav
@@ -896,7 +897,7 @@ const translations = {
 
     "project-voting-title": "Voting System",
     "project-voting-desc":
-      "Created with Node.js (Express.js) and MySQL for backend, and React.js for frontend. Includes CRUD functionalities for polls.",
+      "Online voting system developed with Node.js (Express) and MySQL for backend, and React.js for frontend. Includes user authentication, vote verification to avoid duplication, dashboard for real-time results visualization, and RESTful API for integration.",
 
     "project-dashboard-app-title": "Dashboard App",
     "project-timecard-app-title": "Timecard Transcription App",
@@ -909,6 +910,7 @@ const translations = {
     "modal-resources": "Resources include:",
     "modal-features": "Key features:",
     "modal-functionalities": "Functionalities:",
+    "project-live-demo": "Live Demo",
   },
 };
 
@@ -1316,6 +1318,7 @@ function addTranslationAttributes() {
     { id: "timecard-app", key: "project-timecard-app-title" },
     { id: "login-page", key: "project-login-page-title" },
     { id: "voting-system", key: "project-voting-system-title" },
+    { id: "progressive-metronome", key: "project-progressive-metronome-title" }, // Add this line
   ];
 
   projectTitleMap.forEach(item => {
@@ -1334,15 +1337,16 @@ function addTranslationAttributes() {
   });
 
   const projectDescMap = [
-    { id: "auto-control-app", key: "project-auto-control-desc" },
-    { id: "dashboard-app", key: "project-dashboard-desc" },
-    { id: "platform-game", key: "project-platform-game-desc" },
-    { id: "video-streaming", key: "project-video-streaming-desc" },
-    { id: "task-management", key: "project-task-management-desc" },
-    { id: "inventory-management", key: "project-inventory-management-desc" },
-    { id: "timecard-app", key: "project-timecard-desc" },
-    { id: "login-page", key: "project-login-desc" },
-    { id: "voting-system", key: "project-voting-desc" },
+    { index: 0, key: "project-auto-control-desc" },
+    { index: 1, key: "project-dashboard-desc" },
+    { index: 2, key: "project-platform-game-desc" },
+    { index: 3, key: "project-video-streaming-desc" },
+    { index: 4, key: "project-task-management-desc" },
+    { index: 5, key: "project-inventory-desc" },
+    { index: 6, key: "project-timecard-desc" },
+    { index: 7, key: "project-login-desc" },
+    { index: 8, key: "project-voting-desc" },
+    { index: 9, key: "project-progressive-metronome-desc" }, // Add this line
   ];
 
   projectDescMap.forEach(item => {
@@ -1362,30 +1366,27 @@ function addTranslationAttributes() {
 }
 
 function updateProjectDescriptions() {
-  // Map of project cards to their description keys
-  const projectDescMap = [
-    { index: 0, key: "project-auto-control-desc" },
-    { index: 1, key: "project-dashboard-desc" },
-    { index: 2, key: "project-platform-game-desc" },
-    { index: 3, key: "project-video-streaming-desc" },
-    { index: 4, key: "project-task-management-desc" },
-    { index: 5, key: "project-inventory-desc" },
-    { index: 6, key: "project-timecard-desc" },
-    { index: 7, key: "project-login-desc" },
-    { index: 8, key: "project-voting-desc" },
-  ];
-
-  const projectCards = document.querySelectorAll(".project-card");
-
-  projectDescMap.forEach((item) => {
-    if (projectCards[item.index]) {
-      const descElement = 
-        projectCards[item.index].querySelector(".project-desc");
-      if (descElement && translations[currentLang][item.key]) {
-        descElement.textContent = translations[currentLang][item.key];
-      }
+  // Find all voting system cards first, they need special handling
+  const votingSystemCards = document.querySelectorAll('.project-card[data-category="js sql"] .project-desc');
+  votingSystemCards.forEach(descEl => {
+    if (descEl && descEl.closest('.project-card').querySelector('img[alt="Sistema de Votação"]')) {
+      descEl.setAttribute("data-i18n", "project-voting-desc");
+      descEl.textContent = translations[currentLang]["project-voting-desc"];
     }
   });
+  
+  // Process all project description elements
+  const projectDescElements = document.querySelectorAll(".project-card .project-desc");
+  
+  projectDescElements.forEach(descElement => {
+    const i18nKey = descElement.getAttribute("data-i18n");
+    if (i18nKey && translations[currentLang][i18nKey]) {
+      descElement.textContent = translations[currentLang][i18nKey];
+    }
+  });
+  
+  // Debug: log which descriptions were updated
+  console.log(`Updated ${projectDescElements.length} project descriptions to ${currentLang}`);
 }
 
 // This function iterates over the projectTitleMap and updates each project card title based on the current language.
@@ -1400,6 +1401,7 @@ function updateProjectCardTitles() {
       { key: "project-timecard-title" },
       { key: "project-login-title" },
       { key: "project-voting-title" },
+      { key: "project-progressive-metronome-title" }, // Add this line
   ];
 
   projectTitleMap.forEach(item => {
@@ -1725,4 +1727,106 @@ document.addEventListener("click", function() {
         dropdownMobile.style.display = "none";
         dropdownMobile.classList.remove("active");
     }
+});
+
+// Fix the project description for the voting system in the translations object
+
+// In the Portuguese translations
+translations.pt["project-voting-desc"] = "Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend. Inclui autenticação de usuários, verificação de votos para evitar duplicidade, dashboard para visualização de resultados em tempo real e API RESTful para integração.";
+
+// In the English translations  
+translations.en["project-voting-desc"] = "Online voting system developed with Node.js (Express) and MySQL for backend, and React.js for frontend. Includes user authentication, vote verification to avoid duplication, dashboard for real-time results visualization, and RESTful API for integration.";
+
+// Also ensure the voting system card has the correct data-i18n attribute
+document.addEventListener("DOMContentLoaded", function() {
+    // Find the voting system project card
+    const votingSystemCard = document.querySelector('.project-card[data-category="js sql"]');
+    if (votingSystemCard && votingSystemCard.querySelector('img[alt="Sistema de Votação"]')) {
+        const descEl = votingSystemCard.querySelector(".project-desc");
+        if (descEl) {
+            // Ensure it has the correct data-i18n attribute
+            descEl.setAttribute("data-i18n", "project-voting-desc");
+            // Update the text content immediately
+            descEl.textContent = translations[currentLang]["project-voting-desc"];
+        }
+    }
+    
+    const projectMappings = [
+        { selector: 'img[alt="Aplicativo de Autocontrole Empresarial"]', key: "project-auto-control-desc" },
+        { selector: 'img[alt="Progressive Metronome"]', key: "project-progressive-metronome-desc" },
+        { selector: 'img[alt="Sistema de Gerenciamento de Tarefas"]', key: "project-task-management-desc" },
+        { selector: 'img[alt="Sistema de Gerenciamento de Inventário"]', key: "project-inventory-desc" },
+        { selector: 'img[alt="Página de Login"]', key: "project-login-desc" },
+        { selector: 'img[alt="Projeto de Jogo de Plataforma"]', key: "project-platform-game-desc" },
+        { selector: 'img[alt="App de Transcrição de Cartão de Ponto"]', key: "project-timecard-desc" },
+        { selector: 'img[alt="App de Dashboard"]', key: "project-dashboard-desc" },
+        { selector: 'img[alt="Site de Streaming de Vídeo"]', key: "project-video-streaming-desc" }
+    ];
+    
+    // Process each project
+    projectMappings.forEach(mapping => {
+        const projectCard = document.querySelector(`.project-card:has(${mapping.selector})`);
+        if (projectCard) {
+            const descEl = projectCard.querySelector(".project-desc");
+            if (descEl) {
+                descEl.setAttribute("data-i18n", mapping.key);
+                // Update the text content immediately if translation exists
+                if (translations[currentLang][mapping.key]) {
+                    descEl.textContent = translations[currentLang][mapping.key];
+                }
+            }
+        }
+    });
+    
+    // Alternative approach if :has() selector is not supported in some browsers
+    document.querySelectorAll('.project-card').forEach(card => {
+        const img = card.querySelector('img');
+        if (!img) return;
+        
+        const alt = img.getAttribute('alt');
+        let key = "";
+        
+        switch(alt) {
+            case "Aplicativo de Autocontrole Empresarial":
+                key = "project-auto-control-desc";
+                break;
+            case "Progressive Metronome":
+                key = "project-progressive-metronome-desc";
+                break;
+            case "Sistema de Gerenciamento de Tarefas":
+                key = "project-task-management-desc";
+                break;
+            case "Sistema de Gerenciamento de Inventário":
+                key = "project-inventory-desc";
+                break;
+            case "Página de Login":
+                key = "project-login-desc";
+                break;
+            case "Projeto de Jogo de Plataforma":
+                key = "project-platform-game-desc";
+                break;
+            case "App de Transcrição de Cartão de Ponto":
+                key = "project-timecard-desc";
+                break;
+            case "App de Dashboard":
+                key = "project-dashboard-desc";
+                break;
+            case "Site de Streaming de Vídeo":
+                key = "project-video-streaming-desc";
+                break;
+        }
+        
+        if (key && !card.querySelector(`.project-desc[data-i18n="${key}"]`)) {
+            const descEl = card.querySelector(".project-desc");
+            if (descEl) {
+                descEl.setAttribute("data-i18n", key);
+                if (translations[currentLang][key]) {
+                    descEl.textContent = translations[currentLang][key];
+                }
+            }
+        }
+    });
+    
+    // Update all descriptions after setting attributes
+    updateProjectDescriptions();
 });
