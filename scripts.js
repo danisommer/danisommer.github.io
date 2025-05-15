@@ -922,6 +922,12 @@ function updateLanguage(lang) {
   currentLang = lang;
   localStorage.setItem("language", currentLang);
 
+  document.querySelectorAll(".project-link").forEach(button => {
+    if (translations[currentLang]["project-details"]) {
+      button.textContent = translations[currentLang]["project-details"];
+    }
+  });
+
   // Update language toggle buttons
   document.querySelectorAll(".lang-option").forEach((option) => {
     option.classList.toggle("active", option.dataset.lang === currentLang);
@@ -1182,6 +1188,11 @@ function addTranslationAttributes() {
   document
     .querySelector(".filter-btn.active")
     .setAttribute("data-i18n", "projects-btn-all");
+
+  // Add data-i18n attribute to all project detail buttons
+  document.querySelectorAll(".project-link").forEach((button) => {
+    button.setAttribute("data-i18n", "project-details");
+  });
 
   // Contact section
   document
@@ -1777,6 +1788,14 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+
+      // Update project details buttons with correct translation
+  document.querySelectorAll(".project-link").forEach(button => {
+    button.setAttribute("data-i18n", "project-details");
+    if (translations[currentLang]["project-details"]) {
+      button.textContent = translations[currentLang]["project-details"];
+    }
+  });
     
     // Alternative approach if :has() selector is not supported in some browsers
     document.querySelectorAll('.project-card').forEach(card => {
