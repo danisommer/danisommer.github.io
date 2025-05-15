@@ -923,12 +923,29 @@ function updateLanguage(lang) {
   localStorage.setItem("language", currentLang);
 
   document.querySelectorAll(".project-link").forEach(button => {
-    if (translations[currentLang]["project-details"]) {
-      button.textContent = translations[currentLang]["project-details"];
+    // Check if this is a GitHub link by looking for the GitHub icon
+    if (button.querySelector(".fab.fa-github")) {
+      button.setAttribute("data-i18n", "project-github");
+      if (translations[currentLang]["project-github"]) {
+        button.querySelector("span").textContent = translations[currentLang]["project-github"];
+      }
+    } 
+    // Check if this is a live demo link
+    else if (button.querySelector(".fas.fa-globe")) {
+      button.setAttribute("data-i18n", "project-live-demo");
+      if (translations[currentLang]["project-live-demo"]) {
+        button.querySelector("span").textContent = translations[currentLang]["project-live-demo"];
+      }
+    }
+    // Otherwise it's a details button
+    else {
+      button.setAttribute("data-i18n", "project-details");
+      if (translations[currentLang]["project-details"]) {
+        button.querySelector("span").textContent = translations[currentLang]["project-details"];
+      }
     }
   });
 
-  // Update language toggle buttons
   document.querySelectorAll(".lang-option").forEach((option) => {
     option.classList.toggle("active", option.dataset.lang === currentLang);
   });
@@ -1189,9 +1206,19 @@ function addTranslationAttributes() {
     .querySelector(".filter-btn.active")
     .setAttribute("data-i18n", "projects-btn-all");
 
-  // Add data-i18n attribute to all project detail buttons
-  document.querySelectorAll(".project-link").forEach((button) => {
+  // Add specific data-i18n attributes to project detail buttons
+  document.querySelectorAll(".project-link[data-project]").forEach((button) => {
     button.setAttribute("data-i18n", "project-details");
+  });
+
+  // Ensure GitHub buttons have the correct translation key
+  document.querySelectorAll(".project-links a").forEach((link) => {
+    // Check if this is a GitHub link
+    if (link.querySelector("i.fab.fa-github")) {
+      link.setAttribute("data-i18n", "project-github");
+    } else if (link.querySelector("i.fas.fa-globe")) {
+      link.setAttribute("data-i18n", "project-live-demo");
+    }
   });
 
   // Contact section
@@ -1396,6 +1423,14 @@ function updateProjectDescriptions() {
     }
   });
   
+  // Also update GitHub and demo links
+  document.querySelectorAll(".project-links a").forEach(link => {
+    const i18nKey = link.getAttribute("data-i18n");
+    if (i18nKey && translations[currentLang][i18nKey]) {
+      link.textContent = translations[currentLang][i18nKey];
+    }
+  });
+  
   // Debug: log which descriptions were updated
   console.log(`Updated ${projectDescElements.length} project descriptions to ${currentLang}`);
 }
@@ -1446,8 +1481,7 @@ document.querySelectorAll(".language-option").forEach((option) => {
     localStorage.setItem("language", currentLang);
 
     // Update UI to show active language
-    document.querySelector(".language-btn span").textContent =
-      lang.toUpperCase();
+    document.querySelector(".language-btn span").textContent = lang.toUpperCase();
 
     // Close dropdown
     document.querySelector(".language-dropdown").style.display = "none";
@@ -1717,6 +1751,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "none" : "block";
             dropdown.classList.toggle("active");
             console.log("Mobile dropdown toggled:", dropdown.style.display);
+       
+       
         }, true); // Use capture phase
     }
     
@@ -1788,14 +1824,31 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-
-      // Update project details buttons with correct translation
+    
+    // Update project details buttons with correct translation
   document.querySelectorAll(".project-link").forEach(button => {
+  // Check if this is a GitHub link by looking for the GitHub icon
+  if (button.querySelector(".fab.fa-github")) {
+    button.setAttribute("data-i18n", "project-github");
+    if (translations[currentLang]["project-github"]) {
+      button.querySelector("span").textContent = translations[currentLang]["project-github"];
+    }
+  } 
+  // Check if this is a live demo link
+  else if (button.querySelector(".fas.fa-globe")) {
+    button.setAttribute("data-i18n", "project-live-demo");
+    if (translations[currentLang]["project-live-demo"]) {
+      button.querySelector("span").textContent = translations[currentLang]["project-live-demo"];
+    }
+  }
+  // Otherwise it's a details button
+  else {
     button.setAttribute("data-i18n", "project-details");
     if (translations[currentLang]["project-details"]) {
-      button.textContent = translations[currentLang]["project-details"];
+      button.querySelector("span").textContent = translations[currentLang]["project-details"];
     }
-  });
+  }
+});
     
     // Alternative approach if :has() selector is not supported in some browsers
     document.querySelectorAll('.project-card').forEach(card => {
