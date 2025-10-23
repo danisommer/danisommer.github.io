@@ -642,7 +642,7 @@ const translations = {
     "about-title": "Sobre Mim",
     "about-greeting": "Olá, sou o Daniel",
     "about-p1":
-      "Sou estudante do 5º semestre de Sistemas de Informação na UTFPR e estagiário em Desenvolvimento Java na Meisters Solutions. Tenho experiência no desenvolvimento de sistemas de E-Commerce, focado em backend (Java, Spring, SQL, Docker, SAP Hybris) e contribuindo para o frontend (TypeScript - Spartacus). Também atuei no desenvolvimento de um app de Delivery com React Native e na integração do SAP Business One via SCPI.",
+      "Sou estudante do 6º semestre de Sistemas de Informação na UTFPR e estagiário em Desenvolvimento Java na Meisters Solutions. Tenho experiência no desenvolvimento de sistemas de E-Commerce, focado em backend (Java, Spring, SQL, Docker, SAP Hybris) e contribuindo para o frontend (TypeScript - Spartacus). Também atuei no desenvolvimento de um app de Delivery com React Native e na integração do SAP Business One via SCPI.",
     "about-p2":
       "Trabalho bem em equipe, possuo boa comunicação e experiência com clientes internacionais, o que aprimorou meu inglês. Além da experiência profissional, concluí diversos cursos e desenvolvi projetos pessoais, como um sistema de controle, um jogo em C++, um site de streaming e um dashboard de monitoramento.",
     "about-btn": "Ver CV",
@@ -698,7 +698,7 @@ const translations = {
     "exp-edu-date": "2023 - Presente",
     "exp-edu-school": "UTFPR - Universidade Tecnológica Federal do Paraná",
     "exp-edu-desc":
-      "Atualmente no 5º semestre do curso de Sistemas de Informação.",
+      "Atualmente no 6º semestre do curso de Sistemas de Informação.",
 
     "exp-courses-title": "Cursos Adicionais",
     "exp-courses-date": "2022 - 2024",
@@ -790,7 +790,7 @@ const translations = {
     "about-title": "About Me",
     "about-greeting": "Hi, I am Daniel",
     "about-p1":
-      "I am a 5th-semester Information Systems student at UTFPR and a Java Development Intern at Meisters Solutions. I have experience in E-Commerce system development, focusing on backend (Java, Spring, SQL, Docker, SAP Hybris) and contributing to the frontend (TypeScript - Spartacus). I also worked on a Delivery App using React Native and integrated SAP Business One through SCPI.",
+      "I am a 6th-semester Information Systems student at UTFPR and a Java Development Intern at Meisters Solutions. I have experience in E-Commerce system development, focusing on backend (Java, Spring, SQL, Docker, SAP Hybris) and contributing to the frontend (TypeScript - Spartacus). I also worked on a Delivery App using React Native and integrated SAP Business One through SCPI.",
     "about-p2":
       "I excel in teamwork, communication, and have experience working with international clients, which improved my English. In addition to my professional experience, I have completed various courses and developed personal projects, including a control system, a C++ game, a streaming website, and a monitoring dashboard.",
     "about-btn": "See Resume",
@@ -844,7 +844,7 @@ const translations = {
     "exp-edu-date": "2023 - Present",
     "exp-edu-school": "UTFPR - Federal University of Technology - Paraná",
     "exp-edu-desc":
-      "Currently in the 5th semester of Information Systems program.",
+      "Currently in the 6th semester of Information Systems program.",
 
     "exp-courses-title": "Additional Courses",
     "exp-courses-date": "2022 - 2024",
