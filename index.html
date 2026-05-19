@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Zaki Sommer - Backend Developer</title>
+    <meta name="description" data-i18n="meta-description" content="Backend Developer especializado em Elixir e Java, com foco em sistemas escaláveis de pagamento.">
+    <meta property="og:title" data-i18n="meta-og-title" content="Daniel Zaki Sommer - Backend Developer">
+    <meta property="og:description" data-i18n="meta-og-description" content="Backend Developer especializado em Elixir e Java, com foco em sistemas escaláveis de pagamento.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danisommer.github.io/">
+    <meta property="og:image" content="images/profile_picture.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" data-i18n="meta-twitter-title" content="Daniel Zaki Sommer - Backend Developer">
+    <meta name="twitter:description" data-i18n="meta-twitter-description" content="Backend Developer especializado em Elixir e Java, com foco em sistemas escaláveis de pagamento.">
+    <meta name="twitter:image" content="images/profile_picture.jpg">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -13,88 +25,88 @@
 <body>
     <header>
         <div class="header-container">
-            <a href="#" class="logo">Daniel Z. Sommer</a>
+            <a href="#home" class="logo" data-i18n="hero-title">Daniel Z. Sommer</a>
             <nav class="nav-links">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">Sobre</a>
-                <a href="#skills">Habilidades</a>
-                <a href="#experience">Experiência</a>
-                <a href="#projects">Projetos</a>
-                <a href="#contact">Contato</a>
+                <a href="#home" class="active" data-i18n="nav-home">Home</a>
+                <a href="#about" data-i18n="nav-about">Sobre</a>
+                <a href="#skills" data-i18n="nav-skills">Habilidades</a>
+                <a href="#experience" data-i18n="nav-experience">Experiência</a>
+                <a href="#projects" data-i18n="nav-projects">Projetos</a>
+                <a href="#contact" data-i18n="nav-contact">Contato</a>
             </nav>
             <div class="header-actions">
                 <div class="language-selector">
-                    <button class="language-btn">
+                    <button class="language-btn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="languageDropdown" data-i18n="aria-language-toggle" data-i18n-attr="aria-label">
                         <span>PT</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </button>
-                    <div class="language-dropdown">
-                        <div class="language-option" data-lang="pt">
+                    <div class="language-dropdown" id="languageDropdown" role="listbox" aria-label="Selecao de idioma">
+                        <button class="language-option" type="button" data-lang="pt" role="option" aria-selected="true">
                             <span>Português</span>
-                        </div>
-                        <div class="language-option" data-lang="en">
+                        </button>
+                        <button class="language-option" type="button" data-lang="en" role="option" aria-selected="false">
                             <span>English</span>
-                        </div>
+                        </button>
                     </div>
                 </div>
-                <button class="theme-toggle">
-                    <i class="fas fa-moon"></i>
+                <button class="theme-toggle" type="button" aria-pressed="false" data-i18n="aria-theme-toggle" data-i18n-attr="aria-label">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                 </button>
-                <button class="mobile-toggle">
-                    <i class="fas fa-bars"></i>
+                <button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" data-i18n="aria-menu-open" data-i18n-attr="aria-label">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <div class="mobile-nav">
-        <button class="close-nav">
-            <i class="fas fa-times"></i>
+    <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+        <button class="close-nav" type="button" data-i18n="aria-menu-close" data-i18n-attr="aria-label">
+            <i class="fas fa-times" aria-hidden="true"></i>
         </button>
         <div class="mobile-links">
-            <a href="#home">Home</a>
-            <a href="#about">Sobre</a>
-            <a href="#skills">Habilidades</a>
-            <a href="#experience">Experiência</a>
-            <a href="#projects">Projetos</a>
-            <a href="#contact">Contato</a>
+            <a href="#home" data-i18n="nav-home">Home</a>
+            <a href="#about" data-i18n="nav-about">Sobre</a>
+            <a href="#skills" data-i18n="nav-skills">Habilidades</a>
+            <a href="#experience" data-i18n="nav-experience">Experiência</a>
+            <a href="#projects" data-i18n="nav-projects">Projetos</a>
+            <a href="#contact" data-i18n="nav-contact">Contato</a>
         </div>
         
         <!-- Add mobile menu controls -->
         <div class="mobile-controls">
             <div class="language-selector-mobile">
-                <button class="language-btn-mobile">
+                <button class="language-btn-mobile" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="languageDropdownMobile" data-i18n="aria-language-toggle" data-i18n-attr="aria-label">
                     <span>PT</span>
-                    <i class="fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
                 </button>
-                <div class="language-dropdown-mobile">
-                    <div class="language-option" data-lang="pt">
+                <div class="language-dropdown-mobile" id="languageDropdownMobile" role="listbox" aria-label="Selecao de idioma">
+                    <button class="language-option" type="button" data-lang="pt" role="option" aria-selected="true">
                         <span>Português</span>
-                    </div>
-                    <div class="language-option" data-lang="en">
+                    </button>
+                    <button class="language-option" type="button" data-lang="en" role="option" aria-selected="false">
                         <span>English</span>
-                    </div>
+                    </button>
                 </div>
             </div>
-            <button class="theme-toggle-mobile">
-                <i class="fas fa-moon"></i>
+            <button class="theme-toggle-mobile" type="button" aria-pressed="false" data-i18n="aria-theme-toggle" data-i18n-attr="aria-label">
+                <i class="fas fa-moon" aria-hidden="true"></i>
             </button>
         </div>
     </div>
 
-    <div class="overlay"></div>
+    <div class="overlay" aria-hidden="true"></div>
 
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Daniel Zaki Sommer</h1>
-                <h2 class="hero-subtitle">Backend Developer</h2>
-                <p class="hero-text">
+                <h1 class="hero-title" data-i18n="hero-title">Daniel Zaki Sommer</h1>
+                <h2 class="hero-subtitle" data-i18n="hero-subtitle">Backend Developer</h2>
+                <p class="hero-text" data-i18n="hero-text">
                     Desenvolvedor Elixir na Trio e estudante de Sistemas de Informação na UTFPR, especializado em desenvolvimento de sistemas escaláveis de pagamento com Elixir, Postgres, Redis e Kafka, além de experiência anterior com Java (Spring), Docker e SAP Hybris.
                 </p>
                 <div class="hero-btns">
-                    <a href="#projects" class="btn">Ver Projetos</a>
-                    <a href="#contact" class="btn btn-outline">Contato</a>
+                    <a href="#projects" class="btn" data-i18n="hero-btn-projects">Ver Projetos</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="hero-btn-contact">Contato</a>
                 </div>
             </div>
         </div>
@@ -102,21 +114,21 @@
 
     <section id="about" class="about section">
         <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
+            <h2 class="section-title" data-i18n="about-title">Sobre Mim</h2>
             <div class="about-container">
                 <div class="about-img">
-                    <img src="/images/profile_picture.jpg" alt="Daniel Zaki Sommer">
+                    <img src="/images/profile_picture.jpg" alt="Daniel Zaki Sommer" loading="lazy" width="480" height="480">
                 </div>
                 <div class="about-content">
-                    <h2>Olá, sou Daniel Zaki Sommer</h2>
-                    <p>
+                    <h2 data-i18n="about-greeting">Olá, sou Daniel Zaki Sommer</h2>
+                    <p data-i18n="about-p1">
                         Atualmente, trabalho como Desenvolvedor Elixir na Trio, contribuindo para sistemas de pagamento escaláveis, e como desenvolvedor na Hi Tech Consultoria, empresa júnior da UTFPR. Sou estudante do 6º semestre de Sistemas de Informação na UTFPR. Tenho experiência em desenvolvimento backend com Elixir, Postgres, Redis, Kafka e Docker, além de experiência anterior com Java (Spring), SQL, SAP Hybris e integrações SCPI para E-Commerce.
                     </p>
-                    <p>
+                    <p data-i18n="about-p2">
                         Aprimorei minhas habilidades através de cursos sobre APIs REST, Docker e AWS, e adquiri experiência em trabalho em equipe e comunicação em ambientes colaborativos. Minha interação com clientes internacionais melhorou meu inglês, e construí projetos pessoais como sistema de gerenciamento de inventário, sistema de votação, site de streaming de vídeo e painel de monitoramento de sistema em tempo real.
                     </p>
                     <a href="https://bristle-swing-0b0.notion.site/Daniel-Zaki-Sommer-Backend-Developer-1b5f096b9f3f80af9be1d98870c75b0c"
-                        class="btn about-btn">Download CV</a>
+                        class="btn about-btn" target="_blank" rel="noopener noreferrer" data-i18n="about-btn">Download CV</a>
                 </div>
             </div>
         </div>
@@ -124,12 +136,12 @@
 
     <section id="skills" class="skills section">
         <div class="container">
-            <h2 class="section-title">Minhas Habilidades</h2>
+            <h2 class="section-title" data-i18n="skills-title">Minhas Habilidades</h2>
 
             <div class="skills-carousel-container">
                 <div class="skills-carousel">
                     <div class="skill-category">
-                        <h3>Linguagens e Frameworks</h3>
+                        <h3 data-i18n="skills-languages">Linguagens e Frameworks</h3>
                         <div class="skill-items">
                             <div class="skill-item">
                                 <span>Java (Spring)</span>
@@ -171,7 +183,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3>Bancos de Dados</h3>
+                        <h3 data-i18n="skills-databases">Bancos de Dados</h3>
                         <div class="skill-items">
                             <div class="skill-item">
                                 <span>MySQL</span>
@@ -205,7 +217,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3>Idiomas</h3>
+                        <h3 data-i18n="skills-languages-heading">Idiomas</h3>
                         <div class="skill-items">
                             <div class="skill-item">
                                 <span>English</span>
@@ -219,7 +231,7 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3>Outras Ferramentas</h3>
+                        <h3 data-i18n="skills-tools">Outras Ferramentas</h3>
                         <div class="skill-items">
                             <div class="skill-item">
                                 <span>Git/Github</span>
@@ -272,69 +284,69 @@
 
     <section id="experience" class="experience section">
         <div class="container">
-            <h2 class="section-title">Experiência</h2>
+            <h2 class="section-title" data-i18n="experience-title">Experiência</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Developer</h3>
-                        <p class="timeline-date">Outubro 2025 - Presente</p>
-                        <p>Hi Tech Consultoria</p>
+                        <h3 data-i18n="exp-hitech-title">Developer</h3>
+                        <p class="timeline-date" data-i18n="exp-hitech-date">Outubro 2025 - Presente</p>
+                        <p data-i18n="exp-hitech-company">Hi Tech Consultoria</p>
                         <ul>
-                            <li>A Hi Tech Consultoria é uma empresa júnior sem fins lucrativos da Universidade Tecnológica Federal do Paraná (UTFPR), gerida inteiramente por estudantes.</li>
-                            <li>Como desenvolvedor de software, contribuo para projetos de consultoria em tecnologia que conectam o aprendizado acadêmico à experiência real de mercado.</li>
+                            <li data-i18n="exp-hitech-li1">A Hi Tech Consultoria é uma empresa júnior sem fins lucrativos da Universidade Tecnológica Federal do Paraná (UTFPR), gerida inteiramente por estudantes.</li>
+                            <li data-i18n="exp-hitech-li2">Como desenvolvedor de software, contribuo para projetos de consultoria em tecnologia que conectam o aprendizado acadêmico à experiência real de mercado.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Elixir Developer</h3>
-                        <p class="timeline-date">Julho 2025 - Presente</p>
-                        <p>Trio</p>
+                        <h3 data-i18n="exp-trio-title">Elixir Developer</h3>
+                        <p class="timeline-date" data-i18n="exp-trio-date">Julho 2025 - Presente</p>
+                        <p data-i18n="exp-trio-company">Trio</p>
                         <ul>
-                            <li>Contribuo para a construção de sistemas de pagamento escaláveis no backend.</li>
-                            <li>Minhas responsabilidades diárias envolvem o uso de tecnologias como Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.</li>
+                            <li data-i18n="exp-trio-li1">Contribuo para a construção de sistemas de pagamento escaláveis no backend.</li>
+                            <li data-i18n="exp-trio-li2">Minhas responsabilidades diárias envolvem o uso de tecnologias como Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Java Development Intern</h3>
-                        <p class="timeline-date">Julho 2024 - Julho 2025</p>
-                        <p>Meisters Solutions</p>
+                        <h3 data-i18n="exp-meisters-title">Java Development Intern</h3>
+                        <p class="timeline-date" data-i18n="exp-meisters-date">Julho 2024 - Julho 2025</p>
+                        <p data-i18n="exp-meisters-company">Meisters Solutions</p>
                         <ul>
-                            <li>Desenvolvimento em Java: Criei e mantive soluções de integração para grandes clientes.</li>
-                            <li>Integração com SAP Cloud Platform (SCPI): Projetei e implementei fluxos de trabalho para integrações em escala corporativa.</li>
-                            <li>Colaboração internacional: Trabalhei com equipes e desenvolvedores sêniores de diferentes países, aprimorando minhas habilidades de comunicação técnica e trabalho em equipe.</li>
+                            <li data-i18n="exp-meisters-li1">Desenvolvimento em Java: Criei e mantive soluções de integração para grandes clientes.</li>
+                            <li data-i18n="exp-meisters-li2">Integração com SAP Cloud Platform (SCPI): Projetei e implementei fluxos de trabalho para integrações em escala corporativa.</li>
+                            <li data-i18n="exp-meisters-li3">Colaboração internacional: Trabalhei com equipes e desenvolvedores sêniores de diferentes países, aprimorando minhas habilidades de comunicação técnica e trabalho em equipe.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Java Software Developer Intern</h3>
-                        <p class="timeline-date">Julho 2024 - Julho 2025</p>
-                        <p>Digiu Digital</p>
+                        <h3 data-i18n="exp-digiu-title">Java Software Developer Intern</h3>
+                        <p class="timeline-date" data-i18n="exp-digiu-date">Julho 2024 - Julho 2025</p>
+                        <p data-i18n="exp-digiu-company">Digiu Digital</p>
                         <ul>
-                            <li>Java (Spring): Desenvolvi funcionalidades para plataformas de E-Commerce, com foco em escalabilidade e desempenho.</li>
-                            <li>Outras tecnologias: Atuei com Docker, TypeScript, SQL e SAP Hybris em ambientes de produção.</li>
-                            <li>Desenvolvimento mobile: Contribuí para aplicativos utilizando React Native e PHP.</li>
-                            <li>Colaboração internacional: Trabalhei com clientes internacionais e desenvolvedores sêniores, aprimorando minhas habilidades de comunicação e trabalho em equipe ágil.</li>
+                            <li data-i18n="exp-digiu-li1">Java (Spring): Desenvolvi funcionalidades para plataformas de E-Commerce, com foco em escalabilidade e desempenho.</li>
+                            <li data-i18n="exp-digiu-li2">Outras tecnologias: Atuei com Docker, TypeScript, SQL e SAP Hybris em ambientes de produção.</li>
+                            <li data-i18n="exp-digiu-li3">Desenvolvimento mobile: Contribuí para aplicativos utilizando React Native e PHP.</li>
+                            <li data-i18n="exp-digiu-li4">Colaboração internacional: Trabalhei com clientes internacionais e desenvolvedores sêniores, aprimorando minhas habilidades de comunicação e trabalho em equipe ágil.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Graduação em Sistemas de Informação</h3>
-                        <p class="timeline-date">2023 - Presente</p>
-                        <p>UTFPR - Universidade Tecnológica Federal do Paraná</p>
+                        <h3 data-i18n="exp-edu-title">Graduação em Sistemas de Informação</h3>
+                        <p class="timeline-date" data-i18n="exp-edu-date">2023 - Presente</p>
+                        <p data-i18n="exp-edu-school">UTFPR - Universidade Tecnológica Federal do Paraná</p>
                         <ul>
-                            <li>Atualmente no 6º semestre do curso de Sistemas de Informação.</li>
+                            <li data-i18n="exp-edu-desc">Atualmente no 6º semestre do curso de Sistemas de Informação.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Cursos Adicionais</h3>
-                        <p class="timeline-date">2022 - 2024</p>
+                        <h3 data-i18n="exp-courses-title">Cursos Adicionais</h3>
+                        <p class="timeline-date" data-i18n="exp-courses-date">2022 - 2024</p>
                         <ul>
                             <li>Java COMPLETO: Do Zero ao Profissional - Udemy</li>
                             <li>The Ultimate Fullstack Web Development Bootcamp - Udemy</li>
@@ -354,25 +366,25 @@
 
     <section id="projects" class="projects section">
         <div class="container">
-            <h2 class="section-title">Meus Projetos Pessoais</h2>
+            <h2 class="section-title" data-i18n="projects-title">Meus Projetos Pessoais</h2>
             <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="java">Java</button>
-                <button class="filter-btn" data-filter="kotlin">Kotlin</button>
-                <button class="filter-btn" data-filter="sql">SQL</button>
-                <button class="filter-btn" data-filter="python">Python</button>
-                <button class="filter-btn" data-filter="js">JavaScript</button>
-                <button class="filter-btn" data-filter="cpp">C/C++</button>
+                <button class="filter-btn active" type="button" data-filter="all" data-i18n="filter-all">Todos</button>
+                <button class="filter-btn" type="button" data-filter="java" data-i18n="filter-java">Java</button>
+                <button class="filter-btn" type="button" data-filter="kotlin" data-i18n="filter-kotlin">Kotlin</button>
+                <button class="filter-btn" type="button" data-filter="sql" data-i18n="filter-sql">SQL</button>
+                <button class="filter-btn" type="button" data-filter="python" data-i18n="filter-python">Python</button>
+                <button class="filter-btn" type="button" data-filter="js" data-i18n="filter-js">JavaScript</button>
+                <button class="filter-btn" type="button" data-filter="cpp" data-i18n="filter-cpp">C/C++</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="kotlin java sql">
+                <div class="project-card" data-project-id="auto-control-app" data-category="kotlin java sql">
                     <div class="project-img">
-                        <img src="images/projects/auto-control-app.jpg" alt="Aplicativo de Autocontrole Empresarial">
+                        <img src="images/projects/auto-control-app.jpg" alt="Aplicativo de Autocontrole Empresarial" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-auto-control-title">
-                            <i class="fas fa-tasks"></i>
-                            Aplicativo de Autocontrole Empresarial
+                            <i class="fas fa-tasks" aria-hidden="true"></i>
+                            <span class="project-title-text">Aplicativo de Autocontrole Empresarial</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">Kotlin</span>
@@ -384,26 +396,26 @@
                             Um aplicativo de controle de negócios para Android desenvolvido com Kotlin e Java usando banco de dados SQL. Gerencia dados e processos empresariais com uma interface intuitiva, otimizando as operações diárias.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="auto-control-app">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
-                            <a href="https://github.com/danisommer/AutoControlApp" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                            <button type="button" class="project-link project-details-btn" data-project-id="auto-control-app" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
+                            <a href="https://github.com/danisommer/AutoControlApp" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="python cpp">
+                <div class="project-card" data-project-id="dashboard-app" data-category="python cpp">
                     <div class="project-img">
-                        <img src="images/projects/dashboard-app.jpg" alt="App de Dashboard">
+                        <img src="images/projects/dashboard-app.jpg" alt="App de Dashboard" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title project-dashboard-title" >
-                            <i class="fas fa-chart-line"></i>
-                            App de Dashboard
+                        <h3 class="project-title project-dashboard-title">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            <span class="project-title-text">App de Dashboard</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
@@ -414,27 +426,27 @@
                             Monitoramento de métricas de sistema em tempo real com uma GUI Python e backend C++.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="dashboard-app">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
+                            <button type="button" class="project-link project-details-btn" data-project-id="dashboard-app" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
                             <a href="https://github.com/danisommer/python-dashboard" target="_blank"
-                                class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                                rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="cpp">
+                <div class="project-card" data-project-id="platform-game" data-category="cpp">
                     <div class="project-img">
-                        <img src="images/projects/platform-game.jpg" alt="Projeto de Jogo de Plataforma">
+                        <img src="images/projects/platform-game.jpg" alt="Projeto de Jogo de Plataforma" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-platform-game-title">
-                            <i class="fas fa-gamepad"></i>
-                            Projeto de Jogo de Plataforma
+                            <i class="fas fa-gamepad" aria-hidden="true"></i>
+                            <span class="project-title-text">Projeto de Jogo de Plataforma</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">C++</span>
@@ -447,27 +459,27 @@
                             modelos UML.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="platform-game">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
+                            <button type="button" class="project-link project-details-btn" data-project-id="platform-game" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
                             <a href="https://github.com/danisommer/JOGO-PLATAFORMA" target="_blank"
-                                class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                                rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="java js">
+                <div class="project-card" data-project-id="video-streaming" data-category="java js">
                     <div class="project-img">
-                        <img src="images/projects/video-streaming.jpg" alt="Site de Streaming de Vídeo">
+                        <img src="images/projects/video-streaming.jpg" alt="Site de Streaming de Vídeo" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-video-streaming-title">
-                            <i class="fas fa-video"></i>
-                            Site de Streaming de Vídeo
+                            <i class="fas fa-video" aria-hidden="true"></i>
+                            <span class="project-title-text">Site de Streaming de Vídeo</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">Java</span>
@@ -479,26 +491,26 @@
                             Contribuição para backend em Java (Spring Boot) com MongoDB, e frontend em React.js.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="video-streaming">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
-                            <a href="https://github.com/HunterNicky/TikTube" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                            <button type="button" class="project-link project-details-btn" data-project-id="video-streaming" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
+                            <a href="https://github.com/HunterNicky/TikTube" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="project-card" data-category="js">
+                <div class="project-card" data-project-id="progressive-metronome" data-category="js">
                     <div class="project-img">
-                        <img src="images/projects/progressive-metronome.png" alt="Progressive Metronome">
+                        <img src="images/projects/progressive-metronome.png" alt="Progressive Metronome" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-progressive-metronome-title">
-                            <i class="fas fa-tasks"></i>
-                            Metronomo Progressivo
+                            <i class="fas fa-tasks" aria-hidden="true"></i>
+                            <span class="project-title-text">Metronomo Progressivo</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">HTML/CSS/JS</span>
@@ -509,26 +521,26 @@
                             O Progressive Speed Metronome é uma ferramenta online que ajuda músicos a desenvolver velocidade técnica, aumentando o tempo automaticamente até atingir o BPM desejado. Permite personalizar tempo, compasso, incrementos e oferece feedback visual. É responsivo e feito com HTML, JavaScript, Tone.js e Tailwind CSS.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="progressive-metronome">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
-                            <a href="https://github.com/danisommer/METRONOME-SITE" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                            <button type="button" class="project-link project-details-btn" data-project-id="progressive-metronome" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
+                            <a href="https://github.com/danisommer/METRONOME-SITE" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="java sql js">
+                <div class="project-card" data-project-id="task-management" data-category="java sql js">
                     <div class="project-img">
-                        <img src="images/projects/task-management.jpg" alt="Sistema de Gerenciamento de Tarefas">
+                        <img src="images/projects/task-management.jpg" alt="Sistema de Gerenciamento de Tarefas" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-task-management-title">
-                            <i class="fas fa-tasks"></i>
-                            Sistema de Gerenciamento de Tarefas
+                            <i class="fas fa-tasks" aria-hidden="true"></i>
+                            <span class="project-title-text">Sistema de Gerenciamento de Tarefas</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">Java</span>
@@ -541,28 +553,28 @@
                             usando HTML, CSS e JavaScript para frontend.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="task-management">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
+                            <button type="button" class="project-link project-details-btn" data-project-id="task-management" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
                             <a href="https://github.com/danisommer/TASK-MANAGEMENT-SYSTEM" target="_blank"
-                                class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                                rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="js sql">
+                <div class="project-card" data-project-id="inventory-management" data-category="js sql">
                     <div class="project-img">
                         <img src="images/projects/inventory-management.jpg"
-                            alt="Sistema de Gerenciamento de Inventário">
+                            alt="Sistema de Gerenciamento de Inventário" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-inventory-title">
-                            <i class="fas fa-boxes"></i>
-                            Sistema de Gerenciamento de Inventário
+                            <i class="fas fa-boxes" aria-hidden="true"></i>
+                            <span class="project-title-text">Sistema de Gerenciamento de Inventário</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">Node.js</span>
@@ -575,26 +587,26 @@
                             Inclui autenticação com bcrypt e JWT.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="inventory-management">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
-                            <a href="https://github.com/danisommer/API-ESTOQUES" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                            <button type="button" class="project-link project-details-btn" data-project-id="inventory-management" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
+                            <a href="https://github.com/danisommer/API-ESTOQUES" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="python">
+                <div class="project-card" data-project-id="timecard-app" data-category="python">
                     <div class="project-img">
-                        <img src="images/projects/timecard-app.jpg" alt="App de Transcrição de Cartão de Ponto">
+                        <img src="images/projects/timecard-app.jpg" alt="App de Transcrição de Cartão de Ponto" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-timecard-title">
-                            <i class="fas fa-file-alt"></i>
-                            App de Transcrição de Cartão de Ponto
+                            <i class="fas fa-file-alt" aria-hidden="true"></i>
+                            <span class="project-title-text">App de Transcrição de Cartão de Ponto</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
@@ -605,27 +617,27 @@
                             Desenvolvido em Python para converter dados de cartão de ponto de PDFs para CSV.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="timecard-app">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
+                            <button type="button" class="project-link project-details-btn" data-project-id="timecard-app" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
                             <a href="https://github.com/danisommer/LEITOR-DE-CARTAO-PONTO" target="_blank"
-                                class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                                rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="js sql">
+                <div class="project-card" data-project-id="login-page" data-category="js sql">
                     <div class="project-img">
-                        <img src="images/projects/login-page.jpg" alt="Página de Login">
+                        <img src="images/projects/login-page.jpg" alt="Página de Login" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-login-title">
-                            <i class="fas fa-sign-in-alt"></i>
-                            Página de Login
+                            <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                            <span class="project-title-text">Página de Login</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">React.js</span>
@@ -639,26 +651,26 @@
                             autenticação segura com bcrypt e JWT.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="login-page">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
-                            <a href="https://github.com/danisommer/PAGINA-LOGIN" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                            <button type="button" class="project-link project-details-btn" data-project-id="login-page" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
+                            <a href="https://github.com/danisommer/PAGINA-LOGIN" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="js sql">
+                <div class="project-card" data-project-id="voting-system" data-category="js sql">
                     <div class="project-img">
-                        <img src="images/projects/voting-system.jpg" alt="Sistema de Votação">
+                        <img src="images/projects/voting-system.jpg" alt="Sistema de Votação" loading="lazy" width="600" height="400">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title project-voting-title">
-                            <i class="fas fa-vote-yea"></i>
-                            Sistema de Votação
+                            <i class="fas fa-vote-yea" aria-hidden="true"></i>
+                            <span class="project-title-text">Sistema de Votação</span>
                         </h3>
                         <div class="project-tags">
                             <span class="project-tag">Node.js</span>
@@ -671,13 +683,13 @@
                             funcionalidades CRUD para enquetes.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link" data-project="voting-system">
-                                <i class="fas fa-info-circle"></i>
-                                <span>Detalhes</span>
-                            </a>
-                            <a href="https://github.com/danisommer/PAGINA-ENQUETE" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                            <button type="button" class="project-link project-details-btn" data-project-id="voting-system" aria-haspopup="dialog" aria-controls="projectModal">
+                                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                                <span data-i18n="project-details">Detalhes</span>
+                            </button>
+                            <a href="https://github.com/danisommer/PAGINA-ENQUETE" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <span data-i18n="project-github">GitHub</span>
                             </a>
                         </div>
                     </div>
@@ -689,16 +701,16 @@
 
     <section id="contact" class="contact section">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
+            <h2 class="section-title" data-i18n="contact-title">Entre em Contato</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Informações de Contato</h3>
+                    <h3 data-i18n="contact-info">Informações de Contato</h3>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>E-mail</h4>
+                            <h4 data-i18n="contact-email">E-mail</h4>
                             <p><a href="mailto:danielsommer@alunos.utfpr.edu.br">danielsommer@alunos.utfpr.edu.br</a>
                             </p>
                             <p><a href="mailto:danibee2005@gmail.com">danibee2005@gmail.com</a></p>
@@ -709,9 +721,9 @@
                             <i class="fab fa-linkedin"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>LinkedIn</h4>
+                            <h4 data-i18n="contact-linkedin">LinkedIn</h4>
                             <p><a href="http://www.linkedin.com/in/danisommer"
-                                    target="_blank">www.linkedin.com/in/danisommer</a></p>
+                                    target="_blank" rel="noopener noreferrer">www.linkedin.com/in/danisommer</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -719,30 +731,30 @@
                             <i class="fab fa-github"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <p><a href="https://github.com/danisommer" target="_blank">github.com/danisommer</a></p>
+                            <h4 data-i18n="contact-github">GitHub</h4>
+                            <p><a href="https://github.com/danisommer" target="_blank" rel="noopener noreferrer">github.com/danisommer</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm" action="https://formspree.io/f/mgvavpow" method="POST">
                         <div class="form-group">
-                            <label for="name">Nome</label>
+                            <label for="name" data-i18n="contact-form-name">Nome</label>
                             <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">E-mail</label>
+                            <label for="email" data-i18n="contact-form-email">E-mail</label>
                             <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Assunto</label>
+                            <label for="subject" data-i18n="contact-form-subject">Assunto</label>
                             <input type="text" id="subject" name="subject" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Mensagem</label>
+                            <label for="message" data-i18n="contact-form-message">Mensagem</label>
                             <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn form-btn">Enviar Mensagem</button>
+                        <button type="submit" class="btn form-btn" data-i18n="contact-form-submit">Enviar Mensagem</button>
                     </form>
                 </div>
             </div>
@@ -759,43 +771,43 @@
                         de sistemas E-Commerce.</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Links Rápidos</h3>
+                    <h3 data-i18n="footer-links">Links Rápidos</h3>
                     <div class="footer-links">
-                        <a href="#home">Home</a>
-                        <a href="#about">Sobre</a>
-                        <a href="#skills">Habilidades</a>
-                        <a href="#experience">Experiência</a>
-                        <a href="#projects">Projetos</a>
-                        <a href="#contact">Contato</a>
+                        <a href="#home" data-i18n="nav-home">Home</a>
+                        <a href="#about" data-i18n="nav-about">Sobre</a>
+                        <a href="#skills" data-i18n="nav-skills">Habilidades</a>
+                        <a href="#experience" data-i18n="nav-experience">Experiência</a>
+                        <a href="#projects" data-i18n="nav-projects">Projetos</a>
+                        <a href="#contact" data-i18n="nav-contact">Contato</a>
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h3>Redes Sociais</h3>
+                    <h3 data-i18n="footer-social">Redes Sociais</h3>
                     <div class="social-links">
-                        <a href="http://www.linkedin.com/in/danisommer" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="http://www.linkedin.com/in/danisommer" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-                        <a href="https://github.com/danisommer" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/danisommer" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Daniel Zaki Sommer. Todos os direitos reservados.</p>
+                <p data-i18n="footer-copyright">&copy; 2025 Daniel Zaki Sommer. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+    <button class="back-to-top" type="button" data-i18n="aria-back-to-top" data-i18n-attr="aria-label">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
     <!-- Project Modals -->
-    <div class="modal" id="projectModal">
-        <div class="modal-content">
-            <button class="close-modal">
-                <i class="fas fa-times"></i>
+    <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content" tabindex="-1">
+            <button class="close-modal" type="button" data-i18n="aria-modal-close" data-i18n-attr="aria-label">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
             <div class="project-details">
             </div>
@@ -803,6 +815,5 @@
     </div>
     <script src="scripts.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </html>

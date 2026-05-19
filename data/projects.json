@@ -1,0 +1,528 @@
+{
+  "auto-control-app": {
+    "title": {
+      "pt": "Aplicativo de Autocontrole Empresarial",
+      "en": "Business Self-Control App"
+    },
+    "summary": {
+      "pt": "Um aplicativo de controle de negócios para Android desenvolvido com Kotlin e Java usando banco de dados SQL. Gerencia dados e processos empresariais com uma interface intuitiva, otimizando as operações diárias.",
+      "en": "A business control app for Android developed with Kotlin and Java using an SQL database. It manages business data and processes with an intuitive interface, optimizing daily operations."
+    },
+    "details": {
+      "intro": {
+        "pt": "Aplicativo para controle empresarial desenvolvido com Kotlin e Java para Android, utilizando banco de dados SQL.",
+        "en": "Business control application developed with Kotlin and Java for Android, using SQL database."
+      },
+      "features": {
+        "pt": [
+          "Desenvolvimento de um aplicativo de autocontrole empresarial para Android.",
+          "Implementação utilizando Kotlin e Java com banco de dados SQL.",
+          "Funcionalidades de gerenciamento de dados empresariais e controle de processos.",
+          "Interface intuitiva e eficiente para facilitar a operação diária.",
+          "Habilidades: Kotlin, Android, Java, SQL, Git, Desenvolvimento Mobile."
+        ],
+        "en": [
+          "Development of a business self-control application for Android.",
+          "Implementation using Kotlin and Java with SQL database.",
+          "Business data management and process control functionalities.",
+          "Intuitive and efficient interface to facilitate daily operations.",
+          "Skills: Kotlin, Android, Java, SQL, Git, Mobile Development."
+        ]
+      },
+      "outro": {
+        "pt": "Este aplicativo foi desenvolvido para otimizar o controle e a gestão de processos empresariais, proporcionando uma solução móvel completa.",
+        "en": "This application was developed to optimize the control and management of business processes, providing a complete mobile solution."
+      }
+    },
+    "tags": ["Kotlin", "Android", "Java", "SQL"],
+    "image": {
+      "src": "images/projects/auto-control-app.jpg",
+      "alt": {
+        "pt": "Aplicativo de Autocontrole Empresarial",
+        "en": "Business Self-Control App"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/AutoControlApp"
+      }
+    ]
+  },
+  "progressive-metronome": {
+    "title": {
+      "pt": "Metronomo Progressivo",
+      "en": "Progressive Metronome"
+    },
+    "summary": {
+      "pt": "O Metronomo Progressivo é uma ferramenta online que ajuda músicos a desenvolver velocidade técnica, aumentando o tempo automaticamente até atingir o BPM desejado. Permite personalizar tempo, compasso, incrementos e oferece feedback visual. É responsivo e feito com HTML, JavaScript, Tone.js e Tailwind CSS.",
+      "en": "The Progressive Speed Metronome is an online tool that helps musicians develop technical speed by automatically increasing the tempo until reaching the desired BPM. It allows customization of tempo, time signature, increments, and provides visual feedback. It's responsive and built with HTML, JavaScript, Tone.js, and Tailwind CSS."
+    },
+    "details": {
+      "intro": {
+        "pt": "O Progressive Speed Metronome é uma ferramenta web interativa projetada para músicos que desejam melhorar sua velocidade técnica.",
+        "en": "The Progressive Speed Metronome is an interactive web tool designed for musicians who want to improve their technical speed."
+      },
+      "features": {
+        "pt": [
+          "Aumenta automaticamente o tempo até atingir o BPM alvo desejado.",
+          "Interface responsiva e amigável desenvolvida com HTML, CSS e JavaScript.",
+          "Utiliza Tone.js para sincronização precisa de tempo e geração de sons.",
+          "Personalize o tempo inicial e final, compasso e incrementos de progressão.",
+          "Feedback visual do andamento atual e progresso em direção ao objetivo.",
+          "Design moderno com Tailwind CSS para uma experiência de usuário otimizada."
+        ],
+        "en": [
+          "Automatically increases tempo until reaching the desired target BPM.",
+          "Responsive and user-friendly interface developed with HTML, CSS, and JavaScript.",
+          "Uses Tone.js for precise time synchronization and sound generation.",
+          "Customize starting and ending tempo, time signature, and progression increments.",
+          "Visual feedback of current tempo and progress towards the goal.",
+          "Modern design with Tailwind CSS for an optimized user experience."
+        ]
+      },
+      "outro": {
+        "pt": "Ferramenta perfeita para praticar escalas, exercícios técnicos e passagens musicais difíceis, ajudando músicos a desenvolver velocidade gradualmente e de forma disciplinada.",
+        "en": "Perfect tool for practicing scales, technical exercises, and difficult musical passages, helping musicians develop speed gradually and in a disciplined manner."
+      }
+    },
+    "tags": ["HTML/CSS/JS", "Tone.js", "Tailwind CSS", "Web Audio API"],
+    "image": {
+      "src": "images/projects/progressive-metronome.png",
+      "alt": {
+        "pt": "Metronomo Progressivo",
+        "en": "Progressive Metronome"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/METRONOME-SITE"
+      },
+      {
+        "type": "demo",
+        "url": "https://danisommer.github.io/METRONOME-SITE/"
+      }
+    ]
+  },
+  "task-management": {
+    "title": {
+      "pt": "Sistema de Gerenciamento de Tarefas",
+      "en": "Task Management System"
+    },
+    "summary": {
+      "pt": "Sistema de gerenciamento de tarefas construído com Java (Spring Boot) e MySQL para backend, usando HTML, CSS e JavaScript para frontend.",
+      "en": "Task management system built with Java (Spring Boot) and MySQL for backend, using HTML, CSS and JavaScript for frontend."
+    },
+    "details": {
+      "intro": {
+        "pt": "Sistema completo de gerenciamento de tarefas construído com Java (Spring Boot) e MySQL para backend, e HTML, CSS e JavaScript para o frontend.",
+        "en": "Complete task management system built with Java (Spring Boot) and MySQL for backend, and HTML, CSS and JavaScript for frontend."
+      },
+      "features": {
+        "pt": [
+          "Backend em Java com Spring Boot e banco de dados MySQL.",
+          "Implementação de APIs RESTful para operações CRUD.",
+          "Frontend desenvolvido com HTML, CSS e JavaScript.",
+          "Funcionalidades: adição, edição, marcação de conclusão e exclusão de tarefas.",
+          "Filtros por nome, data e status, além de notificações automáticas por e-mail."
+        ],
+        "en": [
+          "Java backend with Spring Boot and MySQL database.",
+          "Implementation of RESTful APIs for CRUD operations.",
+          "Frontend developed with HTML, CSS and JavaScript.",
+          "Features: adding, editing, completion marking and deletion of tasks.",
+          "Filters by name, date and status, as well as automatic email notifications."
+        ]
+      },
+      "outro": {
+        "pt": "Este projeto foi desenvolvido como uma solução para gerenciar tarefas de forma eficiente, permitindo aos usuários organizar seu trabalho e aumentar sua produtividade.",
+        "en": "This project was developed as a solution to efficiently manage tasks, allowing users to organize their work and increase productivity."
+      }
+    },
+    "tags": ["Java", "Spring Boot", "MySQL", "HTML/CSS/JS", "CRUD"],
+    "image": {
+      "src": "images/projects/task-management.jpg",
+      "alt": {
+        "pt": "Sistema de Gerenciamento de Tarefas",
+        "en": "Task Management System"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/TASK-MANAGEMENT-SYSTEM"
+      }
+    ]
+  },
+  "inventory-management": {
+    "title": {
+      "pt": "Sistema de Gerenciamento de Inventário",
+      "en": "Inventory Management System"
+    },
+    "summary": {
+      "pt": "Desenvolvido usando Node.js (Express.js) e MySQL para backend, e React.js para frontend. Inclui autenticação com bcrypt e JWT.",
+      "en": "Developed using Node.js (Express.js) and MySQL for backend, and React.js for frontend. Includes authentication with bcrypt and JWT."
+    },
+    "details": {
+      "intro": {
+        "pt": "Sistema de gerenciamento de inventário desenvolvido usando Node.js (Express.js) e MySQL para backend, e React.js para frontend.",
+        "en": "Inventory management system developed using Node.js (Express.js) and MySQL for backend, and React.js for frontend."
+      },
+      "features": {
+        "pt": [
+          "Desenvolvimento de um sistema de gerenciamento de estoque.",
+          "Backend utilizando Node.js e Express.js, com banco de dados MySQL.",
+          "Frontend em React.js com Axios para requisições HTTP.",
+          "Autenticação segura com bcrypt (criptografia de senha) e JWT (gerenciamento de sessão).",
+          "Funcionalidades CRUD para gerenciamento de usuários e materiais."
+        ],
+        "en": [
+          "Development of a stock management system.",
+          "Backend using Node.js and Express.js, with MySQL database.",
+          "Frontend in React.js with Axios for HTTP requests.",
+          "Secure authentication with bcrypt (password encryption) and JWT (session management).",
+          "CRUD functionalities for user and material management."
+        ]
+      },
+      "outro": {
+        "pt": "Implementado para empresas que buscam otimizar o controle de estoque e melhorar a eficiência operacional.",
+        "en": "Implemented for companies looking to optimize inventory control and improve operational efficiency."
+      }
+    },
+    "tags": ["Node.js", "Express.js", "React.js", "MySQL", "bcrypt", "JWT"],
+    "image": {
+      "src": "images/projects/inventory-management.jpg",
+      "alt": {
+        "pt": "Sistema de Gerenciamento de Inventário",
+        "en": "Inventory Management System"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/API-ESTOQUES"
+      }
+    ]
+  },
+  "login-page": {
+    "title": {
+      "pt": "Página de Login",
+      "en": "Login Page"
+    },
+    "summary": {
+      "pt": "Desenvolvida com React.js no frontend e Express.js com SQLite no backend. Inclui autenticação segura com bcrypt e JWT.",
+      "en": "Developed with React.js on the frontend and Express.js with SQLite on the backend. Includes secure authentication with bcrypt and JWT."
+    },
+    "details": {
+      "intro": {
+        "pt": "Página de login desenvolvida com React.js no frontend e Express.js com SQLite no backend.",
+        "en": "Login page developed with React.js on the frontend and Express.js with SQLite on the backend."
+      },
+      "features": {
+        "pt": [
+          "Criação de uma página de login utilizando React.js no frontend.",
+          "Backend desenvolvido com Express.js e SQLite.",
+          "Autenticação segura com JWT e bcrypt para proteção de credenciais.",
+          "Interface de usuário responsiva e intuitiva.",
+          "Gestão eficiente de sessões de usuário."
+        ],
+        "en": [
+          "Creation of a login page using React.js on the frontend.",
+          "Backend developed with Express.js and SQLite.",
+          "Secure authentication with JWT and bcrypt for credential protection.",
+          "Responsive and intuitive user interface.",
+          "Efficient user session management."
+        ]
+      },
+      "outro": {
+        "pt": "Ideal para projetos que necessitam de um sistema seguro e eficiente de login e gerenciamento de usuários.",
+        "en": "Ideal for projects that need a secure and efficient login and user management system."
+      }
+    },
+    "tags": ["React.js", "Express.js", "SQLite", "JWT", "bcrypt"],
+    "image": {
+      "src": "images/projects/login-page.jpg",
+      "alt": {
+        "pt": "Página de Login",
+        "en": "Login Page"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/PAGINA-LOGIN"
+      }
+    ]
+  },
+  "platform-game": {
+    "title": {
+      "pt": "Projeto de Jogo de Plataforma",
+      "en": "Platform Game Project"
+    },
+    "summary": {
+      "pt": "Jogo de plataforma completo em C++ usando SFML, empregando Programação Orientada a Objetos e modelos UML.",
+      "en": "Complete platform game in C++ using SFML, employing Object-Oriented Programming and UML models."
+    },
+    "details": {
+      "intro": {
+        "pt": "Jogo de plataforma 2D desenvolvido em C++ utilizando a biblioteca SFML.",
+        "en": "2D platform game developed in C++ using the SFML library."
+      },
+      "features": {
+        "pt": [
+          "Desenvolvimento de um jogo de plataforma em C++.",
+          "Utilização da biblioteca SFML para gráficos e física do jogo.",
+          "Implementação de princípios de programação orientada a objetos.",
+          "Design de níveis e mecânicas de jogo envolventes.",
+          "Modelagem do projeto utilizando UML para organização do código."
+        ],
+        "en": [
+          "Development of a platform game in C++.",
+          "Use of the SFML library for graphics and game physics.",
+          "Implementation of object-oriented programming principles.",
+          "Level design and engaging game mechanics.",
+          "Project modeling using UML for code organization."
+        ]
+      },
+      "outro": {
+        "pt": "Este projeto demonstra conhecimentos avançados em C++, padrões de design, e desenvolvimento de jogos.",
+        "en": "This project demonstrates advanced knowledge in C++, design patterns, and game development."
+      }
+    },
+    "tags": ["C++", "SFML", "OOP", "UML", "Game Development"],
+    "image": {
+      "src": "images/projects/platform-game.jpg",
+      "alt": {
+        "pt": "Projeto de Jogo de Plataforma",
+        "en": "Platform Game Project"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/JOGO-PLATAFORMA"
+      }
+    ]
+  },
+  "timecard-app": {
+    "title": {
+      "pt": "App de Transcrição de Cartão de Ponto",
+      "en": "Timecard Transcription App"
+    },
+    "summary": {
+      "pt": "Desenvolvido em Python para converter dados de cartão de ponto de PDFs para CSV.",
+      "en": "Developed in Python to convert timecard data from PDFs to CSV."
+    },
+    "details": {
+      "intro": {
+        "pt": "Aplicativo Python que extrai dados de cartão de ponto em PDFs e converte para formato CSV.",
+        "en": "Python application that extracts timecard data from PDFs and converts to CSV format."
+      },
+      "features": {
+        "pt": [
+          "Programa em Python para leitura de arquivos PDF e inserção de dados em uma planilha Excel.",
+          "Automação do processamento de dados e exportação eficiente para Excel.",
+          "Extração precisa de informações de horas trabalhadas a partir de documentos.",
+          "Interface simples e eficiente para facilitar o uso.",
+          "Otimização de processos de RH, reduzindo o tempo de processamento manual."
+        ],
+        "en": [
+          "Python program for reading PDF files and inserting data into an Excel spreadsheet.",
+          "Automation of data processing and efficient export to Excel.",
+          "Accurate extraction of working hours information from documents.",
+          "Simple and efficient interface for ease of use.",
+          "Optimization of HR processes, reducing manual processing time."
+        ]
+      },
+      "outro": {
+        "pt": "Desenvolvido para otimizar processos de RH, reduzindo significativamente o tempo de processamento manual de cartões de ponto.",
+        "en": "Developed to optimize HR processes, significantly reducing the manual processing time of timecards."
+      }
+    },
+    "tags": ["Python", "PDF Processing", "CSV", "Data Extraction"],
+    "image": {
+      "src": "images/projects/timecard-app.jpg",
+      "alt": {
+        "pt": "App de Transcrição de Cartão de Ponto",
+        "en": "Timecard Transcription App"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/LEITOR-DE-CARTAO-PONTO"
+      }
+    ]
+  },
+  "dashboard-app": {
+    "title": {
+      "pt": "App de Dashboard",
+      "en": "Dashboard App"
+    },
+    "summary": {
+      "pt": "Monitoramento de métricas de sistema em tempo real com uma GUI Python e backend C++.",
+      "en": "Real-time system metrics monitoring with a Python GUI and C++ backend."
+    },
+    "details": {
+      "intro": {
+        "pt": "Aplicativo de monitoramento de métricas de sistema em tempo real com frontend Python e backend C++.",
+        "en": "Real-time system metrics monitoring application with Python frontend and C++ backend."
+      },
+      "features": {
+        "pt": [
+          "Desenvolvimento de um painel para monitoramento de métricas do sistema em tempo real.",
+          "Interface gráfica desenvolvida em Python com backend em C++.",
+          "Visualização de dados de desempenho do sistema em tempo real.",
+          "Monitoramento de recursos como CPU, memória, disco e rede.",
+          "Alertas configuráveis para situações críticas de desempenho."
+        ],
+        "en": [
+          "Development of a dashboard for real-time system metrics monitoring.",
+          "Graphical interface developed in Python with C++ backend.",
+          "Real-time system performance data visualization.",
+          "Monitoring of resources such as CPU, memory, disk and network.",
+          "Configurable alerts for critical performance situations."
+        ]
+      },
+      "outro": {
+        "pt": "Criado para oferecer uma visão clara e objetiva do desempenho do sistema em tempo real.",
+        "en": "Created to provide a clear and objective view of system performance in real time."
+      }
+    },
+    "tags": ["Python", "C++", "GUI", "Data Visualization"],
+    "image": {
+      "src": "images/projects/dashboard-app.jpg",
+      "alt": {
+        "pt": "App de Dashboard",
+        "en": "Dashboard App"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/python-dashboard"
+      }
+    ]
+  },
+  "voting-system": {
+    "title": {
+      "pt": "Sistema de Votação",
+      "en": "Voting System"
+    },
+    "summary": {
+      "pt": "Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend. Inclui autenticação de usuários, verificação de votos para evitar duplicidade, dashboard para visualização de resultados em tempo real e API RESTful para integração.",
+      "en": "Online voting system developed with Node.js (Express) and MySQL for backend, and React.js for frontend. Includes user authentication, vote verification to avoid duplication, dashboard for real-time results visualization, and RESTful API for integration."
+    },
+    "details": {
+      "intro": {
+        "pt": "Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend.",
+        "en": "Online voting system developed with Node.js (Express) and MySQL for backend, and React.js for frontend."
+      },
+      "features": {
+        "pt": [
+          "Desenvolvimento de uma página para enquetes com React.js no frontend.",
+          "Backend construído com Express.js e MySQL.",
+          "Autenticação de usuários e verificação de votos para evitar duplicidade.",
+          "Dashboard para visualização de resultados em tempo real.",
+          "API RESTful para integração com outros sistemas quando necessário."
+        ],
+        "en": [
+          "Development of a poll page with React.js on the frontend.",
+          "Backend built with Express.js and MySQL.",
+          "User authentication and vote verification to avoid duplication.",
+          "Dashboard for real-time results visualization.",
+          "RESTful API for integration with other systems when needed."
+        ]
+      },
+      "outro": {
+        "pt": "Implementado para facilitar processos democráticos em organizações, clubes e eventos.",
+        "en": "Implemented to facilitate democratic processes in organizations, clubs and events."
+      }
+    },
+    "tags": ["Node.js", "Express.js", "React.js", "MySQL", "RESTful API"],
+    "image": {
+      "src": "images/projects/voting-system.jpg",
+      "alt": {
+        "pt": "Sistema de Votação",
+        "en": "Voting System"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/danisommer/PAGINA-ENQUETE"
+      }
+    ]
+  },
+  "video-streaming": {
+    "title": {
+      "pt": "Site de Streaming de Vídeo",
+      "en": "Video Streaming Website"
+    },
+    "summary": {
+      "pt": "Contribuição para backend em Java (Spring Boot) com MongoDB, e frontend em React.js.",
+      "en": "Contribution to backend in Java (Spring Boot) with MongoDB, and frontend in React.js."
+    },
+    "details": {
+      "intro": {
+        "pt": "Plataforma de streaming de vídeo com backend Java (Spring Boot) e MongoDB, com frontend React.js.",
+        "en": "Video streaming platform with Java backend (Spring Boot) and MongoDB, with React.js frontend."
+      },
+      "features": {
+        "pt": [
+          "Participação no desenvolvimento do frontend de um clone funcional do YouTube.",
+          "Frontend desenvolvido em React.js e backend em Java com MongoDB.",
+          "Funcionalidades de upload, streaming e gerenciamento de vídeos.",
+          "Sistema de usuários com perfis, inscrições e interações.",
+          "Integração com serviços de armazenamento em nuvem para conteúdo de vídeo."
+        ],
+        "en": [
+          "Participation in the frontend development of a functional YouTube clone.",
+          "Frontend developed in React.js and backend in Java with MongoDB.",
+          "Video upload, streaming and management functionalities.",
+          "User system with profiles, subscriptions and interactions.",
+          "Integration with cloud storage services for video content."
+        ]
+      },
+      "outro": {
+        "pt": "Desenvolvido como um projeto colaborativo para criar uma alternativa de código aberto para plataformas de streaming de vídeo.",
+        "en": "Developed as a collaborative project to create an open-source alternative to video streaming platforms."
+      }
+    },
+    "tags": ["Java", "Spring Boot", "MongoDB", "React.js", "AWS S3"],
+    "image": {
+      "src": "images/projects/video-streaming.jpg",
+      "alt": {
+        "pt": "Site de Streaming de Vídeo",
+        "en": "Video Streaming Website"
+      },
+      "width": 600,
+      "height": 400
+    },
+    "links": [
+      {
+        "type": "github",
+        "url": "https://github.com/HunterNicky/TikTube"
+      }
+    ]
+  }
+}
