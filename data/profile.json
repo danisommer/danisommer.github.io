@@ -1,0 +1,66 @@
+{
+  "$schema": "./schemas/profile.schema.json",
+  "name": "Daniel Zaki Sommer",
+  "shortName": "Daniel Z. Sommer",
+  "headline": {
+    "pt": "Elixir Dev @ Trio | Sistemas de Informação @ UTFPR",
+    "en": "Elixir Dev @ Trio | Information Systems @ UTFPR"
+  },
+  "intro": {
+    "pt": "Desenvolvedor Elixir na Trio, contribuindo para sistemas de pagamento escaláveis no backend. Estudante do 8º semestre de Sistemas de Informação na UTFPR e desenvolvedor na Hi Tech Consultoria, com experiência anterior em Java (Spring), Docker, TypeScript, SQL, SAP Hybris e integrações via SCPI.",
+    "en": "Elixir developer at Trio, contributing to scalable payment systems on the backend. 8th-semester Information Systems student at UTFPR and developer at Hi Tech Consultoria, with prior experience in Java (Spring), Docker, TypeScript, SQL, SAP Hybris, and SCPI integrations."
+  },
+  "photo": {
+    "src": "images/profile_picture.jpg",
+    "alt": "Daniel Zaki Sommer"
+  },
+  "about": {
+    "greeting": {
+      "pt": "Olá, sou Daniel Zaki Sommer",
+      "en": "Hi, I am Daniel Zaki Sommer"
+    },
+    "paragraphs": [
+      {
+        "pt": "Atualmente, trabalho como Desenvolvedor Elixir na Trio, contribuindo para a construção de sistemas de pagamento escaláveis no backend, e atuo como desenvolvedor na Hi Tech Consultoria, a empresa júnior da UTFPR voltada para consultoria em tecnologia. Estou no 8º semestre do curso de Sistemas de Informação na UTFPR.",
+        "en": "I currently work as an Elixir Developer at Trio, contributing to scalable payment systems on the backend, and as a developer at Hi Tech Consultoria, UTFPR's junior enterprise focused on technology consulting. I am an 8th-semester Information Systems student at UTFPR."
+      },
+      {
+        "pt": "Anteriormente, estagiei na Meisters Solutions e na Digiu Digital, contribuindo para sistemas de E-Commerce com Java (Spring), Docker, TypeScript, SQL e SAP Hybris, além de integrações via SCPI e desenvolvimento mobile com React Native e PHP. Concluí cursos sobre REST APIs, Docker e AWS e desenvolvi projetos pessoais como gerenciamento de estoque, plataforma de votação e dashboard de monitoramento em tempo real.",
+        "en": "Previously, I interned at Meisters Solutions and Digiu Digital, contributing to E-Commerce systems with Java (Spring), Docker, TypeScript, SQL, and SAP Hybris, plus SCPI integrations and mobile development with React Native and PHP. I completed courses on REST APIs, Docker, and AWS and built personal projects such as an inventory management system, a voting platform, and a real-time monitoring dashboard."
+      }
+    ]
+  },
+  "resumeUrl": "https://bristle-swing-0b0.notion.site/Daniel-Zaki-Sommer-Backend-Developer-1b5f096b9f3f80af9be1d98870c75b0c",
+  "footerNote": {
+    "pt": "Elixir Developer com experiência em sistemas de pagamento escaláveis e E-Commerce.",
+    "en": "Elixir Developer with experience in scalable payment and E-Commerce systems."
+  },
+  "contacts": [
+    {
+      "label": { "pt": "E-mail", "en": "Email" },
+      "icon": "fas fa-envelope",
+      "url": "mailto:danibee2005@gmail.com",
+      "text": "danibee2005@gmail.com"
+    },
+    {
+      "label": "LinkedIn",
+      "icon": "fab fa-linkedin-in",
+      "url": "https://www.linkedin.com/in/danisommer",
+      "text": "www.linkedin.com/in/danisommer",
+      "social": true
+    },
+    {
+      "label": { "pt": "Portfólio", "en": "Portfolio" },
+      "icon": "fas fa-globe",
+      "url": "https://danisommer.github.io/",
+      "text": "danisommer.github.io"
+    },
+    {
+      "label": "GitHub",
+      "icon": "fab fa-github",
+      "url": "https://github.com/danisommer",
+      "text": "github.com/danisommer",
+      "social": true
+    }
+  ]
+}

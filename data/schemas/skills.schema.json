@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Habilidades",
+  "description": "Carrossel de habilidades: um slide por categoria.",
+  "type": "object",
+  "required": ["levels", "categories"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "levels": {
+      "type": "object",
+      "description": "Nomes exibidos para cada nível. A chave (ex.: \"advanced\") é o valor usado em \"level\" de cada habilidade.",
+      "additionalProperties": { "$ref": "common.schema.json#/definitions/localizedText" }
+    },
+    "categories": {
+      "type": "array",
+      "description": "Slides do carrossel, na ordem.",
+      "items": { "$ref": "#/definitions/category" }
+    }
+  },
+  "definitions": {
+    "category": {
+      "type": "object",
+      "required": ["title", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "description": "Título do slide.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "items": {
+          "type": "array",
+          "description": "Habilidades do slide, na ordem.",
+          "items": { "$ref": "#/definitions/skill" }
+        }
+      },
+      "defaultSnippets": [
+        {
+          "label": "Nova categoria",
+          "description": "Slide do carrossel",
+          "body": {
+            "title": { "pt": "${1:Categoria}", "en": "${2:Category}" },
+            "items": [
+              { "name": "${3:Tecnologia}", "level": "${4:intermediate}" }
+            ]
+          }
+        }
+      ]
+    },
+    "skill": {
+      "type": "object",
+      "required": ["name", "level"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "description": "Nome da habilidade.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "level": {
+          "type": "string",
+          "description": "Uma das chaves de \"levels\", no topo do arquivo.",
+          "examples": ["basic", "intermediate", "advanced", "fluent", "professional", "native"]
+        }
+      },
+      "defaultSnippets": [
+        {
+          "label": "Nova habilidade",
+          "body": { "name": "${1:Tecnologia}", "level": "${2:intermediate}" }
+        }
+      ]
+    }
+  }
+}

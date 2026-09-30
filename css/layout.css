@@ -1,0 +1,357 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    z-index: var(--z-header);
+    width: 100%;
+    background-color: var(--color-inverse-bg);
+    color: var(--color-inverse-text);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.is-scrolled {
+    box-shadow: var(--shadow-header);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.logo,
+.logo:hover {
+    color: var(--color-inverse-text);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a,
+.nav-links a:hover {
+    color: var(--color-inverse-text);
+}
+
+.nav-links a {
+    position: relative;
+    font-weight: 500;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current]::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--color-inverse-text);
+    font-size: 0.85rem;
+}
+
+.language-toggle span {
+    opacity: 0.4;
+}
+
+.language-toggle button {
+    padding: 0.1rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: none;
+    color: var(--color-inverse-text);
+    font-weight: 600;
+    opacity: 0.65;
+    cursor: pointer;
+    transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.language-toggle button:hover,
+.language-toggle button[aria-pressed="true"] {
+    opacity: 1;
+}
+
+.language-toggle button[aria-pressed="true"] {
+    border-bottom-color: var(--color-accent);
+}
+
+.theme-toggle,
+.menu-toggle,
+.mobile-nav-close {
+    border: none;
+    background: none;
+    color: var(--color-inverse-text);
+    cursor: pointer;
+}
+
+.theme-toggle {
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--color-accent);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: var(--z-mobile-nav);
+    width: min(300px, 85vw);
+    height: 100vh;
+    height: 100dvh;
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: var(--color-inverse-bg);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.mobile-nav.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.3s ease, visibility 0s;
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+}
+
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.mobile-links a {
+    color: var(--color-inverse-text);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.mobile-links a:hover,
+.mobile-links a[aria-current] {
+    color: var(--color-accent);
+}
+
+.mobile-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-controls .language-toggle {
+    font-size: 1rem;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-overlay);
+    background-color: var(--color-overlay);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.site-footer {
+    padding: 3rem 0 1rem;
+    background-color: var(--color-inverse-bg);
+    color: var(--color-inverse-text);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h3 {
+    margin-bottom: 1.5rem;
+    color: var(--color-inverse-text);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.footer-links a {
+    color: var(--color-inverse-text);
+    opacity: 0.8;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-inverse-text);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--color-primary-fill);
+    color: var(--color-inverse-text);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: var(--z-back-to-top);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-primary-fill);
+    color: var(--color-inverse-text);
+    font-size: 0.85rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--color-primary-fill-hover);
+    color: var(--color-inverse-text);
+}
+
+.load-error {
+    margin-bottom: 2rem;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--color-accent);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.load-error-detail {
+    margin-top: 0.5rem;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.noscript {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: calc(var(--z-header) + 1);
+    padding: 1rem;
+    background-color: var(--color-accent);
+    color: #1a1a1a;
+    text-align: center;
+}
+
+@media (min-width: 993px) and (max-width: 1100px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-links,
+    .header-actions .language-toggle,
+    .header-actions .theme-toggle {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}

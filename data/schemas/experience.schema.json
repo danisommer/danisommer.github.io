@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Experiência",
+  "description": "Itens da timeline (empregos, formação, cursos), na ordem em que aparecem.",
+  "type": "object",
+  "required": ["items"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "items": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/item" }
+    }
+  },
+  "definitions": {
+    "item": {
+      "type": "object",
+      "required": ["title", "start"],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "description": "Cargo, curso ou título do bloco.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "organization": {
+          "description": "Empresa ou instituição. Opcional.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "start": {
+          "description": "Início: \"2025-07\" ou \"2022\".",
+          "$ref": "common.schema.json#/definitions/period"
+        },
+        "end": {
+          "description": "Fim, no mesmo formato. Sem este campo, o site exibe \"Presente\".",
+          "$ref": "common.schema.json#/definitions/period"
+        },
+        "highlights": {
+          "type": "array",
+          "description": "Tópicos da lista do card.",
+          "items": { "$ref": "common.schema.json#/definitions/text" }
+        }
+      },
+      "defaultSnippets": [
+        {
+          "label": "Nova experiência",
+          "description": "Item da timeline",
+          "body": {
+            "title": "${1:Cargo}",
+            "organization": "${2:Empresa}",
+            "start": "${3:2026-01}",
+            "highlights": [
+              { "pt": "${4:O que você fez}", "en": "${5:What you did}" }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

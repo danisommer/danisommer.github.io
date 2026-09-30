@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Definições comuns",
+  "description": "Tipos reutilizados pelos schemas dos arquivos em data/.",
+  "definitions": {
+    "localizedText": {
+      "type": "object",
+      "description": "Texto nos dois idiomas: { \"pt\": \"...\", \"en\": \"...\" }.",
+      "required": ["pt", "en"],
+      "additionalProperties": false,
+      "properties": {
+        "pt": { "type": "string", "minLength": 1, "description": "Texto em português." },
+        "en": { "type": "string", "minLength": 1, "description": "Texto em inglês." }
+      },
+      "defaultSnippets": [
+        {
+          "label": "{ pt, en }",
+          "description": "Texto traduzido",
+          "body": { "pt": "$1", "en": "$2" }
+        }
+      ]
+    },
+    "text": {
+      "description": "String simples quando o texto é igual nos dois idiomas; { \"pt\": \"...\", \"en\": \"...\" } quando muda.",
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        { "$ref": "#/definitions/localizedText" }
+      ]
+    },
+    "period": {
+      "type": "string",
+      "description": "Ano-mês (\"2025-07\") ou só o ano (\"2022\"). O site formata no idioma do visitante.",
+      "pattern": "^\\d{4}(-(0[1-9]|1[0-2]))?$"
+    },
+    "url": {
+      "type": "string",
+      "description": "Endereço completo, começando com https:// (ou mailto: para e-mail).",
+      "pattern": "^(https?://|mailto:)\\S+$"
+    },
+    "imagePath": {
+      "type": "string",
+      "description": "Caminho a partir da raiz do site, ex.: images/projects/meu-projeto.jpg",
+      "pattern": "^images/\\S+\\.(jpe?g|png|webp|gif|svg)$"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Classe de ícone do Font Awesome 6 free (https://fontawesome.com/search?ic=free): \"fas fa-...\" para ícones sólidos, \"fab fa-...\" para marcas.",
+      "pattern": "^fa[sbr] fa-[a-z0-9-]+$",
+      "examples": ["fas fa-code", "fas fa-music", "fab fa-github"]
+    }
+  }
+}

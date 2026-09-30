@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Textos da interface",
+  "description": "Rótulos fixos (menu, botões, títulos das seções, mensagens). Cada texto final é { \"pt\": \"...\", \"en\": \"...\" }; os grupos intermediários só organizam. As chaves são usadas pelo código — altere os textos, não os nomes.",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" }
+  },
+  "additionalProperties": { "$ref": "#/definitions/node" },
+  "definitions": {
+    "node": {
+      "type": "object",
+      "if": {
+        "anyOf": [{ "required": ["pt"] }, { "required": ["en"] }]
+      },
+      "then": { "$ref": "common.schema.json#/definitions/localizedText" },
+      "else": {
+        "minProperties": 1,
+        "additionalProperties": { "$ref": "#/definitions/node" }
+      }
+    }
+  }
+}

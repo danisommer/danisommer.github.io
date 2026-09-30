@@ -1,0 +1,78 @@
+{
+  "$schema": "./schemas/ui.schema.json",
+  "nav": {
+    "home": { "pt": "Home", "en": "Home" },
+    "about": { "pt": "Sobre", "en": "About" },
+    "skills": { "pt": "Habilidades", "en": "Skills" },
+    "experience": { "pt": "Experiência", "en": "Experience" },
+    "projects": { "pt": "Projetos", "en": "Projects" },
+    "contact": { "pt": "Contato", "en": "Contact" }
+  },
+  "hero": {
+    "viewProjects": { "pt": "Ver Projetos", "en": "View Projects" },
+    "contact": { "pt": "Contato", "en": "Contact" }
+  },
+  "about": {
+    "title": { "pt": "Sobre Mim", "en": "About Me" },
+    "resume": { "pt": "Ver Currículo", "en": "View Resume" }
+  },
+  "skills": {
+    "title": { "pt": "Minhas Habilidades", "en": "My Skills" },
+    "carousel": { "pt": "Categorias de habilidades", "en": "Skill categories" },
+    "previous": { "pt": "Categoria anterior", "en": "Previous category" },
+    "next": { "pt": "Próxima categoria", "en": "Next category" },
+    "goTo": { "pt": "Mostrar {category}", "en": "Show {category}" }
+  },
+  "experience": {
+    "title": { "pt": "Experiência", "en": "Experience" },
+    "present": { "pt": "Presente", "en": "Present" }
+  },
+  "projects": {
+    "title": { "pt": "Meus Projetos Pessoais", "en": "My Personal Projects" },
+    "filterLabel": { "pt": "Filtrar projetos por tecnologia", "en": "Filter projects by technology" },
+    "filterAll": { "pt": "Todos", "en": "All" },
+    "details": { "pt": "Detalhes", "en": "Details" },
+    "featuresIntro": { "pt": "Recursos incluem:", "en": "Features include:" },
+    "close": { "pt": "Fechar detalhes do projeto", "en": "Close project details" },
+    "links": {
+      "github": { "pt": "GitHub", "en": "GitHub" },
+      "demo": { "pt": "Demo Online", "en": "Live Demo" }
+    }
+  },
+  "contact": {
+    "title": { "pt": "Entre em Contato", "en": "Get in Touch" },
+    "info": { "pt": "Informações de Contato", "en": "Contact Information" },
+    "form": {
+      "name": { "pt": "Nome", "en": "Name" },
+      "email": { "pt": "E-mail", "en": "Email" },
+      "subject": { "pt": "Assunto", "en": "Subject" },
+      "message": { "pt": "Mensagem", "en": "Message" },
+      "submit": { "pt": "Enviar Mensagem", "en": "Send Message" },
+      "sending": { "pt": "Enviando...", "en": "Sending..." },
+      "success": {
+        "pt": "Mensagem enviada! Obrigado pelo contato, respondo em breve.",
+        "en": "Message sent! Thanks for reaching out, I'll get back to you soon."
+      },
+      "error": {
+        "pt": "Não foi possível enviar agora. Tente de novo em instantes ou use um dos contatos ao lado.",
+        "en": "Your message couldn't be sent right now. Please try again shortly or use one of the contacts listed."
+      }
+    }
+  },
+  "footer": {
+    "links": { "pt": "Links Rápidos", "en": "Quick Links" },
+    "social": { "pt": "Redes Sociais", "en": "Social Media" },
+    "copyright": {
+      "pt": "© {year} {name}. Todos os direitos reservados.",
+      "en": "© {year} {name}. All rights reserved."
+    }
+  },
+  "a11y": {
+    "mainNav": { "pt": "Navegação principal", "en": "Main navigation" },
+    "language": { "pt": "Idioma", "en": "Language" },
+    "themeToggle": { "pt": "Tema escuro", "en": "Dark theme" },
+    "menuOpen": { "pt": "Abrir menu", "en": "Open menu" },
+    "menuClose": { "pt": "Fechar menu", "en": "Close menu" },
+    "backToTop": { "pt": "Voltar ao topo", "en": "Back to top" }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Projetos",
+  "description": "Cards da seção de projetos, o modal de detalhes e os botões de filtro.",
+  "type": "object",
+  "required": ["categories", "items"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "categories": {
+      "type": "array",
+      "description": "Botões de filtro, na ordem em que aparecem. Botões sem nenhum projeto ficam ocultos.",
+      "items": { "$ref": "#/definitions/category" }
+    },
+    "items": {
+      "type": "array",
+      "description": "Projetos, na ordem em que aparecem na página.",
+      "items": { "$ref": "#/definitions/project" }
+    }
+  },
+  "definitions": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "category": {
+      "type": "object",
+      "required": ["id", "label"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Identificador usado em \"categories\" de cada projeto (minúsculas e hífens).",
+          "$ref": "#/definitions/slug"
+        },
+        "label": {
+          "description": "Texto do botão de filtro.",
+          "$ref": "common.schema.json#/definitions/text"
+        }
+      },
+      "defaultSnippets": [
+        {
+          "label": "Nova categoria de filtro",
+          "body": { "id": "${1:elixir}", "label": "${2:Elixir}" }
+        }
+      ]
+    },
+    "project": {
+      "type": "object",
+      "required": ["id", "title", "categories", "tags", "summary", "links"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Identificador único do projeto (minúsculas e hífens).",
+          "$ref": "#/definitions/slug"
+        },
+        "title": {
+          "description": "Título do card e do modal.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "icon": {
+          "description": "Ícone ao lado do título. Opcional (padrão: \"fas fa-code\").",
+          "$ref": "common.schema.json#/definitions/icon"
+        },
+        "image": {
+          "description": "Screenshot do projeto: recortado no card, inteiro no modal. Opcional: sem imagem, o card mostra o ícone sobre fundo azul.",
+          "$ref": "common.schema.json#/definitions/imagePath"
+        },
+        "categories": {
+          "type": "array",
+          "description": "Filtros em que o projeto aparece: valores de \"id\" da lista \"categories\" no topo do arquivo.",
+          "uniqueItems": true,
+          "items": { "type": "string" }
+        },
+        "tags": {
+          "type": "array",
+          "description": "Etiquetas de tecnologia exibidas no card e no modal.",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "summary": {
+          "description": "Descrição curta do card.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "details": {
+          "type": "object",
+          "description": "Conteúdo do modal \"Detalhes\". Opcional: sem ele, o modal mostra o resumo.",
+          "additionalProperties": false,
+          "properties": {
+            "intro": {
+              "description": "Parágrafo de abertura.",
+              "$ref": "common.schema.json#/definitions/text"
+            },
+            "features": {
+              "type": "array",
+              "description": "Lista exibida após \"Recursos incluem:\".",
+              "items": { "$ref": "common.schema.json#/definitions/text" }
+            },
+            "outro": {
+              "description": "Parágrafo de fechamento.",
+              "$ref": "common.schema.json#/definitions/text"
+            }
+          }
+        },
+        "links": {
+          "type": "object",
+          "description": "Links exibidos no card e no modal.",
+          "additionalProperties": false,
+          "properties": {
+            "github": {
+              "description": "Repositório no GitHub.",
+              "$ref": "common.schema.json#/definitions/url"
+            },
+            "demo": {
+              "description": "Versão online do projeto.",
+              "$ref": "common.schema.json#/definitions/url"
+            }
+          }
+        }
+      },
+      "defaultSnippets": [
+        {
+          "label": "Novo projeto",
+          "description": "Esqueleto completo de um projeto (card + modal)",
+          "body": {
+            "id": "${1:meu-projeto}",
+            "title": { "pt": "${2:Título}", "en": "${3:Title}" },
+            "icon": "${4:fas fa-code}",
+            "image": "images/projects/${1:meu-projeto}.jpg",
+            "categories": ["${5:java}"],
+            "tags": ["${6:Java}"],
+            "summary": { "pt": "${7:Resumo do card.}", "en": "${8:Card summary.}" },
+            "details": {
+              "intro": { "pt": "${9:Parágrafo de abertura do modal.}", "en": "${10:Modal opening paragraph.}" },
+              "features": [
+                { "pt": "${11:Recurso}", "en": "${12:Feature}" }
+              ],
+              "outro": { "pt": "${13:Parágrafo de fechamento.}", "en": "${14:Closing paragraph.}" }
+            },
+            "links": { "github": "https://github.com/danisommer/${15:repositorio}" }
+          }
+        }
+      ]
+    }
+  }
+}

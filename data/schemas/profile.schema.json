@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Perfil",
+  "description": "Dados pessoais e textos do topo, do \"Sobre\", dos contatos e do rodapé.",
+  "type": "object",
+  "required": ["name", "shortName", "headline", "intro", "photo", "about", "resumeUrl", "footerNote", "contacts"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nome completo: logo do header, título do topo e copyright."
+    },
+    "shortName": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nome curto exibido no rodapé."
+    },
+    "headline": {
+      "description": "Subtítulo amarelo do topo.",
+      "$ref": "common.schema.json#/definitions/text"
+    },
+    "intro": {
+      "description": "Parágrafo do topo, abaixo do subtítulo.",
+      "$ref": "common.schema.json#/definitions/text"
+    },
+    "photo": {
+      "type": "object",
+      "description": "Foto da seção \"Sobre\".",
+      "required": ["src", "alt"],
+      "additionalProperties": false,
+      "properties": {
+        "src": { "$ref": "common.schema.json#/definitions/imagePath" },
+        "alt": {
+          "description": "Descrição da foto para leitores de tela.",
+          "$ref": "common.schema.json#/definitions/text"
+        }
+      }
+    },
+    "about": {
+      "type": "object",
+      "description": "Seção \"Sobre\".",
+      "required": ["greeting", "paragraphs"],
+      "additionalProperties": false,
+      "properties": {
+        "greeting": {
+          "description": "Título ao lado da foto.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "paragraphs": {
+          "type": "array",
+          "description": "Parágrafos, na ordem em que aparecem.",
+          "minItems": 1,
+          "items": { "$ref": "common.schema.json#/definitions/text" }
+        }
+      }
+    },
+    "resumeUrl": {
+      "description": "Link aberto pelo botão de currículo.",
+      "$ref": "common.schema.json#/definitions/url"
+    },
+    "footerNote": {
+      "description": "Frase do rodapé, abaixo do nome.",
+      "$ref": "common.schema.json#/definitions/text"
+    },
+    "contacts": {
+      "type": "array",
+      "description": "Itens de \"Informações de Contato\", na ordem. Os marcados com \"social\": true também aparecem em \"Redes Sociais\", no rodapé.",
+      "items": { "$ref": "#/definitions/contact" }
+    }
+  },
+  "definitions": {
+    "contact": {
+      "type": "object",
+      "required": ["label", "icon", "url", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "description": "Título do item, ex.: \"LinkedIn\".",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "icon": { "$ref": "common.schema.json#/definitions/icon" },
+        "url": { "$ref": "common.schema.json#/definitions/url" },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Texto visível do link."
+        },
+        "social": {
+          "type": "boolean",
+          "description": "true: também aparece em \"Redes Sociais\", no rodapé."
+        }
+      },
+      "defaultSnippets": [
+        {
+          "label": "Novo contato",
+          "description": "Item de contato (e, opcionalmente, rede social no rodapé)",
+          "body": {
+            "label": "${1:Nome}",
+            "icon": "${2:fab fa-github}",
+            "url": "${3:https://}",
+            "text": "${4:texto do link}",
+            "social": false
+          }
+        }
+      ]
+    }
+  }
+}

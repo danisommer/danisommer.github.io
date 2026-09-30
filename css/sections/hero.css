@@ -1,0 +1,80 @@
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: var(--header-height) 0;
+    background-color: var(--color-inverse-bg);
+    color: var(--color-inverse-text);
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    color: var(--color-inverse-text);
+}
+
+.hero-subtitle {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-accent);
+}
+
+.hero-text {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero .btn-outline {
+    border-color: var(--color-primary-on-inverse);
+    color: var(--color-primary-on-inverse);
+}
+
+.hero .btn-outline:hover {
+    border-color: var(--color-primary-fill);
+    background-color: var(--color-primary-fill);
+    color: var(--color-inverse-text);
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
