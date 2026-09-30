@@ -104,7 +104,7 @@ function renderCard(project) {
       "div",
       { class: "project-content" },
       h("h3", { class: "project-title" }, icon(projectIcon), h("span", {}, title)),
-      renderTags(project.tags, "project-tags"),
+      renderTags(project, "project-tags"),
       h("p", { class: "project-desc" }, t(project.summary)),
       h(
         "div",
@@ -121,8 +121,13 @@ function renderCard(project) {
   );
 }
 
-function renderTags(tags, className) {
-  return h("div", { class: className }, tags.map((tag) => h("span", { class: "project-tag" }, tag)));
+function renderTags({ tags, status }, className) {
+  return h(
+    "div",
+    { class: className },
+    status && h("span", { class: "project-status" }, label(`projects.status.${status}`)),
+    tags.map((tag) => h("span", { class: "project-tag" }, tag))
+  );
 }
 
 function renderLinks(links, className) {
@@ -171,7 +176,7 @@ function renderModal(dialog, project) {
     h("h2", { id: "project-modal-title" }, title),
     project.image &&
       h("div", { class: "project-details-img" }, h("img", { src: project.image, alt: title, decoding: "async" })),
-    renderTags(project.tags, "project-details-tags"),
+    renderTags(project, "project-details-tags"),
     h("div", { class: "project-details-desc" }, renderDescription(project)),
     h("div", { class: "project-details-links" }, renderLinks(project.links, "btn"))
   );

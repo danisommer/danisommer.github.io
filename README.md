@@ -15,7 +15,7 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 
 | Quero mudar… | Arquivo |
 |---|---|
-| Nome, subtítulo e texto do topo, "Sobre", foto, link do currículo, contatos, frase do rodapé | `data/profile.json` |
+| Nome, subtítulo, localização e texto do topo, "Sobre", foto, link do currículo, contatos, frase do rodapé | `data/profile.json` |
 | Timeline: empregos, formação, cursos | `data/experience.json` |
 | Carrossel de habilidades e nomes dos níveis | `data/skills.json` |
 | Projetos (card + modal) e botões de filtro | `data/projects.json` |
@@ -50,7 +50,7 @@ Cada JSON aponta para um schema em `data/schemas/` (linha `"$schema"` no topo). 
 4. `"icon"` é uma classe do [Font Awesome 6 free](https://fontawesome.com/search?ic=free), ex.: `"fas fa-music"`.
 5. `"links"` aceita `"github"` e `"demo"`; os dois aparecem no card e no modal.
 
-`icon`, `image` e `details` são opcionais. Sem imagem, o card mostra o ícone sobre fundo azul; sem `details`, o modal mostra o resumo.
+`icon`, `image`, `details` e `status` são opcionais. Sem imagem, o card mostra o ícone sobre fundo azul; sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe o selo "Em andamento".
 
 ### Criar um filtro novo
 
@@ -62,13 +62,13 @@ Em `data/experience.json`, dentro de `"items"`, use **Ctrl+Espaço → Nova expe
 
 ### Adicionar ou mudar uma habilidade
 
-Em `data/skills.json`, cada item de `"categories"` é um slide do carrossel. Uma habilidade é `{ "name": "Elixir", "level": "advanced" }`, e `level` precisa ser uma das chaves de `"levels"` no topo do arquivo (`basic`, `intermediate`, `advanced`, `fluent`, `professional`, `native`). Para criar um nível novo, adicione a chave em `"levels"` com o nome em pt e en.
+Em `data/skills.json`, cada item de `"categories"` é um slide do carrossel. Uma habilidade é `{ "name": "Elixir" }`. O `level` é opcional e vira uma etiqueta ao lado do nome (hoje só os idiomas usam); quando existe, precisa ser uma das chaves de `"levels"` no topo do arquivo (`basic`, `intermediate`, `advanced`, `fluent`, `professional`, `native`). Para criar um nível novo, adicione a chave em `"levels"` com o nome em pt e en.
 
 ### Virar o semestre
 
 O semestre aparece em três textos, nos dois idiomas:
 
-- `data/profile.json` → `intro` e o primeiro item de `about.paragraphs`;
+- `data/profile.json` → `intro` e o segundo item de `about.paragraphs`;
 - `data/experience.json` → item da UTFPR, em `highlights`.
 
 ### Adicionar um contato ou rede social

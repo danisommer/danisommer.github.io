@@ -22,31 +22,32 @@ export function setup() {
 }
 
 export function render({ profile }) {
-  document.querySelector("#contact .contact-list").replaceChildren(...profile.contacts.map(renderContact));
+  const items = [
+    ...profile.contacts.map(renderContact),
+    profile.location && contactItem("fas fa-location-dot", label("contact.location"), t(profile.location)),
+  ];
+
+  document.querySelector("#contact .contact-list").replaceChildren(...items.filter(Boolean));
   renderStatus();
 }
 
 function renderContact(contact) {
   const external = !contact.url.startsWith("mailto:");
+  const link = h(
+    "a",
+    { href: contact.url, target: external && "_blank", rel: external && "noopener noreferrer" },
+    contact.text
+  );
 
+  return contactItem(contact.icon, t(contact.label), link);
+}
+
+function contactItem(iconClass, title, content) {
   return h(
     "li",
     { class: "contact-item" },
-    h("div", { class: "contact-icon" }, icon(contact.icon)),
-    h(
-      "div",
-      { class: "contact-details" },
-      h("h4", {}, t(contact.label)),
-      h(
-        "p",
-        {},
-        h(
-          "a",
-          { href: contact.url, target: external && "_blank", rel: external && "noopener noreferrer" },
-          contact.text
-        )
-      )
-    )
+    h("div", { class: "contact-icon" }, icon(iconClass)),
+    h("div", { class: "contact-details" }, h("h4", {}, title), h("p", {}, content))
   );
 }
 

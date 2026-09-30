@@ -21,6 +21,10 @@
       "description": "Subtítulo amarelo do topo.",
       "$ref": "common.schema.json#/definitions/text"
     },
+    "location": {
+      "description": "Cidade exibida no topo e em \"Informações de Contato\". Opcional.",
+      "$ref": "common.schema.json#/definitions/text"
+    },
     "intro": {
       "description": "Parágrafo do topo, abaixo do subtítulo.",
       "$ref": "common.schema.json#/definitions/text"

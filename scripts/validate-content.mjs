@@ -57,7 +57,7 @@ async function checkProfile(profile) {
 function checkSkills({ levels, categories }) {
   categories.forEach((category, categoryIndex) => {
     category.items.forEach((skill, skillIndex) => {
-      if (!Object.hasOwn(levels, skill.level)) {
+      if (skill.level !== undefined && !Object.hasOwn(levels, skill.level)) {
         problems.push(
           `data/skills.json /categories/${categoryIndex}/items/${skillIndex}: nível "${skill.level}" não existe em "levels"`
         );

@@ -2,21 +2,6 @@
   "$schema": "./schemas/experience.schema.json",
   "items": [
     {
-      "title": "Developer",
-      "organization": "Hi Tech Consultoria",
-      "start": "2025-10",
-      "highlights": [
-        {
-          "pt": "A Hi Tech Consultoria é uma empresa júnior sem fins lucrativos da Universidade Tecnológica Federal do Paraná (UTFPR), gerida inteiramente por estudantes.",
-          "en": "Hi Tech Consultoria is a non-profit junior enterprise of the Federal University of Technology - Paraná (UTFPR), fully managed by students."
-        },
-        {
-          "pt": "Como desenvolvedor de software, contribuo para projetos de consultoria em tecnologia que conectam o aprendizado acadêmico à experiência real de mercado.",
-          "en": "As a software developer, I contribute to technology consulting projects that connect academic learning with real market experience."
-        }
-      ]
-    },
-    {
       "title": "Elixir Developer",
       "organization": "Trio",
       "start": "2025-07",
@@ -28,6 +13,21 @@
         {
           "pt": "Minhas responsabilidades diárias envolvem o uso de tecnologias como Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
           "en": "My daily responsibilities involve technologies such as Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
+        }
+      ]
+    },
+    {
+      "title": "Developer",
+      "organization": "Hi Tech Consultoria",
+      "start": "2025-10",
+      "highlights": [
+        {
+          "pt": "A Hi Tech Consultoria é uma empresa júnior sem fins lucrativos da Universidade Tecnológica Federal do Paraná (UTFPR), gerida inteiramente por estudantes.",
+          "en": "Hi Tech Consultoria is a non-profit junior enterprise of the Federal University of Technology - Paraná (UTFPR), fully managed by students."
+        },
+        {
+          "pt": "Como desenvolvedor de software, contribuo para projetos de consultoria em tecnologia que conectam o aprendizado acadêmico à experiência real de mercado.",
+          "en": "As a software developer, I contribute to technology consulting projects that connect academic learning with real market experience."
         }
       ]
     },
@@ -95,21 +95,39 @@
     },
     {
       "title": {
+        "pt": "Técnico de Som e Guitarrista (voluntário)",
+        "en": "Sound Technician and Guitarist (volunteer)"
+      },
+      "organization": "Comunidade Cristã de Curitiba",
+      "start": "2021-06",
+      "highlights": [
+        {
+          "pt": "Atuo voluntariamente como técnico de som/música, como técnico líder, com domínio de equipamentos de áudio de alto padrão.",
+          "en": "I volunteer as a sound/music technician, acting as lead technician and mastering high-standard audio equipment."
+        },
+        {
+          "pt": "Guitarrista desde junho de 2026.",
+          "en": "Guitarist since June 2026."
+        }
+      ]
+    },
+    {
+      "title": {
         "pt": "Cursos Adicionais",
         "en": "Additional Courses"
       },
       "start": "2022",
       "end": "2024",
       "highlights": [
-        "Java COMPLETO: Do Zero ao Profissional - Udemy",
-        "The Ultimate Fullstack Web Development Bootcamp - Udemy",
         "REST API's RESTFul do 0 à AWS c. Spring Boot 3 Java e Docker - Udemy",
-        "SAP Business One B1 Complete Training With Implementation - Udemy",
+        "Java COMPLETO: Do Zero ao Profissional - Udemy",
+        "Fullstack Web Development Bootcamp - Udemy",
+        "SAP CPI Course (SAP Cloud Platform Integration) - Udemy",
         "Introdução SAP Commerce (Hybris) - Udemy",
         "Introduction to SAP Hybris - Udemy",
-        "SAP CPI Course (SAP Cloud Platform Integration) - Udemy",
-        "Linux Workshop - PET-CoCE",
-        "Excel Course - Simplifica Treinamentos"
+        "SAP Business One B1 Complete Training With Implementation - Udemy",
+        "Oficina de Linux - PET-CoCE",
+        "Curso de Excel - Simplifica Treinamentos"
       ]
     }
   ]

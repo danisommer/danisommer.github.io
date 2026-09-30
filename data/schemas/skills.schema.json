@@ -41,7 +41,7 @@
           "body": {
             "title": { "pt": "${1:Categoria}", "en": "${2:Category}" },
             "items": [
-              { "name": "${3:Tecnologia}", "level": "${4:intermediate}" }
+              { "name": "${3:Tecnologia}" }
             ]
           }
         }
@@ -49,7 +49,7 @@
     },
     "skill": {
       "type": "object",
-      "required": ["name", "level"],
+      "required": ["name"],
       "additionalProperties": false,
       "properties": {
         "name": {
@@ -58,13 +58,17 @@
         },
         "level": {
           "type": "string",
-          "description": "Uma das chaves de \"levels\", no topo do arquivo.",
+          "description": "Opcional: uma das chaves de \"levels\", no topo do arquivo. Sem ele, aparece só o nome.",
           "examples": ["basic", "intermediate", "advanced", "fluent", "professional", "native"]
         }
       },
       "defaultSnippets": [
         {
           "label": "Nova habilidade",
+          "body": { "name": "${1:Tecnologia}" }
+        },
+        {
+          "label": "Nova habilidade com nível",
           "body": { "name": "${1:Tecnologia}", "level": "${2:intermediate}" }
         }
       ]

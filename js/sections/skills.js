@@ -80,7 +80,7 @@ function renderCategory(category, levels) {
           "div",
           { class: "skill-item" },
           h("span", { class: "skill-name" }, t(skill.name)),
-          h("span", { class: "skill-level" }, levelLabel(skill.level, levels))
+          skill.level && h("span", { class: "skill-level" }, levelLabel(skill.level, levels))
         )
       )
     )

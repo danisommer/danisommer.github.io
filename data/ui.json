@@ -34,6 +34,9 @@
     "details": { "pt": "Detalhes", "en": "Details" },
     "featuresIntro": { "pt": "Recursos incluem:", "en": "Features include:" },
     "close": { "pt": "Fechar detalhes do projeto", "en": "Close project details" },
+    "status": {
+      "in-progress": { "pt": "Em andamento", "en": "In progress" }
+    },
     "links": {
       "github": { "pt": "GitHub", "en": "GitHub" },
       "demo": { "pt": "Demo Online", "en": "Live Demo" }
@@ -42,6 +45,7 @@
   "contact": {
     "title": { "pt": "Entre em Contato", "en": "Get in Touch" },
     "info": { "pt": "Informações de Contato", "en": "Contact Information" },
+    "location": { "pt": "Localização", "en": "Location" },
     "form": {
       "name": { "pt": "Nome", "en": "Name" },
       "email": { "pt": "E-mail", "en": "Email" },

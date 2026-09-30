@@ -12,49 +12,56 @@
     {
       "title": { "pt": "Linguagens e Frameworks", "en": "Languages and Frameworks" },
       "items": [
-        { "name": "Java (Spring)", "level": "advanced" },
-        { "name": "Elixir", "level": "advanced" },
-        { "name": "Phoenix Framework", "level": "advanced" },
-        { "name": "Groovy", "level": "advanced" },
-        { "name": "Kotlin", "level": "intermediate" },
-        { "name": "Python (Django)", "level": "basic" },
-        { "name": "TypeScript (Spartacus)", "level": "intermediate" },
-        { "name": "JavaScript (Web)", "level": "advanced" },
-        { "name": "React Native", "level": "intermediate" },
-        { "name": "C/C++", "level": "advanced" }
+        { "name": "Elixir" },
+        { "name": "Phoenix Framework" },
+        { "name": "Go" },
+        { "name": "Java (Spring Boot)" },
+        { "name": "Python" },
+        { "name": "SQL" },
+        { "name": "TypeScript" },
+        { "name": "JavaScript" },
+        { "name": "React" },
+        { "name": "C/C++" }
       ]
     },
     {
-      "title": { "pt": "Dados e Infraestrutura", "en": "Data and Infrastructure" },
+      "title": { "pt": "Dados e Mensageria", "en": "Data and Messaging" },
       "items": [
-        { "name": "MySQL", "level": "advanced" },
-        { "name": "PostgreSQL", "level": "advanced" },
-        { "name": "Redis", "level": "intermediate" },
-        { "name": "ClickHouse", "level": "intermediate" },
-        { "name": "Kafka", "level": "intermediate" },
-        { "name": "MongoDB", "level": "basic" },
-        { "name": "AWS", "level": "basic" }
+        { "name": "PostgreSQL" },
+        { "name": "MySQL" },
+        { "name": "MongoDB" },
+        { "name": "Redis" },
+        { "name": "ClickHouse" },
+        { "name": "Apache Kafka / RedPanda" },
+        { "name": "RabbitMQ" }
       ]
     },
     {
-      "title": { "pt": "Idiomas", "en": "Languages" },
+      "title": { "pt": "Arquitetura e Domínio", "en": "Architecture and Domain" },
+      "items": [
+        { "name": { "pt": "Sistemas de pagamento", "en": "Payment systems" } },
+        { "name": { "pt": "Microsserviços", "en": "Microservices" } },
+        { "name": { "pt": "Arquitetura orientada a eventos", "en": "Event-driven architecture" } },
+        { "name": { "pt": "APIs REST", "en": "REST APIs" } }
+      ]
+    },
+    {
+      "title": { "pt": "Infraestrutura e Ferramentas", "en": "Infrastructure and Tools" },
+      "items": [
+        { "name": "Docker" },
+        { "name": "Google Kubernetes Engine" },
+        { "name": "Linux" },
+        { "name": "Git / GitHub" },
+        { "name": "GitHub Actions" },
+        { "name": "Bitbucket" },
+        { "name": "Postman" }
+      ]
+    },
+    {
+      "title": { "pt": "Idiomas", "en": "Spoken Languages" },
       "items": [
         { "name": { "pt": "Inglês", "en": "English" }, "level": "professional" },
         { "name": { "pt": "Português", "en": "Portuguese" }, "level": "native" }
-      ]
-    },
-    {
-      "title": { "pt": "Outras Ferramentas", "en": "Other Tools" },
-      "items": [
-        { "name": "Git/Github", "level": "advanced" },
-        { "name": "Bitbucket", "level": "advanced" },
-        { "name": "Postman", "level": "advanced" },
-        { "name": "Docker", "level": "intermediate" },
-        { "name": "Excel", "level": "intermediate" },
-        { "name": "Linux", "level": "intermediate" },
-        { "name": "SAP CPI", "level": "advanced" },
-        { "name": "SAP Commerce Cloud", "level": "intermediate" },
-        { "name": "SAP Business One", "level": "intermediate" }
       ]
     }
   ]

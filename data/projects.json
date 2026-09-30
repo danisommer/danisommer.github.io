@@ -1,517 +1,395 @@
 {
   "$schema": "./schemas/projects.schema.json",
   "categories": [
-    { "id": "java", "label": "Java" },
-    { "id": "kotlin", "label": "Kotlin" },
-    { "id": "sql", "label": "SQL" },
+    { "id": "go", "label": "Go" },
     { "id": "python", "label": "Python" },
-    { "id": "js", "label": "JavaScript" },
+    { "id": "js", "label": "JavaScript/TypeScript" },
     { "id": "cpp", "label": "C/C++" }
   ],
   "items": [
     {
-      "id": "auto-control-app",
+      "id": "event-driven-ecommerce",
       "title": {
-        "pt": "Aplicativo de Autocontrole Empresarial",
-        "en": "Business Self-Control App"
+        "pt": "E-commerce Orientado a Eventos",
+        "en": "Event-Driven E-commerce"
       },
-      "icon": "fas fa-tasks",
-      "image": "images/projects/auto-control-app.jpg",
-      "categories": ["kotlin", "java", "sql"],
-      "tags": ["Kotlin", "Android", "Java", "SQL"],
+      "icon": "fas fa-network-wired",
+      "image": "images/projects/event-driven-ecommerce.png",
+      "categories": ["go"],
+      "tags": ["Go", "RabbitMQ", "Microservices", "RSA", "Docker"],
       "summary": {
-        "pt": "Um aplicativo de controle de negócios para Android desenvolvido com Kotlin e Java usando banco de dados SQL. Gerencia dados e processos empresariais com uma interface intuitiva, otimizando as operações diárias.",
-        "en": "A business control app for Android developed with Kotlin and Java using an SQL database. It manages business data and processes with an intuitive interface, optimizing daily operations."
+        "pt": "Backend de e-commerce em Go dividido em microsserviços que se comunicam apenas por eventos no RabbitMQ, com cada evento assinado digitalmente (RSA) e validado por quem o recebe.",
+        "en": "E-commerce backend in Go split into microservices that communicate only through RabbitMQ events, with every event digitally signed (RSA) and verified by its consumer."
       },
       "details": {
         "intro": {
-          "pt": "Aplicativo para controle empresarial desenvolvido com Kotlin e Java para Android, utilizando banco de dados SQL.",
-          "en": "Business control application developed with Kotlin and Java for Android, using SQL database."
+          "pt": "Nenhum processo chama outro diretamente: pedidos, estoque, pagamento, entrega e promoções se coordenam só por eventos. Projeto desenvolvido em dupla.",
+          "en": "No process calls another directly: orders, inventory, payment, shipping, and promotions coordinate only through events. Built as a two-person project."
         },
         "features": [
           {
-            "pt": "Desenvolvimento de um aplicativo de autocontrole empresarial para Android.",
-            "en": "Development of a business self-control application for Android."
+            "pt": "Sete processos independentes ligados por uma exchange direct (fluxo do pedido) e uma topic (promoções por categoria).",
+            "en": "Seven independent processes connected by a direct exchange (order flow) and a topic exchange (promotions by category)."
           },
           {
-            "pt": "Implementação utilizando Kotlin e Java com banco de dados SQL.",
-            "en": "Implementation using Kotlin and Java with SQL database."
+            "pt": "Eventos assinados com RSA e verificados por quem os consome.",
+            "en": "Events signed with RSA and verified by their consumers."
           },
           {
-            "pt": "Funcionalidades de gerenciamento de dados empresariais e controle de processos.",
-            "en": "Business data management and process control functionalities."
+            "pt": "Compensação: pedido cancelado (sem estoque, pagamento recusado ou exclusão) devolve ao estoque o que estava reservado.",
+            "en": "Compensation: a cancelled order (out of stock, payment declined, or deleted) returns reserved items to inventory."
           },
           {
-            "pt": "Interface intuitiva e eficiente para facilitar a operação diária.",
-            "en": "Intuitive and efficient interface to facilitate daily operations."
+            "pt": "Fila durável por serviço e retentativa de conexão com o broker na inicialização.",
+            "en": "One durable queue per service and broker connection retries on startup."
           },
           {
-            "pt": "Habilidades: Kotlin, Android, Java, SQL, Git, Desenvolvimento Mobile.",
-            "en": "Skills: Kotlin, Android, Java, SQL, Git, Mobile Development."
+            "pt": "Minha parte: serviços Principal (menu e acompanhamento dos pedidos), Estoque e Pagamento.",
+            "en": "My part: the Main (menu and order tracking), Inventory, and Payment services."
           }
         ],
         "outro": {
-          "pt": "Este aplicativo foi desenvolvido para otimizar o controle e a gestão de processos empresariais, proporcionando uma solução móvel completa.",
-          "en": "This application was developed to optimize the control and management of business processes, providing a complete mobile solution."
+          "pt": "O RabbitMQ sobe via Docker Compose e cada serviço roda em seu próprio processo, com comandos make.",
+          "en": "RabbitMQ runs via Docker Compose and each service runs as its own process, started with make commands."
         }
       },
       "links": {
-        "github": "https://github.com/danisommer/AutoControlApp"
+        "github": "https://github.com/danisommer/sistemas-distribuidos"
       }
     },
     {
-      "id": "dashboard-app",
+      "id": "cg-image-reconstruction",
       "title": {
-        "pt": "App de Dashboard",
-        "en": "Dashboard App"
+        "pt": "Reconstrução de Imagens: Python × Go",
+        "en": "Image Reconstruction: Python vs Go"
+      },
+      "icon": "fas fa-wave-square",
+      "categories": ["go", "python"],
+      "tags": ["Go", "Python", "CGNE/CGNR", "HTTP", "Benchmark"],
+      "summary": {
+        "pt": "Reconstrói imagens a partir de sinais com os métodos de gradiente conjugado CGNE e CGNR, implementados em um servidor Python e em outro em Go, ambos só com a biblioteca padrão, para comparar desempenho.",
+        "en": "Reconstructs images from signal data with the CGNE and CGNR conjugate-gradient methods, implemented in a Python server and a Go server, both using only the standard library, to compare performance."
+      },
+      "details": {
+        "intro": {
+          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída.",
+          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image."
+        },
+        "features": [
+          {
+            "pt": "CGNE e CGNR implementados do zero em Python e em Go, com parada por erro (ε < 1e-4) ou limite de iterações.",
+            "en": "CGNE and CGNR implemented from scratch in Python and Go, stopping on error (ε < 1e-4) or an iteration limit."
+          },
+          {
+            "pt": "Servidores HTTP e encoder PNG próprios, sem dependências externas, com os metadados da reconstrução gravados no próprio PNG.",
+            "en": "Custom HTTP servers and PNG encoder with no external dependencies, writing the reconstruction metadata into the PNG itself."
+          },
+          {
+            "pt": "Medição de CPU e pico de memória em cada reconstrução.",
+            "en": "CPU time and peak memory measured for every reconstruction."
+          },
+          {
+            "pt": "Cliente que reexecuta a mesma sequência contra os dois servidores e gera relatórios em PDF com tempos, speedup e reconstruções por segundo.",
+            "en": "A client that replays the same sequence against both servers and generates PDF reports with timings, speedup, and reconstructions per second."
+          }
+        ]
+      },
+      "links": {
+        "github": "https://github.com/danisommer/cg-image-reconstruction"
+      }
+    },
+    {
+      "id": "compass-plus",
+      "title": "Compass+",
+      "icon": "fas fa-compass",
+      "image": "images/projects/compass-plus.png",
+      "categories": ["js"],
+      "tags": ["TypeScript", "Vite", "PDF.js", "GitHub Actions"],
+      "summary": {
+        "pt": "Planejador acadêmico para alunos da UTFPR: lê os PDFs do Portal do Aluno (matriz, histórico e turmas abertas) e gera grades de horário sem conflito, tudo no navegador.",
+        "en": "Course planner for UTFPR students: it reads the student portal PDFs (curriculum, transcript, and open classes) and generates conflict-free schedules, all in the browser."
+      },
+      "details": {
+        "intro": {
+          "pt": "Ferramenta web que transforma os PDFs do Portal do Aluno em um plano de semestre, processando tudo localmente, sem enviar dados a servidores.",
+          "en": "A web tool that turns the student portal PDFs into a semester plan, processing everything locally without sending data to any server."
+        },
+        "features": [
+          {
+            "pt": "Leitura dos três PDFs (matriz curricular, histórico escolar e turmas abertas) com PDF.js.",
+            "en": "Parsing of the three PDFs (curriculum, transcript, and open classes) with PDF.js."
+          },
+          {
+            "pt": "Etapa de resolução de divergências entre os documentos antes do planejamento.",
+            "en": "A step to resolve inconsistencies between the documents before planning."
+          },
+          {
+            "pt": "Motor de alocação que monta grades sem conflito de horário e considera a carga horária de trabalho informada.",
+            "en": "An allocation engine that builds conflict-free schedules and takes the declared working hours into account."
+          },
+          {
+            "pt": "Preferências ajustáveis, comparação de grades e cópia do plano escolhido.",
+            "en": "Adjustable preferences, schedule comparison, and copying of the chosen plan."
+          },
+          {
+            "pt": "Deploy no GitHub Pages e análise de código com CodeQL via GitHub Actions.",
+            "en": "Deployed to GitHub Pages, with CodeQL code analysis via GitHub Actions."
+          }
+        ]
+      },
+      "links": {
+        "github": "https://github.com/danisommer/compass-plus",
+        "demo": "https://danisommer.github.io/compass-plus/"
+      }
+    },
+    {
+      "id": "knights-quest",
+      "title": "Knight's Quest",
+      "icon": "fas fa-gamepad",
+      "image": "images/projects/platform-game.jpg",
+      "categories": ["cpp"],
+      "tags": ["C++", "SFML", "OOP", "CMake"],
+      "summary": {
+        "pt": "Jogo de plataforma 2D em C++ com SFML: co-op local, inimigos, chefão, sistema de combate, árvore de habilidades, save e ranking.",
+        "en": "2D platformer in C++ with SFML: local co-op, enemies, a boss, a combat system, a skill tree, saves, and a ranking."
+      },
+      "details": {
+        "intro": {
+          "pt": "Jogo de plataforma com rolagem lateral construído do zero em C++ com a biblioteca SFML, com cerca de 9 mil linhas organizadas em orientação a objetos.",
+          "en": "A side-scrolling platformer built from scratch in C++ with the SFML library, with about 9,000 lines organized with object-oriented design."
+        },
+        "features": [
+          {
+            "pt": "Modo cooperativo local para dois jogadores.",
+            "en": "Local cooperative mode for two players."
+          },
+          {
+            "pt": "Inimigos com comportamentos distintos e chefão com projéteis e portais.",
+            "en": "Enemies with distinct behaviors and a boss with projectiles and portals."
+          },
+          {
+            "pt": "Sistema de combate e árvore de habilidades.",
+            "en": "Combat system and skill tree."
+          },
+          {
+            "pt": "Gerenciadores de estados, eventos, colisões, gráficos e recursos, com fases carregadas de arquivo e geração procedural de plataformas.",
+            "en": "State, event, collision, graphics, and resource managers, with levels loaded from files and procedural platform generation."
+          },
+          {
+            "pt": "Save, carregamento e ranking de pontuação.",
+            "en": "Save, load, and score ranking."
+          }
+        ],
+        "outro": {
+          "pt": "Desenvolvido com modelagem UML e documentado em relatório técnico.",
+          "en": "Designed with UML models and documented in a technical report."
+        }
+      },
+      "links": {
+        "github": "https://github.com/danisommer/sfml-platformer"
+      }
+    },
+    {
+      "id": "text-to-sql",
+      "title": {
+        "pt": "Text-to-SQL com Llama",
+        "en": "Text-to-SQL with Llama"
+      },
+      "icon": "fas fa-robot",
+      "categories": ["python"],
+      "tags": ["Python", "Llama 3.2", "Transformers", "MySQL", "PostgreSQL"],
+      "summary": {
+        "pt": "Converte perguntas em português em consultas SQL com o Llama 3.2 e as executa em bancos MySQL ou PostgreSQL.",
+        "en": "Turns questions in Portuguese into SQL queries with Llama 3.2 and runs them on MySQL or PostgreSQL databases."
+      },
+      "details": {
+        "intro": {
+          "pt": "Aplicação de linha de comando que usa um modelo de linguagem local para gerar SQL a partir de linguagem natural, com base no schema real do banco.",
+          "en": "A command-line application that uses a local language model to generate SQL from natural language, based on the database's real schema."
+        },
+        "features": [
+          {
+            "pt": "Conexão com MySQL e PostgreSQL e leitura automática do schema: tabelas, colunas, tipos, chaves primárias e estrangeiras.",
+            "en": "Connects to MySQL and PostgreSQL and reads the schema automatically: tables, columns, types, primary and foreign keys."
+          },
+          {
+            "pt": "Prompt montado com o schema para o Llama 3.2 (Hugging Face Transformers), com extração do SQL da resposta do modelo.",
+            "en": "Schema-aware prompt for Llama 3.2 (Hugging Face Transformers), with SQL extraction from the model's answer."
+          },
+          {
+            "pt": "Versão alternativa com parser baseado em regras (similaridade de palavras, joins e múltiplas condições), sem IA.",
+            "en": "An alternative rule-based parser (word similarity, joins, and multiple conditions) that works without AI."
+          },
+          {
+            "pt": "Execução da consulta e exibição dos resultados em tabela no terminal.",
+            "en": "Runs the query and prints the results as a table in the terminal."
+          }
+        ]
+      },
+      "links": {
+        "github": "https://github.com/danisommer/llama-text-to-sql"
+      }
+    },
+    {
+      "id": "grafo-quest",
+      "title": "GrafoQuest",
+      "icon": "fas fa-project-diagram",
+      "categories": ["js"],
+      "tags": ["React", "D3.js", "Tailwind CSS", "Zustand", "Framer Motion"],
+      "summary": {
+        "pt": "Jogo educativo para aprender teoria dos grafos e algoritmos (Dijkstra, BFS/DFS, Prim, Kruskal, ordenação topológica e outros) com visualizações passo a passo.",
+        "en": "Educational game for learning graph theory and algorithms (Dijkstra, BFS/DFS, Prim, Kruskal, topological sort, and more) with step-by-step visualizations."
+      },
+      "details": {
+        "intro": {
+          "pt": "Criado para a disciplina de Projeto e Análise de Algoritmos da UTFPR: jogável só com o mouse e 100% offline.",
+          "en": "Built for UTFPR's Design and Analysis of Algorithms course: playable with the mouse only and 100% offline."
+        },
+        "features": [
+          {
+            "pt": "Missões: campanha com 12 fases.",
+            "en": "Missions: a 12-level campaign."
+          },
+          {
+            "pt": "Arena de Algoritmos: monte o algoritmo arrastando blocos de pseudocódigo.",
+            "en": "Algorithm Arena: assemble the algorithm by dragging pseudocode blocks."
+          },
+          {
+            "pt": "Laboratório de Grafos: construa o grafo e execute os algoritmos passo a passo.",
+            "en": "Graph Lab: build the graph and run the algorithms step by step."
+          },
+          {
+            "pt": "Visualizações em SVG com D3.js e progresso salvo no navegador.",
+            "en": "SVG visualizations with D3.js and progress saved in the browser."
+          }
+        ]
+      },
+      "links": {
+        "github": "https://github.com/danisommer/grafo-quest"
+      }
+    },
+    {
+      "id": "tsp-metaheuristics",
+      "title": {
+        "pt": "Caixeiro Viajante: Têmpera Simulada × Genético",
+        "en": "Traveling Salesman: Simulated Annealing vs Genetic"
+      },
+      "icon": "fas fa-route",
+      "image": "images/projects/tsp-metaheuristics.png",
+      "status": "in-progress",
+      "categories": ["python"],
+      "tags": ["Python", "NumPy", "Matplotlib", "Metaheuristics"],
+      "summary": {
+        "pt": "Compara têmpera simulada e algoritmo genético no problema do caixeiro viajante, com experimentos de 20 a 100 cidades e gráficos de convergência.",
+        "en": "Compares simulated annealing and a genetic algorithm on the traveling salesman problem, with experiments from 20 to 100 cities and convergence charts."
+      },
+      "details": {
+        "intro": {
+          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo.",
+          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper."
+        },
+        "features": [
+          {
+            "pt": "Têmpera simulada e algoritmo genético implementados do zero, com a heurística do vizinho mais próximo como referência.",
+            "en": "Simulated annealing and a genetic algorithm implemented from scratch, with the nearest-neighbor heuristic as a baseline."
+          },
+          {
+            "pt": "Experimentos com 20, 50 e 100 cidades e análise de sensibilidade de parâmetros.",
+            "en": "Experiments with 20, 50, and 100 cities and parameter sensitivity analysis."
+          },
+          {
+            "pt": "Visualização da evolução da melhor rota, da convergência da população e comparativo entre os métodos.",
+            "en": "Visualization of the best route's evolution, population convergence, and a comparison between the methods."
+          }
+        ]
+      },
+      "links": {
+        "github": "https://github.com/danisommer/tsp"
+      }
+    },
+    {
+      "id": "system-monitor-dashboard",
+      "title": {
+        "pt": "Monitor de Sistema em Tempo Real",
+        "en": "Real-Time System Monitor"
       },
       "icon": "fas fa-chart-line",
       "image": "images/projects/dashboard-app.jpg",
       "categories": ["python", "cpp"],
-      "tags": ["Python", "C++", "GUI", "Data Visualization"],
+      "tags": ["Python", "C++", "Tkinter", "Matplotlib", "Linux"],
       "summary": {
-        "pt": "Monitoramento de métricas de sistema em tempo real com uma GUI Python e backend C++.",
-        "en": "Real-time system metrics monitoring with a Python GUI and C++ backend."
+        "pt": "Monitoramento de métricas do sistema em tempo real, com interface em Python (Tkinter e Matplotlib) e coleta de dados em C++ exposta como biblioteca compartilhada.",
+        "en": "Real-time system metrics monitoring, with a Python interface (Tkinter and Matplotlib) and C++ data collection exposed as a shared library."
       },
       "details": {
         "intro": {
-          "pt": "Aplicativo de monitoramento de métricas de sistema em tempo real com frontend Python e backend C++.",
-          "en": "Real-time system metrics monitoring application with Python frontend and C++ backend."
+          "pt": "Painel para Linux que combina a velocidade de C++ na coleta de dados com a praticidade de Python na interface.",
+          "en": "A Linux dashboard that combines C++ speed for data collection with Python convenience for the interface."
         },
         "features": [
           {
-            "pt": "Desenvolvimento de um painel para monitoramento de métricas do sistema em tempo real.",
-            "en": "Development of a dashboard for real-time system metrics monitoring."
+            "pt": "Coleta em C++ via /proc, sysinfo e statvfs: CPU, memória, disco (uso, leitura e escrita), load average, uptime, processos e threads.",
+            "en": "C++ collection via /proc, sysinfo, and statvfs: CPU, memory, disk (usage, reads, and writes), load average, uptime, processes, and threads."
           },
           {
-            "pt": "Interface gráfica desenvolvida em Python com backend em C++.",
-            "en": "Graphical interface developed in Python with C++ backend."
+            "pt": "Biblioteca compartilhada (.so) consumida pela interface em Python.",
+            "en": "A shared library (.so) consumed by the Python interface."
           },
           {
-            "pt": "Visualização de dados de desempenho do sistema em tempo real.",
-            "en": "Real-time system performance data visualization."
+            "pt": "Gráficos em tempo real com Matplotlib embutido no Tkinter, atualizados em threads separadas.",
+            "en": "Real-time Matplotlib charts embedded in Tkinter, updated on separate threads."
           },
           {
-            "pt": "Monitoramento de recursos como CPU, memória, disco e rede.",
-            "en": "Monitoring of resources such as CPU, memory, disk and network."
-          },
-          {
-            "pt": "Alertas configuráveis para situações críticas de desempenho.",
-            "en": "Configurable alerts for critical performance situations."
+            "pt": "Árvore de processos com detalhes (informações básicas, threads e recursos) e opção de encerrar processos.",
+            "en": "Process tree with details (basic info, threads, and resources) and the option to kill processes."
           }
-        ],
-        "outro": {
-          "pt": "Criado para oferecer uma visão clara e objetiva do desempenho do sistema em tempo real.",
-          "en": "Created to provide a clear and objective view of system performance in real time."
-        }
+        ]
       },
       "links": {
-        "github": "https://github.com/danisommer/python-dashboard"
+        "github": "https://github.com/danisommer/system-monitor-dashboard"
       }
     },
     {
-      "id": "platform-game",
-      "title": {
-        "pt": "Projeto de Jogo de Plataforma",
-        "en": "Platform Game Project"
-      },
-      "icon": "fas fa-gamepad",
-      "image": "images/projects/platform-game.jpg",
-      "categories": ["cpp"],
-      "tags": ["C++", "SFML", "OOP", "UML", "Game Development"],
-      "summary": {
-        "pt": "Jogo de plataforma completo em C++ usando SFML, empregando Programação Orientada a Objetos e modelos UML.",
-        "en": "Complete platform game in C++ using SFML, employing Object-Oriented Programming and UML models."
-      },
-      "details": {
-        "intro": {
-          "pt": "Jogo de plataforma 2D desenvolvido em C++ utilizando a biblioteca SFML.",
-          "en": "2D platform game developed in C++ using the SFML library."
-        },
-        "features": [
-          {
-            "pt": "Desenvolvimento de um jogo de plataforma em C++.",
-            "en": "Development of a platform game in C++."
-          },
-          {
-            "pt": "Utilização da biblioteca SFML para gráficos e física do jogo.",
-            "en": "Use of the SFML library for graphics and game physics."
-          },
-          {
-            "pt": "Implementação de princípios de programação orientada a objetos.",
-            "en": "Implementation of object-oriented programming principles."
-          },
-          {
-            "pt": "Design de níveis e mecânicas de jogo envolventes.",
-            "en": "Level design and engaging game mechanics."
-          },
-          {
-            "pt": "Modelagem do projeto utilizando UML para organização do código.",
-            "en": "Project modeling using UML for code organization."
-          }
-        ],
-        "outro": {
-          "pt": "Este projeto demonstra conhecimentos avançados em C++, padrões de design, e desenvolvimento de jogos.",
-          "en": "This project demonstrates advanced knowledge in C++, design patterns, and game development."
-        }
-      },
-      "links": {
-        "github": "https://github.com/danisommer/JOGO-PLATAFORMA"
-      }
-    },
-    {
-      "id": "video-streaming",
-      "title": {
-        "pt": "Site de Streaming de Vídeo",
-        "en": "Video Streaming Website"
-      },
-      "icon": "fas fa-video",
-      "image": "images/projects/video-streaming.jpg",
-      "categories": ["java", "js"],
-      "tags": ["Java", "Spring Boot", "MongoDB", "React.js", "AWS S3"],
-      "summary": {
-        "pt": "Contribuição para backend em Java (Spring Boot) com MongoDB, e frontend em React.js.",
-        "en": "Contribution to backend in Java (Spring Boot) with MongoDB, and frontend in React.js."
-      },
-      "details": {
-        "intro": {
-          "pt": "Plataforma de streaming de vídeo com backend Java (Spring Boot) e MongoDB, com frontend React.js.",
-          "en": "Video streaming platform with Java backend (Spring Boot) and MongoDB, with React.js frontend."
-        },
-        "features": [
-          {
-            "pt": "Participação no desenvolvimento do frontend de um clone funcional do YouTube.",
-            "en": "Participation in the frontend development of a functional YouTube clone."
-          },
-          {
-            "pt": "Frontend desenvolvido em React.js e backend em Java com MongoDB.",
-            "en": "Frontend developed in React.js and backend in Java with MongoDB."
-          },
-          {
-            "pt": "Funcionalidades de upload, streaming e gerenciamento de vídeos.",
-            "en": "Video upload, streaming and management functionalities."
-          },
-          {
-            "pt": "Sistema de usuários com perfis, inscrições e interações.",
-            "en": "User system with profiles, subscriptions and interactions."
-          },
-          {
-            "pt": "Integração com serviços de armazenamento em nuvem para conteúdo de vídeo.",
-            "en": "Integration with cloud storage services for video content."
-          }
-        ],
-        "outro": {
-          "pt": "Desenvolvido como um projeto colaborativo para criar uma alternativa de código aberto para plataformas de streaming de vídeo.",
-          "en": "Developed as a collaborative project to create an open-source alternative to video streaming platforms."
-        }
-      },
-      "links": {
-        "github": "https://github.com/HunterNicky/TikTube"
-      }
-    },
-    {
-      "id": "progressive-metronome",
+      "id": "smart-metronome",
       "title": {
         "pt": "Metrônomo Progressivo",
         "en": "Progressive Metronome"
       },
       "icon": "fas fa-music",
-      "image": "images/projects/progressive-metronome.png",
+      "image": "images/projects/smart-metronome.png",
       "categories": ["js"],
-      "tags": ["HTML/CSS/JS", "Tone.js", "Tailwind CSS", "Web Audio API"],
+      "tags": ["JavaScript", "Tone.js", "Tailwind CSS", "Web Audio API"],
       "summary": {
-        "pt": "O Metrônomo Progressivo é uma ferramenta online que ajuda músicos a desenvolver velocidade técnica, aumentando o tempo automaticamente até atingir o BPM desejado. Permite personalizar tempo, compasso, incrementos e oferece feedback visual. É responsivo e feito com HTML, JavaScript, Tone.js e Tailwind CSS.",
-        "en": "The Progressive Speed Metronome is an online tool that helps musicians develop technical speed by automatically increasing the tempo until reaching the desired BPM. It allows customization of tempo, time signature, increments, and provides visual feedback. It's responsive and built with HTML, JavaScript, Tone.js, and Tailwind CSS."
+        "pt": "Metrônomo web com treino progressivo de andamento: aumenta o BPM automaticamente até a meta, com tap tempo, sons personalizáveis, visualização dos tempos e histórico de sessões.",
+        "en": "Web metronome with progressive tempo training: it raises the BPM automatically up to a target, with tap tempo, customizable sounds, beat visualization, and session history."
       },
       "details": {
         "intro": {
-          "pt": "O Progressive Speed Metronome é uma ferramenta web interativa projetada para músicos que desejam melhorar sua velocidade técnica.",
-          "en": "The Progressive Speed Metronome is an interactive web tool designed for musicians who want to improve their technical speed."
+          "pt": "Ferramenta para músicos ganharem velocidade técnica de forma gradual, usada direto no navegador.",
+          "en": "A tool for musicians to build technical speed gradually, used right in the browser."
         },
         "features": [
           {
-            "pt": "Aumenta automaticamente o tempo até atingir o BPM alvo desejado.",
-            "en": "Automatically increases tempo until reaching the desired target BPM."
+            "pt": "Modo progressivo que aumenta o andamento até o BPM alvo.",
+            "en": "Progressive mode that raises the tempo up to the target BPM."
           },
           {
-            "pt": "Interface responsiva e amigável desenvolvida com HTML, CSS e JavaScript.",
-            "en": "Responsive and user-friendly interface developed with HTML, CSS, and JavaScript."
+            "pt": "Tap tempo, sons selecionáveis e acento no primeiro tempo do compasso.",
+            "en": "Tap tempo, selectable sounds, and an accent on the first beat of the measure."
           },
           {
-            "pt": "Utiliza Tone.js para sincronização precisa de tempo e geração de sons.",
-            "en": "Uses Tone.js for precise time synchronization and sound generation."
+            "pt": "Agendamento preciso dos cliques com Tone.js (Web Audio API).",
+            "en": "Precise click scheduling with Tone.js (Web Audio API)."
           },
           {
-            "pt": "Personalize o tempo inicial e final, compasso e incrementos de progressão.",
-            "en": "Customize starting and ending tempo, time signature, and progression increments."
-          },
-          {
-            "pt": "Feedback visual do andamento atual e progresso em direção ao objetivo.",
-            "en": "Visual feedback of current tempo and progress towards the goal."
-          },
-          {
-            "pt": "Design moderno com Tailwind CSS para uma experiência de usuário otimizada.",
-            "en": "Modern design with Tailwind CSS for an optimized user experience."
+            "pt": "Histórico de sessões salvo no navegador e atalhos de teclado.",
+            "en": "Session history saved in the browser and keyboard shortcuts."
           }
-        ],
-        "outro": {
-          "pt": "Ferramenta perfeita para praticar escalas, exercícios técnicos e passagens musicais difíceis, ajudando músicos a desenvolver velocidade gradualmente e de forma disciplinada.",
-          "en": "Perfect tool for practicing scales, technical exercises, and difficult musical passages, helping musicians develop speed gradually and in a disciplined manner."
-        }
+        ]
       },
       "links": {
-        "github": "https://github.com/danisommer/METRONOME-SITE",
-        "demo": "https://danisommer.github.io/METRONOME-SITE/"
-      }
-    },
-    {
-      "id": "task-management",
-      "title": {
-        "pt": "Sistema de Gerenciamento de Tarefas",
-        "en": "Task Management System"
-      },
-      "icon": "fas fa-tasks",
-      "image": "images/projects/task-management.jpg",
-      "categories": ["java", "sql", "js"],
-      "tags": ["Java", "Spring Boot", "MySQL", "HTML/CSS/JS", "CRUD"],
-      "summary": {
-        "pt": "Sistema de gerenciamento de tarefas construído com Java (Spring Boot) e MySQL para backend, usando HTML, CSS e JavaScript para frontend.",
-        "en": "Task management system built with Java (Spring Boot) and MySQL for backend, using HTML, CSS and JavaScript for frontend."
-      },
-      "details": {
-        "intro": {
-          "pt": "Sistema completo de gerenciamento de tarefas construído com Java (Spring Boot) e MySQL para backend, e HTML, CSS e JavaScript para o frontend.",
-          "en": "Complete task management system built with Java (Spring Boot) and MySQL for backend, and HTML, CSS and JavaScript for frontend."
-        },
-        "features": [
-          {
-            "pt": "Backend em Java com Spring Boot e banco de dados MySQL.",
-            "en": "Java backend with Spring Boot and MySQL database."
-          },
-          {
-            "pt": "Implementação de APIs RESTful para operações CRUD.",
-            "en": "Implementation of RESTful APIs for CRUD operations."
-          },
-          {
-            "pt": "Frontend desenvolvido com HTML, CSS e JavaScript.",
-            "en": "Frontend developed with HTML, CSS and JavaScript."
-          },
-          {
-            "pt": "Funcionalidades: adição, edição, marcação de conclusão e exclusão de tarefas.",
-            "en": "Features: adding, editing, completion marking and deletion of tasks."
-          },
-          {
-            "pt": "Filtros por nome, data e status, além de notificações automáticas por e-mail.",
-            "en": "Filters by name, date and status, as well as automatic email notifications."
-          }
-        ],
-        "outro": {
-          "pt": "Este projeto foi desenvolvido como uma solução para gerenciar tarefas de forma eficiente, permitindo aos usuários organizar seu trabalho e aumentar sua produtividade.",
-          "en": "This project was developed as a solution to efficiently manage tasks, allowing users to organize their work and increase productivity."
-        }
-      },
-      "links": {
-        "github": "https://github.com/danisommer/TASK-MANAGEMENT-SYSTEM"
-      }
-    },
-    {
-      "id": "inventory-management",
-      "title": {
-        "pt": "Sistema de Gerenciamento de Inventário",
-        "en": "Inventory Management System"
-      },
-      "icon": "fas fa-boxes",
-      "image": "images/projects/inventory-management.jpg",
-      "categories": ["js", "sql"],
-      "tags": ["Node.js", "Express.js", "React.js", "MySQL", "bcrypt", "JWT"],
-      "summary": {
-        "pt": "Desenvolvido usando Node.js (Express.js) e MySQL para backend, e React.js para frontend. Inclui autenticação com bcrypt e JWT.",
-        "en": "Developed using Node.js (Express.js) and MySQL for backend, and React.js for frontend. Includes authentication with bcrypt and JWT."
-      },
-      "details": {
-        "intro": {
-          "pt": "Sistema de gerenciamento de inventário desenvolvido usando Node.js (Express.js) e MySQL para backend, e React.js para frontend.",
-          "en": "Inventory management system developed using Node.js (Express.js) and MySQL for backend, and React.js for frontend."
-        },
-        "features": [
-          {
-            "pt": "Desenvolvimento de um sistema de gerenciamento de estoque.",
-            "en": "Development of a stock management system."
-          },
-          {
-            "pt": "Backend utilizando Node.js e Express.js, com banco de dados MySQL.",
-            "en": "Backend using Node.js and Express.js, with MySQL database."
-          },
-          {
-            "pt": "Frontend em React.js com Axios para requisições HTTP.",
-            "en": "Frontend in React.js with Axios for HTTP requests."
-          },
-          {
-            "pt": "Autenticação segura com bcrypt (criptografia de senha) e JWT (gerenciamento de sessão).",
-            "en": "Secure authentication with bcrypt (password encryption) and JWT (session management)."
-          },
-          {
-            "pt": "Funcionalidades CRUD para gerenciamento de usuários e materiais.",
-            "en": "CRUD functionalities for user and material management."
-          }
-        ],
-        "outro": {
-          "pt": "Implementado para empresas que buscam otimizar o controle de estoque e melhorar a eficiência operacional.",
-          "en": "Implemented for companies looking to optimize inventory control and improve operational efficiency."
-        }
-      },
-      "links": {
-        "github": "https://github.com/danisommer/API-ESTOQUES"
-      }
-    },
-    {
-      "id": "timecard-app",
-      "title": {
-        "pt": "App de Transcrição de Cartão de Ponto",
-        "en": "Timecard Transcription App"
-      },
-      "icon": "fas fa-file-alt",
-      "image": "images/projects/timecard-app.jpg",
-      "categories": ["python"],
-      "tags": ["Python", "PDF Processing", "CSV", "Data Extraction"],
-      "summary": {
-        "pt": "Desenvolvido em Python para converter dados de cartão de ponto de PDFs para CSV.",
-        "en": "Developed in Python to convert timecard data from PDFs to CSV."
-      },
-      "details": {
-        "intro": {
-          "pt": "Aplicativo Python que extrai dados de cartão de ponto em PDFs e converte para formato CSV.",
-          "en": "Python application that extracts timecard data from PDFs and converts to CSV format."
-        },
-        "features": [
-          {
-            "pt": "Programa em Python para leitura de arquivos PDF e inserção de dados em uma planilha Excel.",
-            "en": "Python program for reading PDF files and inserting data into an Excel spreadsheet."
-          },
-          {
-            "pt": "Automação do processamento de dados e exportação eficiente para Excel.",
-            "en": "Automation of data processing and efficient export to Excel."
-          },
-          {
-            "pt": "Extração precisa de informações de horas trabalhadas a partir de documentos.",
-            "en": "Accurate extraction of working hours information from documents."
-          },
-          {
-            "pt": "Interface simples e eficiente para facilitar o uso.",
-            "en": "Simple and efficient interface for ease of use."
-          },
-          {
-            "pt": "Otimização de processos de RH, reduzindo o tempo de processamento manual.",
-            "en": "Optimization of HR processes, reducing manual processing time."
-          }
-        ],
-        "outro": {
-          "pt": "Desenvolvido para otimizar processos de RH, reduzindo significativamente o tempo de processamento manual de cartões de ponto.",
-          "en": "Developed to optimize HR processes, significantly reducing the manual processing time of timecards."
-        }
-      },
-      "links": {
-        "github": "https://github.com/danisommer/LEITOR-DE-CARTAO-PONTO"
-      }
-    },
-    {
-      "id": "login-page",
-      "title": {
-        "pt": "Página de Login",
-        "en": "Login Page"
-      },
-      "icon": "fas fa-sign-in-alt",
-      "image": "images/projects/login-page.jpg",
-      "categories": ["js", "sql"],
-      "tags": ["React.js", "Express.js", "SQLite", "JWT", "bcrypt"],
-      "summary": {
-        "pt": "Desenvolvida com React.js no frontend e Express.js com SQLite no backend. Inclui autenticação segura com bcrypt e JWT.",
-        "en": "Developed with React.js on the frontend and Express.js with SQLite on the backend. Includes secure authentication with bcrypt and JWT."
-      },
-      "details": {
-        "intro": {
-          "pt": "Página de login desenvolvida com React.js no frontend e Express.js com SQLite no backend.",
-          "en": "Login page developed with React.js on the frontend and Express.js with SQLite on the backend."
-        },
-        "features": [
-          {
-            "pt": "Criação de uma página de login utilizando React.js no frontend.",
-            "en": "Creation of a login page using React.js on the frontend."
-          },
-          {
-            "pt": "Backend desenvolvido com Express.js e SQLite.",
-            "en": "Backend developed with Express.js and SQLite."
-          },
-          {
-            "pt": "Autenticação segura com JWT e bcrypt para proteção de credenciais.",
-            "en": "Secure authentication with JWT and bcrypt for credential protection."
-          },
-          {
-            "pt": "Interface de usuário responsiva e intuitiva.",
-            "en": "Responsive and intuitive user interface."
-          },
-          {
-            "pt": "Gestão eficiente de sessões de usuário.",
-            "en": "Efficient user session management."
-          }
-        ],
-        "outro": {
-          "pt": "Ideal para projetos que necessitam de um sistema seguro e eficiente de login e gerenciamento de usuários.",
-          "en": "Ideal for projects that need a secure and efficient login and user management system."
-        }
-      },
-      "links": {
-        "github": "https://github.com/danisommer/PAGINA-LOGIN"
-      }
-    },
-    {
-      "id": "voting-system",
-      "title": {
-        "pt": "Sistema de Votação",
-        "en": "Voting System"
-      },
-      "icon": "fas fa-vote-yea",
-      "image": "images/projects/voting-system.jpg",
-      "categories": ["js", "sql"],
-      "tags": ["Node.js", "Express.js", "React.js", "MySQL", "RESTful API"],
-      "summary": {
-        "pt": "Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend. Inclui autenticação de usuários, verificação de votos para evitar duplicidade, dashboard para visualização de resultados em tempo real e API RESTful para integração.",
-        "en": "Online voting system developed with Node.js (Express) and MySQL for backend, and React.js for frontend. Includes user authentication, vote verification to avoid duplication, dashboard for real-time results visualization, and RESTful API for integration."
-      },
-      "details": {
-        "intro": {
-          "pt": "Sistema de votação online desenvolvido com Node.js (Express) e MySQL para backend, e React.js para frontend.",
-          "en": "Online voting system developed with Node.js (Express) and MySQL for backend, and React.js for frontend."
-        },
-        "features": [
-          {
-            "pt": "Desenvolvimento de uma página para enquetes com React.js no frontend.",
-            "en": "Development of a poll page with React.js on the frontend."
-          },
-          {
-            "pt": "Backend construído com Express.js e MySQL.",
-            "en": "Backend built with Express.js and MySQL."
-          },
-          {
-            "pt": "Autenticação de usuários e verificação de votos para evitar duplicidade.",
-            "en": "User authentication and vote verification to avoid duplication."
-          },
-          {
-            "pt": "Dashboard para visualização de resultados em tempo real.",
-            "en": "Dashboard for real-time results visualization."
-          },
-          {
-            "pt": "API RESTful para integração com outros sistemas quando necessário.",
-            "en": "RESTful API for integration with other systems when needed."
-          }
-        ],
-        "outro": {
-          "pt": "Implementado para facilitar processos democráticos em organizações, clubes e eventos.",
-          "en": "Implemented to facilitate democratic processes in organizations, clubs and events."
-        }
-      },
-      "links": {
-        "github": "https://github.com/danisommer/PAGINA-ENQUETE"
+        "github": "https://github.com/danisommer/smart-metronome",
+        "demo": "https://danisommer.github.io/smart-metronome/"
       }
     }
   ]

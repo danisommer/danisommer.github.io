@@ -19,16 +19,24 @@
 }
 
 .hero-subtitle {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 1.2;
     color: var(--color-accent);
 }
 
+.hero-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
 .hero-text {
     max-width: 600px;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     font-size: 1.1rem;
 }
 

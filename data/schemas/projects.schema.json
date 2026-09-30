@@ -65,6 +65,10 @@
           "description": "Screenshot do projeto: recortado no card, inteiro no modal. Opcional: sem imagem, o card mostra o ícone sobre fundo azul.",
           "$ref": "common.schema.json#/definitions/imagePath"
         },
+        "status": {
+          "description": "Opcional: \"in-progress\" exibe o selo \"Em andamento\" no card e no modal.",
+          "enum": ["in-progress"]
+        },
         "categories": {
           "type": "array",
           "description": "Filtros em que o projeto aparece: valores de \"id\" da lista \"categories\" no topo do arquivo.",

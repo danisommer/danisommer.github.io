@@ -3,12 +3,16 @@
   "name": "Daniel Zaki Sommer",
   "shortName": "Daniel Z. Sommer",
   "headline": {
-    "pt": "Elixir Dev @ Trio | Sistemas de Informação @ UTFPR",
-    "en": "Elixir Dev @ Trio | Information Systems @ UTFPR"
+    "pt": "Backend Developer · Elixir e sistemas distribuídos",
+    "en": "Backend Developer · Elixir and distributed systems"
+  },
+  "location": {
+    "pt": "Curitiba, PR, Brasil",
+    "en": "Curitiba, PR, Brazil"
   },
   "intro": {
-    "pt": "Desenvolvedor Elixir na Trio, contribuindo para sistemas de pagamento escaláveis no backend. Estudante do 8º semestre de Sistemas de Informação na UTFPR e desenvolvedor na Hi Tech Consultoria, com experiência anterior em Java (Spring), Docker, TypeScript, SQL, SAP Hybris e integrações via SCPI.",
-    "en": "Elixir developer at Trio, contributing to scalable payment systems on the backend. 8th-semester Information Systems student at UTFPR and developer at Hi Tech Consultoria, with prior experience in Java (Spring), Docker, TypeScript, SQL, SAP Hybris, and SCPI integrations."
+    "pt": "Desenvolvedor Elixir na Trio, contribuindo para sistemas de pagamento escaláveis no backend com Elixir, Postgres, RedPanda/Kafka, Redis e ClickHouse. Estudante do 8º semestre de Sistemas de Informação na UTFPR, com projetos em Go e microsserviços orientados a eventos e experiência anterior com Java (Spring) em E-Commerce.",
+    "en": "Elixir developer at Trio, contributing to scalable payment systems on the backend with Elixir, Postgres, RedPanda/Kafka, Redis, and ClickHouse. 8th-semester Information Systems student at UTFPR, with projects in Go and event-driven microservices, and previous experience with Java (Spring) in E-Commerce."
   },
   "photo": {
     "src": "images/profile_picture.jpg",
@@ -21,19 +25,27 @@
     },
     "paragraphs": [
       {
-        "pt": "Atualmente, trabalho como Desenvolvedor Elixir na Trio, contribuindo para a construção de sistemas de pagamento escaláveis no backend, e atuo como desenvolvedor na Hi Tech Consultoria, a empresa júnior da UTFPR voltada para consultoria em tecnologia. Estou no 8º semestre do curso de Sistemas de Informação na UTFPR.",
-        "en": "I currently work as an Elixir Developer at Trio, contributing to scalable payment systems on the backend, and as a developer at Hi Tech Consultoria, UTFPR's junior enterprise focused on technology consulting. I am an 8th-semester Information Systems student at UTFPR."
+        "pt": "Atualmente, trabalho como Desenvolvedor Elixir na Trio, onde contribuo para a construção de sistemas de pagamento escaláveis no backend. Meu dia a dia envolve Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
+        "en": "I currently work as an Elixir Developer at Trio, where I contribute to building scalable payment systems on the backend. My day-to-day involves Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
       },
       {
-        "pt": "Anteriormente, estagiei na Meisters Solutions e na Digiu Digital, contribuindo para sistemas de E-Commerce com Java (Spring), Docker, TypeScript, SQL e SAP Hybris, além de integrações via SCPI e desenvolvimento mobile com React Native e PHP. Concluí cursos sobre REST APIs, Docker e AWS e desenvolvi projetos pessoais como gerenciamento de estoque, plataforma de votação e dashboard de monitoramento em tempo real.",
-        "en": "Previously, I interned at Meisters Solutions and Digiu Digital, contributing to E-Commerce systems with Java (Spring), Docker, TypeScript, SQL, and SAP Hybris, plus SCPI integrations and mobile development with React Native and PHP. I completed courses on REST APIs, Docker, and AWS and built personal projects such as an inventory management system, a voting platform, and a real-time monitoring dashboard."
+        "pt": "Estou no 8º semestre de Sistemas de Informação na Universidade Tecnológica Federal do Paraná (UTFPR). Paralelamente, atuo como desenvolvedor na Hi Tech Consultoria, a empresa júnior da UTFPR voltada para consultoria em tecnologia, participando de projetos reais que conectam aprendizado acadêmico e experiência de mercado.",
+        "en": "I am in the 8th semester of Information Systems at the Federal University of Technology - Paraná (UTFPR). Alongside that, I work as a developer at Hi Tech Consultoria, UTFPR's junior enterprise focused on technology consulting, on real projects that connect academic learning with market experience."
+      },
+      {
+        "pt": "Anteriormente, estagiei na Meisters Solutions e na Digiu Digital, contribuindo para sistemas de E-Commerce com Java (Spring), Docker, TypeScript, SQL e SAP Hybris, além de integrações para grandes clientes via SCPI e desenvolvimento mobile com React Native e PHP. A colaboração com clientes internacionais e desenvolvedores sêniores fortaleceu minha comunicação técnica e o trabalho em equipe.",
+        "en": "Previously, I interned at Meisters Solutions and Digiu Digital, contributing to E-Commerce systems with Java (Spring), Docker, TypeScript, SQL, and SAP Hybris, plus integrations for large clients via SCPI and mobile development with React Native and PHP. Working with international clients and senior developers strengthened my technical communication and teamwork."
+      },
+      {
+        "pt": "Nos projetos pessoais e acadêmicos, exploro sistemas distribuídos, desempenho e algoritmos: microsserviços em Go orientados a eventos, um comparativo de desempenho entre Python e Go na reconstrução de imagens e o Compass+, um planejador de grade para alunos da UTFPR.",
+        "en": "In personal and academic projects, I explore distributed systems, performance, and algorithms: event-driven microservices in Go, a Python vs Go performance comparison for image reconstruction, and Compass+, a course planner for UTFPR students."
       }
     ]
   },
   "resumeUrl": "https://bristle-swing-0b0.notion.site/Daniel-Zaki-Sommer-Backend-Developer-1b5f096b9f3f80af9be1d98870c75b0c",
   "footerNote": {
-    "pt": "Elixir Developer com experiência em sistemas de pagamento escaláveis e E-Commerce.",
-    "en": "Elixir Developer with experience in scalable payment and E-Commerce systems."
+    "pt": "Backend Developer focado em Elixir e sistemas distribuídos, com experiência em pagamentos e E-Commerce.",
+    "en": "Backend Developer focused on Elixir and distributed systems, with experience in payments and E-Commerce."
   },
   "contacts": [
     {
