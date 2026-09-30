@@ -190,44 +190,41 @@
       }
     },
     {
-      "id": "text-to-sql",
+      "id": "tsp-metaheuristics",
       "title": {
-        "pt": "Text-to-SQL com Llama",
-        "en": "Text-to-SQL with Llama"
+        "pt": "Caixeiro Viajante: Têmpera Simulada × Genético",
+        "en": "Traveling Salesman: Simulated Annealing vs Genetic"
       },
-      "icon": "fas fa-robot",
+      "icon": "fas fa-route",
+      "image": "images/projects/tsp-metaheuristics.png",
       "categories": ["python"],
-      "tags": ["Python", "Llama 3.2", "Transformers", "MySQL", "PostgreSQL"],
+      "tags": ["Python", "NumPy", "Matplotlib", "Metaheuristics"],
       "summary": {
-        "pt": "Converte perguntas em português em consultas SQL com o Llama 3.2 e as executa em bancos MySQL ou PostgreSQL.",
-        "en": "Turns questions in Portuguese into SQL queries with Llama 3.2 and runs them on MySQL or PostgreSQL databases."
+        "pt": "Compara têmpera simulada e algoritmo genético no problema do caixeiro viajante, com experimentos de 20 a 100 cidades e gráficos de convergência.",
+        "en": "Compares simulated annealing and a genetic algorithm on the traveling salesman problem, with experiments from 20 to 100 cities and convergence charts."
       },
       "details": {
         "intro": {
-          "pt": "Aplicação de linha de comando que usa um modelo de linguagem local para gerar SQL a partir de linguagem natural, com base no schema real do banco.",
-          "en": "A command-line application that uses a local language model to generate SQL from natural language, based on the database's real schema."
+          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo.",
+          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper."
         },
         "features": [
           {
-            "pt": "Conexão com MySQL e PostgreSQL e leitura automática do schema: tabelas, colunas, tipos, chaves primárias e estrangeiras.",
-            "en": "Connects to MySQL and PostgreSQL and reads the schema automatically: tables, columns, types, primary and foreign keys."
+            "pt": "Têmpera simulada e algoritmo genético implementados do zero, com a heurística do vizinho mais próximo como referência.",
+            "en": "Simulated annealing and a genetic algorithm implemented from scratch, with the nearest-neighbor heuristic as a baseline."
           },
           {
-            "pt": "Prompt montado com o schema para o Llama 3.2 (Hugging Face Transformers), com extração do SQL da resposta do modelo.",
-            "en": "Schema-aware prompt for Llama 3.2 (Hugging Face Transformers), with SQL extraction from the model's answer."
+            "pt": "Experimentos com 20, 50 e 100 cidades e análise de sensibilidade de parâmetros.",
+            "en": "Experiments with 20, 50, and 100 cities and parameter sensitivity analysis."
           },
           {
-            "pt": "Versão alternativa com parser baseado em regras (similaridade de palavras, joins e múltiplas condições), sem IA.",
-            "en": "An alternative rule-based parser (word similarity, joins, and multiple conditions) that works without AI."
-          },
-          {
-            "pt": "Execução da consulta e exibição dos resultados em tabela no terminal.",
-            "en": "Runs the query and prints the results as a table in the terminal."
+            "pt": "Visualização da evolução da melhor rota, da convergência da população e comparativo entre os métodos.",
+            "en": "Visualization of the best route's evolution, population convergence, and a comparison between the methods."
           }
         ]
       },
       "links": {
-        "github": "https://github.com/danisommer/llama-text-to-sql"
+        "github": "https://github.com/danisommer/tsp"
       }
     },
     {
@@ -269,41 +266,44 @@
       }
     },
     {
-      "id": "tsp-metaheuristics",
+      "id": "text-to-sql",
       "title": {
-        "pt": "Caixeiro Viajante: Têmpera Simulada × Genético",
-        "en": "Traveling Salesman: Simulated Annealing vs Genetic"
+        "pt": "Text-to-SQL com Llama",
+        "en": "Text-to-SQL with Llama"
       },
-      "icon": "fas fa-route",
-      "image": "images/projects/tsp-metaheuristics.png",
+      "icon": "fas fa-robot",
       "categories": ["python"],
-      "tags": ["Python", "NumPy", "Matplotlib", "Metaheuristics"],
+      "tags": ["Python", "Llama 3.2", "Transformers", "MySQL", "PostgreSQL"],
       "summary": {
-        "pt": "Compara têmpera simulada e algoritmo genético no problema do caixeiro viajante, com experimentos de 20 a 100 cidades e gráficos de convergência.",
-        "en": "Compares simulated annealing and a genetic algorithm on the traveling salesman problem, with experiments from 20 to 100 cities and convergence charts."
+        "pt": "Converte perguntas em português em consultas SQL com o Llama 3.2 e as executa em bancos MySQL ou PostgreSQL.",
+        "en": "Turns questions in Portuguese into SQL queries with Llama 3.2 and runs them on MySQL or PostgreSQL databases."
       },
       "details": {
         "intro": {
-          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo.",
-          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper."
+          "pt": "Aplicação de linha de comando que usa um modelo de linguagem local para gerar SQL a partir de linguagem natural, com base no schema real do banco.",
+          "en": "A command-line application that uses a local language model to generate SQL from natural language, based on the database's real schema."
         },
         "features": [
           {
-            "pt": "Têmpera simulada e algoritmo genético implementados do zero, com a heurística do vizinho mais próximo como referência.",
-            "en": "Simulated annealing and a genetic algorithm implemented from scratch, with the nearest-neighbor heuristic as a baseline."
+            "pt": "Conexão com MySQL e PostgreSQL e leitura automática do schema: tabelas, colunas, tipos, chaves primárias e estrangeiras.",
+            "en": "Connects to MySQL and PostgreSQL and reads the schema automatically: tables, columns, types, primary and foreign keys."
           },
           {
-            "pt": "Experimentos com 20, 50 e 100 cidades e análise de sensibilidade de parâmetros.",
-            "en": "Experiments with 20, 50, and 100 cities and parameter sensitivity analysis."
+            "pt": "Prompt montado com o schema para o Llama 3.2 (Hugging Face Transformers), com extração do SQL da resposta do modelo.",
+            "en": "Schema-aware prompt for Llama 3.2 (Hugging Face Transformers), with SQL extraction from the model's answer."
           },
           {
-            "pt": "Visualização da evolução da melhor rota, da convergência da população e comparativo entre os métodos.",
-            "en": "Visualization of the best route's evolution, population convergence, and a comparison between the methods."
+            "pt": "Versão alternativa com parser baseado em regras (similaridade de palavras, joins e múltiplas condições), sem IA.",
+            "en": "An alternative rule-based parser (word similarity, joins, and multiple conditions) that works without AI."
+          },
+          {
+            "pt": "Execução da consulta e exibição dos resultados em tabela no terminal.",
+            "en": "Runs the query and prints the results as a table in the terminal."
           }
         ]
       },
       "links": {
-        "github": "https://github.com/danisommer/tsp"
+        "github": "https://github.com/danisommer/llama-text-to-sql"
       }
     },
     {

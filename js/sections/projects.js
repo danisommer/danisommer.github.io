@@ -54,12 +54,16 @@ export function render({ projects }) {
   const section = document.getElementById("projects");
 
   section.querySelector(".filter-container").replaceChildren(...renderFilters(projects));
-  section.querySelector(".projects-grid").replaceChildren(...projects.items.map(renderCard));
+  section.querySelector(".projects-grid").replaceChildren(...withImagesFirst(projects.items).map(renderCard));
   applyFilter(section);
 
   if (state.openProject) {
     renderModal(document.getElementById("project-modal"), state.openProject);
   }
+}
+
+function withImagesFirst(items) {
+  return [...items].sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
 }
 
 function renderFilters({ categories, items }) {

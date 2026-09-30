@@ -14,7 +14,7 @@
     },
     "items": {
       "type": "array",
-      "description": "Projetos, na ordem em que aparecem na página.",
+      "description": "Projetos em ordem de relevância. Na página, os que têm imagem aparecem primeiro; dentro de cada grupo, vale a ordem deste arquivo.",
       "items": { "$ref": "#/definitions/project" }
     }
   },

@@ -30,7 +30,7 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 - **Texto que muda entre idiomas** → objeto com os dois: `{ "pt": "Olá", "en": "Hello" }`.
 - **Texto igual nos dois idiomas** → string simples: `"Elixir"`.
 - **Datas** → `"AAAA-MM"` (`"2025-07"`) ou só `"AAAA"` (`"2022"`). O site escreve por extenso no idioma do visitante ("julho de 2025" / "July 2025"). Sem data de fim, aparece "Presente".
-- **Ordem** → a ordem dos itens no arquivo é a ordem na página.
+- **Ordem** → a ordem dos itens no arquivo é a ordem na página. Exceção: em `data/projects.json` a ordem é de **relevância**, e na página os projetos com imagem vêm primeiro (dentro de cada grupo, vale a ordem do arquivo). Ao adicionar a foto de um projeto, ele sobe sozinho para o grupo com imagem.
 
 ### O VS Code ajuda enquanto você edita
 
@@ -45,7 +45,7 @@ Cada JSON aponta para um schema em `data/schemas/` (linha `"$schema"` no topo). 
 ### Adicionar um projeto
 
 1. Salve a imagem em `images/projects/` (ex.: `meu-projeto.jpg`). Ela aparece recortada no card e inteira no modal.
-2. Em `data/projects.json`, dentro de `"items"`, coloque o cursor onde o projeto deve aparecer e use **Ctrl+Espaço → Novo projeto**.
+2. Em `data/projects.json`, dentro de `"items"`, coloque o cursor na posição de relevância do projeto (mais relevantes no topo) e use **Ctrl+Espaço → Novo projeto**.
 3. `"categories"` define em quais filtros o projeto aparece — use os `id` da lista `"categories"` no topo do arquivo.
 4. `"icon"` é uma classe do [Font Awesome 6 free](https://fontawesome.com/search?ic=free), ex.: `"fas fa-music"`.
 5. `"links"` aceita `"github"` e `"demo"`; os dois aparecem no card e no modal.
