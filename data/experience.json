@@ -2,6 +2,7 @@
   "$schema": "./schemas/experience.schema.json",
   "items": [
     {
+      "type": "work",
       "title": "Elixir Developer",
       "organization": "Trio",
       "start": "2025-07",
@@ -17,6 +18,7 @@
       ]
     },
     {
+      "type": "work",
       "title": "Developer",
       "organization": "Hi Tech Consultoria",
       "start": "2025-10",
@@ -32,6 +34,7 @@
       ]
     },
     {
+      "type": "work",
       "title": "Java Developer",
       "organization": "Meisters Solutions",
       "start": "2024-07",
@@ -52,6 +55,7 @@
       ]
     },
     {
+      "type": "work",
       "title": "Java Software Developer",
       "organization": "Digiu Digital",
       "start": "2024-07",
@@ -76,6 +80,7 @@
       ]
     },
     {
+      "type": "education",
       "title": {
         "pt": "Bacharelado em Sistemas de Informação",
         "en": "Bachelor in Information Systems"
@@ -94,6 +99,7 @@
       ]
     },
     {
+      "type": "volunteering",
       "title": {
         "pt": "Técnico de Som e Guitarrista (voluntário)",
         "en": "Sound Technician and Guitarist (volunteer)"
@@ -112,6 +118,7 @@
       ]
     },
     {
+      "type": "courses",
       "title": {
         "pt": "Cursos Adicionais",
         "en": "Additional Courses"

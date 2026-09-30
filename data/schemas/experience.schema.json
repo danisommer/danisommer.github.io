@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Experiência",
-  "description": "Itens da timeline (empregos, formação, cursos), na ordem em que aparecem.",
+  "description": "Itens da timeline (empregos, formação, voluntariado, cursos), na ordem em que aparecem. O currículo em PDF agrupa os itens pelo \"type\".",
   "type": "object",
   "required": ["items"],
   "additionalProperties": false,
@@ -15,9 +15,13 @@
   "definitions": {
     "item": {
       "type": "object",
-      "required": ["title", "start"],
+      "required": ["type", "title", "start"],
       "additionalProperties": false,
       "properties": {
+        "type": {
+          "description": "Seção do currículo em que o item entra: \"work\" (Experiência), \"education\" (Formação), \"volunteering\" (Voluntariado) ou \"courses\" (só no site).",
+          "enum": ["work", "education", "volunteering", "courses"]
+        },
         "title": {
           "description": "Cargo, curso ou título do bloco.",
           "$ref": "common.schema.json#/definitions/text"
@@ -36,7 +40,7 @@
         },
         "highlights": {
           "type": "array",
-          "description": "Tópicos da lista do card.",
+          "description": "Tópicos da lista do card (e do currículo, para \"work\" e \"education\").",
           "items": { "$ref": "common.schema.json#/definitions/text" }
         }
       },
@@ -45,11 +49,12 @@
           "label": "Nova experiência",
           "description": "Item da timeline",
           "body": {
-            "title": "${1:Cargo}",
-            "organization": "${2:Empresa}",
-            "start": "${3:2026-01}",
+            "type": "${1|work,education,volunteering,courses|}",
+            "title": "${2:Cargo}",
+            "organization": "${3:Empresa}",
+            "start": "${4:2026-01}",
             "highlights": [
-              { "pt": "${4:O que você fez}", "en": "${5:What you did}" }
+              { "pt": "${5:O que você fez}", "en": "${6:What you did}" }
             ]
           }
         }

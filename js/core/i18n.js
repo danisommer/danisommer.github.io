@@ -4,6 +4,8 @@ const LOCALES = { pt: "pt-BR", en: "en" };
 const FALLBACK_LANGUAGE = "pt";
 const STORAGE_KEY = "language";
 const DATE_PATTERN = /^(\d{4})(?:-(0[1-9]|1[0-2]))?$/;
+const LONG_MONTH = { month: "long", year: "numeric" };
+const NUMERIC_MONTH = { month: "2-digit", year: "numeric" };
 
 let language = initialLanguage();
 let dictionary = {};
@@ -13,12 +15,22 @@ export function getLanguage() {
   return language;
 }
 
-/** Troca o idioma por escolha do visitante e memoriza a escolha. */
-export function setLanguage(next) {
-  if (!Object.hasOwn(LOCALES, next)) {
+/** true se o valor é um idioma suportado ("pt" ou "en"). */
+export function isSupportedLanguage(value) {
+  return typeof value === "string" && Object.hasOwn(LOCALES, value);
+}
+
+/** Usa o idioma nesta página sem memorizá-lo (ex.: cv.html?lang=en). */
+export function overrideLanguage(next) {
+  if (!isSupportedLanguage(next)) {
     throw new Error(`Idioma não suportado: ${next}`);
   }
   language = next;
+}
+
+/** Troca o idioma por escolha do visitante e memoriza a escolha. */
+export function setLanguage(next) {
+  overrideLanguage(next);
   savePreference(STORAGE_KEY, next);
 }
 
@@ -49,10 +61,14 @@ export function label(key, values = {}) {
   return t(entry).replace(/\{(\w+)\}/g, (marker, name) => String(values[name] ?? marker));
 }
 
-/** Período "início – fim" no idioma atual; sem fim, exibe "Presente". */
+/** Período "julho de 2025 – Presente" no idioma atual; sem fim, exibe "Presente". */
 export function formatPeriod(start, end) {
-  const finish = end ? formatDate(end) : label("experience.present");
-  return `${formatDate(start)} – ${finish}`;
+  return period(start, end, LONG_MONTH);
+}
+
+/** Período "07/2025 – Presente": formato compacto para o currículo. */
+export function formatNumericPeriod(start, end) {
+  return period(start, end, NUMERIC_MONTH);
 }
 
 /** Aplica o idioma atual ao <html lang> e aos elementos com data-i18n / data-i18n-aria-label. */
@@ -67,7 +83,12 @@ export function translateDocument() {
   }
 }
 
-function formatDate(value) {
+function period(start, end, format) {
+  const finish = end ? formatDate(end, format) : label("experience.present");
+  return `${formatDate(start, format)} – ${finish}`;
+}
+
+function formatDate(value, format) {
   const match = DATE_PATTERN.exec(value);
   if (!match) {
     console.error(`Data inválida (use "AAAA-MM" ou "AAAA"): ${value}`);
@@ -77,14 +98,12 @@ function formatDate(value) {
   const [, year, month] = match;
   if (!month) return year;
 
-  return new Intl.DateTimeFormat(LOCALES[language], { month: "long", year: "numeric" }).format(
-    new Date(Number(year), Number(month) - 1)
-  );
+  return new Intl.DateTimeFormat(LOCALES[language], format).format(new Date(Number(year), Number(month) - 1));
 }
 
 function initialLanguage() {
   const saved = readPreference(STORAGE_KEY);
-  if (saved !== null && Object.hasOwn(LOCALES, saved)) return saved;
+  if (isSupportedLanguage(saved)) return saved;
 
   const preferred = navigator.languages?.[0] ?? navigator.language ?? "";
   return preferred.toLowerCase().startsWith("pt") ? "pt" : "en";

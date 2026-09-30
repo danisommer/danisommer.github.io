@@ -13,8 +13,19 @@
     "contact": { "pt": "Contato", "en": "Contact" }
   },
   "about": {
-    "title": { "pt": "Sobre Mim", "en": "About Me" },
-    "resume": { "pt": "Ver Currículo", "en": "View Resume" }
+    "title": { "pt": "Sobre Mim", "en": "About Me" }
+  },
+  "cv": {
+    "download": { "pt": "Baixar CV (PDF)", "en": "Download Resume (PDF)" },
+    "fileName": { "pt": "{name} - Currículo.pdf", "en": "{name} - Resume.pdf" },
+    "documentTitle": { "pt": "{name} - Currículo", "en": "{name} - Resume" },
+    "summary": { "pt": "Resumo", "en": "Summary" },
+    "experience": { "pt": "Experiência", "en": "Experience" },
+    "education": { "pt": "Formação", "en": "Education" },
+    "projects": { "pt": "Projetos", "en": "Projects" },
+    "skills": { "pt": "Habilidades", "en": "Skills" },
+    "volunteering": { "pt": "Voluntariado", "en": "Volunteering" },
+    "demo": { "pt": "Demo", "en": "Demo" }
   },
   "skills": {
     "title": { "pt": "Minhas Habilidades", "en": "My Skills" },
