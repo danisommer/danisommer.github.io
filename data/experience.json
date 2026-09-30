@@ -3,22 +3,6 @@
   "items": [
     {
       "type": "work",
-      "title": "Elixir Developer",
-      "organization": "Trio",
-      "start": "2025-07",
-      "highlights": [
-        {
-          "pt": "Contribuo para a construção de sistemas de pagamento escaláveis no backend.",
-          "en": "I contribute to building scalable payment systems on the backend."
-        },
-        {
-          "pt": "Minhas responsabilidades diárias envolvem o uso de tecnologias como Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
-          "en": "My daily responsibilities involve technologies such as Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
-        }
-      ]
-    },
-    {
-      "type": "work",
       "title": "Developer",
       "organization": "Hi Tech Consultoria",
       "start": "2025-10",
@@ -30,6 +14,23 @@
         {
           "pt": "Como desenvolvedor de software, contribuo para projetos de consultoria em tecnologia que conectam o aprendizado acadêmico à experiência real de mercado.",
           "en": "As a software developer, I contribute to technology consulting projects that connect academic learning with real market experience."
+        }
+      ]
+    },
+    {
+      "type": "work",
+      "title": "Elixir Developer",
+      "organization": "Trio",
+      "start": "2025-07",
+      "end": "2026-09",
+      "highlights": [
+        {
+          "pt": "Contribuí para a construção de sistemas de pagamento escaláveis no backend.",
+          "en": "I contributed to building scalable payment systems on the backend."
+        },
+        {
+          "pt": "Trabalhei no dia a dia com Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
+          "en": "I worked daily with Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
         }
       ]
     },

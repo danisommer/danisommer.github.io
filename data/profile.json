@@ -11,8 +11,8 @@
     "en": "Curitiba, PR, Brazil"
   },
   "intro": {
-    "pt": "Desenvolvedor Elixir na Trio, contribuindo para sistemas de pagamento escaláveis no backend com Elixir, Postgres, RedPanda/Kafka, Redis e ClickHouse. Estudante do 8º semestre de Sistemas de Informação na UTFPR, com projetos em Go e microsserviços orientados a eventos e experiência anterior com Java (Spring) em E-Commerce.",
-    "en": "Elixir developer at Trio, contributing to scalable payment systems on the backend with Elixir, Postgres, RedPanda/Kafka, Redis, and ClickHouse. 8th-semester Information Systems student at UTFPR, with projects in Go and event-driven microservices, and previous experience with Java (Spring) in E-Commerce."
+    "pt": "Desenvolvedor backend com experiência em sistemas de pagamento escaláveis na Trio, com Elixir, Postgres, RedPanda/Kafka, Redis e ClickHouse. Estudante do 8º semestre de Sistemas de Informação na UTFPR e desenvolvedor na Hi Tech Consultoria, com projetos em Go e microsserviços orientados a eventos e experiência anterior com Java (Spring) em E-Commerce.",
+    "en": "Backend developer with experience in scalable payment systems at Trio, using Elixir, Postgres, RedPanda/Kafka, Redis, and ClickHouse. 8th-semester Information Systems student at UTFPR and developer at Hi Tech Consultoria, with projects in Go and event-driven microservices, and previous experience with Java (Spring) in E-Commerce."
   },
   "photo": {
     "src": "images/profile_picture.jpg",
@@ -25,12 +25,12 @@
     },
     "paragraphs": [
       {
-        "pt": "Atualmente, trabalho como Desenvolvedor Elixir na Trio, onde contribuo para a construção de sistemas de pagamento escaláveis no backend. Meu dia a dia envolve Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
-        "en": "I currently work as an Elixir Developer at Trio, where I contribute to building scalable payment systems on the backend. My day-to-day involves Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
+        "pt": "Trabalhei como Desenvolvedor Elixir na Trio de julho de 2025 a setembro de 2026, contribuindo para a construção de sistemas de pagamento escaláveis no backend. Meu dia a dia envolvia Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
+        "en": "I worked as an Elixir Developer at Trio from July 2025 to September 2026, contributing to building scalable payment systems on the backend. My day-to-day involved Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
       },
       {
-        "pt": "Estou no 8º semestre de Sistemas de Informação na Universidade Tecnológica Federal do Paraná (UTFPR). Paralelamente, atuo como desenvolvedor na Hi Tech Consultoria, a empresa júnior da UTFPR voltada para consultoria em tecnologia, participando de projetos reais que conectam aprendizado acadêmico e experiência de mercado.",
-        "en": "I am in the 8th semester of Information Systems at the Federal University of Technology - Paraná (UTFPR). Alongside that, I work as a developer at Hi Tech Consultoria, UTFPR's junior enterprise focused on technology consulting, on real projects that connect academic learning with market experience."
+        "pt": "Estou no 8º semestre de Sistemas de Informação na Universidade Tecnológica Federal do Paraná (UTFPR) e atuo como desenvolvedor na Hi Tech Consultoria, a empresa júnior da UTFPR voltada para consultoria em tecnologia, participando de projetos reais que conectam aprendizado acadêmico e experiência de mercado.",
+        "en": "I am in the 8th semester of Information Systems at the Federal University of Technology - Paraná (UTFPR) and work as a developer at Hi Tech Consultoria, UTFPR's junior enterprise focused on technology consulting, on real projects that connect academic learning with market experience."
       },
       {
         "pt": "Anteriormente, estagiei na Meisters Solutions e na Digiu Digital, contribuindo para sistemas de E-Commerce com Java (Spring), Docker, TypeScript, SQL e SAP Hybris, além de integrações para grandes clientes via SCPI e desenvolvimento mobile com React Native e PHP. A colaboração com clientes internacionais e desenvolvedores sêniores fortaleceu minha comunicação técnica e o trabalho em equipe.",
