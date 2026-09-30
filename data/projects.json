@@ -276,7 +276,6 @@
       },
       "icon": "fas fa-route",
       "image": "images/projects/tsp-metaheuristics.png",
-      "status": "in-progress",
       "categories": ["python"],
       "tags": ["Python", "NumPy", "Matplotlib", "Metaheuristics"],
       "summary": {
