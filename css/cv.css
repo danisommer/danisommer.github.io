@@ -1,6 +1,6 @@
 @page {
     size: A4;
-    margin: 11mm 14mm;
+    margin: 10mm 14mm;
 }
 
 :root {
@@ -38,7 +38,7 @@ a {
     width: 210mm;
     min-height: 297mm;
     margin: 2rem auto;
-    padding: 11mm 14mm;
+    padding: 10mm 14mm;
     background-color: #ffffff;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
@@ -62,11 +62,11 @@ a {
 }
 
 .cv-section {
-    margin-top: 3.5mm;
+    margin-top: 3mm;
 }
 
 .cv-section h2 {
-    margin-bottom: 1.5mm;
+    margin-bottom: 1.3mm;
     padding-bottom: 0.6mm;
     border-bottom: 0.75pt solid var(--cv-rule);
     color: var(--cv-accent);
@@ -79,7 +79,7 @@ a {
 }
 
 .cv-entry + .cv-entry {
-    margin-top: 1.8mm;
+    margin-top: 1.5mm;
 }
 
 .cv-entry-head {
