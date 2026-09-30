@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Experiência",
-  "description": "Itens da timeline (empregos, formação, voluntariado, cursos), na ordem em que aparecem. O currículo em PDF agrupa os itens pelo \"type\".",
+  "description": "Itens da timeline (empregos, formação, voluntariado, cursos), na ordem em que aparecem. O currículo em PDF usa o \"type\" para montar Experiência e Formação.",
   "type": "object",
   "required": ["items"],
   "additionalProperties": false,
@@ -19,7 +19,7 @@
       "additionalProperties": false,
       "properties": {
         "type": {
-          "description": "Seção do currículo em que o item entra: \"work\" (Experiência), \"education\" (Formação), \"volunteering\" (Voluntariado) ou \"courses\" (só no site).",
+          "description": "Tipo do item: \"work\" (entra em Experiência no currículo), \"education\" (entra em Formação), \"volunteering\" e \"courses\" (só no site).",
           "enum": ["work", "education", "volunteering", "courses"]
         },
         "title": {

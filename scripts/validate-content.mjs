@@ -69,12 +69,18 @@ function checkSkills({ levels, categories }) {
 async function checkProjects({ categories, items }) {
   const knownCategories = new Set(categories.map((category) => category.id));
   const seenIds = new Set();
+  const seenCvPositions = new Set();
 
   for (const [index, project] of items.entries()) {
     const where = `data/projects.json /items/${index} (${project.id})`;
 
     if (seenIds.has(project.id)) problems.push(`${where}: id repetido`);
     seenIds.add(project.id);
+
+    if (project.cv !== undefined && seenCvPositions.has(project.cv)) {
+      problems.push(`${where}: posição "cv": ${project.cv} repetida`);
+    }
+    seenCvPositions.add(project.cv);
 
     project.categories
       .filter((id) => !knownCategories.has(id))

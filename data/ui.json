@@ -24,7 +24,6 @@
     "education": { "pt": "Formação", "en": "Education" },
     "projects": { "pt": "Projetos", "en": "Projects" },
     "skills": { "pt": "Habilidades", "en": "Skills" },
-    "volunteering": { "pt": "Voluntariado", "en": "Volunteering" },
     "demo": { "pt": "Demo", "en": "Demo" }
   },
   "skills": {

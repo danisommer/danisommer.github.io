@@ -61,7 +61,7 @@ Adicione `{ "id": "elixir", "label": "Elixir" }` em `"categories"` no topo de `d
 
 Em `data/experience.json`, dentro de `"items"`, use **Ctrl+Espaço → Nova experiência**. Enquanto for o emprego atual, não coloque `"end"`. `"organization"` e `"highlights"` são opcionais.
 
-`"type"` diz em que seção do currículo o item entra: `"work"` (Experiência), `"education"` (Formação), `"volunteering"` (Voluntariado, só a linha do título) ou `"courses"` (fica só no site).
+`"type"` classifica o item: `"work"` entra em Experiência no currículo, `"education"` entra em Formação; `"volunteering"` e `"courses"` ficam só no site.
 
 ### Adicionar ou mudar uma habilidade
 
@@ -92,11 +92,13 @@ O que entra, em uma página A4, uma coluna, texto selecionável (legível por si
 |---|---|
 | Cabeçalho | `profile.json`: `name`, `headline`, `location`, `contacts` |
 | Resumo | `profile.json`: `intro` (o texto do topo do site) |
-| Experiência / Formação / Voluntariado | `experience.json`, pelo `type` de cada item (datas em `MM/AAAA`) |
-| Projetos | os 3 primeiros de `projects.json` (ordem de relevância), com tags e links |
+| Experiência / Formação | `experience.json`, pelo `type` de cada item (datas em `MM/AAAA`) |
+| Projetos | os projetos de `projects.json` que têm `"cv"`, na ordem desse número, com tags, links e a frase de `"cvSummary"` |
 | Habilidades | todas as categorias de `skills.json`, uma linha cada |
 
-O layout foi calibrado para caber em uma página; se o conteúdo crescer, o PDF continua certo, só passa para a segunda página. A quantidade de projetos é a constante `PROJECT_COUNT` em `js/cv.js`.
+O layout foi calibrado para caber em uma página com 6 projetos; se o conteúdo crescer, o PDF continua certo, só passa para a segunda página.
+
+**Escolher os projetos do currículo:** em `data/projects.json`, `"cv": 1` põe o projeto em primeiro no currículo, `"cv": 2` em segundo, e assim por diante; sem `"cv"`, ele fica só no site. Essa ordem é independente da ordem do site. Cada projeto do currículo ocupa duas linhas: título com tecnologias e links, e a frase de `"cvSummary"` (até ~105 caracteres; sem ela, entra o `"summary"`, que ocupa mais espaço). O validador acusa duas posições `"cv"` iguais.
 
 **Ver localmente:** com o servidor rodando, abra <http://localhost:8000/cv.html> (ou `cv.html?lang=en`). Para gerar um PDF na mão: **Ctrl+P → Salvar como PDF**, com **Cabeçalhos e rodapés** desmarcado.
 

@@ -53,6 +53,11 @@
           "description": "Identificador único do projeto (minúsculas e hífens).",
           "$ref": "#/definitions/slug"
         },
+        "cv": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Posição do projeto no currículo em PDF (1 = primeiro). Sem este campo, o projeto não entra no currículo."
+        },
         "title": {
           "description": "Título do card e do modal.",
           "$ref": "common.schema.json#/definitions/text"
@@ -83,6 +88,10 @@
         },
         "summary": {
           "description": "Descrição curta do card.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "cvSummary": {
+          "description": "Frase de uma linha (até ~105 caracteres) usada no currículo em PDF. Opcional: sem ela, o currículo usa o \"summary\".",
           "$ref": "common.schema.json#/definitions/text"
         },
         "details": {

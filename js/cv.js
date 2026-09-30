@@ -10,8 +10,6 @@ import {
   translateDocument,
 } from "./core/i18n.js";
 
-const PROJECT_COUNT = 3;
-
 start();
 
 async function start() {
@@ -51,10 +49,13 @@ function renderCv({ profile, experience, skills, projects }) {
     section(label("cv.summary"), [h("p", {}, t(profile.intro))]),
     section(label("cv.experience"), ofType("work").map(renderEntry)),
     section(label("cv.education"), ofType("education").map(renderEntry)),
-    section(label("cv.projects"), projects.items.slice(0, PROJECT_COUNT).map(renderProject)),
+    section(label("cv.projects"), cvProjects(projects.items).map(renderProject)),
     section(label("cv.skills"), [renderSkills(skills)]),
-    section(label("cv.volunteering"), ofType("volunteering").map(renderEntryHead)),
   ].filter(Boolean);
+}
+
+function cvProjects(items) {
+  return items.filter((project) => project.cv !== undefined).sort((a, b) => a.cv - b.cv);
 }
 
 function renderHeader(profile) {
@@ -86,10 +87,6 @@ function renderEntry(item) {
   );
 }
 
-function renderEntryHead(item) {
-  return h("article", { class: "cv-entry" }, entryHead(item));
-}
-
 function entryHead({ title, organization, start, end }) {
   return h(
     "div",
@@ -114,7 +111,7 @@ function renderProject(project) {
       h("h3", {}, t(project.title), h("span", { class: "cv-tech" }, ` · ${project.tags.join(", ")}`)),
       links.length > 0 && h("span", { class: "cv-links" }, joinWith(links, " · "))
     ),
-    h("p", {}, t(project.summary))
+    h("p", {}, t(project.cvSummary ?? project.summary))
   );
 }
 

@@ -9,6 +9,7 @@
   "items": [
     {
       "id": "event-driven-ecommerce",
+      "cv": 1,
       "title": {
         "pt": "E-commerce Orientado a Eventos",
         "en": "Event-Driven E-commerce"
@@ -20,6 +21,10 @@
       "summary": {
         "pt": "Backend de e-commerce em Go dividido em microsserviços que se comunicam apenas por eventos no RabbitMQ, com cada evento assinado digitalmente (RSA) e validado por quem o recebe.",
         "en": "E-commerce backend in Go split into microservices that communicate only through RabbitMQ events, with every event digitally signed (RSA) and verified by its consumer."
+      },
+      "cvSummary": {
+        "pt": "Microsserviços em Go que se comunicam só por eventos no RabbitMQ, com cada evento assinado via RSA.",
+        "en": "Go microservices that communicate only through RabbitMQ events, each one signed with RSA."
       },
       "details": {
         "intro": {
@@ -59,6 +64,7 @@
     },
     {
       "id": "cg-image-reconstruction",
+      "cv": 2,
       "title": {
         "pt": "Reconstrução de Imagens: Python × Go",
         "en": "Image Reconstruction: Python vs Go"
@@ -69,6 +75,10 @@
       "summary": {
         "pt": "Reconstrói imagens a partir de sinais com os métodos de gradiente conjugado CGNE e CGNR, implementados em um servidor Python e em outro em Go, ambos só com a biblioteca padrão, para comparar desempenho.",
         "en": "Reconstructs images from signal data with the CGNE and CGNR conjugate-gradient methods, implemented in a Python server and a Go server, both using only the standard library, to compare performance."
+      },
+      "cvSummary": {
+        "pt": "Solvers CGNE/CGNR em servidores Python e Go só com a biblioteca padrão, comparando tempo, CPU e memória.",
+        "en": "CGNE/CGNR solvers in standard-library-only Python and Go servers, compared on time, CPU, and memory."
       },
       "details": {
         "intro": {
@@ -100,6 +110,7 @@
     },
     {
       "id": "compass-plus",
+      "cv": 3,
       "title": "Compass+",
       "icon": "fas fa-compass",
       "image": "images/projects/compass-plus.png",
@@ -108,6 +119,10 @@
       "summary": {
         "pt": "Planejador acadêmico para alunos da UTFPR: lê os PDFs do Portal do Aluno (matriz, histórico e turmas abertas) e gera grades de horário sem conflito, tudo no navegador.",
         "en": "Course planner for UTFPR students: it reads the student portal PDFs (curriculum, transcript, and open classes) and generates conflict-free schedules, all in the browser."
+      },
+      "cvSummary": {
+        "pt": "Lê os PDFs do Portal do Aluno da UTFPR e gera grades de horário sem conflito, tudo no navegador.",
+        "en": "Reads UTFPR student portal PDFs and generates conflict-free class schedules, entirely in the browser."
       },
       "details": {
         "intro": {
@@ -144,6 +159,7 @@
     },
     {
       "id": "knights-quest",
+      "cv": 5,
       "title": "Knight's Quest",
       "icon": "fas fa-gamepad",
       "image": "images/projects/platform-game.jpg",
@@ -152,6 +168,10 @@
       "summary": {
         "pt": "Jogo de plataforma 2D em C++ com SFML: co-op local, inimigos, chefão, sistema de combate, árvore de habilidades, save e ranking.",
         "en": "2D platformer in C++ with SFML: local co-op, enemies, a boss, a combat system, a skill tree, saves, and a ranking."
+      },
+      "cvSummary": {
+        "pt": "Jogo de plataforma 2D em C++ (~9 mil linhas, OO) com co-op local, chefão, árvore de habilidades e save.",
+        "en": "2D platformer in C++ (~9k lines, OOP) with local co-op, a boss fight, a skill tree, and saves."
       },
       "details": {
         "intro": {
@@ -191,6 +211,7 @@
     },
     {
       "id": "tsp-metaheuristics",
+      "cv": 6,
       "title": {
         "pt": "Caixeiro Viajante: Têmpera Simulada × Genético",
         "en": "Traveling Salesman: Simulated Annealing vs Genetic"
@@ -202,6 +223,10 @@
       "summary": {
         "pt": "Compara têmpera simulada e algoritmo genético no problema do caixeiro viajante, com experimentos de 20 a 100 cidades e gráficos de convergência.",
         "en": "Compares simulated annealing and a genetic algorithm on the traveling salesman problem, with experiments from 20 to 100 cities and convergence charts."
+      },
+      "cvSummary": {
+        "pt": "Têmpera simulada × algoritmo genético no caixeiro viajante, com experimentos de 20 a 100 cidades.",
+        "en": "Simulated annealing vs a genetic algorithm on the traveling salesman problem, from 20 to 100 cities."
       },
       "details": {
         "intro": {
@@ -267,6 +292,7 @@
     },
     {
       "id": "text-to-sql",
+      "cv": 4,
       "title": {
         "pt": "Text-to-SQL com Llama",
         "en": "Text-to-SQL with Llama"
@@ -277,6 +303,10 @@
       "summary": {
         "pt": "Converte perguntas em português em consultas SQL com o Llama 3.2 e as executa em bancos MySQL ou PostgreSQL.",
         "en": "Turns questions in Portuguese into SQL queries with Llama 3.2 and runs them on MySQL or PostgreSQL databases."
+      },
+      "cvSummary": {
+        "pt": "Converte perguntas em português em SQL com Llama 3.2, usando o schema real do MySQL ou PostgreSQL.",
+        "en": "Turns Portuguese questions into SQL with Llama 3.2, grounded on the real MySQL or PostgreSQL schema."
       },
       "details": {
         "intro": {
