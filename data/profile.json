@@ -11,8 +11,8 @@
     "en": "Curitiba, PR, Brazil"
   },
   "intro": {
-    "pt": "Desenvolvedor backend com experiência em sistemas de pagamento escaláveis na Trio, com Elixir, Postgres, RedPanda/Kafka, Redis e ClickHouse. Estudante do 8º semestre de Sistemas de Informação na UTFPR e desenvolvedor na Hi Tech Consultoria, com projetos em Go e microsserviços orientados a eventos e experiência anterior com Java (Spring) em E-Commerce.",
-    "en": "Backend developer with experience in scalable payment systems at Trio, using Elixir, Postgres, RedPanda/Kafka, Redis, and ClickHouse. 8th-semester Information Systems student at UTFPR and developer at Hi Tech Consultoria, with projects in Go and event-driven microservices, and previous experience with Java (Spring) in E-Commerce."
+    "pt": "Desenvolvedor backend com experiência em banking-as-a-service com Pix na Trio: cerca de 900 commits em 18 repositórios Elixir, do core bancário ao backoffice. Estudante do 8º semestre de Sistemas de Informação na UTFPR e desenvolvedor na Hi Tech Consultoria, com projetos em Go e microsserviços orientados a eventos e experiência anterior com Java (Spring).",
+    "en": "Backend developer with banking-as-a-service and Pix experience at Trio: about 900 commits across 18 Elixir repositories, from core banking to the back office. 8th-semester Information Systems student at UTFPR and developer at Hi Tech Consultoria, with projects in Go and event-driven microservices, and previous experience with Java (Spring)."
   },
   "photo": {
     "src": "images/profile_picture.jpg",
@@ -25,8 +25,8 @@
     },
     "paragraphs": [
       {
-        "pt": "Trabalhei como Desenvolvedor Elixir na Trio de julho de 2025 a setembro de 2026, contribuindo para sistemas de pagamento escaláveis no backend: reporte regulatório ao Bacen, reconciliações automáticas, core bancário e as ferramentas de backoffice usadas por compliance, financeiro e suporte. Meu dia a dia envolvia Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
-        "en": "I worked as an Elixir Developer at Trio from July 2025 to September 2026, contributing to scalable payment systems on the backend: regulatory reporting to the Central Bank, automated reconciliations, core banking, and the back-office tools used by compliance, finance, and support. My day-to-day involved Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
+        "pt": "Trabalhei como Desenvolvedor Elixir na Trio de julho de 2025 a setembro de 2026, com cerca de 900 commits em 18 repositórios de uma plataforma de banking-as-a-service com Pix: reporte regulatório ao Bacen (CCS), conciliação, MED do Pix, saldos no core bancário e o backoffice usado por compliance, financeiro e suporte. Meu dia a dia envolvia Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
+        "en": "I worked as an Elixir Developer at Trio from July 2025 to September 2026, with about 900 commits across 18 repositories of a banking-as-a-service platform with Pix: regulatory reporting to the Central Bank (CCS), reconciliation, Pix MED, balances in core banking, and the back office used by compliance, finance, and support. My day-to-day involved Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
       },
       {
         "pt": "Estou no 8º semestre de Sistemas de Informação na Universidade Tecnológica Federal do Paraná (UTFPR) e atuo como desenvolvedor na Hi Tech Consultoria, a empresa júnior da UTFPR voltada para consultoria em tecnologia, participando de projetos reais que conectam aprendizado acadêmico e experiência de mercado.",

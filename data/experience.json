@@ -21,32 +21,32 @@
       "end": "2026-09",
       "highlights": [
         {
-          "pt": "Assumi o reporte diário do CCS ao Bacen, em aberto havia cerca de dois anos, e o resolvi de ponta a ponta: engenharia reversa dos retornos da validação externa, formato do arquivo e origem, coesão e recuperação dos dados.",
-          "en": "Took over the daily CCS regulatory report to the Central Bank, an issue open for about two years, and solved it end to end: reverse-engineering the external validation feedback, the file format, and the origin, consistency, and recovery of the data."
+          "pt": "Resolvi o arquivo CCS enviado diariamente ao Bacen, em aberto havia cerca de dois anos: regras de contas encerradas e de fim de vínculo com representantes, engenharia reversa da validação externa e recuperação de dados.",
+          "en": "Fixed the CCS file sent daily to the Central Bank, an issue open for about two years: rules for closed accounts and ended links with legal representatives, reverse-engineering the external validation, and data recovery."
         },
         {
-          "pt": "Conduzi investigações complexas reproduzindo o problema com testes automatizados e scripts de cenário, validando cada etapa entre serviços (core, API, backoffice) e cruzando auditoria no ClickHouse com o Postgres.",
-          "en": "Led complex investigations by reproducing issues with automated tests and scenario scripts, validating each step across services (core, API, back office) and cross-checking ClickHouse audit trails with Postgres."
+          "pt": "Construí fluxos de conciliação com o Bacen para transações não conciliadas e jobs agendados de saldo da conta PI e de correção, com ganho de performance via índices de cobertura, cache e consultas paralelas em lotes.",
+          "en": "Built reconciliation flows against the Central Bank for unreconciled transactions and scheduled jobs for PI account balance and corrections, speeding them up with covering indexes, caching, and parallel batched queries."
         },
         {
-          "pt": "Corrigi funcionalidades inconsistentes atacando a causa raiz, cobrindo-as com testes e padronizando o código em módulos reutilizáveis, com regra de negócio no serviço dono do dado e erros tratados explicitamente.",
-          "en": "Fixed inconsistent features at the root cause, covering them with tests and standardizing the code into reusable modules, with business rules in the service that owns the data and explicit error handling."
+          "pt": "Criei o helper de busca por trecho que ignora acentos e maiúsculas, adotado em 8 serviços, e padronizei a busca em dezenas de telas do backoffice usado por ~100 funcionários.",
+          "en": "Created the partial-text search helper that ignores accents and case, adopted by 8 services, and standardized search across dozens of screens of a back office used daily by ~100 employees."
         },
         {
-          "pt": "Desenvolvi e adaptei reconciliações automáticas entre extratos do Bacen e a base local, detectando e corrigindo divergências em volumes de milhares a milhões de registros.",
-          "en": "Built and adapted automated reconciliations between Central Bank statements and local data, detecting and fixing discrepancies across thousands to millions of records."
+          "pt": "No backoffice em LiveView, entreguei bloqueios e retenções, abertura e edição de contas, tarifas, transferências de tesouraria e troca de representante legal, com trilha de auditoria de sessão e rota em todas as ações.",
+          "en": "In the LiveView back office, delivered account blocks and holds, account opening and editing, fees, treasury transfers, and legal representative replacement, with a session- and route-level audit trail on every action."
         },
         {
-          "pt": "Criei a busca compartilhada do backoffice (ILIKE no backend, em biblioteca comum aos serviços) e padronizei dezenas de telas: parcial, sem diferenciar acentos nem maiúsculas, automática e com limites de performance.",
-          "en": "Created the shared back-office search (backend ILIKE in a library shared across services) and standardized dozens of screens: partial, accent- and case-insensitive, as-you-type, with performance limits."
+          "pt": "No MED do Pix, implementei busca full-text em notificações de infração e pedidos de devolução, sincronização com o DICT, fluxo de contestação e exportação em CSV.",
+          "en": "In Pix MED (the fraud refund mechanism), implemented full-text search over infraction reports and refund requests, DICT synchronization, a dispute flow, and CSV export."
         },
         {
-          "pt": "Entreguei ao backoffice, usado por ~100 funcionários diariamente, operações em lote, automação de fluxos manuais, controle de uso de ferramentas pagas (Redis), permissões por área e exportação CSV/PDF, com requisitos levantados com as áreas.",
-          "en": "Delivered to a back office used daily by ~100 employees: batch operations, automation of manual flows, Redis-based usage control for paid tools, role-based permissions, and CSV/PDF exports, with requirements gathered from business teams."
+          "pt": "Expus saldo bloqueado e disponível do core às contas virtuais, criei tabelas e migrations no ClickHouse e reforcei a estabilidade em produção com retry, filtros no Sentry e correção de crashes.",
+          "en": "Exposed blocked and available balances from the core to virtual accounts, created ClickHouse tables and migrations, and improved production stability with retries, Sentry filters, and crash fixes."
         },
         {
-          "pt": "Atuei no core bancário (ledger, tarifas) e nas bibliotecas entre microsserviços, com queries validadas por EXPLAIN ANALYZE, transações curtas, migrations, specs OpenAPI e jobs Oban, monitorando com Sentry e Grafana.",
-          "en": "Worked on core banking (ledger, fees) and the libraries between microservices, with queries validated through EXPLAIN ANALYZE, short transactions, migrations, OpenAPI specs, and Oban jobs, monitoring with Sentry and Grafana."
+          "pt": "Investiguei bugs complexos reproduzindo-os com testes e scripts de cenário entre serviços e cruzando auditoria no ClickHouse com o Postgres, corrigindo na causa raiz e padronizando o código em módulos reutilizáveis.",
+          "en": "Investigated complex bugs by reproducing them with tests and scenario scripts across services and cross-checking ClickHouse audit trails with Postgres, fixing root causes and standardizing code into reusable modules."
         }
       ]
     },

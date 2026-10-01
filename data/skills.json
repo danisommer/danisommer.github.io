@@ -13,7 +13,7 @@
       "title": { "pt": "Linguagens e Frameworks", "en": "Languages and Frameworks" },
       "items": [
         { "name": "Elixir" },
-        { "name": "Phoenix Framework" },
+        { "name": "Phoenix (LiveView)" },
         { "name": "Go" },
         { "name": "Java (Spring Boot)" },
         { "name": "Python" },
