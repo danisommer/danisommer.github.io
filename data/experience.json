@@ -21,12 +21,16 @@
       "end": "2026-09",
       "highlights": [
         {
-          "pt": "Assumi o reporte diário do CCS ao Bacen (contas e representantes), um problema em aberto havia cerca de dois anos, e o resolvi de ponta a ponta: do formato do arquivo à origem, coesão e recuperação dos dados que o alimentam.",
-          "en": "Took over the daily CCS regulatory report to the Central Bank (accounts and legal representatives), an issue open for about two years, and solved it end to end: from the file format to the origin, consistency, and recovery of the data behind it."
+          "pt": "Assumi o reporte diário do CCS ao Bacen, em aberto havia cerca de dois anos, e o resolvi de ponta a ponta: engenharia reversa dos retornos da validação externa, formato do arquivo e origem, coesão e recuperação dos dados.",
+          "en": "Took over the daily CCS regulatory report to the Central Bank, an issue open for about two years, and solved it end to end: reverse-engineering the external validation feedback, the file format, and the origin, consistency, and recovery of the data."
         },
         {
-          "pt": "Fiz engenharia reversa dos retornos pouco detalhados da validação externa para eliminar rejeições; cruzando trilhas de auditoria no ClickHouse com o Postgres, achei a causa de um erro raro de dados cadastrais e bloqueei sua origem.",
-          "en": "Reverse-engineered vague feedback from the external validation to eliminate rejections; by cross-checking ClickHouse audit trails with Postgres, I found the root cause of a rare registration-data error and blocked it at the source."
+          "pt": "Conduzi investigações complexas reproduzindo o problema com testes automatizados e scripts de cenário, validando cada etapa entre serviços (core, API, backoffice) e cruzando auditoria no ClickHouse com o Postgres.",
+          "en": "Led complex investigations by reproducing issues with automated tests and scenario scripts, validating each step across services (core, API, back office) and cross-checking ClickHouse audit trails with Postgres."
+        },
+        {
+          "pt": "Corrigi funcionalidades inconsistentes atacando a causa raiz, cobrindo-as com testes e padronizando o código em módulos reutilizáveis, com regra de negócio no serviço dono do dado e erros tratados explicitamente.",
+          "en": "Fixed inconsistent features at the root cause, covering them with tests and standardizing the code into reusable modules, with business rules in the service that owns the data and explicit error handling."
         },
         {
           "pt": "Desenvolvi e adaptei reconciliações automáticas entre extratos do Bacen e a base local, detectando e corrigindo divergências em volumes de milhares a milhões de registros.",
@@ -37,12 +41,12 @@
           "en": "Created the shared back-office search (backend ILIKE in a library shared across services) and standardized dozens of screens: partial, accent- and case-insensitive, as-you-type, with performance limits."
         },
         {
-          "pt": "Entreguei ao backoffice operações em lote, automação de fluxos manuais, controle de uso de ferramentas pagas (Redis), permissões por área e exportação CSV/PDF, com requisitos levantados direto com as áreas.",
-          "en": "Delivered back-office batch operations, automation of manual flows, Redis-based usage control for paid tools, role-based permissions, and CSV/PDF exports, with requirements gathered directly from business teams."
+          "pt": "Entreguei ao backoffice, usado por ~100 funcionários diariamente, operações em lote, automação de fluxos manuais, controle de uso de ferramentas pagas (Redis), permissões por área e exportação CSV/PDF, com requisitos levantados com as áreas.",
+          "en": "Delivered to a back office used daily by ~100 employees: batch operations, automation of manual flows, Redis-based usage control for paid tools, role-based permissions, and CSV/PDF exports, with requirements gathered from business teams."
         },
         {
-          "pt": "Atuei no core bancário (ledger, tarifas) e nas bibliotecas de comunicação entre microsserviços, com migrations, specs OpenAPI, jobs Oban e otimização de queries em Postgres e ClickHouse.",
-          "en": "Worked on the core banking system (ledger, fees) and the libraries for communication between microservices, with migrations, OpenAPI specs, Oban jobs, and query optimization in Postgres and ClickHouse."
+          "pt": "Atuei no core bancário (ledger, tarifas) e nas bibliotecas entre microsserviços, com queries validadas por EXPLAIN ANALYZE, transações curtas, migrations, specs OpenAPI e jobs Oban, monitorando com Sentry e Grafana.",
+          "en": "Worked on core banking (ledger, fees) and the libraries between microservices, with queries validated through EXPLAIN ANALYZE, short transactions, migrations, OpenAPI specs, and Oban jobs, monitoring with Sentry and Grafana."
         }
       ]
     },
@@ -54,12 +58,8 @@
       "end": "2025-07",
       "highlights": [
         {
-          "pt": "Desenvolvimento em Java: Criei e mantive soluções de integração para grandes clientes.",
-          "en": "Java development: I created and maintained integration solutions for large clients."
-        },
-        {
-          "pt": "Integração com SAP Cloud Platform (SCPI): Projetei e implementei fluxos de trabalho para integrações em escala corporativa.",
-          "en": "Integration with SAP Cloud Platform (SCPI): I designed and implemented workflows for corporate-scale integrations."
+          "pt": "Criei e mantive integrações em Java e no SAP Cloud Platform Integration (SCPI) para grandes clientes, em escala corporativa.",
+          "en": "Built and maintained Java and SAP Cloud Platform Integration (SCPI) integrations for large clients at corporate scale."
         }
       ]
     },
@@ -71,12 +71,8 @@
       "end": "2025-07",
       "highlights": [
         {
-          "pt": "Java (Spring): Desenvolvi funcionalidades para plataformas de E-Commerce, com foco em escalabilidade e desempenho.",
-          "en": "Java (Spring): I developed features for E-Commerce platforms with a focus on scalability and performance."
-        },
-        {
-          "pt": "Atuei com Docker, TypeScript, SQL e SAP Hybris em produção e em apps mobile com React Native e PHP.",
-          "en": "Worked with Docker, TypeScript, SQL, and SAP Hybris in production, plus mobile apps with React Native and PHP."
+          "pt": "Desenvolvi E-Commerce em Java (Spring) com Docker, TypeScript, SQL e SAP Hybris, além de apps mobile (React Native, PHP).",
+          "en": "Built E-Commerce features in Java (Spring) with Docker, TypeScript, SQL, SAP Hybris, and mobile apps (React Native, PHP)."
         }
       ]
     },
