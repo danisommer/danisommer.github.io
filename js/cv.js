@@ -48,7 +48,7 @@ function renderCv({ profile, experience, skills, projects }) {
     renderHeader(profile),
     section(label("cv.summary"), [h("p", {}, t(profile.intro))]),
     section(label("cv.experience"), ofType("work").map(renderEntry)),
-    section(label("cv.education"), ofType("education").map(renderEntry)),
+    section(label("cv.education"), ofType("education").map(renderEntryHead)),
     section(label("cv.projects"), cvProjects(projects.items).map(renderProject)),
     section(label("cv.skills"), [renderSkills(skills)]),
   ].filter(Boolean);
@@ -85,6 +85,10 @@ function renderEntry(item) {
     entryHead(item),
     highlights.length > 0 && h("ul", {}, highlights.map((highlight) => h("li", {}, t(highlight))))
   );
+}
+
+function renderEntryHead(item) {
+  return h("article", { class: "cv-entry" }, entryHead(item));
 }
 
 function entryHead({ title, organization, start, end }) {

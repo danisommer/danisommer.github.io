@@ -8,12 +8,8 @@
       "start": "2025-10",
       "highlights": [
         {
-          "pt": "A Hi Tech Consultoria é uma empresa júnior sem fins lucrativos da Universidade Tecnológica Federal do Paraná (UTFPR), gerida inteiramente por estudantes.",
-          "en": "Hi Tech Consultoria is a non-profit junior enterprise of the Federal University of Technology - Paraná (UTFPR), fully managed by students."
-        },
-        {
-          "pt": "Como desenvolvedor de software, contribuo para projetos de consultoria em tecnologia que conectam o aprendizado acadêmico à experiência real de mercado.",
-          "en": "As a software developer, I contribute to technology consulting projects that connect academic learning with real market experience."
+          "pt": "Contribuo como desenvolvedor para projetos de consultoria em tecnologia da empresa júnior da UTFPR.",
+          "en": "I contribute as a developer to technology consulting projects at UTFPR's junior enterprise."
         }
       ]
     },
@@ -25,12 +21,28 @@
       "end": "2026-09",
       "highlights": [
         {
-          "pt": "Contribuí para a construção de sistemas de pagamento escaláveis no backend.",
-          "en": "I contributed to building scalable payment systems on the backend."
+          "pt": "Assumi o reporte diário do CCS ao Bacen (contas e representantes), um problema em aberto havia cerca de dois anos, e o resolvi de ponta a ponta: do formato do arquivo à origem, coesão e recuperação dos dados que o alimentam.",
+          "en": "Took over the daily CCS regulatory report to the Central Bank (accounts and legal representatives), an issue open for about two years, and solved it end to end: from the file format to the origin, consistency, and recovery of the data behind it."
         },
         {
-          "pt": "Trabalhei no dia a dia com Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
-          "en": "I worked daily with Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
+          "pt": "Fiz engenharia reversa dos retornos pouco detalhados da validação externa para eliminar rejeições; cruzando trilhas de auditoria no ClickHouse com o Postgres, achei a causa de um erro raro de dados cadastrais e bloqueei sua origem.",
+          "en": "Reverse-engineered vague feedback from the external validation to eliminate rejections; by cross-checking ClickHouse audit trails with Postgres, I found the root cause of a rare registration-data error and blocked it at the source."
+        },
+        {
+          "pt": "Desenvolvi e adaptei reconciliações automáticas entre extratos do Bacen e a base local, detectando e corrigindo divergências em volumes de milhares a milhões de registros.",
+          "en": "Built and adapted automated reconciliations between Central Bank statements and local data, detecting and fixing discrepancies across thousands to millions of records."
+        },
+        {
+          "pt": "Criei a busca compartilhada do backoffice (ILIKE no backend, em biblioteca comum aos serviços) e padronizei dezenas de telas: parcial, sem diferenciar acentos nem maiúsculas, automática e com limites de performance.",
+          "en": "Created the shared back-office search (backend ILIKE in a library shared across services) and standardized dozens of screens: partial, accent- and case-insensitive, as-you-type, with performance limits."
+        },
+        {
+          "pt": "Entreguei ao backoffice operações em lote, automação de fluxos manuais, controle de uso de ferramentas pagas (Redis), permissões por área e exportação CSV/PDF, com requisitos levantados direto com as áreas.",
+          "en": "Delivered back-office batch operations, automation of manual flows, Redis-based usage control for paid tools, role-based permissions, and CSV/PDF exports, with requirements gathered directly from business teams."
+        },
+        {
+          "pt": "Atuei no core bancário (ledger, tarifas) e nas bibliotecas de comunicação entre microsserviços, com migrations, specs OpenAPI, jobs Oban e otimização de queries em Postgres e ClickHouse.",
+          "en": "Worked on the core banking system (ledger, fees) and the libraries for communication between microservices, with migrations, OpenAPI specs, Oban jobs, and query optimization in Postgres and ClickHouse."
         }
       ]
     },
@@ -48,10 +60,6 @@
         {
           "pt": "Integração com SAP Cloud Platform (SCPI): Projetei e implementei fluxos de trabalho para integrações em escala corporativa.",
           "en": "Integration with SAP Cloud Platform (SCPI): I designed and implemented workflows for corporate-scale integrations."
-        },
-        {
-          "pt": "Colaboração internacional: Trabalhei com equipes e desenvolvedores sêniores de diferentes países, aprimorando minhas habilidades de comunicação técnica e trabalho em equipe.",
-          "en": "International collaboration: I worked with teams and senior developers from different countries, improving my technical communication and teamwork skills."
         }
       ]
     },
@@ -67,16 +75,8 @@
           "en": "Java (Spring): I developed features for E-Commerce platforms with a focus on scalability and performance."
         },
         {
-          "pt": "Outras tecnologias: Atuei com Docker, TypeScript, SQL e SAP Hybris em ambientes de produção.",
-          "en": "Other technologies: I worked with Docker, TypeScript, SQL, and SAP Hybris in production environments."
-        },
-        {
-          "pt": "Desenvolvimento mobile: Contribuí para aplicativos utilizando React Native e PHP.",
-          "en": "Mobile development: I contributed to apps using React Native and PHP."
-        },
-        {
-          "pt": "Colaboração internacional: Trabalhei com clientes internacionais e desenvolvedores sêniores, aprimorando minhas habilidades de comunicação e trabalho em equipe ágil.",
-          "en": "International collaboration: I worked with international clients and senior developers, improving communication and agile teamwork skills."
+          "pt": "Atuei com Docker, TypeScript, SQL e SAP Hybris em produção e em apps mobile com React Native e PHP.",
+          "en": "Worked with Docker, TypeScript, SQL, and SAP Hybris in production, plus mobile apps with React Native and PHP."
         }
       ]
     },
