@@ -121,7 +121,7 @@
 }
 
 .project-row:hover {
-    background-color: var(--color-raised);
+    background-color: var(--color-dim);
 }
 
 .project-row-n {

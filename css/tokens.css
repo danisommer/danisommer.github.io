@@ -15,6 +15,7 @@
     --color-on-accent: #141413;
     --color-figure: #0f1114;
     --color-overlay: rgba(10, 10, 9, 0.78);
+    --color-dim: rgba(0, 0, 0, 0.5);
     --color-success: #9bd47a;
     --color-error: #ff8a7a;
 
@@ -46,11 +47,12 @@
     --color-accent-mark: #5d8209;
     --color-on-accent: #191917;
     --color-overlay: rgba(25, 25, 23, 0.55);
+    --color-dim: rgba(235, 233, 227, 0.5);
     --color-success: #3d7a1c;
     --color-error: #b3261e;
 }
 
-.hero {
+[data-theme="dark"] .hero {
     color-scheme: dark;
 
     --color-bg: #000000;
