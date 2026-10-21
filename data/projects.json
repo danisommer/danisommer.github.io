@@ -1,11 +1,5 @@
 {
   "$schema": "./schemas/projects.schema.json",
-  "categories": [
-    { "id": "go", "label": "Go" },
-    { "id": "python", "label": "Python" },
-    { "id": "js", "label": "JavaScript/TypeScript" },
-    { "id": "cpp", "label": "C/C++" }
-  ],
   "items": [
     {
       "id": "event-driven-ecommerce",
@@ -14,11 +8,13 @@
         "pt": "E-commerce Orientado a Eventos",
         "en": "Event-Driven E-commerce"
       },
-      "icon": "fas fa-network-wired",
       "image": "images/projects/event-driven-ecommerce.png",
       "status": "in-progress",
-      "categories": ["go"],
       "tags": ["Go", "RabbitMQ", "Microservices", "RSA", "Docker"],
+      "context": {
+        "pt": "Disciplina de Sistemas Distribuídos · 1ª etapa em dupla",
+        "en": "Distributed Systems course · first stage in a pair"
+      },
       "summary": {
         "pt": "Backend de e-commerce em Go dividido em microsserviços que se comunicam apenas por eventos no RabbitMQ, com cada evento assinado digitalmente (RSA) e validado por quem o recebe.",
         "en": "E-commerce backend in Go split into microservices that communicate only through RabbitMQ events, with every event digitally signed (RSA) and verified by its consumer."
@@ -70,9 +66,8 @@
         "pt": "Reconstrução de Imagens: Python × Go",
         "en": "Image Reconstruction: Python vs Go"
       },
-      "icon": "fas fa-wave-square",
-      "categories": ["go", "python"],
       "tags": ["Go", "Python", "CGNE/CGNR", "HTTP", "Benchmark"],
+      "context": { "pt": "Disciplina · individual", "en": "Course · individual" },
       "summary": {
         "pt": "Reconstrói imagens a partir de sinais com os métodos de gradiente conjugado CGNE e CGNR, implementados em um servidor Python e em outro em Go, ambos só com a biblioteca padrão, para comparar desempenho.",
         "en": "Reconstructs images from signal data with the CGNE and CGNR conjugate-gradient methods, implemented in a Python server and a Go server, both using only the standard library, to compare performance."
@@ -113,11 +108,10 @@
       "id": "compass-plus",
       "cv": 3,
       "title": "Compass+",
-      "icon": "fas fa-compass",
       "image": "images/projects/compass-plus.png",
       "status": "in-progress",
-      "categories": ["js"],
       "tags": ["TypeScript", "Vite", "PDF.js", "GitHub Actions"],
+      "context": { "pt": "Pessoal", "en": "Personal" },
       "summary": {
         "pt": "Planejador acadêmico para alunos da UTFPR: lê os PDFs do Portal do Aluno (matriz, histórico e turmas abertas) e gera grades de horário sem conflito, tudo no navegador.",
         "en": "Course planner for UTFPR students: it reads the student portal PDFs (curriculum, transcript, and open classes) and generates conflict-free schedules, all in the browser."
@@ -162,10 +156,9 @@
     {
       "id": "knights-quest",
       "title": "Knight's Quest",
-      "icon": "fas fa-gamepad",
       "image": "images/projects/platform-game.jpg",
-      "categories": ["cpp"],
       "tags": ["C++", "SFML", "OOP", "CMake"],
+      "context": { "pt": "Disciplina de Técnicas de Programação", "en": "Programming Techniques course" },
       "summary": {
         "pt": "Jogo de plataforma 2D em C++ com SFML: co-op local, inimigos, chefão, sistema de combate, árvore de habilidades, save e ranking.",
         "en": "2D platformer in C++ with SFML: local co-op, enemies, a boss, a combat system, a skill tree, saves, and a ranking."
@@ -216,10 +209,9 @@
         "pt": "Caixeiro Viajante: Têmpera Simulada × Genético",
         "en": "Traveling Salesman: Simulated Annealing vs Genetic"
       },
-      "icon": "fas fa-route",
       "image": "images/projects/tsp-metaheuristics.png",
-      "categories": ["python"],
       "tags": ["Python", "NumPy", "Matplotlib", "Metaheuristics"],
+      "context": { "pt": "Disciplina de Sistemas Inteligentes", "en": "Intelligent Systems course" },
       "summary": {
         "pt": "Compara têmpera simulada e algoritmo genético no problema do caixeiro viajante, com experimentos de 20 a 100 cidades e gráficos de convergência.",
         "en": "Compares simulated annealing and a genetic algorithm on the traveling salesman problem, with experiments from 20 to 100 cities and convergence charts."
@@ -255,9 +247,8 @@
     {
       "id": "grafo-quest",
       "title": "GrafoQuest",
-      "icon": "fas fa-project-diagram",
-      "categories": ["js"],
       "tags": ["React", "D3.js", "Tailwind CSS", "Zustand", "Framer Motion"],
+      "context": { "pt": "Estudo para Projeto e Análise de Algoritmos", "en": "Study aid for Algorithm Design and Analysis" },
       "summary": {
         "pt": "Jogo educativo para aprender teoria dos grafos e algoritmos (Dijkstra, BFS/DFS, Prim, Kruskal, ordenação topológica e outros) com visualizações passo a passo.",
         "en": "Educational game for learning graph theory and algorithms (Dijkstra, BFS/DFS, Prim, Kruskal, topological sort, and more) with step-by-step visualizations."
@@ -297,9 +288,8 @@
         "pt": "Text-to-SQL com Llama",
         "en": "Text-to-SQL with Llama"
       },
-      "icon": "fas fa-robot",
-      "categories": ["python"],
       "tags": ["Python", "Llama 3.2", "Transformers", "MySQL", "PostgreSQL"],
+      "context": { "pt": "Disciplina de Banco de Dados", "en": "Databases course" },
       "summary": {
         "pt": "Converte perguntas em português em consultas SQL com o Llama 3.2 e as executa em bancos MySQL ou PostgreSQL.",
         "en": "Turns questions in Portuguese into SQL queries with Llama 3.2 and runs them on MySQL or PostgreSQL databases."
@@ -342,9 +332,7 @@
         "pt": "Monitor de Sistema em Tempo Real",
         "en": "Real-Time System Monitor"
       },
-      "icon": "fas fa-chart-line",
       "image": "images/projects/dashboard-app.jpg",
-      "categories": ["python", "cpp"],
       "tags": ["Python", "C++", "Tkinter", "Matplotlib", "Linux"],
       "summary": {
         "pt": "Monitoramento de métricas do sistema em tempo real, com interface em Python (Tkinter e Matplotlib) e coleta de dados em C++ exposta como biblioteca compartilhada.",
@@ -384,9 +372,7 @@
         "pt": "Metrônomo Progressivo",
         "en": "Progressive Metronome"
       },
-      "icon": "fas fa-music",
       "image": "images/projects/smart-metronome.png",
-      "categories": ["js"],
       "tags": ["JavaScript", "Tone.js", "Tailwind CSS", "Web Audio API"],
       "summary": {
         "pt": "Metrônomo web com treino progressivo de andamento: aumenta o BPM automaticamente até a meta, com tap tempo, sons personalizáveis, visualização dos tempos e histórico de sessões.",

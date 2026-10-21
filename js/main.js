@@ -11,7 +11,7 @@ import * as navigation from "./sections/navigation.js";
 import * as projects from "./sections/projects.js";
 import * as skills from "./sections/skills.js";
 
-const sections = [navigation, hero, about, skills, experience, projects, contact, footer];
+const sections = [navigation, hero, experience, projects, skills, about, contact, footer];
 
 initTheme();
 start();
@@ -43,8 +43,8 @@ function renderPage(content) {
 
 function showLoadError(error) {
   console.error(error);
-  document.querySelector(".hero-btns").hidden = true;
-  document.querySelector(".hero-content").prepend(
+  document.querySelector(".hero-actions").hidden = true;
+  document.querySelector(".hero-grid").prepend(
     h(
       "div",
       { class: "load-error", role: "alert" },

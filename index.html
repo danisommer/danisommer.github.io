@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Zaki Sommer - Backend Developer</title>
     <meta name="description" content="Desenvolvedor backend (Elixir) com experiência em Pix, sistemas financeiros e integrações. Estudante de Sistemas de Informação na UTFPR.">
-    <meta name="theme-color" content="#1a1a1a">
+    <meta name="theme-color" content="#141413">
     <link rel="canonical" href="https://danisommer.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://danisommer.github.io/">
@@ -28,19 +28,20 @@
             } catch {
                 saved = null;
             }
-            const system = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            document.documentElement.dataset.theme = saved === "light" || saved === "dark" ? saved : system;
+            document.documentElement.dataset.theme = saved === "light" ? "light" : "dark";
         }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/sections/hero.css">
-    <link rel="stylesheet" href="css/sections/about.css">
-    <link rel="stylesheet" href="css/sections/skills.css">
     <link rel="stylesheet" href="css/sections/experience.css">
     <link rel="stylesheet" href="css/sections/projects.css">
+    <link rel="stylesheet" href="css/sections/skills.css">
+    <link rel="stylesheet" href="css/sections/about.css">
     <link rel="stylesheet" href="css/sections/contact.css">
     <script type="module" src="js/main.js"></script>
 </head>
@@ -51,138 +52,125 @@
     </noscript>
 
     <header class="site-header">
-        <div class="header-container">
-            <a href="#home" class="logo"></a>
+        <div class="wrap header-bar">
+            <a href="#top" class="brand"></a>
             <nav class="nav-links" data-i18n-aria-label="a11y.mainNav">
-                <a href="#home" data-i18n="nav.home"></a>
-                <a href="#about" data-i18n="nav.about"></a>
-                <a href="#skills" data-i18n="nav.skills"></a>
                 <a href="#experience" data-i18n="nav.experience"></a>
                 <a href="#projects" data-i18n="nav.projects"></a>
+                <a href="#skills" data-i18n="nav.skills"></a>
+                <a href="#about" data-i18n="nav.about"></a>
                 <a href="#contact" data-i18n="nav.contact"></a>
             </nav>
-            <div class="header-actions">
+            <div class="header-tools">
                 <div class="language-toggle" role="group" data-i18n-aria-label="a11y.language">
                     <button type="button" data-lang="pt" lang="pt-BR" title="Português">PT</button>
-                    <span aria-hidden="true">|</span>
+                    <span aria-hidden="true">/</span>
                     <button type="button" data-lang="en" lang="en" title="English">EN</button>
                 </div>
                 <button type="button" class="theme-toggle" data-theme-toggle data-i18n-aria-label="a11y.themeToggle">
-                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M7 1a6 6 0 0 1 0 12z" fill="currentColor"/></svg>
                 </button>
-                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" data-i18n-aria-label="a11y.menuOpen">
-                    <i class="fas fa-bars" aria-hidden="true"></i>
-                </button>
+                <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" data-i18n="nav.menu"></button>
             </div>
         </div>
     </header>
 
     <div class="mobile-nav" id="mobile-nav" inert>
-        <button type="button" class="mobile-nav-close" data-i18n-aria-label="a11y.menuClose">
-            <i class="fas fa-times" aria-hidden="true"></i>
-        </button>
+        <button type="button" class="mobile-nav-close" data-i18n="nav.close" data-i18n-aria-label="a11y.menuClose"></button>
         <nav class="mobile-links" data-i18n-aria-label="a11y.mainNav">
-            <a href="#home" data-i18n="nav.home"></a>
-            <a href="#about" data-i18n="nav.about"></a>
-            <a href="#skills" data-i18n="nav.skills"></a>
             <a href="#experience" data-i18n="nav.experience"></a>
             <a href="#projects" data-i18n="nav.projects"></a>
+            <a href="#skills" data-i18n="nav.skills"></a>
+            <a href="#about" data-i18n="nav.about"></a>
             <a href="#contact" data-i18n="nav.contact"></a>
         </nav>
         <div class="mobile-controls">
             <div class="language-toggle" role="group" data-i18n-aria-label="a11y.language">
                 <button type="button" data-lang="pt" lang="pt-BR" title="Português">PT</button>
-                <span aria-hidden="true">|</span>
+                <span aria-hidden="true">/</span>
                 <button type="button" data-lang="en" lang="en" title="English">EN</button>
             </div>
             <button type="button" class="theme-toggle" data-theme-toggle data-i18n-aria-label="a11y.themeToggle">
-                <i class="fas fa-moon" aria-hidden="true"></i>
+                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M7 1a6 6 0 0 1 0 12z" fill="currentColor"/></svg>
             </button>
         </div>
     </div>
 
     <div class="overlay" aria-hidden="true"></div>
 
-    <main>
+    <main id="top">
         <section id="home" class="hero">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title"></h1>
-                    <p class="hero-subtitle"></p>
-                    <p class="hero-location" hidden>
-                        <i class="fas fa-location-dot" aria-hidden="true"></i>
-                        <span></span>
-                    </p>
-                    <p class="hero-text"></p>
-                    <div class="hero-btns">
-                        <a href="#projects" class="btn" data-i18n="hero.viewProjects"></a>
-                        <a href="#contact" class="btn btn-outline" data-i18n="hero.contact"></a>
+            <div class="wrap">
+                <div class="grid hero-grid">
+                    <p class="hero-kicker"></p>
+                    <h1 class="hero-name"></h1>
+                    <figure class="hero-portrait" hidden></figure>
+                    <p class="hero-lede"></p>
+                    <div class="hero-focus" hidden>
+                        <p class="label" data-i18n="hero.focus"></p>
+                        <ul></ul>
                     </div>
+                    <div class="hero-actions"></div>
                 </div>
-                <div class="hero-portrait" hidden></div>
+                <dl class="grid hero-facts"></dl>
             </div>
         </section>
 
-        <section id="about" class="section about">
-            <div class="container">
-                <h2 class="section-title" data-i18n="about.title"></h2>
-                <div class="about-container">
-                    <div class="about-img"></div>
-                    <div class="about-content">
-                        <h3 class="about-greeting"></h3>
-                        <div class="about-text"></div>
-                        <a class="btn about-btn">
-                            <i class="fas fa-file-arrow-down" aria-hidden="true"></i>
-                            <span data-i18n="cv.download"></span>
-                        </a>
-                    </div>
+        <section id="experience" class="section">
+            <div class="wrap">
+                <header class="grid section-head">
+                    <p class="section-index" aria-hidden="true">01</p>
+                    <h2 class="section-title" data-i18n="experience.title"></h2>
+                </header>
+                <div class="experience-list"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="wrap">
+                <header class="grid section-head">
+                    <p class="section-index" aria-hidden="true">02</p>
+                    <h2 class="section-title" data-i18n="projects.title"></h2>
+                </header>
+                <div class="projects-feature"></div>
+                <div class="projects-index"></div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="wrap">
+                <header class="grid section-head">
+                    <p class="section-index" aria-hidden="true">03</p>
+                    <h2 class="section-title" data-i18n="skills.title"></h2>
+                </header>
+                <dl class="skills-list"></dl>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="wrap">
+                <header class="grid section-head">
+                    <p class="section-index" aria-hidden="true">04</p>
+                    <h2 class="section-title" data-i18n="about.title"></h2>
+                </header>
+                <div class="grid about-body">
+                    <div class="about-text"></div>
+                    <div class="about-actions"></div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="section skills">
-            <div class="container">
-                <h2 class="section-title" data-i18n="skills.title"></h2>
-                <div class="skills-carousel-container" role="region" aria-roledescription="carousel" data-i18n-aria-label="skills.carousel">
-                    <div class="skills-carousel"></div>
-                    <div class="carousel-navigation">
-                        <button type="button" class="carousel-btn" data-carousel="prev" data-i18n-aria-label="skills.previous">
-                            <i class="fas fa-chevron-left" aria-hidden="true"></i>
-                        </button>
-                        <div class="carousel-indicators"></div>
-                        <button type="button" class="carousel-btn" data-carousel="next" data-i18n-aria-label="skills.next">
-                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section experience">
-            <div class="container">
-                <h2 class="section-title" data-i18n="experience.title"></h2>
-                <ol class="timeline"></ol>
-            </div>
-        </section>
-
-        <section id="projects" class="section projects">
-            <div class="container">
-                <h2 class="section-title" data-i18n="projects.title"></h2>
-                <div class="filter-container" role="group" data-i18n-aria-label="projects.filterLabel"></div>
-                <div class="projects-grid"></div>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact">
-            <div class="container">
-                <h2 class="section-title" data-i18n="contact.title"></h2>
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <h3 data-i18n="contact.info"></h3>
-                        <ul class="contact-list"></ul>
-                    </div>
-                    <div class="contact-form">
-                        <form id="contact-form" action="https://formspree.io/f/mgvavpow" method="POST">
+        <section id="contact" class="section">
+            <div class="wrap">
+                <header class="grid section-head">
+                    <p class="section-index" aria-hidden="true">05</p>
+                    <h2 class="section-title" data-i18n="contact.title"></h2>
+                </header>
+                <div class="grid contact-body">
+                    <div class="contact-links"></div>
+                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/mgvavpow" method="POST">
+                        <p class="label contact-form-title" data-i18n="contact.formTitle"></p>
+                        <div class="form-row">
                             <div class="form-group">
                                 <label for="name" data-i18n="contact.form.name"></label>
                                 <input type="text" id="name" name="name" class="form-control" autocomplete="name" required>
@@ -191,60 +179,38 @@
                                 <label for="email" data-i18n="contact.form.email"></label>
                                 <input type="email" id="email" name="email" class="form-control" autocomplete="email" required>
                             </div>
-                            <div class="form-group">
-                                <label for="subject" data-i18n="contact.form.subject"></label>
-                                <input type="text" id="subject" name="subject" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" data-i18n="contact.form.message"></label>
-                                <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                            </div>
-                            <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off">
-                            <button type="submit" class="btn form-btn"></button>
-                            <p class="form-status" role="status"></p>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="contact.form.subject"></label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message"></label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off">
+                        <button type="submit" class="btn form-btn"></button>
+                        <p class="form-status" role="status"></p>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3 class="footer-name"></h3>
-                    <p class="footer-note"></p>
-                </div>
-                <div class="footer-col">
-                    <h3 data-i18n="footer.links"></h3>
-                    <nav class="footer-links" data-i18n-aria-label="footer.links">
-                        <a href="#home" data-i18n="nav.home"></a>
-                        <a href="#about" data-i18n="nav.about"></a>
-                        <a href="#skills" data-i18n="nav.skills"></a>
-                        <a href="#experience" data-i18n="nav.experience"></a>
-                        <a href="#projects" data-i18n="nav.projects"></a>
-                        <a href="#contact" data-i18n="nav.contact"></a>
-                    </nav>
-                </div>
-                <div class="footer-col">
-                    <h3 data-i18n="footer.social"></h3>
-                    <div class="social-links"></div>
-                </div>
+        <div class="wrap grid footer-bar">
+            <div class="footer-id">
+                <p class="footer-name"></p>
+                <p class="footer-note"></p>
             </div>
+            <nav class="footer-links" data-i18n-aria-label="a11y.contactLinks"></nav>
             <p class="copyright"></p>
         </div>
     </footer>
 
-    <a href="#home" class="back-to-top" data-i18n-aria-label="a11y.backToTop">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </a>
-
     <dialog class="modal" id="project-modal" aria-labelledby="project-modal-title">
         <div class="modal-content">
-            <button type="button" class="close-modal" data-i18n-aria-label="projects.close" autofocus>
-                <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
+            <button type="button" class="close-modal" data-i18n="nav.close" data-i18n-aria-label="projects.close" autofocus></button>
             <div class="project-details"></div>
         </div>
     </dialog>

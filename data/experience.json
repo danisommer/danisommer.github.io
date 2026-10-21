@@ -10,6 +10,8 @@
       "organization": "Trio",
       "start": "2025-07",
       "end": "2026-09",
+      "note": { "pt": "15 meses · meio período", "en": "15 months · part-time" },
+      "stack": ["Elixir", "Phoenix LiveView", "PostgreSQL", "ClickHouse", "Redis", "RedPanda/Kafka", "Docker", "Sentry"],
       "highlights": [
         {
           "pt": "Corrigi o arquivo regulatório diário do CCS, enviado ao Bacen, com problema aberto havia cerca de dois anos: um único registro inválido derrubava o arquivo inteiro. Fiz engenharia reversa da validação externa, implementei as regras de contas encerradas e de fim de vínculo com representantes e recuperei os dados; o arquivo passou a ser aceito, sem novos erros relacionados.",
@@ -50,6 +52,8 @@
       "organization": "Meisters Solutions",
       "start": "2024-07",
       "end": "2025-07",
+      "note": { "pt": "Estágio · 30 h semanais", "en": "Internship · 30 h/week" },
+      "stack": ["SAP CPI", "Groovy", "SAP Business One", "XML/JSON", "FTP/SFTP"],
       "highlights": [
         {
           "pt": "Desenvolvi e mantive integrações no SAP CPI entre o ERP SAP Business One, uma loja PrestaShop, a Amazon e transportadoras, sincronizando pedidos, clientes, preços, faturas e status da operação europeia de uma multinacional.",
@@ -70,6 +74,8 @@
       "organization": "Digiu Digital",
       "start": "2024-07",
       "end": "2025-07",
+      "note": { "pt": "Mesmo estágio da Meisters", "en": "Same internship as Meisters" },
+      "stack": ["Java", "Spring", "Docker"],
       "highlights": [
         {
           "pt": "Mesmo estágio da Meisters, no mesmo período, junto com a equipe da Digiu na Espanha, em reuniões em inglês.",

@@ -1,20 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Projetos",
-  "description": "Cards da seção de projetos, o modal de detalhes e os botões de filtro.",
+  "description": "Seção de projetos (destaque e índice) e o modal de detalhes.",
   "type": "object",
-  "required": ["categories", "items"],
+  "required": ["items"],
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
-    "categories": {
-      "type": "array",
-      "description": "Botões de filtro, na ordem em que aparecem. Botões sem nenhum projeto ficam ocultos.",
-      "items": { "$ref": "#/definitions/category" }
-    },
     "items": {
       "type": "array",
-      "description": "Projetos em ordem de relevância. Na página, os que têm imagem aparecem primeiro; dentro de cada grupo, vale a ordem deste arquivo.",
+      "description": "Projetos em ordem de relevância: o primeiro sai em destaque, com imagem e ficha técnica; os demais formam o índice, nesta ordem.",
       "items": { "$ref": "#/definitions/project" }
     }
   },
@@ -23,30 +18,9 @@
       "type": "string",
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
     },
-    "category": {
-      "type": "object",
-      "required": ["id", "label"],
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "description": "Identificador usado em \"categories\" de cada projeto (minúsculas e hífens).",
-          "$ref": "#/definitions/slug"
-        },
-        "label": {
-          "description": "Texto do botão de filtro.",
-          "$ref": "common.schema.json#/definitions/text"
-        }
-      },
-      "defaultSnippets": [
-        {
-          "label": "Nova categoria de filtro",
-          "body": { "id": "${1:elixir}", "label": "${2:Elixir}" }
-        }
-      ]
-    },
     "project": {
       "type": "object",
-      "required": ["id", "title", "categories", "tags", "summary", "links"],
+      "required": ["id", "title", "tags", "summary", "links"],
       "additionalProperties": false,
       "properties": {
         "id": {
@@ -59,35 +33,29 @@
           "description": "Posição do projeto no currículo em PDF (1 = primeiro). Sem este campo, o projeto não entra no currículo."
         },
         "title": {
-          "description": "Título do card e do modal.",
+          "description": "Título no site e no modal.",
           "$ref": "common.schema.json#/definitions/text"
         },
-        "icon": {
-          "description": "Ícone ao lado do título. Opcional (padrão: \"fas fa-code\").",
-          "$ref": "common.schema.json#/definitions/icon"
-        },
         "image": {
-          "description": "Screenshot do projeto: recortado no card, inteiro no modal. Opcional: sem imagem, o card mostra o ícone sobre fundo azul.",
+          "description": "Imagem real do projeto (diagrama ou tela), exibida no destaque e no modal. Opcional: o índice nunca mostra imagens.",
           "$ref": "common.schema.json#/definitions/imagePath"
         },
         "status": {
-          "description": "Opcional: \"in-progress\" exibe o selo \"Em andamento\" no card e no modal.",
+          "description": "Opcional: \"in-progress\" exibe \"Em andamento\" no site e no modal.",
           "enum": ["in-progress"]
-        },
-        "categories": {
-          "type": "array",
-          "description": "Filtros em que o projeto aparece: valores de \"id\" da lista \"categories\" no topo do arquivo.",
-          "uniqueItems": true,
-          "items": { "type": "string" }
         },
         "tags": {
           "type": "array",
-          "description": "Etiquetas de tecnologia exibidas no card e no modal.",
+          "description": "Tecnologias, exibidas na coluna \"Stack\" e no currículo.",
           "minItems": 1,
           "items": { "type": "string", "minLength": 1 }
         },
+        "context": {
+          "description": "Origem do projeto, exibida na coluna \"Contexto\", ex.: \"Disciplina de Banco de Dados\" ou \"Pessoal\". Opcional: sem ele, a coluna fica vazia.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
         "summary": {
-          "description": "Descrição curta do card.",
+          "description": "Descrição curta exibida no site.",
           "$ref": "common.schema.json#/definitions/text"
         },
         "cvSummary": {
@@ -116,7 +84,7 @@
         },
         "links": {
           "type": "object",
-          "description": "Links exibidos no card e no modal.",
+          "description": "Links exibidos no site e no modal.",
           "additionalProperties": false,
           "properties": {
             "github": {
@@ -133,15 +101,13 @@
       "defaultSnippets": [
         {
           "label": "Novo projeto",
-          "description": "Esqueleto completo de um projeto (card + modal)",
+          "description": "Esqueleto completo de um projeto (site + modal)",
           "body": {
             "id": "${1:meu-projeto}",
             "title": { "pt": "${2:Título}", "en": "${3:Title}" },
-            "icon": "${4:fas fa-code}",
-            "image": "images/projects/${1:meu-projeto}.jpg",
-            "categories": ["${5:java}"],
-            "tags": ["${6:Java}"],
-            "summary": { "pt": "${7:Resumo do card.}", "en": "${8:Card summary.}" },
+            "tags": ["${4:Java}"],
+            "context": { "pt": "${5:Pessoal}", "en": "${6:Personal}" },
+            "summary": { "pt": "${7:Resumo curto.}", "en": "${8:Short summary.}" },
             "details": {
               "intro": { "pt": "${9:Parágrafo de abertura do modal.}", "en": "${10:Modal opening paragraph.}" },
               "features": [

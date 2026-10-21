@@ -1,6 +1,8 @@
 # danisommer.github.io
 
-Portfólio pessoal publicado em <https://danisommer.github.io>. HTML, CSS e JavaScript puros, sem build e sem dependências (fora o Font Awesome via CDN).
+Portfólio pessoal publicado em <https://danisommer.github.io>. HTML, CSS e JavaScript puros, sem build e sem dependências (fora as fontes Schibsted Grotesk e IBM Plex Mono, do Google Fonts).
+
+O visual segue um grid de 12 colunas: nas seções, as 3 primeiras colunas guardam os metadados (número da seção, datas, empresa, rótulos) e as 9 restantes, o conteúdo. O tema escuro é o padrão; o claro fica a um clique e a escolha é lembrada.
 
 Todo o conteúdo — textos, experiências, habilidades, projetos e contatos — fica em arquivos JSON na pasta `data/`, com português e inglês lado a lado. O HTML é só o esqueleto; o JavaScript lê os JSON e monta a página. O currículo em PDF sai dos mesmos arquivos (ver [Currículo em PDF](#currículo-em-pdf)).
 
@@ -15,10 +17,10 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 
 | Quero mudar… | Arquivo |
 |---|---|
-| Nome, subtítulo, localização, texto e retrato do topo, "Sobre", foto, contatos, frase do rodapé | `data/profile.json` |
-| Timeline: empregos, formação, voluntariado, cursos | `data/experience.json` |
-| Carrossel de habilidades e nomes dos níveis | `data/skills.json` |
-| Projetos (card + modal) e botões de filtro | `data/projects.json` |
+| Nome, linha de cima, texto, lista "Experiência com" e retrato do topo, "Sobre", contatos, frase do rodapé | `data/profile.json` |
+| Experiência, empresa júnior, formação, voluntariado, cursos | `data/experience.json` |
+| Competências (uma linha por categoria) e nomes dos níveis | `data/skills.json` |
+| Projetos (destaque, índice e modal) | `data/projects.json` |
 | Textos fixos da interface: menu, botões, títulos das seções, mensagens do formulário | `data/ui.json` |
 | Título da aba, descrição e imagem do preview de link (LinkedIn, WhatsApp) | `<head>` do `index.html` |
 | Cores dos temas claro e escuro | `css/tokens.css` |
@@ -30,8 +32,9 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 
 - **Texto que muda entre idiomas** → objeto com os dois: `{ "pt": "Olá", "en": "Hello" }`.
 - **Texto igual nos dois idiomas** → string simples: `"Elixir"`.
-- **Datas** → `"AAAA-MM"` (`"2025-07"`) ou só `"AAAA"` (`"2022"`). O site escreve por extenso no idioma do visitante ("julho de 2025" / "July 2025"). Sem data de fim, aparece "Presente".
-- **Ordem** → a ordem dos itens no arquivo é a ordem na página. Exceção: em `data/projects.json` a ordem é de **relevância**, e na página os projetos com imagem vêm primeiro (dentro de cada grupo, vale a ordem do arquivo). Ao adicionar a foto de um projeto, ele sobe sozinho para o grupo com imagem.
+- **Datas** → `"AAAA-MM"` (`"2025-07"`) ou só `"AAAA"` (`"2022"`). O site e o currículo mostram `07/2025`. Sem data de fim, aparece "Presente".
+- **Ordem** → a ordem dos itens no arquivo é a ordem na página, e o primeiro tem destaque: o primeiro `"work"` de `data/experience.json` sai com o primeiro tópico em corpo grande e os demais numerados em duas colunas; o primeiro projeto de `data/projects.json` sai com imagem e ficha técnica, e os outros formam o índice.
+- **Topo** → os blocos "Agora", "Antes" e "Formação" saem de `data/experience.json` (o item atual de `"work"` ou `"junior-enterprise"`, o primeiro `"work"` encerrado e a formação); "Base" sai de `location`.
 
 ### O VS Code ajuda enquanto você edita
 
@@ -45,27 +48,22 @@ Cada JSON aponta para um schema em `data/schemas/` (linha `"$schema"` no topo). 
 
 ### Adicionar um projeto
 
-1. Salve a imagem em `images/projects/` (ex.: `meu-projeto.jpg`). Ela aparece recortada no card e inteira no modal.
-2. Em `data/projects.json`, dentro de `"items"`, coloque o cursor na posição de relevância do projeto (mais relevantes no topo) e use **Ctrl+Espaço → Novo projeto**.
-3. `"categories"` define em quais filtros o projeto aparece — use os `id` da lista `"categories"` no topo do arquivo.
-4. `"icon"` é uma classe do [Font Awesome 6 free](https://fontawesome.com/search?ic=free), ex.: `"fas fa-music"`.
-5. `"links"` aceita `"github"` e `"demo"`; os dois aparecem no card e no modal.
+1. Em `data/projects.json`, dentro de `"items"`, coloque o cursor na posição de relevância do projeto (mais relevantes no topo) e use **Ctrl+Espaço → Novo projeto**.
+2. `"context"` diz de onde o projeto veio ("Disciplina de Banco de Dados", "Pessoal") e aparece na coluna "Contexto".
+3. `"links"` aceita `"github"` e `"demo"`; os dois aparecem no índice, no destaque e no modal.
+4. Se tiver uma imagem real do projeto (diagrama ou tela), salve em `images/projects/` e aponte em `"image"`. Ela aparece no destaque e no modal; o índice não mostra imagens, então nenhum projeto precisa de uma.
 
-`icon`, `image`, `details` e `status` são opcionais. Sem imagem, o card mostra o ícone sobre fundo azul; sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe o selo "Em andamento".
-
-### Criar um filtro novo
-
-Adicione `{ "id": "elixir", "label": "Elixir" }` em `"categories"` no topo de `data/projects.json` e use `"elixir"` nos projetos. Filtros sem nenhum projeto ficam ocultos, então dá para deixar categorias preparadas.
+`image`, `context`, `details` e `status` são opcionais. Sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe "Em andamento".
 
 ### Adicionar uma experiência, formação ou curso
 
-Em `data/experience.json`, dentro de `"items"`, use **Ctrl+Espaço → Nova experiência**. Enquanto for o emprego atual, não coloque `"end"`. `"organization"` e `"highlights"` são opcionais.
+Em `data/experience.json`, dentro de `"items"`, use **Ctrl+Espaço → Nova experiência**. Enquanto for o emprego atual, não coloque `"end"`. `"organization"`, `"highlights"`, `"note"` (linha curta abaixo da empresa, ex.: "15 meses · meio período") e `"stack"` (tecnologias abaixo dos tópicos) são opcionais; `note` e `stack` só aparecem no site.
 
-`"type"` classifica o item: `"work"` entra em Experiência no currículo, `"junior-enterprise"` entra em Empresa Júnior, `"education"` entra em Formação; `"volunteering"` e `"courses"` ficam só no site.
+`"type"` classifica o item: `"work"` entra em Experiência no site e no currículo; `"junior-enterprise"` e `"education"` entram no bloco "Empresa júnior e formação" do site (e em Empresa Júnior e Formação no currículo); `"volunteering"` e `"courses"` entram no bloco "Voluntariado e cursos" e ficam só no site.
 
 ### Adicionar ou mudar uma habilidade
 
-Em `data/skills.json`, cada item de `"categories"` é um slide do carrossel. Uma habilidade é `{ "name": "Elixir" }`. O `level` é opcional e vira uma etiqueta ao lado do nome (hoje só os idiomas usam); quando existe, precisa ser uma das chaves de `"levels"` no topo do arquivo (`basic`, `intermediate`, `advanced`, `fluent`, `professional`, `native`). Para criar um nível novo, adicione a chave em `"levels"` com o nome em pt e en.
+Em `data/skills.json`, cada item de `"categories"` é uma linha da seção Competências (e do currículo). Uma habilidade é `{ "name": "Elixir" }`. O `level` é opcional e vira uma etiqueta ao lado do nome (hoje só os idiomas usam); quando existe, precisa ser uma das chaves de `"levels"` no topo do arquivo (`basic`, `intermediate`, `advanced`, `fluent`, `professional`, `native`). Para criar um nível novo, adicione a chave em `"levels"` com o nome em pt e en.
 
 ### Virar o semestre
 
@@ -76,15 +74,15 @@ O semestre aparece em três textos, nos dois idiomas:
 
 ### Adicionar um contato ou rede social
 
-Em `data/profile.json`, dentro de `"contacts"`, use **Ctrl+Espaço → Novo contato**. Com `"social": true`, o ícone também aparece em "Redes Sociais", no rodapé.
+Em `data/profile.json`, dentro de `"contacts"`, use **Ctrl+Espaço → Novo contato**. Todos os contatos entram no cabeçalho do currículo; com `"featured": true`, o contato também aparece no topo, na seção Contato e no rodapé. O e-mail (`mailto:`) aparece pelo endereço; os demais, pelo nome, abrindo em nova aba.
 
-### Trocar a foto
+### Trocar o retrato
 
-`data/profile.json` → `photo.src` para a foto do "Sobre" e `portrait.src` para o retrato do topo (as imagens vão em `images/`). O retrato aparece recortado em 4:5, com o rosto na parte de cima; uma largura de ~800 px basta, e acima disso a imagem só fica mais pesada no carregamento.
+`data/profile.json` → `portrait.src` (a imagem vai em `images/`). O retrato aparece recortado em 4:5, com o rosto na parte de cima; uma largura de ~800 px basta, e acima disso a imagem só fica mais pesada no carregamento. A imagem do preview de link (LinkedIn, WhatsApp) é outra: fica nas tags `og:image` e `twitter:image` do `<head>` do `index.html`.
 
 ## Currículo em PDF
 
-O botão **Baixar CV (PDF)**, na seção "Sobre", baixa o currículo no idioma em que o site está (`cv/pt.pdf` ou `cv/en.pdf`). Ninguém edita o PDF: ele é gerado a cada publicação a partir dos mesmos `data/*.json`, então atualizar o site atualiza o currículo.
+O botão **Currículo em PDF**, no topo e no fim da seção "Sobre", baixa o currículo no idioma em que o site está (`cv/pt.pdf` ou `cv/en.pdf`). Ninguém edita o PDF: ele é gerado a cada publicação a partir dos mesmos `data/*.json`, então atualizar o site atualiza o currículo.
 
 O que entra, em uma página A4, uma coluna, texto selecionável (legível por sistemas de triagem/ATS):
 
@@ -108,7 +106,7 @@ O layout foi calibrado para caber em uma página com 6 projetos; se o conteúdo 
 
 Todo push dispara o workflow `.github/workflows/pages.yml`:
 
-1. **validate** — `scripts/validate-content.mjs` confere os JSON contra os schemas e também verifica o que o schema sozinho não pega: id de projeto repetido, categoria ou nível de habilidade que não existe e imagem que não está na pasta.
+1. **validate** — `scripts/validate-content.mjs` confere os JSON contra os schemas e também verifica o que o schema sozinho não pega: id de projeto repetido, posição `"cv"` repetida, nível de habilidade que não existe e imagem que não está na pasta.
 2. **deploy** — só na `main` e só se a validação passar: gera os PDFs do currículo e publica o site no GitHub Pages.
 
 Se a validação falhar, o site no ar continua na versão anterior e o erro aparece na aba **Actions** do repositório, apontando arquivo e campo.
@@ -125,15 +123,16 @@ node scripts/validate-content.mjs
 ## Estrutura do código
 
 ```
-index.html            esqueleto da página; aplica o tema salvo antes da primeira pintura
+index.html            esqueleto da página; aplica o tema salvo (ou o escuro) antes da primeira pintura
 cv.html               página do currículo (vira o PDF); css/cv.css e js/cv.js
 data/                 conteúdo (JSON) + schemas de validação
-css/tokens.css        cores, sombras, fontes e medidas (temas claro/escuro)
-css/base.css          reset, tipografia, botões, títulos de seção
-css/layout.css        header, menu mobile, rodapé, botão de voltar ao topo
+css/tokens.css        cores, fontes e medidas (tema escuro padrão e tema claro)
+css/base.css          reset, grid de 12 colunas, tipografia, links, botão, cabeçalho de seção
+css/layout.css        header, menu mobile, rodapé
 css/sections/         um arquivo por seção
 js/main.js            carrega data/*.json e monta cada seção
-js/core/              idioma (i18n.js), tema, carga do conteúdo, criação de elementos (dom.js)
+js/core/              idioma (i18n.js), tema, carga do conteúdo, criação de elementos (dom.js),
+                      links compartilhados: currículo e contatos (links.js)
 js/sections/          um módulo por seção: setup() liga os eventos uma vez; render() monta o HTML
                       e roda de novo quando o idioma muda
 scripts/              validação do conteúdo e geração dos PDFs, usadas pelo workflow

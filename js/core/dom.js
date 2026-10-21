@@ -13,11 +13,6 @@ export function h(tag, attributes = {}, ...children) {
   return element;
 }
 
-/** Ícone do Font Awesome, oculto para leitores de tela. */
-export function icon(classes) {
-  return h("i", { class: classes, "aria-hidden": "true" });
-}
-
 function setAttribute(element, name, value) {
   if (value === null || value === undefined || value === false) return;
   if (name === "class") {

@@ -1,17 +1,15 @@
 import { getLanguage } from "../core/i18n.js";
 
-const SCROLL_THRESHOLD = 100;
 const desktopLayout = window.matchMedia("(min-width: 993px)");
 
 export function setup({ changeLanguage }) {
   setupLanguageToggles(changeLanguage);
   setupMobileMenu();
-  setupScrollState();
   setupActiveLink();
 }
 
 export function render({ profile }) {
-  document.querySelector(".logo").textContent = profile.name;
+  document.querySelector(".brand").textContent = profile.name;
 
   for (const button of document.querySelectorAll("[data-lang]")) {
     button.setAttribute("aria-pressed", String(button.dataset.lang === getLanguage()));
@@ -31,7 +29,7 @@ function setupMobileMenu() {
   const drawer = document.getElementById("mobile-nav");
   const closeButton = drawer.querySelector(".mobile-nav-close");
   const overlay = document.querySelector(".overlay");
-  const background = document.querySelectorAll(".site-header, main, .site-footer, .back-to-top");
+  const background = document.querySelectorAll(".site-header, main, .site-footer");
 
   const setOpen = (open) => {
     drawer.classList.toggle("is-open", open);
@@ -69,20 +67,6 @@ function setupMobileMenu() {
   desktopLayout.addEventListener("change", (event) => {
     if (event.matches && drawer.classList.contains("is-open")) setOpen(false);
   });
-}
-
-function setupScrollState() {
-  const header = document.querySelector(".site-header");
-  const backToTop = document.querySelector(".back-to-top");
-
-  const update = () => {
-    const scrolled = window.scrollY > SCROLL_THRESHOLD;
-    header.classList.toggle("is-scrolled", scrolled);
-    backToTop.classList.toggle("is-visible", scrolled);
-  };
-
-  window.addEventListener("scroll", update, { passive: true });
-  update();
 }
 
 function setupActiveLink() {

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Experiência",
-  "description": "Itens da timeline (empregos, empresa júnior, formação, voluntariado, cursos), na ordem em que aparecem. O currículo em PDF usa o \"type\" para montar Experiência, Empresa Júnior e Formação.",
+  "description": "Experiência, empresa júnior, formação, voluntariado e cursos, na ordem em que aparecem. O \"type\" decide o bloco no site e no currículo; o primeiro \"work\" sai em destaque no site.",
   "type": "object",
   "required": ["items"],
   "additionalProperties": false,
@@ -38,6 +38,16 @@
           "description": "Fim, no mesmo formato. Sem este campo, o site exibe \"Presente\".",
           "$ref": "common.schema.json#/definitions/period"
         },
+        "note": {
+          "description": "Linha curta abaixo da empresa no site, ex.: duração e regime (\"15 meses · meio período\"). Opcional; não entra no currículo.",
+          "$ref": "common.schema.json#/definitions/text"
+        },
+        "stack": {
+          "type": "array",
+          "description": "Tecnologias usadas, exibidas abaixo dos tópicos no site. Opcional; não entra no currículo.",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
         "highlights": {
           "type": "array",
           "description": "Tópicos da lista do card (e do currículo, para \"work\" e \"junior-enterprise\").",
@@ -47,7 +57,7 @@
       "defaultSnippets": [
         {
           "label": "Nova experiência",
-          "description": "Item da timeline",
+          "description": "Item de experiência, formação, voluntariado ou cursos",
           "body": {
             "type": "${1|work,junior-enterprise,education,volunteering,courses|}",
             "title": "${2:Cargo}",

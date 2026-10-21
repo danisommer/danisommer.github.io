@@ -1,16 +1,14 @@
-import { h, icon } from "../core/dom.js";
+import { h } from "../core/dom.js";
 import { label, t } from "../core/i18n.js";
+import { arrow, externalLink } from "../core/links.js";
 
-const ALL = "all";
-const DEFAULT_ICON = "fas fa-code";
 const LINK_TYPES = {
-  github: { icon: "fab fa-github", label: "projects.links.github" },
-  demo: { icon: "fas fa-globe", label: "projects.links.demo" },
+  github: "projects.links.github",
+  demo: "projects.links.demo",
 };
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const state = {
-  filter: ALL,
   openProject: null,
   trigger: null,
   closing: false,
@@ -21,16 +19,7 @@ export function setup({ content }) {
   const dialog = document.getElementById("project-modal");
   const findProject = (id) => content.projects.items.find((project) => project.id === id);
 
-  warnUnknownCategories(content.projects);
-
-  section.querySelector(".filter-container").addEventListener("click", (event) => {
-    const button = event.target.closest("[data-filter]");
-    if (!button) return;
-    state.filter = button.dataset.filter;
-    applyFilter(section);
-  });
-
-  section.querySelector(".projects-grid").addEventListener("click", (event) => {
+  section.addEventListener("click", (event) => {
     const button = event.target.closest("[data-project]");
     if (button) openModal(dialog, findProject(button.dataset.project), button);
   });
@@ -52,86 +41,95 @@ export function setup({ content }) {
 
 export function render({ projects }) {
   const section = document.getElementById("projects");
+  const [featured, ...others] = projects.items;
 
-  section.querySelector(".filter-container").replaceChildren(...renderFilters(projects));
-  section.querySelector(".projects-grid").replaceChildren(...withImagesFirst(projects.items).map(renderCard));
-  applyFilter(section);
+  section.querySelector(".projects-feature").replaceChildren(...(featured ? [renderFeature(featured)] : []));
+  section
+    .querySelector(".projects-index")
+    .replaceChildren(...(others.length > 0 ? [renderIndexHead(), ...others.map((project, index) => renderRow(project, index + 2))] : []));
 
   if (state.openProject) {
     renderModal(document.getElementById("project-modal"), state.openProject);
   }
 }
 
-function withImagesFirst(items) {
-  return [...items].sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
-}
-
-function renderFilters({ categories, items }) {
-  const used = new Set(items.flatMap((project) => project.categories));
-  const available = categories.filter((category) => used.has(category.id));
-  if (available.length === 0) return [];
-
-  return [
-    filterButton(ALL, label("projects.filterAll")),
-    ...available.map((category) => filterButton(category.id, t(category.label))),
-  ];
-}
-
-function filterButton(id, text) {
-  return h("button", { type: "button", class: "filter-btn", "data-filter": id }, text);
-}
-
-function applyFilter(section) {
-  for (const button of section.querySelectorAll("[data-filter]")) {
-    button.setAttribute("aria-pressed", String(button.dataset.filter === state.filter));
-  }
-  for (const card of section.querySelectorAll(".project-card")) {
-    card.hidden = state.filter !== ALL && !card.dataset.categories.split(" ").includes(state.filter);
-  }
-}
-
-function renderCard(project) {
+function renderFeature(project) {
   const title = t(project.title);
-  const projectIcon = project.icon ?? DEFAULT_ICON;
 
   return h(
     "article",
-    { class: "project-card", "data-categories": project.categories.join(" ") },
-    h(
-      "div",
-      { class: "project-img" },
-      project.image
-        ? h("img", { src: project.image, alt: title, loading: "lazy", decoding: "async" })
-        : icon(projectIcon)
-    ),
-    h(
-      "div",
-      { class: "project-content" },
-      h("h3", { class: "project-title" }, icon(projectIcon), h("span", {}, title)),
-      renderTags(project, "project-tags"),
-      h("p", { class: "project-desc" }, t(project.summary)),
+    { class: "grid project-feature" },
+    project.image &&
       h(
-        "div",
-        { class: "project-links" },
-        h(
-          "button",
-          { type: "button", class: "project-link", "data-project": project.id, "aria-haspopup": "dialog" },
-          icon("fas fa-info-circle"),
-          h("span", {}, label("projects.details"))
-        ),
-        renderLinks(project.links, "project-link")
-      )
+        "figure",
+        { class: "project-feature-figure" },
+        h("img", { src: project.image, alt: title, loading: "lazy", decoding: "async" })
+      ),
+    h(
+      "div",
+      { class: "project-feature-body" },
+      h("p", { class: "project-feature-index" }, `01 — ${label("projects.featured")}`),
+      h("h3", { class: "project-feature-title" }, title),
+      h("p", { class: "project-feature-summary" }, t(project.summary)),
+      h(
+        "dl",
+        { class: "spec" },
+        project.context && specRow(label("projects.context"), t(project.context)),
+        project.status && specRow(label("projects.statusLabel"), statusText(project.status)),
+        specRow(label("projects.stack"), project.tags.join(" · "))
+      ),
+      h("div", { class: "project-feature-links" }, detailsButton(project, "link"), renderLinks(project.links, "link"))
     )
   );
 }
 
-function renderTags({ tags, status }, className) {
+function specRow(term, description) {
+  return h("div", {}, h("dt", { class: "label" }, term), h("dd", {}, description));
+}
+
+function renderIndexHead() {
   return h(
     "div",
-    { class: className },
-    status && h("span", { class: "project-status" }, label(`projects.status.${status}`)),
-    tags.map((tag) => h("span", { class: "project-tag" }, tag))
+    { class: "grid project-index-head", "aria-hidden": "true" },
+    ["projects.number", "projects.project", "projects.stack", "projects.context"].map((key) =>
+      h("p", { class: "label" }, label(key))
+    )
   );
+}
+
+function renderRow(project, number) {
+  return h(
+    "article",
+    { class: "grid project-row" },
+    h("p", { class: "project-row-n", "aria-hidden": "true" }, String(number).padStart(2, "0")),
+    h(
+      "div",
+      { class: "project-row-main" },
+      h("h3", {}, detailsButton(project, "project-row-title", t(project.title))),
+      h("p", { class: "project-row-summary" }, t(project.summary))
+    ),
+    h("ul", { class: "project-row-stack" }, project.tags.map((tag) => h("li", {}, tag))),
+    h(
+      "p",
+      { class: "project-row-context" },
+      project.context && t(project.context),
+      project.context && project.status && " · ",
+      project.status && statusText(project.status)
+    ),
+    h("div", { class: "project-row-links" }, renderLinks(project.links, "project-row-link"))
+  );
+}
+
+function detailsButton(project, className, text) {
+  return h(
+    "button",
+    { type: "button", class: className, "data-project": project.id, "aria-haspopup": "dialog" },
+    text ?? [label("projects.details"), arrow("→")]
+  );
+}
+
+function statusText(status) {
+  return h("span", { class: "status" }, label(`projects.status.${status}`));
 }
 
 function renderLinks(links, className) {
@@ -140,14 +138,7 @@ function renderLinks(links, className) {
       console.warn(`Tipo de link "${type}" não suportado (data/projects.json).`);
       return null;
     }
-
-    const link = LINK_TYPES[type];
-    return h(
-      "a",
-      { href: url, class: className, target: "_blank", rel: "noopener noreferrer" },
-      icon(link.icon),
-      h("span", {}, label(link.label))
-    );
+    return externalLink(url, label(LINK_TYPES[type]), className);
   });
 }
 
@@ -166,7 +157,7 @@ async function closeModal(dialog) {
   state.closing = true;
 
   if (!reducedMotion.matches) {
-    await dialog.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 200, easing: "ease-in" }).finished;
+    await dialog.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 160, easing: "ease-in" }).finished;
   }
 
   dialog.close();
@@ -178,11 +169,17 @@ function renderModal(dialog, project) {
 
   dialog.querySelector(".project-details").replaceChildren(
     h("h2", { id: "project-modal-title" }, title),
+    h(
+      "p",
+      { class: "project-details-meta" },
+      project.status && statusText(project.status),
+      project.context && h("span", {}, t(project.context)),
+      h("span", {}, project.tags.join(" · "))
+    ),
     project.image &&
       h("div", { class: "project-details-img" }, h("img", { src: project.image, alt: title, decoding: "async" })),
-    renderTags(project, "project-details-tags"),
     h("div", { class: "project-details-desc" }, renderDescription(project)),
-    h("div", { class: "project-details-links" }, renderLinks(project.links, "btn"))
+    h("div", { class: "project-details-links" }, renderLinks(project.links, "link"))
   );
 }
 
@@ -196,16 +193,4 @@ function renderDescription({ details, summary }) {
     features.length > 0 && h("ul", {}, features.map((feature) => h("li", {}, t(feature)))),
     outro && h("p", {}, t(outro)),
   ];
-}
-
-function warnUnknownCategories({ categories, items }) {
-  const known = new Set(categories.map((category) => category.id));
-
-  for (const project of items) {
-    project.categories
-      .filter((id) => !known.has(id))
-      .forEach((id) =>
-        console.warn(`Projeto "${project.id}": categoria "${id}" não existe em "categories" (data/projects.json).`)
-      );
-  }
 }

@@ -52,7 +52,6 @@ async function validateContent() {
 
 async function checkProfile(profile) {
   if (profile.portrait) await checkFile("data/profile.json /portrait/src", profile.portrait.src);
-  await checkFile("data/profile.json /photo/src", profile.photo.src);
 }
 
 function checkSkills({ levels, categories }) {
@@ -67,8 +66,7 @@ function checkSkills({ levels, categories }) {
   });
 }
 
-async function checkProjects({ categories, items }) {
-  const knownCategories = new Set(categories.map((category) => category.id));
+async function checkProjects({ items }) {
   const seenIds = new Set();
   const seenCvPositions = new Set();
 
@@ -82,10 +80,6 @@ async function checkProjects({ categories, items }) {
       problems.push(`${where}: posição "cv": ${project.cv} repetida`);
     }
     seenCvPositions.add(project.cv);
-
-    project.categories
-      .filter((id) => !knownCategories.has(id))
-      .forEach((id) => problems.push(`${where}: categoria "${id}" não existe em "categories"`));
 
     if (project.image) await checkFile(where, project.image);
   }

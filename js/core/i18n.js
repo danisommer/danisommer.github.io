@@ -4,7 +4,6 @@ const LOCALES = { pt: "pt-BR", en: "en" };
 const FALLBACK_LANGUAGE = "pt";
 const STORAGE_KEY = "language";
 const DATE_PATTERN = /^(\d{4})(?:-(0[1-9]|1[0-2]))?$/;
-const LONG_MONTH = { month: "long", year: "numeric" };
 const NUMERIC_MONTH = { month: "2-digit", year: "numeric" };
 
 let language = initialLanguage();
@@ -61,12 +60,7 @@ export function label(key, values = {}) {
   return t(entry).replace(/\{(\w+)\}/g, (marker, name) => String(values[name] ?? marker));
 }
 
-/** Período "julho de 2025 – Presente" no idioma atual; sem fim, exibe "Presente". */
-export function formatPeriod(start, end) {
-  return period(start, end, LONG_MONTH);
-}
-
-/** Período "07/2025 – Presente": formato compacto para o currículo. */
+/** Período "07/2025 – Presente" no idioma atual; sem fim, exibe "Presente". */
 export function formatNumericPeriod(start, end) {
   return period(start, end, NUMERIC_MONTH);
 }

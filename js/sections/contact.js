@@ -1,5 +1,6 @@
-import { h, icon } from "../core/dom.js";
+import { h } from "../core/dom.js";
 import { label, t } from "../core/i18n.js";
+import { contactLink, featuredContacts, isEmail } from "../core/links.js";
 
 const STATUS_MESSAGES = {
   success: "contact.form.success",
@@ -22,33 +23,21 @@ export function setup() {
 }
 
 export function render({ profile }) {
-  const items = [
-    ...profile.contacts.map(renderContact),
-    profile.location && contactItem("fas fa-location-dot", label("contact.location"), t(profile.location)),
-  ];
+  const contacts = featuredContacts(profile);
+  const email = contacts.find(isEmail);
+  const others = contacts.filter((contact) => !isEmail(contact));
 
-  document.querySelector("#contact .contact-list").replaceChildren(...items.filter(Boolean));
+  document.querySelector("#contact .contact-links").replaceChildren(
+    ...[
+      email && contactLink(email, "contact-email"),
+      others.length > 0 && h("ul", { class: "contact-list" }, others.map(renderContact)),
+    ].filter(Boolean)
+  );
   renderStatus();
 }
 
 function renderContact(contact) {
-  const external = !contact.url.startsWith("mailto:");
-  const link = h(
-    "a",
-    { href: contact.url, target: external && "_blank", rel: external && "noopener noreferrer" },
-    contact.text
-  );
-
-  return contactItem(contact.icon, t(contact.label), link);
-}
-
-function contactItem(iconClass, title, content) {
-  return h(
-    "li",
-    { class: "contact-item" },
-    h("div", { class: "contact-icon" }, icon(iconClass)),
-    h("div", { class: "contact-details" }, h("h4", {}, title), h("p", {}, content))
-  );
+  return h("li", {}, h("span", { class: "label" }, t(contact.label)), contactLink(contact, "link", contact.text));
 }
 
 async function send(form) {
