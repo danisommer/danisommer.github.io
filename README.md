@@ -1,6 +1,6 @@
 # danisommer.github.io
 
-Portfólio pessoal publicado em <https://danisommer.github.io>. HTML, CSS e JavaScript puros, sem build e sem dependências (fora as fontes Schibsted Grotesk e IBM Plex Mono, do Google Fonts).
+Portfólio pessoal publicado em <https://danisommer.github.io>. HTML, CSS e JavaScript puros, sem build e sem dependências (fora as fontes Schibsted Grotesk e IBM Plex Mono, do Google Fonts, e os ícones do Font Awesome via CDN).
 
 O visual segue um grid de 12 colunas: nas seções, as 3 primeiras colunas guardam os metadados (número da seção, datas, empresa, rótulos) e as 9 restantes, o conteúdo. O tema escuro é o padrão; o claro fica a um clique e a escolha é lembrada.
 
@@ -23,6 +23,7 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 | Projetos (destaque, índice e modal) | `data/projects.json` |
 | Textos fixos da interface: menu, botões, títulos das seções, mensagens do formulário | `data/ui.json` |
 | Título da aba, descrição e imagem do preview de link (LinkedIn, WhatsApp) | `<head>` do `index.html` |
+| Ícone da aba | `images/favicon.svg` (a marca "D/", com as letras em Schibsted Grotesk convertidas em contorno); `images/favicon.png` (48 px) e `images/apple-touch-icon.png` (180 px) são versões em PNG dela, para navegadores sem SVG e para a tela inicial do iPhone |
 | Cores dos temas claro e escuro | `css/tokens.css` |
 | Visual de uma seção | `css/sections/<seção>.css` |
 | Estrutura ou comportamento de uma seção | `js/sections/<seção>.js` |
@@ -51,9 +52,9 @@ Cada JSON aponta para um schema em `data/schemas/` (linha `"$schema"` no topo). 
 1. Em `data/projects.json`, dentro de `"items"`, coloque o cursor na posição de relevância do projeto (mais relevantes no topo) e use **Ctrl+Espaço → Novo projeto**.
 2. `"context"` diz de onde o projeto veio ("Disciplina de Banco de Dados", "Pessoal") e aparece na coluna "Contexto".
 3. `"links"` aceita `"github"` e `"demo"`; os dois aparecem no índice, no destaque e no modal.
-4. Se tiver uma imagem real do projeto (diagrama ou tela), salve em `images/projects/` e aponte em `"image"`. Ela aparece no destaque e no modal; o índice não mostra imagens, então nenhum projeto precisa de uma.
+4. Se tiver uma imagem real do projeto (diagrama ou tela), salve em `images/projects/` e aponte em `"image"`. Ela aparece inteira no destaque e no modal, e recortada em quadrado (pelo centro) na miniatura do índice. Sem imagem, a miniatura mostra o ícone de `"icon"`, uma classe do [Font Awesome 6 free](https://fontawesome.com/search?ic=free), ex.: `"fas fa-music"` (padrão: `"fas fa-code"`).
 
-`image`, `context`, `details` e `status` são opcionais. Sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe "Em andamento".
+`image`, `icon`, `context`, `details` e `status` são opcionais. Sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe "Em andamento".
 
 ### Adicionar uma experiência, formação ou curso
 

@@ -41,6 +41,12 @@
       "type": "string",
       "description": "Caminho a partir da raiz do site, ex.: images/projects/meu-projeto.jpg",
       "pattern": "^images/\\S+\\.(jpe?g|png|webp|gif|svg)$"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Classe de ícone do Font Awesome 6 free (https://fontawesome.com/search?ic=free): \"fas fa-...\" para ícones sólidos, \"fab fa-...\" para marcas.",
+      "pattern": "^fa[sbr] fa-[a-z0-9-]+$",
+      "examples": ["fas fa-code", "fas fa-music", "fab fa-github"]
     }
   }
 }

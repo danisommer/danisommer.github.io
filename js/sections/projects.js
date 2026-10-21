@@ -1,7 +1,8 @@
-import { h } from "../core/dom.js";
+import { h, icon } from "../core/dom.js";
 import { label, t } from "../core/i18n.js";
 import { arrow, externalLink } from "../core/links.js";
 
+const DEFAULT_ICON = "fas fa-code";
 const LINK_TYPES = {
   github: "projects.links.github",
   demo: "projects.links.demo",
@@ -91,9 +92,7 @@ function renderIndexHead() {
   return h(
     "div",
     { class: "grid project-index-head", "aria-hidden": "true" },
-    ["projects.number", "projects.project", "projects.stack", "projects.context"].map((key) =>
-      h("p", { class: "label" }, label(key))
-    )
+    ["projects.project", "projects.stack", "projects.context"].map((key) => h("p", { class: "label" }, label(key)))
   );
 }
 
@@ -101,10 +100,11 @@ function renderRow(project, number) {
   return h(
     "article",
     { class: "grid project-row" },
-    h("p", { class: "project-row-n", "aria-hidden": "true" }, String(number).padStart(2, "0")),
+    renderThumb(project),
     h(
       "div",
       { class: "project-row-main" },
+      h("p", { class: "project-row-n", "aria-hidden": "true" }, String(number).padStart(2, "0")),
       h("h3", {}, detailsButton(project, "project-row-title", t(project.title))),
       h("p", { class: "project-row-summary" }, t(project.summary))
     ),
@@ -117,6 +117,16 @@ function renderRow(project, number) {
       project.status && statusText(project.status)
     ),
     h("div", { class: "project-row-links" }, renderLinks(project.links, "project-row-link"))
+  );
+}
+
+function renderThumb(project) {
+  return h(
+    "div",
+    { class: project.image ? "project-row-thumb" : "project-row-thumb is-icon", "aria-hidden": "true" },
+    project.image
+      ? h("img", { src: project.image, alt: "", loading: "lazy", decoding: "async" })
+      : icon(project.icon ?? DEFAULT_ICON)
   );
 }
 

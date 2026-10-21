@@ -66,6 +66,7 @@
         "pt": "Reconstrução de Imagens: Python × Go",
         "en": "Image Reconstruction: Python vs Go"
       },
+      "icon": "fas fa-wave-square",
       "tags": ["Go", "Python", "CGNE/CGNR", "HTTP", "Benchmark"],
       "context": { "pt": "Disciplina · individual", "en": "Course · individual" },
       "summary": {
@@ -247,6 +248,7 @@
     {
       "id": "grafo-quest",
       "title": "GrafoQuest",
+      "icon": "fas fa-project-diagram",
       "tags": ["React", "D3.js", "Tailwind CSS", "Zustand", "Framer Motion"],
       "context": { "pt": "Estudo para Projeto e Análise de Algoritmos", "en": "Study aid for Algorithm Design and Analysis" },
       "summary": {
@@ -288,6 +290,7 @@
         "pt": "Text-to-SQL com Llama",
         "en": "Text-to-SQL with Llama"
       },
+      "icon": "fas fa-robot",
       "tags": ["Python", "Llama 3.2", "Transformers", "MySQL", "PostgreSQL"],
       "context": { "pt": "Disciplina de Banco de Dados", "en": "Databases course" },
       "summary": {

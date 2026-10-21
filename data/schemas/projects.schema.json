@@ -9,7 +9,7 @@
     "$schema": { "type": "string" },
     "items": {
       "type": "array",
-      "description": "Projetos em ordem de relevância: o primeiro sai em destaque, com imagem e ficha técnica; os demais formam o índice, nesta ordem.",
+      "description": "Projetos em ordem de relevância: o primeiro sai em destaque, com imagem e ficha técnica; os demais formam o índice, nesta ordem, cada um com uma miniatura (a imagem recortada ou o ícone).",
       "items": { "$ref": "#/definitions/project" }
     }
   },
@@ -37,8 +37,12 @@
           "$ref": "common.schema.json#/definitions/text"
         },
         "image": {
-          "description": "Imagem real do projeto (diagrama ou tela), exibida no destaque e no modal. Opcional: o índice nunca mostra imagens.",
+          "description": "Imagem real do projeto (diagrama ou tela): inteira no destaque e no modal, recortada em quadrado na miniatura do índice. Opcional.",
           "$ref": "common.schema.json#/definitions/imagePath"
+        },
+        "icon": {
+          "description": "Ícone da miniatura do índice quando o projeto não tem imagem. Opcional (padrão: \"fas fa-code\").",
+          "$ref": "common.schema.json#/definitions/icon"
         },
         "status": {
           "description": "Opcional: \"in-progress\" exibe \"Em andamento\" no site e no modal.",

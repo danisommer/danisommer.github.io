@@ -45,7 +45,6 @@
   "projects": {
     "title": { "pt": "Projetos", "en": "Projects" },
     "featured": { "pt": "Em destaque", "en": "Featured" },
-    "number": { "pt": "Nº", "en": "No." },
     "project": { "pt": "Projeto", "en": "Project" },
     "stack": { "pt": "Stack", "en": "Stack" },
     "context": { "pt": "Contexto", "en": "Context" },
