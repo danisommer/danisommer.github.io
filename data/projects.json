@@ -10,49 +10,57 @@
       },
       "image": "images/projects/event-driven-ecommerce.png",
       "status": "in-progress",
-      "tags": ["Go", "RabbitMQ", "Microservices", "RSA", "Docker"],
+      "tags": ["Go", "RabbitMQ", "Microservices", "SSE", "SQLite", "RSA"],
       "context": {
-        "pt": "Disciplina de Sistemas Distribuídos · 1ª etapa em dupla",
-        "en": "Distributed Systems course · first stage in a pair"
+        "pt": "Disciplina de Sistemas Distribuídos · 1ª etapa em dupla, 2ª individual",
+        "en": "Distributed Systems course · first stage in a pair, second solo"
       },
       "summary": {
-        "pt": "Backend de e-commerce em Go dividido em microsserviços que se comunicam apenas por eventos no RabbitMQ, com cada evento assinado digitalmente (RSA) e validado por quem o recebe.",
-        "en": "E-commerce backend in Go split into microservices that communicate only through RabbitMQ events, with every event digitally signed (RSA) and verified by its consumer."
+        "pt": "Loja virtual em microsserviços Go: o frontend fala com um API Gateway por REST e SSE, e os serviços se coordenam por eventos no RabbitMQ assinados com RSA, com pagamento por webhook e promoções por e-mail.",
+        "en": "Online store built as Go microservices: the frontend talks to an API gateway over REST and SSE, and the services coordinate through RSA-signed RabbitMQ events, with webhook payments and email promotions."
       },
       "cvSummary": {
-        "pt": "Projeto de disciplina: microsserviços em Go que se comunicam só por eventos no RabbitMQ, assinados com RSA.",
-        "en": "Course project: Go microservices that communicate only through RabbitMQ events signed with RSA."
+        "pt": "Projeto de disciplina: microsserviços Go com API Gateway REST/SSE e eventos RabbitMQ assinados com RSA.",
+        "en": "Course project: Go microservices with a REST/SSE API gateway and RSA-signed RabbitMQ events."
       },
       "details": {
         "intro": {
-          "pt": "Nenhum processo chama outro diretamente: pedidos, estoque, pagamento, entrega e promoções se coordenam só por eventos. Projeto da disciplina de Sistemas Distribuídos: a primeira etapa foi feita em dupla; a segunda, em andamento, é individual.",
-          "en": "No process calls another directly: orders, inventory, payment, shipping, and promotions coordinate only through events. A Distributed Systems course project: the first stage was built in a pair; the second, in progress, is individual."
+          "pt": "Loja virtual completa, com catálogo, carrinho, pedidos acompanhados em tempo real e inscrição em promoções. Os serviços de domínio se coordenam por eventos, e o REST só aparece nas bordas: navegador e Gateway, consulta de preço no Estoque e provedor de pagamento. Projeto da disciplina de Sistemas Distribuídos: a primeira etapa, só de mensageria, foi feita em dupla; a segunda, que transformou o projeto em aplicação web, é individual.",
+          "en": "A complete online store with a catalog, a cart, real-time order tracking, and promotion sign-ups. Domain services coordinate through events, and REST only appears at the edges: browser and gateway, price lookups in Inventory, and the payment provider. A Distributed Systems course project: the first stage, messaging only, was built in a pair; the second, which turned it into a web application, is individual."
         },
         "features": [
           {
-            "pt": "Sete processos independentes ligados por uma exchange direct (fluxo do pedido) e uma topic (promoções por categoria).",
-            "en": "Seven independent processes connected by a direct exchange (order flow) and a topic exchange (promotions by category)."
+            "pt": "API Gateway em Go só com a biblioteca padrão: REST para o frontend e Server-Sent Events que levam cada mudança de status do pedido ao navegador, sem recarregar a página.",
+            "en": "API gateway in standard-library Go: REST for the frontend and Server-Sent Events that push every order status change to the browser without a page reload."
           },
           {
-            "pt": "Eventos assinados com RSA e verificados por quem os consome.",
-            "en": "Events signed with RSA and verified by their consumers."
+            "pt": "Cinco serviços em Go ligados por uma exchange direct do RabbitMQ, com fila durável por serviço; todo evento é assinado com RSA e descartado por quem consome se a assinatura não bater.",
+            "en": "Five Go services connected by a RabbitMQ direct exchange, with one durable queue per service; every event is RSA-signed and dropped by its consumer if the signature doesn't match."
           },
           {
-            "pt": "Compensação: pedido cancelado (sem estoque, pagamento recusado ou exclusão) devolve ao estoque o que estava reservado.",
-            "en": "Compensation: a cancelled order (out of stock, payment declined, or deleted) returns reserved items to inventory."
+            "pt": "Pagamento por um provedor externo simulado em Python (Flask): o serviço cria a cobrança, o comprador aprova ou recusa no checkout e o resultado volta por webhook.",
+            "en": "Payments through a simulated external provider in Python (Flask): the service creates the charge, the buyer approves or declines at checkout, and the result comes back via webhook."
           },
           {
-            "pt": "Fila durável por serviço e retentativa de conexão com o broker na inicialização.",
-            "en": "One durable queue per service and broker connection retries on startup."
+            "pt": "Estoque e inscrições em SQLite. A reserva acontece numa transação, e pedido recusado ou cancelado devolve o que estava reservado.",
+            "en": "Inventory and sign-ups stored in SQLite. Reservations happen in a transaction, and a declined or cancelled order returns what was reserved."
           },
           {
-            "pt": "Minha parte na primeira etapa: a base de mensageria, a assinatura dos eventos e os serviços Principal (menu e acompanhamento dos pedidos), Estoque e Pagamento; Entrega e Promoções foram feitos pelo colega.",
-            "en": "My part in the first stage: the messaging foundation, event signing, and the Main (menu and order tracking), Inventory, and Payment services; Shipping and Promotions were built by my teammate."
+            "pt": "Promoções por categoria: o serviço sorteia um desconto, o Estoque, dono do preço, passa a cobrá-lo, e só então os inscritos recebem o e-mail pela API da Resend.",
+            "en": "Promotions by category: the service draws a discount, Inventory, which owns prices, starts charging it, and only then do subscribers get the email through the Resend API."
+          },
+          {
+            "pt": "Idempotência: evento reentregue ou webhook repetido não reserva, não cobra e não publica duas vezes, e pedido encerrado ignora eventos atrasados.",
+            "en": "Idempotency: a redelivered event or a repeated webhook never reserves, charges, or publishes twice, and a closed order ignores late events."
+          },
+          {
+            "pt": "Minha parte na primeira etapa: a base de mensageria, a assinatura dos eventos e os serviços Principal, Estoque e Pagamento; Entrega e Promoções foram feitos pelo colega. A segunda etapa é toda minha.",
+            "en": "My part in the first stage: the messaging foundation, event signing, and the Main, Inventory, and Payment services; Shipping and Promotions were built by my teammate. The second stage is entirely mine."
           }
         ],
         "outro": {
-          "pt": "O RabbitMQ sobe via Docker Compose e cada serviço roda em seu próprio processo, com comandos make. A segunda etapa, em andamento, transforma o projeto em uma aplicação web, com API Gateway REST, notificações em tempo real via SSE, pagamento por webhook e envio de e-mails por API externa.",
-          "en": "RabbitMQ runs via Docker Compose and each service runs as its own process, started with make commands. The second stage, in progress, turns the project into a web application with a REST API gateway, real-time notifications over SSE, webhook-based payments, and email delivery through an external API."
+          "pt": "O RabbitMQ sobe via Docker Compose e cada processo com um comando make. Os testes usam go test, com httptest e SQLite temporário, e unittest no provedor simulado; cada serviço recebe as dependências por interface, trocadas por versões falsas nos testes.",
+          "en": "RabbitMQ runs via Docker Compose and each process starts with a make command. Tests use go test, with httptest and temporary SQLite databases, and unittest for the simulated provider; each service receives its dependencies through interfaces, swapped for fakes in tests."
         }
       },
       "links": {
@@ -68,7 +76,10 @@
       },
       "icon": "fas fa-wave-square",
       "tags": ["Go", "Python", "CGNE/CGNR", "HTTP", "Benchmark"],
-      "context": { "pt": "Disciplina · individual", "en": "Course · individual" },
+      "context": {
+        "pt": "Disciplina de Desenvolvimento Integrado de Sistemas · individual",
+        "en": "Integrated Systems Development course · individual"
+      },
       "summary": {
         "pt": "Reconstrói imagens a partir de sinais com os métodos de gradiente conjugado CGNE e CGNR, implementados em um servidor Python e em outro em Go, ambos só com a biblioteca padrão, para comparar desempenho.",
         "en": "Reconstructs images from signal data with the CGNE and CGNR conjugate-gradient methods, implemented in a Python server and a Go server, both using only the standard library, to compare performance."
@@ -79,8 +90,8 @@
       },
       "details": {
         "intro": {
-          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída. Projeto de disciplina, desenvolvido individualmente.",
-          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image. A course project, built individually."
+          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída. Projeto da disciplina de Desenvolvimento Integrado de Sistemas, desenvolvido individualmente.",
+          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image. An Integrated Systems Development course project, built individually."
         },
         "features": [
           {
@@ -337,14 +348,15 @@
       },
       "image": "images/projects/dashboard-app.jpg",
       "tags": ["Python", "C++", "Tkinter", "Matplotlib", "Linux"],
+      "context": { "pt": "Disciplina de Sistemas Operacionais", "en": "Operating Systems course" },
       "summary": {
         "pt": "Monitoramento de métricas do sistema em tempo real, com interface em Python (Tkinter e Matplotlib) e coleta de dados em C++ exposta como biblioteca compartilhada.",
         "en": "Real-time system metrics monitoring, with a Python interface (Tkinter and Matplotlib) and C++ data collection exposed as a shared library."
       },
       "details": {
         "intro": {
-          "pt": "Painel para Linux que combina a velocidade de C++ na coleta de dados com a praticidade de Python na interface.",
-          "en": "A Linux dashboard that combines C++ speed for data collection with Python convenience for the interface."
+          "pt": "Painel para Linux que combina a velocidade de C++ na coleta de dados com a praticidade de Python na interface. Projeto da disciplina de Sistemas Operacionais.",
+          "en": "A Linux dashboard that combines C++ speed for data collection with Python convenience for the interface. An Operating Systems course project."
         },
         "features": [
           {
@@ -377,14 +389,15 @@
       },
       "image": "images/projects/smart-metronome.png",
       "tags": ["JavaScript", "Tone.js", "Tailwind CSS", "Web Audio API"],
+      "context": { "pt": "Pessoal", "en": "Personal" },
       "summary": {
         "pt": "Metrônomo web com treino progressivo de andamento: aumenta o BPM automaticamente até a meta, com tap tempo, sons personalizáveis, visualização dos tempos e histórico de sessões.",
         "en": "Web metronome with progressive tempo training: it raises the BPM automatically up to a target, with tap tempo, customizable sounds, beat visualization, and session history."
       },
       "details": {
         "intro": {
-          "pt": "Ferramenta para músicos ganharem velocidade técnica de forma gradual, usada direto no navegador.",
-          "en": "A tool for musicians to build technical speed gradually, used right in the browser."
+          "pt": "Ferramenta para músicos ganharem velocidade técnica de forma gradual, usada direto no navegador. Projeto pessoal.",
+          "en": "A tool for musicians to build technical speed gradually, used right in the browser. A personal project."
         },
         "features": [
           {
