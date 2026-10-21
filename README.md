@@ -29,6 +29,7 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 | Visual de uma seção | `css/sections/<seção>.css` |
 | Estrutura ou comportamento de uma seção | `js/sections/<seção>.js` |
 | Layout do currículo em PDF | `cv.html`, `css/cv.css`, `js/cv.js` |
+| E-mail que recebe as mensagens do formulário, remetente e endereço do site aceito | `[vars]` de `worker/wrangler.toml` (vale depois do `npx wrangler deploy`, ver [Formulário de contato](#formulário-de-contato)) |
 
 ## Regras do conteúdo
 
@@ -122,6 +123,24 @@ node scripts/validate-content.mjs
 
 > Pré-requisito (uma vez só): em **Settings → Pages → Build and deployment → Source**, selecione **GitHub Actions**. Com a opção antiga ("Deploy from a branch"), o GitHub também publica a branch direto, sem os PDFs do currículo, e as duas publicações concorrem.
 
+## Formulário de contato
+
+O formulário da seção Contato não envia e-mail pelo navegador: ele manda os campos para um Cloudflare Worker (pasta `worker/`), que guarda a chave do [Resend](https://resend.com) em segredo e envia a mensagem para o e-mail de `CONTACT_TO`. O "Responder" do e-mail já vai para quem escreveu.
+
+O Worker só aceita envios vindos de `ALLOWED_ORIGIN` (o endereço do site), confere os campos e descarta quem preenche o campo escondido `_gotcha`, que só robôs enxergam. Se o Resend recusar, o site mostra a mensagem de erro de `data/ui.json`; nada some sem aviso.
+
+O push não publica o Worker. O deploy é manual, de dentro de `worker/`, com Node 22 ou mais novo (exigência do Wrangler):
+
+```bash
+npx wrangler login                        # uma vez só
+npx wrangler secret put RESEND_API_KEY    # uma vez, e de novo ao trocar a chave
+npx wrangler deploy                       # a cada mudança em worker/
+```
+
+O endereço que o `deploy` imprime (`https://portfolio-contact.<sua-conta>.workers.dev`) é o `action` do `<form id="contact-form">` no `index.html`.
+
+Sem domínio próprio verificado no Resend, o remetente é `onboarding@resend.dev` e o destino só pode ser o e-mail da conta do Resend. Para saber o que aconteceu com um envio: logs do Worker no painel da Cloudflare (**Workers & Pages → portfolio-contact → Logs**) e a lista de e-mails no painel do Resend.
+
 ## Estrutura do código
 
 ```
@@ -138,6 +157,7 @@ js/core/              idioma (i18n.js), tema, carga do conteúdo, criação de e
 js/sections/          um módulo por seção: setup() liga os eventos uma vez; render() monta o HTML
                       e roda de novo quando o idioma muda
 scripts/              validação do conteúdo e geração dos PDFs, usadas pelo workflow
+worker/               Cloudflare Worker do formulário de contato (envia pelo Resend); deploy à parte
 ```
 
 Textos fixos do HTML usam `data-i18n="chave.do.ui"` (conteúdo) ou `data-i18n-aria-label="…"` (rótulo para leitores de tela), com as chaves de `data/ui.json`. Uma chave inexistente aparece na página como o próprio nome da chave e gera um aviso no console.

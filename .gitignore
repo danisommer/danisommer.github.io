@@ -1,2 +1,5 @@
 node_modules/
 cv/
+.dev.vars*
+.env
+.wrangler/

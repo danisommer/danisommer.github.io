@@ -63,11 +63,8 @@ async function send(form) {
     return;
   }
 
-  console.warn(
-    `O Formspree recusou o envio em segundo plano (HTTP ${response.status}); usando o envio padrão do formulário.`,
-    await response.text()
-  );
-  form.submit();
+  console.warn(`O servidor de contato recusou o envio (HTTP ${response.status}):`, await response.text());
+  setStatus("error");
 }
 
 function setStatus(next) {
