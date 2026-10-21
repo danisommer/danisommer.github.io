@@ -12,8 +12,8 @@
       "status": "in-progress",
       "tags": ["Go", "RabbitMQ", "Microservices", "SSE", "SQLite", "RSA"],
       "context": {
-        "pt": "Disciplina de Sistemas Distribuídos · 1ª etapa em dupla, 2ª individual",
-        "en": "Distributed Systems course · first stage in a pair, second solo"
+        "pt": "Disciplina de Sistemas Distribuídos",
+        "en": "Distributed Systems course"
       },
       "summary": {
         "pt": "Loja virtual em microsserviços Go: o frontend fala com um API Gateway por REST e SSE, e os serviços se coordenam por eventos no RabbitMQ assinados com RSA, com pagamento por webhook e promoções por e-mail.",
@@ -25,8 +25,8 @@
       },
       "details": {
         "intro": {
-          "pt": "Loja virtual completa, com catálogo, carrinho, pedidos acompanhados em tempo real e inscrição em promoções. Os serviços de domínio se coordenam por eventos, e o REST só aparece nas bordas: navegador e Gateway, consulta de preço no Estoque e provedor de pagamento. Projeto da disciplina de Sistemas Distribuídos: a primeira etapa, só de mensageria, foi feita em dupla; a segunda, que transformou o projeto em aplicação web, é individual.",
-          "en": "A complete online store with a catalog, a cart, real-time order tracking, and promotion sign-ups. Domain services coordinate through events, and REST only appears at the edges: browser and gateway, price lookups in Inventory, and the payment provider. A Distributed Systems course project: the first stage, messaging only, was built in a pair; the second, which turned it into a web application, is individual."
+          "pt": "Loja virtual completa, com catálogo, carrinho, pedidos acompanhados em tempo real e inscrição em promoções. Os serviços de domínio se coordenam por eventos, e o REST só aparece nas bordas: navegador e Gateway, consulta de preço no Estoque e provedor de pagamento. Projeto da disciplina de Sistemas Distribuídos: a primeira etapa cobriu só a mensageria; a segunda transformou o projeto em aplicação web.",
+          "en": "A complete online store with a catalog, a cart, real-time order tracking, and promotion sign-ups. Domain services coordinate through events, and REST only appears at the edges: browser and gateway, price lookups in Inventory, and the payment provider. A Distributed Systems course project: the first stage covered messaging only; the second turned it into a web application."
         },
         "features": [
           {
@@ -52,10 +52,6 @@
           {
             "pt": "Idempotência: evento reentregue ou webhook repetido não reserva, não cobra e não publica duas vezes, e pedido encerrado ignora eventos atrasados.",
             "en": "Idempotency: a redelivered event or a repeated webhook never reserves, charges, or publishes twice, and a closed order ignores late events."
-          },
-          {
-            "pt": "Minha parte na primeira etapa: a base de mensageria, a assinatura dos eventos e os serviços Principal, Estoque e Pagamento; Entrega e Promoções foram feitos pelo colega. A segunda etapa é toda minha.",
-            "en": "My part in the first stage: the messaging foundation, event signing, and the Main, Inventory, and Payment services; Shipping and Promotions were built by my teammate. The second stage is entirely mine."
           }
         ],
         "outro": {
@@ -77,8 +73,8 @@
       "icon": "fas fa-wave-square",
       "tags": ["Go", "Python", "CGNE/CGNR", "HTTP", "Benchmark"],
       "context": {
-        "pt": "Disciplina de Desenvolvimento Integrado de Sistemas · individual",
-        "en": "Integrated Systems Development course · individual"
+        "pt": "Disciplina de Desenvolvimento Integrado de Sistemas",
+        "en": "Integrated Systems Development course"
       },
       "summary": {
         "pt": "Reconstrói imagens a partir de sinais com os métodos de gradiente conjugado CGNE e CGNR, implementados em um servidor Python e em outro em Go, ambos só com a biblioteca padrão, para comparar desempenho.",
@@ -90,8 +86,8 @@
       },
       "details": {
         "intro": {
-          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída. Projeto da disciplina de Desenvolvimento Integrado de Sistemas, desenvolvido individualmente.",
-          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image. An Integrated Systems Development course project, built individually."
+          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída. Projeto da disciplina de Desenvolvimento Integrado de Sistemas.",
+          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image. An Integrated Systems Development course project."
         },
         "features": [
           {
@@ -234,8 +230,8 @@
       },
       "details": {
         "intro": {
-          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo. Projeto da disciplina de Sistemas Inteligentes, desenvolvido individualmente.",
-          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper. An Intelligent Systems course project, built individually."
+          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo. Projeto da disciplina de Sistemas Inteligentes.",
+          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper. An Intelligent Systems course project."
         },
         "features": [
           {
@@ -338,6 +334,96 @@
       },
       "links": {
         "github": "https://github.com/danisommer/llama-text-to-sql"
+      }
+    },
+    {
+      "id": "tcp-chat",
+      "title": {
+        "pt": "Chat TCP com Transferência de Arquivos",
+        "en": "TCP Chat with File Transfer"
+      },
+      "icon": "fas fa-comments",
+      "tags": ["Python", "TCP", "Sockets", "Multithreading", "HTTP"],
+      "context": { "pt": "Disciplina de Redes de Computadores", "en": "Computer Networks course" },
+      "summary": {
+        "pt": "Cliente e servidor TCP com protocolo de aplicação próprio: chat, download de arquivos de qualquer tamanho conferidos por SHA-256 e um servidor HTTP mínimo escrito direto sobre sockets.",
+        "en": "TCP client and server with a custom application protocol: chat, downloads of files of any size verified with SHA-256, and a minimal HTTP server written directly on sockets."
+      },
+      "details": {
+        "intro": {
+          "pt": "Comunicação de rede construída do zero em Python, só com a biblioteca padrão. Projeto da disciplina de Redes de Computadores.",
+          "en": "Network communication built from scratch in Python with only the standard library. A Computer Networks course project."
+        },
+        "features": [
+          {
+            "pt": "Protocolo binário próprio: um cabeçalho de 12 bytes com tamanho e tipo delimita cada mensagem no fluxo do TCP.",
+            "en": "Custom binary protocol: a 12-byte header with size and type frames each message in the TCP stream."
+          },
+          {
+            "pt": "Servidor multithread, com uma thread por cliente e mensagens do servidor enviadas a todos os conectados.",
+            "en": "Multithreaded server with one thread per client and server messages broadcast to everyone connected."
+          },
+          {
+            "pt": "Arquivos enviados em blocos de 8 KB, com SHA-256 calculado nas duas pontas para conferir a integridade.",
+            "en": "Files sent in 8 KB chunks, with SHA-256 computed on both ends to verify integrity."
+          },
+          {
+            "pt": "No cliente, uma thread separa as mensagens de chat dos dados de um download em andamento.",
+            "en": "On the client, a thread separates chat messages from the data of an ongoing download."
+          },
+          {
+            "pt": "Servidor HTTP mínimo: GET, tipo de conteúdo pela extensão, códigos de status e bloqueio de caminhos fora da pasta servida.",
+            "en": "Minimal HTTP server: GET, content type by extension, status codes, and blocking of paths outside the served folder."
+          }
+        ]
+      },
+      "links": {
+        "github": "https://github.com/danisommer/tcp-chat"
+      }
+    },
+    {
+      "id": "udp-file-transfer",
+      "title": {
+        "pt": "Transferência Confiável sobre UDP",
+        "en": "Reliable File Transfer over UDP"
+      },
+      "icon": "fas fa-right-left",
+      "tags": ["Python", "UDP", "Sockets", "RDT", "CRC32"],
+      "context": { "pt": "Disciplina de Redes de Computadores", "en": "Computer Networks course" },
+      "summary": {
+        "pt": "Transferência de arquivos sobre UDP com a confiabilidade feita na aplicação: segmentação, CRC32 por segmento, retransmissão seletiva por NACK e simulação de perda de pacotes.",
+        "en": "File transfer over UDP with reliability built at the application layer: segmentation, per-segment CRC32, selective retransmission via NACK, and simulated packet loss."
+      },
+      "details": {
+        "intro": {
+          "pt": "O UDP não garante entrega nem ordem; aqui o próprio protocolo cuida disso, em Python e só com a biblioteca padrão. Projeto da disciplina de Redes de Computadores.",
+          "en": "UDP guarantees neither delivery nor order; here the protocol itself handles both, in Python with only the standard library. A Computer Networks course project."
+        },
+        "features": [
+          {
+            "pt": "Protocolo binário com seis tipos de pacote (GET, DATA, END, NACK, OK e ERR), montados com struct.",
+            "en": "Binary protocol with six packet types (GET, DATA, END, NACK, OK, and ERR), built with struct."
+          },
+          {
+            "pt": "Segmentos de 1200 bytes com CRC32 próprio, dimensionados para caber num quadro Ethernet sem fragmentação IP.",
+            "en": "1,200-byte segments with their own CRC32, sized to fit an Ethernet frame without IP fragmentation."
+          },
+          {
+            "pt": "Montagem fora de ordem e retransmissão seletiva: o cliente pede por NACK só os segmentos que faltam.",
+            "en": "Out-of-order reassembly and selective retransmission: the client requests only the missing segments via NACK."
+          },
+          {
+            "pt": "Timeouts com nova tentativa, verificação do tamanho total e recusa de caminhos fora da pasta servida.",
+            "en": "Timeouts with retries, total size verification, and rejection of paths outside the served folder."
+          },
+          {
+            "pt": "Perda simulada por número de sequência ou por probabilidade; num teste com 12 MB, centenas de segmentos perdidos foram recuperados.",
+            "en": "Simulated loss by sequence number or probability; in a 12 MB test, hundreds of lost segments were recovered."
+          }
+        ]
+      },
+      "links": {
+        "github": "https://github.com/danisommer/udp-file-transfer-rdt"
       }
     },
     {
