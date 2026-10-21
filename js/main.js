@@ -1,4 +1,5 @@
 import { loadContent } from "./core/content.js";
+import { initDotField } from "./core/dot-field.js";
 import { h } from "./core/dom.js";
 import { setDictionary, setLanguage, translateDocument } from "./core/i18n.js";
 import { initTheme } from "./core/theme.js";
@@ -14,6 +15,7 @@ import * as skills from "./sections/skills.js";
 const sections = [navigation, hero, experience, projects, skills, about, contact, footer];
 
 initTheme();
+initDotField();
 start();
 
 async function start() {

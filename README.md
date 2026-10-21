@@ -24,7 +24,8 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 | Textos fixos da interface: menu, botões, títulos das seções, mensagens do formulário | `data/ui.json` |
 | Título da aba, descrição e imagem do preview de link (LinkedIn, WhatsApp) | `<head>` do `index.html` |
 | Ícone da aba | `images/favicon.svg` (a marca "D/", com as letras em Schibsted Grotesk convertidas em contorno); `images/favicon.png` (48 px) e `images/apple-touch-icon.png` (180 px) são versões em PNG dela, para navegadores sem SVG e para a tela inicial do iPhone |
-| Cores dos temas claro e escuro | `css/tokens.css` |
+| Cores dos temas claro e escuro (e do topo, que é sempre preto) | `css/tokens.css` |
+| Fundo animado de pontos (site inteiro): espaçamento, tamanho e brilho dos pontos no topo e no resto da página, raio do cursor, tamanho, frequência e duração dos "toques" | constantes no início de `js/core/dot-field.js` |
 | Visual de uma seção | `css/sections/<seção>.css` |
 | Estrutura ou comportamento de uma seção | `js/sections/<seção>.js` |
 | Layout do currículo em PDF | `cv.html`, `css/cv.css`, `js/cv.js` |
@@ -133,7 +134,7 @@ css/layout.css        header, menu mobile, rodapé
 css/sections/         um arquivo por seção
 js/main.js            carrega data/*.json e monta cada seção
 js/core/              idioma (i18n.js), tema, carga do conteúdo, criação de elementos (dom.js),
-                      links compartilhados: currículo e contatos (links.js)
+                      links compartilhados: currículo e contatos (links.js), fundo de pontos (dot-field.js)
 js/sections/          um módulo por seção: setup() liga os eventos uma vez; render() monta o HTML
                       e roda de novo quando o idioma muda
 scripts/              validação do conteúdo e geração dos PDFs, usadas pelo workflow

@@ -1,5 +1,11 @@
 .hero {
     padding-top: 64px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.has-dot-field .hero {
+    background-color: transparent;
 }
 
 .hero-grid {
@@ -8,7 +14,8 @@
 }
 
 .hero-kicker {
-    grid-column: 1 / span 9;
+    grid-column: 4 / span 9;
+    grid-row: 1;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -28,7 +35,8 @@
 }
 
 .hero-name {
-    grid-column: 1 / span 9;
+    grid-column: 4 / span 9;
+    grid-row: 2;
     font-size: clamp(60px, 9.4vw, 150px);
     font-weight: 700;
     line-height: 0.86;
@@ -36,25 +44,32 @@
 }
 
 .hero-portrait {
-    grid-column: 10 / span 3;
-    grid-row: 1 / span 3;
+    position: relative;
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 2;
+    align-self: stretch;
+    min-height: 320px;
 }
 
 .hero-portrait img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    aspect-ratio: 4 / 5;
+    height: 100%;
     object-fit: cover;
-    object-position: 50% 20%;
+    object-position: 50% 25%;
 }
 
 .hero-lede {
-    grid-column: 1 / span 5;
+    grid-column: 4 / span 5;
+    grid-row: 3;
     font-size: clamp(18px, 1.55vw, 21px);
     line-height: 1.5;
 }
 
 .hero-focus {
-    grid-column: 7 / span 3;
+    grid-column: 10 / span 3;
+    grid-row: 3;
 }
 
 .hero-focus ul {
@@ -70,7 +85,8 @@
 }
 
 .hero-actions {
-    grid-column: 1 / span 9;
+    grid-column: 4 / span 9;
+    grid-row: 4;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -102,7 +118,7 @@
 
 @media (max-width: 1080px) {
     .hero-lede {
-        grid-column: 1 / span 6;
+        grid-column: 4 / span 6;
     }
 }
 
@@ -132,6 +148,8 @@
 
     .hero-portrait {
         width: 62%;
+        min-height: 0;
+        aspect-ratio: 4 / 5;
     }
 
     .hero-facts {
