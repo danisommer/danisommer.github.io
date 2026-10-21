@@ -29,6 +29,19 @@
       "description": "Parágrafo do topo, abaixo do subtítulo.",
       "$ref": "common.schema.json#/definitions/text"
     },
+    "portrait": {
+      "type": "object",
+      "description": "Retrato do topo, ao lado do nome (abaixo dele no celular), recortado em 4:5. Opcional: sem ele, o topo mostra só o texto.",
+      "required": ["src", "alt"],
+      "additionalProperties": false,
+      "properties": {
+        "src": { "$ref": "common.schema.json#/definitions/imagePath" },
+        "alt": {
+          "description": "Descrição do retrato para leitores de tela.",
+          "$ref": "common.schema.json#/definitions/text"
+        }
+      }
+    },
     "photo": {
       "type": "object",
       "description": "Foto da seção \"Sobre\".",

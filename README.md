@@ -15,7 +15,7 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 
 | Quero mudar… | Arquivo |
 |---|---|
-| Nome, subtítulo, localização e texto do topo, "Sobre", foto, contatos, frase do rodapé | `data/profile.json` |
+| Nome, subtítulo, localização, texto e retrato do topo, "Sobre", foto, contatos, frase do rodapé | `data/profile.json` |
 | Timeline: empregos, formação, voluntariado, cursos | `data/experience.json` |
 | Carrossel de habilidades e nomes dos níveis | `data/skills.json` |
 | Projetos (card + modal) e botões de filtro | `data/projects.json` |
@@ -80,7 +80,7 @@ Em `data/profile.json`, dentro de `"contacts"`, use **Ctrl+Espaço → Novo cont
 
 ### Trocar a foto
 
-`data/profile.json` → `photo.src` (a imagem vai em `images/`).
+`data/profile.json` → `photo.src` para a foto do "Sobre" e `portrait.src` para o retrato do topo (as imagens vão em `images/`). O retrato aparece recortado em 4:5, com o rosto na parte de cima; uma largura de ~800 px basta, e acima disso a imagem só fica mais pesada no carregamento.
 
 ## Currículo em PDF
 

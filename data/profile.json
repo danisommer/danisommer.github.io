@@ -14,6 +14,13 @@
     "pt": "Desenvolvedor backend com cerca de 15 meses de experiência em produção como trainee na Trio, plataforma de banking-as-a-service com Pix: cerca de 900 commits em 18 repositórios Elixir. Estudante do 8º semestre de Sistemas de Informação na UTFPR.",
     "en": "Backend developer with about 15 months of production experience as a trainee at Trio, a banking-as-a-service platform with Pix instant payments: about 900 commits across 18 Elixir repositories. 8th-semester Information Systems student at UTFPR."
   },
+  "portrait": {
+    "src": "images/retrato.jpg",
+    "alt": {
+      "pt": "Retrato de Daniel Zaki Sommer",
+      "en": "Portrait of Daniel Zaki Sommer"
+    }
+  },
   "photo": {
     "src": "images/profile_picture.jpg",
     "alt": "Daniel Zaki Sommer"

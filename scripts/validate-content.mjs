@@ -51,6 +51,7 @@ async function validateContent() {
 }
 
 async function checkProfile(profile) {
+  if (profile.portrait) await checkFile("data/profile.json /portrait/src", profile.portrait.src);
   await checkFile("data/profile.json /photo/src", profile.photo.src);
 }
 
