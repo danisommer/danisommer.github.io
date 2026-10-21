@@ -53,9 +53,9 @@ Cada JSON aponta para um schema em `data/schemas/` (linha `"$schema"` no topo). 
 
 1. Em `data/projects.json`, dentro de `"items"`, coloque o cursor na posição de relevância do projeto (mais relevantes no topo) e use **Ctrl+Espaço → Novo projeto**.
 2. `"links"` aceita `"github"` e `"demo"`; os dois aparecem no índice, no destaque e no modal.
-3. Se tiver uma imagem real do projeto (diagrama ou tela), salve em `images/projects/` e aponte em `"image"`. Ela aparece inteira no destaque e no modal, e recortada em quadrado (pelo centro) na miniatura do índice. Sem imagem, a miniatura mostra o ícone de `"icon"`, uma classe do [Font Awesome 6 free](https://fontawesome.com/search?ic=free), ex.: `"fas fa-music"` (padrão: `"fas fa-code"`).
+3. Se tiver uma imagem real do projeto (diagrama ou tela), salve em `images/projects/` e aponte em `"image"`. Ela aparece inteira no destaque e no modal, e recortada (pelo centro) na miniatura do índice, que tem a altura do texto ao lado. Sem imagem, a miniatura mostra o ícone de `"icon"`, uma classe do [Font Awesome 6 free](https://fontawesome.com/search?ic=free), ex.: `"fas fa-music"` (padrão: `"fas fa-code"`).
 
-`image`, `icon`, `details` e `status` são opcionais. Sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe "Em andamento" no destaque, abaixo do resumo no índice e no modal.
+`image`, `icon`, `details` e `status` são opcionais. Sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe "Em andamento" no destaque, ao lado do número no índice e no modal.
 
 ### Adicionar uma experiência, formação ou curso
 

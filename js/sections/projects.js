@@ -91,7 +91,7 @@ function renderIndexHead() {
   return h(
     "div",
     { class: "grid project-index-head", "aria-hidden": "true" },
-    ["projects.project", "projects.stack"].map((key) => h("p", { class: "label" }, label(key)))
+    h("p", { class: "label" }, label("projects.project"))
   );
 }
 
@@ -103,12 +103,16 @@ function renderRow(project, number) {
     h(
       "div",
       { class: "project-row-main" },
-      h("p", { class: "project-row-n", "aria-hidden": "true" }, String(number).padStart(2, "0")),
+      h(
+        "p",
+        { class: "project-row-n" },
+        h("span", { "aria-hidden": "true" }, String(number).padStart(2, "0")),
+        project.status && statusText(project.status)
+      ),
       h("h3", {}, detailsButton(project, "project-row-title", t(project.title))),
       h("p", { class: "project-row-summary" }, t(project.summary)),
-      project.status && h("p", { class: "project-row-status" }, statusText(project.status))
+      h("p", { class: "project-row-stack" }, project.tags.join(" · "))
     ),
-    h("ul", { class: "project-row-stack" }, project.tags.map((tag) => h("li", {}, tag))),
     h("div", { class: "project-row-links" }, renderLinks(project.links, "project-row-link"))
   );
 }
