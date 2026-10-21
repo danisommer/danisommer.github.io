@@ -4,24 +4,38 @@ const LOOK = {
   hero: { size: [1.4, 2.6], alpha: [0.22, 0.95] },
   page: { size: [1.4, 2.4], alpha: [0.2, 0.85] },
 };
-const CURSOR = { radius: 100, gain: 0.75, follow: 0.2, followPerPx: 0.004, followMax: 0.7, fadeIn: 0.25, fadeOut: 0.06 };
+const CURSOR = {
+  radius: 100,
+  gain: 0.75,
+  follow: 0.2,
+  followPerPx: 0.004,
+  followMax: 0.7,
+  fadeIn: 0.25,
+  fadeOut: 0.06,
+  pulse: { rate: 1.5, depth: 0.5, reach: 0.75 },
+};
 const DROP = {
   radius: [40, 85],
-  life: [2400, 4400],
+  life: [3600, 6400],
   gain: 1.5,
   shape: 0.7,
   gap: [100, 280],
   areaPerDrop: 220000,
   count: [3, 8],
   candidates: 8,
+  pulse: { rate: 2, depth: 0.7, reach: 0.8 },
 };
+const PULSE = { apex: 0.85, beats: 2, edge: 2, life: [2400, 3400] };
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 /**
  * Fundo do site: grade de pontos presa à página que acende sob o cursor e em "toques" que surgem e somem devagar
  * (e onde o visitante toca); os efeitos se somam. A tela mantém sempre alguns toques visíveis, em fases
- * desencontradas e espalhados. O canvas fica fixo atrás do conteúdo, do tamanho da janela, e também pinta o fundo
+ * desencontradas e espalhados. No auge de cada toque, e em volta do cursor aceso, pontos acesos soltos pulsam para
+ * menos: perdem parte do brilho e voltam devagar, duas vezes, a segunda mais de leve, sem nunca ficar mais claros
+ * do que estavam. Quanto mais perto da borda, mais o ponto pulsa; perto do centro, a pulsação é rara e fraca.
+ * O canvas fica fixo atrás do conteúdo, do tamanho da janela, e também pinta o fundo
  * do topo. Pausa com a aba oculta; com movimento reduzido, a grade fica parada. Sem suporte a canvas, o site segue
  * com os fundos do CSS.
  */
@@ -39,8 +53,11 @@ export function initDotField() {
     width: 0,
     height: 0,
     top: 0,
+    columns: 0,
+    offsetX: 0,
     colors: { hero: "", heroBg: "", page: "" },
     drops: [],
+    pulses: new Map(),
     cursor: { x: 0, y: 0, targetX: 0, targetY: 0, strength: 0, targetStrength: 0 },
     lastDrop: -Infinity,
     lastFrame: null,
@@ -65,6 +82,7 @@ export function initDotField() {
     if (field.frame !== null) cancelAnimationFrame(field.frame);
     field.frame = null;
     field.drops = [];
+    field.pulses.clear();
     field.cursor.strength = 0;
     draw(context, field);
   };
@@ -82,6 +100,9 @@ export function initDotField() {
     field.width = window.innerWidth;
     field.height = window.innerHeight;
     field.top = field.header.getBoundingClientRect().height;
+    field.columns = Math.floor(field.width / SPACING);
+    field.offsetX = (field.width - (field.columns - 1) * SPACING) / 2;
+    field.pulses.clear();
     canvas.width = Math.round(field.width * ratio);
     canvas.height = Math.round(field.height * ratio);
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -153,11 +174,49 @@ function step(field, now) {
   }
   for (const drop of field.drops) {
     drop.strength = DROP.gain * Math.sin(Math.PI * ((now - drop.born) / drop.life)) ** DROP.shape;
+    if (drop.strength >= DROP.gain * PULSE.apex && happens(DROP.pulse.rate, frames)) {
+      addPulse(field, drop.x, drop.pageY, drop.radius, DROP.pulse, now);
+    }
   }
+  if (cursor.strength >= PULSE.apex && happens(CURSOR.pulse.rate, frames)) {
+    addPulse(field, cursor.x, cursor.y + scroll, CURSOR.radius, CURSOR.pulse, now);
+  }
+  updatePulses(field.pulses, now);
 }
 
 function perFrames(rate, frames) {
   return 1 - (1 - rate) ** frames;
+}
+
+function happens(ratePerSecond, frames) {
+  return Math.random() < 1 - Math.exp((-ratePerSecond * frames * FRAME_MS) / 1000);
+}
+
+function addPulse(field, centerX, centerPageY, radius, { depth, reach }, now) {
+  const angle = Math.random() * Math.PI * 2;
+  const distance = Math.sqrt(Math.random()) * reach * radius;
+  const column = Math.round((centerX + Math.cos(angle) * distance - field.offsetX) / SPACING);
+  const row = Math.round((centerPageY + Math.sin(angle) * distance - SPACING / 2) / SPACING);
+  const key = row * field.columns + column;
+
+  if (column < 0 || column >= field.columns || row < 0 || field.pulses.has(key)) return;
+
+  const dotX = field.offsetX + column * SPACING;
+  const dotY = row * SPACING + SPACING / 2;
+  const edge = Math.min(1, Math.hypot(dotX - centerX, dotY - centerPageY) / (reach * radius)) ** PULSE.edge;
+  if (Math.random() > edge) return;
+  field.pulses.set(key, { born: now, life: between(PULSE.life), depth: depth * edge, dim: 0 });
+}
+
+function updatePulses(pulses, now) {
+  for (const [key, pulse] of pulses) {
+    const progress = (now - pulse.born) / pulse.life;
+    if (progress >= 1) {
+      pulses.delete(key);
+      continue;
+    }
+    pulse.dim = pulse.depth * (1 - progress) * Math.sin(Math.PI * PULSE.beats * progress) ** 2;
+  }
 }
 
 function spawnGap(count, target) {
@@ -200,11 +259,9 @@ function createDrop(x, pageY, now) {
 }
 
 function draw(context, field) {
-  const { width, height } = field;
+  const { width, height, columns, offsetX, pulses } = field;
   const scroll = window.scrollY;
   const heroBox = field.hero.getBoundingClientRect();
-  const columns = Math.floor(width / SPACING);
-  const offsetX = (width - (columns - 1) * SPACING) / 2;
 
   context.clearRect(0, 0, width, height);
   if (heroBox.bottom > 0 && heroBox.top < height) {
@@ -222,7 +279,8 @@ function draw(context, field) {
 
     for (let column = 0; column < columns; column += 1) {
       const x = offsetX + column * SPACING;
-      const level = Math.min(1, intensity(field, x, y, scroll));
+      const dim = pulses.get(row * columns + column)?.dim ?? 0;
+      const level = Math.min(1, intensity(field, x, y, scroll)) * (1 - dim);
 
       context.globalAlpha = alpha[0] + (alpha[1] - alpha[0]) * level;
       context.beginPath();

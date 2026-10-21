@@ -25,7 +25,7 @@ O site carrega os JSON com `fetch`, que não funciona abrindo o `index.html` dir
 | Título da aba, descrição e imagem do preview de link (LinkedIn, WhatsApp) | `<head>` do `index.html` |
 | Ícone da aba | `images/favicon.svg` (a marca "D/", com as letras em Schibsted Grotesk convertidas em contorno); `images/favicon.png` (48 px) e `images/apple-touch-icon.png` (180 px) são versões em PNG dela, para navegadores sem SVG e para a tela inicial do iPhone |
 | Cores dos temas claro e escuro (e do topo, que é sempre preto) | `css/tokens.css` |
-| Fundo animado de pontos (site inteiro): espaçamento, tamanho e brilho dos pontos no topo e no resto da página, raio do cursor, tamanho, frequência e duração dos "toques" | constantes no início de `js/core/dot-field.js` |
+| Fundo animado de pontos (site inteiro): espaçamento, tamanho e brilho dos pontos no topo e no resto da página, raio do cursor, tamanho, frequência e duração dos "toques", frequência, profundidade, ritmo e preferência pela borda das pulsações, que só apagam um pouco o ponto (`pulse` e `PULSE`) | constantes no início de `js/core/dot-field.js` |
 | Visual de uma seção | `css/sections/<seção>.css` |
 | Estrutura ou comportamento de uma seção | `js/sections/<seção>.js` |
 | Layout do currículo em PDF | `cv.html`, `css/cv.css`, `js/cv.js` |
