@@ -54,10 +54,6 @@
           "minItems": 1,
           "items": { "type": "string", "minLength": 1 }
         },
-        "context": {
-          "description": "Origem do projeto, exibida na coluna \"Contexto\", ex.: \"Disciplina de Banco de Dados\" ou \"Pessoal\". Opcional: sem ele, a coluna fica vazia.",
-          "$ref": "common.schema.json#/definitions/text"
-        },
         "summary": {
           "description": "Descrição curta exibida no site.",
           "$ref": "common.schema.json#/definitions/text"
@@ -110,16 +106,15 @@
             "id": "${1:meu-projeto}",
             "title": { "pt": "${2:Título}", "en": "${3:Title}" },
             "tags": ["${4:Java}"],
-            "context": { "pt": "${5:Pessoal}", "en": "${6:Personal}" },
-            "summary": { "pt": "${7:Resumo curto.}", "en": "${8:Short summary.}" },
+            "summary": { "pt": "${5:Resumo curto.}", "en": "${6:Short summary.}" },
             "details": {
-              "intro": { "pt": "${9:Parágrafo de abertura do modal.}", "en": "${10:Modal opening paragraph.}" },
+              "intro": { "pt": "${7:Parágrafo de abertura do modal.}", "en": "${8:Modal opening paragraph.}" },
               "features": [
-                { "pt": "${11:Recurso}", "en": "${12:Feature}" }
+                { "pt": "${9:Recurso}", "en": "${10:Feature}" }
               ],
-              "outro": { "pt": "${13:Parágrafo de fechamento.}", "en": "${14:Closing paragraph.}" }
+              "outro": { "pt": "${11:Parágrafo de fechamento.}", "en": "${12:Closing paragraph.}" }
             },
-            "links": { "github": "https://github.com/danisommer/${15:repositorio}" }
+            "links": { "github": "https://github.com/danisommer/${13:repositorio}" }
           }
         }
       ]

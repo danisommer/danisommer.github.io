@@ -78,12 +78,7 @@
 
 .project-index-head > :nth-child(2),
 .project-row-stack {
-    grid-column: 8 / span 2;
-}
-
-.project-index-head > :nth-child(3),
-.project-row-context {
-    grid-column: 10 / span 2;
+    grid-column: 8 / span 4;
 }
 
 .project-row-thumb {
@@ -159,7 +154,7 @@
 }
 
 .project-row-stack,
-.project-row-context {
+.project-row-status {
     font-family: var(--font-mono);
     font-size: 12.5px;
     line-height: 1.75;
@@ -170,7 +165,8 @@
     list-style: none;
 }
 
-.project-row-context {
+.project-row-status {
+    margin-top: 10px;
     color: var(--color-text-3);
 }
 

@@ -11,22 +11,18 @@
       "image": "images/projects/event-driven-ecommerce.png",
       "status": "in-progress",
       "tags": ["Go", "RabbitMQ", "Microservices", "SSE", "SQLite", "RSA"],
-      "context": {
-        "pt": "Disciplina de Sistemas Distribuídos",
-        "en": "Distributed Systems course"
-      },
       "summary": {
         "pt": "Loja virtual em microsserviços Go: o frontend fala com um API Gateway por REST e SSE, e os serviços se coordenam por eventos no RabbitMQ assinados com RSA, com pagamento por webhook e promoções por e-mail.",
         "en": "Online store built as Go microservices: the frontend talks to an API gateway over REST and SSE, and the services coordinate through RSA-signed RabbitMQ events, with webhook payments and email promotions."
       },
       "cvSummary": {
-        "pt": "Projeto de disciplina: microsserviços Go com API Gateway REST/SSE e eventos RabbitMQ assinados com RSA.",
-        "en": "Course project: Go microservices with a REST/SSE API gateway and RSA-signed RabbitMQ events."
+        "pt": "Microsserviços Go com API Gateway REST/SSE e eventos RabbitMQ assinados com RSA.",
+        "en": "Go microservices with a REST/SSE API gateway and RSA-signed RabbitMQ events."
       },
       "details": {
         "intro": {
-          "pt": "Loja virtual completa, com catálogo, carrinho, pedidos acompanhados em tempo real e inscrição em promoções. Os serviços de domínio se coordenam por eventos, e o REST só aparece nas bordas: navegador e Gateway, consulta de preço no Estoque e provedor de pagamento. Projeto da disciplina de Sistemas Distribuídos: a primeira etapa cobriu só a mensageria; a segunda transformou o projeto em aplicação web.",
-          "en": "A complete online store with a catalog, a cart, real-time order tracking, and promotion sign-ups. Domain services coordinate through events, and REST only appears at the edges: browser and gateway, price lookups in Inventory, and the payment provider. A Distributed Systems course project: the first stage covered messaging only; the second turned it into a web application."
+          "pt": "Loja virtual completa, com catálogo, carrinho, pedidos acompanhados em tempo real e inscrição em promoções. Os serviços de domínio se coordenam por eventos, e o REST só aparece nas bordas: navegador e Gateway, consulta de preço no Estoque e provedor de pagamento. A fundamentação teórica veio da disciplina de Sistemas Distribuídos.",
+          "en": "A complete online store with a catalog, a cart, real-time order tracking, and promotion sign-ups. Domain services coordinate through events, and REST only appears at the edges: browser and gateway, price lookups in Inventory, and the payment provider. The theoretical foundation came from the Distributed Systems course."
         },
         "features": [
           {
@@ -72,22 +68,18 @@
       },
       "icon": "fas fa-wave-square",
       "tags": ["Go", "Python", "CGNE/CGNR", "HTTP", "Benchmark"],
-      "context": {
-        "pt": "Disciplina de Desenvolvimento Integrado de Sistemas",
-        "en": "Integrated Systems Development course"
-      },
       "summary": {
         "pt": "Reconstrói imagens a partir de sinais com os métodos de gradiente conjugado CGNE e CGNR, implementados em um servidor Python e em outro em Go, ambos só com a biblioteca padrão, para comparar desempenho.",
         "en": "Reconstructs images from signal data with the CGNE and CGNR conjugate-gradient methods, implemented in a Python server and a Go server, both using only the standard library, to compare performance."
       },
       "cvSummary": {
-        "pt": "Projeto de disciplina: solvers CGNE/CGNR em Python e Go só com a biblioteca padrão, comparando tempo, CPU e memória.",
-        "en": "Course project: CGNE/CGNR solvers in standard-library-only Python and Go servers, compared on time, CPU, and memory."
+        "pt": "Solvers CGNE/CGNR em Python e Go só com a biblioteca padrão, comparando tempo, CPU e memória.",
+        "en": "CGNE/CGNR solvers in standard-library-only Python and Go servers, compared on time, CPU, and memory."
       },
       "details": {
         "intro": {
-          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída. Projeto da disciplina de Desenvolvimento Integrado de Sistemas.",
-          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image. An Integrated Systems Development course project."
+          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída. A fundamentação teórica veio da disciplina de Desenvolvimento Integrado de Sistemas.",
+          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image. The theoretical foundation came from the Integrated Systems Development course."
         },
         "features": [
           {
@@ -119,19 +111,18 @@
       "image": "images/projects/compass-plus.png",
       "status": "in-progress",
       "tags": ["TypeScript", "Vite", "PDF.js", "GitHub Actions"],
-      "context": { "pt": "Pessoal", "en": "Personal" },
       "summary": {
         "pt": "Planejador acadêmico para alunos da UTFPR: lê os PDFs do Portal do Aluno (matriz, histórico e turmas abertas) e gera grades de horário sem conflito, tudo no navegador.",
         "en": "Course planner for UTFPR students: it reads the student portal PDFs (curriculum, transcript, and open classes) and generates conflict-free schedules, all in the browser."
       },
       "cvSummary": {
-        "pt": "Projeto pessoal em desenvolvimento: lê os PDFs do Portal do Aluno da UTFPR e gera grades de horário sem conflito.",
-        "en": "Personal project in progress: reads UTFPR student portal PDFs and generates conflict-free class schedules."
+        "pt": "Em desenvolvimento: lê os PDFs do Portal do Aluno da UTFPR e gera grades de horário sem conflito.",
+        "en": "In progress: reads UTFPR student portal PDFs and generates conflict-free class schedules."
       },
       "details": {
         "intro": {
-          "pt": "Ferramenta web que transforma os PDFs do Portal do Aluno em um plano de semestre, processando tudo localmente, sem enviar dados a servidores. Projeto pessoal, ainda em desenvolvimento e não lançado para os alunos.",
-          "en": "A web tool that turns the student portal PDFs into a semester plan, processing everything locally without sending data to any server. A personal project, still in development and not yet launched to students."
+          "pt": "Ferramenta web que transforma os PDFs do Portal do Aluno em um plano de semestre, processando tudo localmente, sem enviar dados a servidores. Ainda em desenvolvimento e não lançado para os alunos.",
+          "en": "A web tool that turns the student portal PDFs into a semester plan, processing everything locally without sending data to any server. Still in development and not yet launched to students."
         },
         "features": [
           {
@@ -166,7 +157,6 @@
       "title": "Knight's Quest",
       "image": "images/projects/platform-game.jpg",
       "tags": ["C++", "SFML", "OOP", "CMake"],
-      "context": { "pt": "Disciplina de Técnicas de Programação", "en": "Programming Techniques course" },
       "summary": {
         "pt": "Jogo de plataforma 2D em C++ com SFML: co-op local, inimigos, chefão, sistema de combate, árvore de habilidades, save e ranking.",
         "en": "2D platformer in C++ with SFML: local co-op, enemies, a boss, a combat system, a skill tree, saves, and a ranking."
@@ -177,8 +167,8 @@
       },
       "details": {
         "intro": {
-          "pt": "Jogo de plataforma com rolagem lateral construído do zero em C++ com a biblioteca SFML, com cerca de 9 mil linhas organizadas em orientação a objetos. Projeto da disciplina de Técnicas de Programação.",
-          "en": "A side-scrolling platformer built from scratch in C++ with the SFML library, with about 9,000 lines organized with object-oriented design. A Programming Techniques course project."
+          "pt": "Jogo de plataforma com rolagem lateral construído do zero em C++ com a biblioteca SFML, com cerca de 9 mil linhas organizadas em orientação a objetos. A fundamentação teórica veio da disciplina de Técnicas de Programação.",
+          "en": "A side-scrolling platformer built from scratch in C++ with the SFML library, with about 9,000 lines organized with object-oriented design. The theoretical foundation came from the Programming Techniques course."
         },
         "features": [
           {
@@ -219,7 +209,6 @@
       },
       "image": "images/projects/tsp-metaheuristics.png",
       "tags": ["Python", "NumPy", "Matplotlib", "Metaheuristics"],
-      "context": { "pt": "Disciplina de Sistemas Inteligentes", "en": "Intelligent Systems course" },
       "summary": {
         "pt": "Compara têmpera simulada e algoritmo genético no problema do caixeiro viajante, com experimentos de 20 a 100 cidades e gráficos de convergência.",
         "en": "Compares simulated annealing and a genetic algorithm on the traveling salesman problem, with experiments from 20 to 100 cities and convergence charts."
@@ -230,8 +219,8 @@
       },
       "details": {
         "intro": {
-          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo. Projeto da disciplina de Sistemas Inteligentes.",
-          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper. An Intelligent Systems course project."
+          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo. A fundamentação teórica veio da disciplina de Sistemas Inteligentes.",
+          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper. The theoretical foundation came from the Intelligent Systems course."
         },
         "features": [
           {
@@ -257,15 +246,14 @@
       "title": "GrafoQuest",
       "icon": "fas fa-project-diagram",
       "tags": ["React", "D3.js", "Tailwind CSS", "Zustand", "Framer Motion"],
-      "context": { "pt": "Estudo para Projeto e Análise de Algoritmos", "en": "Study aid for Algorithm Design and Analysis" },
       "summary": {
         "pt": "Jogo educativo para aprender teoria dos grafos e algoritmos (Dijkstra, BFS/DFS, Prim, Kruskal, ordenação topológica e outros) com visualizações passo a passo.",
         "en": "Educational game for learning graph theory and algorithms (Dijkstra, BFS/DFS, Prim, Kruskal, topological sort, and more) with step-by-step visualizations."
       },
       "details": {
         "intro": {
-          "pt": "Criado para estudar para a disciplina de Projeto e Análise de Algoritmos da UTFPR: jogável só com o mouse e 100% offline.",
-          "en": "Built as a study aid for UTFPR's Design and Analysis of Algorithms course: playable with the mouse only and 100% offline."
+          "pt": "Feito para aprender algoritmos em grafos jogando: funciona só com o mouse e 100% offline. A fundamentação teórica veio da disciplina de Projeto e Análise de Algoritmos.",
+          "en": "Built to learn graph algorithms by playing: it works with the mouse only and 100% offline. The theoretical foundation came from the Design and Analysis of Algorithms course."
         },
         "features": [
           {
@@ -299,19 +287,18 @@
       },
       "icon": "fas fa-robot",
       "tags": ["Python", "Llama 3.2", "Transformers", "MySQL", "PostgreSQL"],
-      "context": { "pt": "Disciplina de Banco de Dados", "en": "Databases course" },
       "summary": {
         "pt": "Converte perguntas em português em consultas SQL com o Llama 3.2 e as executa em bancos MySQL ou PostgreSQL.",
         "en": "Turns questions in Portuguese into SQL queries with Llama 3.2 and runs them on MySQL or PostgreSQL databases."
       },
       "cvSummary": {
-        "pt": "Projeto de disciplina: converte perguntas em português em SQL com Llama 3.2, usando o schema real do banco.",
-        "en": "Course project: turns Portuguese questions into SQL with Llama 3.2, grounded on the real database schema."
+        "pt": "Converte perguntas em português em SQL com Llama 3.2, usando o schema real do banco.",
+        "en": "Turns Portuguese questions into SQL with Llama 3.2, grounded on the real database schema."
       },
       "details": {
         "intro": {
-          "pt": "Aplicação de linha de comando que usa um modelo de linguagem local para gerar SQL a partir de linguagem natural, com base no schema real do banco. Projeto da disciplina de Banco de Dados.",
-          "en": "A command-line application that uses a local language model to generate SQL from natural language, based on the database's real schema. A Databases course project."
+          "pt": "Aplicação de linha de comando que usa um modelo de linguagem local para gerar SQL a partir de linguagem natural, com base no schema real do banco. A fundamentação teórica veio da disciplina de Banco de Dados.",
+          "en": "A command-line application that uses a local language model to generate SQL from natural language, based on the database's real schema. The theoretical foundation came from the Databases course."
         },
         "features": [
           {
@@ -344,15 +331,14 @@
       },
       "icon": "fas fa-comments",
       "tags": ["Python", "TCP", "Sockets", "Multithreading", "HTTP"],
-      "context": { "pt": "Disciplina de Redes de Computadores", "en": "Computer Networks course" },
       "summary": {
         "pt": "Cliente e servidor TCP com protocolo de aplicação próprio: chat, download de arquivos de qualquer tamanho conferidos por SHA-256 e um servidor HTTP mínimo escrito direto sobre sockets.",
         "en": "TCP client and server with a custom application protocol: chat, downloads of files of any size verified with SHA-256, and a minimal HTTP server written directly on sockets."
       },
       "details": {
         "intro": {
-          "pt": "Comunicação de rede construída do zero em Python, só com a biblioteca padrão. Projeto da disciplina de Redes de Computadores.",
-          "en": "Network communication built from scratch in Python with only the standard library. A Computer Networks course project."
+          "pt": "Comunicação de rede construída do zero em Python, só com a biblioteca padrão. A fundamentação teórica veio da disciplina de Redes de Computadores.",
+          "en": "Network communication built from scratch in Python with only the standard library. The theoretical foundation came from the Computer Networks course."
         },
         "features": [
           {
@@ -389,15 +375,14 @@
       },
       "icon": "fas fa-right-left",
       "tags": ["Python", "UDP", "Sockets", "RDT", "CRC32"],
-      "context": { "pt": "Disciplina de Redes de Computadores", "en": "Computer Networks course" },
       "summary": {
         "pt": "Transferência de arquivos sobre UDP com a confiabilidade feita na aplicação: segmentação, CRC32 por segmento, retransmissão seletiva por NACK e simulação de perda de pacotes.",
         "en": "File transfer over UDP with reliability built at the application layer: segmentation, per-segment CRC32, selective retransmission via NACK, and simulated packet loss."
       },
       "details": {
         "intro": {
-          "pt": "O UDP não garante entrega nem ordem; aqui o próprio protocolo cuida disso, em Python e só com a biblioteca padrão. Projeto da disciplina de Redes de Computadores.",
-          "en": "UDP guarantees neither delivery nor order; here the protocol itself handles both, in Python with only the standard library. A Computer Networks course project."
+          "pt": "O UDP não garante entrega nem ordem; aqui o próprio protocolo cuida disso, em Python e só com a biblioteca padrão. A fundamentação teórica veio da disciplina de Redes de Computadores.",
+          "en": "UDP guarantees neither delivery nor order; here the protocol itself handles both, in Python with only the standard library. The theoretical foundation came from the Computer Networks course."
         },
         "features": [
           {
@@ -434,15 +419,14 @@
       },
       "image": "images/projects/dashboard-app.jpg",
       "tags": ["Python", "C++", "Tkinter", "Matplotlib", "Linux"],
-      "context": { "pt": "Disciplina de Sistemas Operacionais", "en": "Operating Systems course" },
       "summary": {
         "pt": "Monitoramento de métricas do sistema em tempo real, com interface em Python (Tkinter e Matplotlib) e coleta de dados em C++ exposta como biblioteca compartilhada.",
         "en": "Real-time system metrics monitoring, with a Python interface (Tkinter and Matplotlib) and C++ data collection exposed as a shared library."
       },
       "details": {
         "intro": {
-          "pt": "Painel para Linux que combina a velocidade de C++ na coleta de dados com a praticidade de Python na interface. Projeto da disciplina de Sistemas Operacionais.",
-          "en": "A Linux dashboard that combines C++ speed for data collection with Python convenience for the interface. An Operating Systems course project."
+          "pt": "Painel para Linux que combina a velocidade de C++ na coleta de dados com a praticidade de Python na interface. A fundamentação teórica veio da disciplina de Sistemas Operacionais.",
+          "en": "A Linux dashboard that combines C++ speed for data collection with Python convenience for the interface. The theoretical foundation came from the Operating Systems course."
         },
         "features": [
           {
@@ -475,15 +459,14 @@
       },
       "image": "images/projects/smart-metronome.png",
       "tags": ["JavaScript", "Tone.js", "Tailwind CSS", "Web Audio API"],
-      "context": { "pt": "Pessoal", "en": "Personal" },
       "summary": {
         "pt": "Metrônomo web com treino progressivo de andamento: aumenta o BPM automaticamente até a meta, com tap tempo, sons personalizáveis, visualização dos tempos e histórico de sessões.",
         "en": "Web metronome with progressive tempo training: it raises the BPM automatically up to a target, with tap tempo, customizable sounds, beat visualization, and session history."
       },
       "details": {
         "intro": {
-          "pt": "Ferramenta para músicos ganharem velocidade técnica de forma gradual, usada direto no navegador. Projeto pessoal.",
-          "en": "A tool for musicians to build technical speed gradually, used right in the browser. A personal project."
+          "pt": "Ferramenta para músicos ganharem velocidade técnica de forma gradual, usada direto no navegador.",
+          "en": "A tool for musicians to build technical speed gradually, used right in the browser."
         },
         "features": [
           {

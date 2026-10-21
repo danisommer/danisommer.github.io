@@ -47,7 +47,6 @@
     "featured": { "pt": "Em destaque", "en": "Featured" },
     "project": { "pt": "Projeto", "en": "Project" },
     "stack": { "pt": "Stack", "en": "Stack" },
-    "context": { "pt": "Contexto", "en": "Context" },
     "statusLabel": { "pt": "Status", "en": "Status" },
     "details": { "pt": "Detalhes", "en": "Details" },
     "featuresIntro": { "pt": "Recursos incluem:", "en": "Features include:" },

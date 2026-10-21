@@ -75,7 +75,6 @@ function renderFeature(project) {
       h(
         "dl",
         { class: "spec" },
-        project.context && specRow(label("projects.context"), t(project.context)),
         project.status && specRow(label("projects.statusLabel"), statusText(project.status)),
         specRow(label("projects.stack"), project.tags.join(" · "))
       ),
@@ -92,7 +91,7 @@ function renderIndexHead() {
   return h(
     "div",
     { class: "grid project-index-head", "aria-hidden": "true" },
-    ["projects.project", "projects.stack", "projects.context"].map((key) => h("p", { class: "label" }, label(key)))
+    ["projects.project", "projects.stack"].map((key) => h("p", { class: "label" }, label(key)))
   );
 }
 
@@ -106,16 +105,10 @@ function renderRow(project, number) {
       { class: "project-row-main" },
       h("p", { class: "project-row-n", "aria-hidden": "true" }, String(number).padStart(2, "0")),
       h("h3", {}, detailsButton(project, "project-row-title", t(project.title))),
-      h("p", { class: "project-row-summary" }, t(project.summary))
+      h("p", { class: "project-row-summary" }, t(project.summary)),
+      project.status && h("p", { class: "project-row-status" }, statusText(project.status))
     ),
     h("ul", { class: "project-row-stack" }, project.tags.map((tag) => h("li", {}, tag))),
-    h(
-      "p",
-      { class: "project-row-context" },
-      project.context && t(project.context),
-      project.context && project.status && " · ",
-      project.status && statusText(project.status)
-    ),
     h("div", { class: "project-row-links" }, renderLinks(project.links, "project-row-link"))
   );
 }
@@ -183,7 +176,6 @@ function renderModal(dialog, project) {
       "p",
       { class: "project-details-meta" },
       project.status && statusText(project.status),
-      project.context && h("span", {}, t(project.context)),
       h("span", {}, project.tags.join(" · "))
     ),
     project.image &&
