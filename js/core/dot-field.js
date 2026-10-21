@@ -25,7 +25,7 @@ const DROP = {
   candidates: 8,
   pulse: { rate: 2, depth: 0.7, reach: 0.8 },
 };
-const PULSE = { apex: 0.85, beats: 2, edge: 2, life: [2400, 3400] };
+const PULSE = { apex: 0.85, beats: 2, edge: 2, life: [4200, 5800] };
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
