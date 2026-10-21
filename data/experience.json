@@ -3,76 +3,96 @@
   "items": [
     {
       "type": "work",
-      "title": "Developer",
-      "organization": "Hi Tech Consultoria",
-      "start": "2025-10",
-      "highlights": [
-        {
-          "pt": "Contribuo como desenvolvedor para projetos de consultoria em tecnologia da empresa júnior da UTFPR.",
-          "en": "I contribute as a developer to technology consulting projects at UTFPR's junior enterprise."
-        }
-      ]
-    },
-    {
-      "type": "work",
-      "title": "Elixir Developer",
+      "title": {
+        "pt": "Desenvolvedor Trainee (Elixir)",
+        "en": "Software Developer Trainee (Elixir)"
+      },
       "organization": "Trio",
       "start": "2025-07",
-      "end": "2026-10",
+      "end": "2026-09",
       "highlights": [
         {
-          "pt": "Resolvi o arquivo CCS enviado diariamente ao Bacen, em aberto havia cerca de dois anos: regras de contas encerradas e de fim de vínculo com representantes, engenharia reversa da validação externa e recuperação de dados.",
-          "en": "Fixed the CCS file sent daily to the Central Bank, an issue open for about two years: rules for closed accounts and ended links with legal representatives, reverse-engineering the external validation, and data recovery."
+          "pt": "Corrigi o arquivo regulatório diário do CCS, enviado ao Bacen, com problema aberto havia cerca de dois anos: um único registro inválido derrubava o arquivo inteiro. Fiz engenharia reversa da validação externa, implementei as regras de contas encerradas e de fim de vínculo com representantes e recuperei os dados; o arquivo passou a ser aceito, sem novos erros relacionados.",
+          "en": "Fixed the daily CCS regulatory file sent to Brazil's Central Bank, an issue open for about two years: a single invalid record got the whole file rejected. Reverse-engineered the external validation, implemented the rules for closed accounts and ended links with legal representatives, and recovered the data; the file was then accepted with no further related errors."
         },
         {
-          "pt": "Construí fluxos de conciliação com o Bacen para transações não conciliadas e jobs agendados de saldo da conta PI e de correção, com ganho de performance via índices de cobertura, cache e consultas paralelas em lotes.",
-          "en": "Built reconciliation flows against the Central Bank for unreconciled transactions and scheduled jobs for PI account balance and corrections, speeding them up with covering indexes, caching, and parallel batched queries."
+          "pt": "Construí fluxos de conciliação com o Bacen para transações não conciliadas e jobs agendados de saldo da conta PI (conta de liquidação do Pix) e de correção, otimizados com índices de cobertura, cache e consultas paralelas em lotes.",
+          "en": "Built reconciliation flows against the Central Bank for unreconciled transactions, and scheduled jobs for the PI account balance (the Pix settlement account) and for corrections, optimized with covering indexes, caching, and parallel batched queries."
         },
         {
-          "pt": "Criei o helper de busca por trecho que ignora acentos e maiúsculas, adotado em 8 serviços, e padronizei a busca em dezenas de telas do backoffice usado por ~100 funcionários.",
-          "en": "Created the partial-text search helper that ignores accents and case, adopted by 8 services, and standardized search across dozens of screens of a back office used daily by ~100 employees."
+          "pt": "Propus e implementei, numa biblioteca compartilhada, um helper de busca por trecho que ignora acentos e maiúsculas, adotado em 8 serviços, e padronizei a busca em dezenas de telas do backoffice usado por ~100 funcionários.",
+          "en": "Proposed and implemented, in a shared library, a partial-text search helper that ignores accents and case, adopted by 8 services, and standardized search across dozens of screens of a back office used by ~100 employees."
         },
         {
-          "pt": "No backoffice em LiveView, entreguei bloqueios e retenções, abertura e edição de contas, tarifas, transferências de tesouraria e troca de representante legal, com trilha de auditoria de sessão e rota em todas as ações.",
-          "en": "In the LiveView back office, delivered account blocks and holds, account opening and editing, fees, treasury transfers, and legal representative replacement, with a session- and route-level audit trail on every action."
+          "pt": "No backoffice em Phoenix LiveView, entreguei bloqueios e retenções, abertura e edição de contas, tarifas, transferências de tesouraria e troca de representante legal, com trilha de auditoria de sessão e rota em todas as ações.",
+          "en": "In the Phoenix LiveView back office, delivered account blocks and holds, account opening and editing, fees, treasury transfers, and legal representative replacement, with a session- and route-level audit trail on every action."
         },
         {
-          "pt": "No MED do Pix, implementei busca full-text em notificações de infração e pedidos de devolução, sincronização com o DICT, fluxo de contestação e exportação em CSV.",
-          "en": "In Pix MED (the fraud refund mechanism), implemented full-text search over infraction reports and refund requests, DICT synchronization, a dispute flow, and CSV export."
+          "pt": "No MED do Pix (mecanismo de devolução em casos de fraude), implementei busca full-text em notificações de infração e pedidos de devolução, sincronização com o DICT (diretório de chaves Pix), fluxo de contestação e exportação em CSV.",
+          "en": "In Pix MED (the refund mechanism for fraud cases), implemented full-text search over infraction reports and refund requests, synchronization with DICT (the Pix key directory), a dispute flow, and CSV export."
         },
         {
-          "pt": "Expus saldo bloqueado e disponível do core às contas virtuais, criei tabelas e migrations no ClickHouse e reforcei a estabilidade em produção com retry, filtros no Sentry e correção de crashes.",
-          "en": "Exposed blocked and available balances from the core to virtual accounts, created ClickHouse tables and migrations, and improved production stability with retries, Sentry filters, and crash fixes."
+          "pt": "Expus os saldos bloqueado e disponível do core bancário às contas virtuais e criei tabelas e migrations no ClickHouse.",
+          "en": "Exposed blocked and available balances from core banking to virtual accounts, and created ClickHouse tables and migrations."
         },
         {
-          "pt": "Investiguei bugs complexos reproduzindo-os com testes e scripts de cenário entre serviços e cruzando auditoria no ClickHouse com o Postgres, corrigindo na causa raiz e padronizando o código em módulos reutilizáveis.",
-          "en": "Investigated complex bugs by reproducing them with tests and scenario scripts across services and cross-checking ClickHouse audit trails with Postgres, fixing root causes and standardizing code into reusable modules."
+          "pt": "Investiguei bugs entre serviços com testes, scripts de cenário e a auditoria do ClickHouse cruzada com o Postgres; corrigi na causa raiz, padronizei o código em módulos reutilizáveis e reforcei a estabilidade em produção com retry e filtros no Sentry.",
+          "en": "Investigated cross-service bugs with tests, scenario scripts, and ClickHouse audit data cross-checked against Postgres; fixed root causes, consolidated code into reusable modules, and improved production stability with retries and Sentry filters."
         }
       ]
     },
     {
       "type": "work",
-      "title": "Java Developer",
+      "title": {
+        "pt": "Estagiário de Desenvolvimento de Software",
+        "en": "Software Development Intern"
+      },
       "organization": "Meisters Solutions",
       "start": "2024-07",
       "end": "2025-07",
       "highlights": [
         {
-          "pt": "Criei e mantive integrações em Java e no SAP Cloud Platform Integration (SCPI) para grandes clientes, em escala corporativa.",
-          "en": "Built and maintained Java and SAP Cloud Platform Integration (SCPI) integrations for large clients at corporate scale."
+          "pt": "Desenvolvi e mantive integrações no SAP CPI entre o ERP SAP Business One, uma loja PrestaShop, a Amazon e transportadoras, sincronizando pedidos, clientes, preços, faturas e status da operação europeia de uma multinacional.",
+          "en": "Built and maintained SAP CPI integrations connecting the SAP Business One ERP to a PrestaShop store, Amazon, and shipping carriers, syncing orders, customers, prices, invoices, and statuses for a multinational's European operation."
+        },
+        {
+          "pt": "Implementei em Groovy as regras de negócio desses fluxos (descontos em cascata com IVA, normalização de endereços por país e câmbio por data) e a troca de arquivos CSV via FTP/SFTP.",
+          "en": "Implemented the flows' business rules in Groovy (cascading discounts with VAT, per-country address normalization, and date-based exchange rates) and CSV file exchange over FTP/SFTP."
         }
       ]
     },
     {
       "type": "work",
-      "title": "Java Software Developer",
+      "title": {
+        "pt": "Estagiário de Desenvolvimento de Software",
+        "en": "Software Development Intern"
+      },
       "organization": "Digiu Digital",
       "start": "2024-07",
       "end": "2025-07",
       "highlights": [
         {
-          "pt": "Desenvolvi E-Commerce em Java (Spring) com Docker, TypeScript, SQL e SAP Hybris, além de apps mobile (React Native, PHP).",
-          "en": "Built E-Commerce features in Java (Spring) with Docker, TypeScript, SQL, SAP Hybris, and mobile apps (React Native, PHP)."
+          "pt": "Mesmo estágio da Meisters, no mesmo período, junto com a equipe da Digiu na Espanha, em reuniões em inglês.",
+          "en": "Same internship as at Meisters, over the same period, alongside Digiu's team in Spain, in meetings held in English."
+        },
+        {
+          "pt": "Contribuí para o backend em Java (Spring) e Docker de um e-commerce do mesmo cliente, com foco em regras de negócio.",
+          "en": "Contributed to the Java (Spring) and Docker backend of the same client's e-commerce platform, mostly on business rules."
+        }
+      ]
+    },
+    {
+      "type": "junior-enterprise",
+      "title": {
+        "pt": "Desenvolvedor · Equipe de Projetos",
+        "en": "Developer · Projects Team"
+      },
+      "organization": "Hi Tech Consultoria",
+      "start": "2025-10",
+      "highlights": [
+        {
+          "pt": "Elaboro escopo e orçamento de propostas, divido o trabalho da equipe em tarefas, ajudo a definir a stack e reviso código.",
+          "en": "I scope and price client proposals, split the team's work into tasks, help define the tech stack, and review code."
         }
       ]
     },

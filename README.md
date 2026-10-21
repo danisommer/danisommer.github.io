@@ -61,7 +61,7 @@ Adicione `{ "id": "elixir", "label": "Elixir" }` em `"categories"` no topo de `d
 
 Em `data/experience.json`, dentro de `"items"`, use **Ctrl+Espaço → Nova experiência**. Enquanto for o emprego atual, não coloque `"end"`. `"organization"` e `"highlights"` são opcionais.
 
-`"type"` classifica o item: `"work"` entra em Experiência no currículo, `"education"` entra em Formação; `"volunteering"` e `"courses"` ficam só no site.
+`"type"` classifica o item: `"work"` entra em Experiência no currículo, `"junior-enterprise"` entra em Empresa Júnior, `"education"` entra em Formação; `"volunteering"` e `"courses"` ficam só no site.
 
 ### Adicionar ou mudar uma habilidade
 
@@ -71,7 +71,7 @@ Em `data/skills.json`, cada item de `"categories"` é um slide do carrossel. Uma
 
 O semestre aparece em três textos, nos dois idiomas:
 
-- `data/profile.json` → `intro` e o segundo item de `about.paragraphs`;
+- `data/profile.json` → `intro` e o item de `about.paragraphs` que fala da UTFPR;
 - `data/experience.json` → item da UTFPR, em `highlights`.
 
 ### Adicionar um contato ou rede social
@@ -92,7 +92,7 @@ O que entra, em uma página A4, uma coluna, texto selecionável (legível por si
 |---|---|
 | Cabeçalho | `profile.json`: `name`, `headline`, `location`, `contacts` |
 | Resumo | `profile.json`: `intro` (o texto do topo do site) |
-| Experiência / Formação | `experience.json`, pelo `type` de cada item (datas em `MM/AAAA`) |
+| Experiência / Empresa Júnior / Formação | `experience.json`, pelo `type` de cada item (datas em `MM/AAAA`) |
 | Projetos | os projetos de `projects.json` que têm `"cv"`, na ordem desse número, com tags, links e a frase de `"cvSummary"` |
 | Habilidades | todas as categorias de `skills.json`, uma linha cada |
 

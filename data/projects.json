@@ -16,6 +16,7 @@
       },
       "icon": "fas fa-network-wired",
       "image": "images/projects/event-driven-ecommerce.png",
+      "status": "in-progress",
       "categories": ["go"],
       "tags": ["Go", "RabbitMQ", "Microservices", "RSA", "Docker"],
       "summary": {
@@ -23,13 +24,13 @@
         "en": "E-commerce backend in Go split into microservices that communicate only through RabbitMQ events, with every event digitally signed (RSA) and verified by its consumer."
       },
       "cvSummary": {
-        "pt": "Microsserviços em Go que se comunicam só por eventos no RabbitMQ, com cada evento assinado via RSA.",
-        "en": "Go microservices that communicate only through RabbitMQ events, each one signed with RSA."
+        "pt": "Projeto de disciplina: microsserviços em Go que se comunicam só por eventos no RabbitMQ, assinados com RSA.",
+        "en": "Course project: Go microservices that communicate only through RabbitMQ events signed with RSA."
       },
       "details": {
         "intro": {
-          "pt": "Nenhum processo chama outro diretamente: pedidos, estoque, pagamento, entrega e promoções se coordenam só por eventos. Projeto desenvolvido em dupla.",
-          "en": "No process calls another directly: orders, inventory, payment, shipping, and promotions coordinate only through events. Built as a two-person project."
+          "pt": "Nenhum processo chama outro diretamente: pedidos, estoque, pagamento, entrega e promoções se coordenam só por eventos. Projeto da disciplina de Sistemas Distribuídos: a primeira etapa foi feita em dupla; a segunda, em andamento, é individual.",
+          "en": "No process calls another directly: orders, inventory, payment, shipping, and promotions coordinate only through events. A Distributed Systems course project: the first stage was built in a pair; the second, in progress, is individual."
         },
         "features": [
           {
@@ -49,13 +50,13 @@
             "en": "One durable queue per service and broker connection retries on startup."
           },
           {
-            "pt": "Minha parte: serviços Principal (menu e acompanhamento dos pedidos), Estoque e Pagamento.",
-            "en": "My part: the Main (menu and order tracking), Inventory, and Payment services."
+            "pt": "Minha parte na primeira etapa: a base de mensageria, a assinatura dos eventos e os serviços Principal (menu e acompanhamento dos pedidos), Estoque e Pagamento; Entrega e Promoções foram feitos pelo colega.",
+            "en": "My part in the first stage: the messaging foundation, event signing, and the Main (menu and order tracking), Inventory, and Payment services; Shipping and Promotions were built by my teammate."
           }
         ],
         "outro": {
-          "pt": "O RabbitMQ sobe via Docker Compose e cada serviço roda em seu próprio processo, com comandos make.",
-          "en": "RabbitMQ runs via Docker Compose and each service runs as its own process, started with make commands."
+          "pt": "O RabbitMQ sobe via Docker Compose e cada serviço roda em seu próprio processo, com comandos make. A segunda etapa, em andamento, transforma o projeto em uma aplicação web, com API Gateway REST, notificações em tempo real via SSE, pagamento por webhook e envio de e-mails por API externa.",
+          "en": "RabbitMQ runs via Docker Compose and each service runs as its own process, started with make commands. The second stage, in progress, turns the project into a web application with a REST API gateway, real-time notifications over SSE, webhook-based payments, and email delivery through an external API."
         }
       },
       "links": {
@@ -77,13 +78,13 @@
         "en": "Reconstructs images from signal data with the CGNE and CGNR conjugate-gradient methods, implemented in a Python server and a Go server, both using only the standard library, to compare performance."
       },
       "cvSummary": {
-        "pt": "Solvers CGNE/CGNR em servidores Python e Go só com a biblioteca padrão, comparando tempo, CPU e memória.",
-        "en": "CGNE/CGNR solvers in standard-library-only Python and Go servers, compared on time, CPU, and memory."
+        "pt": "Projeto de disciplina: solvers CGNE/CGNR em Python e Go só com a biblioteca padrão, comparando tempo, CPU e memória.",
+        "en": "Course project: CGNE/CGNR solvers in standard-library-only Python and Go servers, compared on time, CPU, and memory."
       },
       "details": {
         "intro": {
-          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída.",
-          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image."
+          "pt": "O mesmo problema numérico resolvido em uma linguagem interpretada e em uma compilada: um cliente envia sequências de sinais em intervalos aleatórios e cada servidor devolve a imagem reconstruída. Projeto de disciplina, desenvolvido individualmente.",
+          "en": "The same numerical problem solved in an interpreted and a compiled language: a client sends signal sequences at random intervals and each server returns the reconstructed image. A course project, built individually."
         },
         "features": [
           {
@@ -114,6 +115,7 @@
       "title": "Compass+",
       "icon": "fas fa-compass",
       "image": "images/projects/compass-plus.png",
+      "status": "in-progress",
       "categories": ["js"],
       "tags": ["TypeScript", "Vite", "PDF.js", "GitHub Actions"],
       "summary": {
@@ -121,13 +123,13 @@
         "en": "Course planner for UTFPR students: it reads the student portal PDFs (curriculum, transcript, and open classes) and generates conflict-free schedules, all in the browser."
       },
       "cvSummary": {
-        "pt": "Lê os PDFs do Portal do Aluno da UTFPR e gera grades de horário sem conflito, tudo no navegador.",
-        "en": "Reads UTFPR student portal PDFs and generates conflict-free class schedules, entirely in the browser."
+        "pt": "Projeto pessoal em desenvolvimento: lê os PDFs do Portal do Aluno da UTFPR e gera grades de horário sem conflito.",
+        "en": "Personal project in progress: reads UTFPR student portal PDFs and generates conflict-free class schedules."
       },
       "details": {
         "intro": {
-          "pt": "Ferramenta web que transforma os PDFs do Portal do Aluno em um plano de semestre, processando tudo localmente, sem enviar dados a servidores.",
-          "en": "A web tool that turns the student portal PDFs into a semester plan, processing everything locally without sending data to any server."
+          "pt": "Ferramenta web que transforma os PDFs do Portal do Aluno em um plano de semestre, processando tudo localmente, sem enviar dados a servidores. Projeto pessoal, ainda em desenvolvimento e não lançado para os alunos.",
+          "en": "A web tool that turns the student portal PDFs into a semester plan, processing everything locally without sending data to any server. A personal project, still in development and not yet launched to students."
         },
         "features": [
           {
@@ -159,7 +161,6 @@
     },
     {
       "id": "knights-quest",
-      "cv": 5,
       "title": "Knight's Quest",
       "icon": "fas fa-gamepad",
       "image": "images/projects/platform-game.jpg",
@@ -175,8 +176,8 @@
       },
       "details": {
         "intro": {
-          "pt": "Jogo de plataforma com rolagem lateral construído do zero em C++ com a biblioteca SFML, com cerca de 9 mil linhas organizadas em orientação a objetos.",
-          "en": "A side-scrolling platformer built from scratch in C++ with the SFML library, with about 9,000 lines organized with object-oriented design."
+          "pt": "Jogo de plataforma com rolagem lateral construído do zero em C++ com a biblioteca SFML, com cerca de 9 mil linhas organizadas em orientação a objetos. Projeto da disciplina de Técnicas de Programação.",
+          "en": "A side-scrolling platformer built from scratch in C++ with the SFML library, with about 9,000 lines organized with object-oriented design. A Programming Techniques course project."
         },
         "features": [
           {
@@ -211,7 +212,6 @@
     },
     {
       "id": "tsp-metaheuristics",
-      "cv": 6,
       "title": {
         "pt": "Caixeiro Viajante: Têmpera Simulada × Genético",
         "en": "Traveling Salesman: Simulated Annealing vs Genetic"
@@ -230,8 +230,8 @@
       },
       "details": {
         "intro": {
-          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo.",
-          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper."
+          "pt": "Pacote Python para estudar metaheurísticas no problema do caixeiro viajante, com execuções reprodutíveis e figuras para artigo. Projeto da disciplina de Sistemas Inteligentes, desenvolvido individualmente.",
+          "en": "A Python package for studying metaheuristics on the traveling salesman problem, with reproducible runs and figures for a paper. An Intelligent Systems course project, built individually."
         },
         "features": [
           {
@@ -264,8 +264,8 @@
       },
       "details": {
         "intro": {
-          "pt": "Criado para a disciplina de Projeto e Análise de Algoritmos da UTFPR: jogável só com o mouse e 100% offline.",
-          "en": "Built for UTFPR's Design and Analysis of Algorithms course: playable with the mouse only and 100% offline."
+          "pt": "Criado para estudar para a disciplina de Projeto e Análise de Algoritmos da UTFPR: jogável só com o mouse e 100% offline.",
+          "en": "Built as a study aid for UTFPR's Design and Analysis of Algorithms course: playable with the mouse only and 100% offline."
         },
         "features": [
           {
@@ -305,13 +305,13 @@
         "en": "Turns questions in Portuguese into SQL queries with Llama 3.2 and runs them on MySQL or PostgreSQL databases."
       },
       "cvSummary": {
-        "pt": "Converte perguntas em português em SQL com Llama 3.2, usando o schema real do MySQL ou PostgreSQL.",
-        "en": "Turns Portuguese questions into SQL with Llama 3.2, grounded on the real MySQL or PostgreSQL schema."
+        "pt": "Projeto de disciplina: converte perguntas em português em SQL com Llama 3.2, usando o schema real do banco.",
+        "en": "Course project: turns Portuguese questions into SQL with Llama 3.2, grounded on the real database schema."
       },
       "details": {
         "intro": {
-          "pt": "Aplicação de linha de comando que usa um modelo de linguagem local para gerar SQL a partir de linguagem natural, com base no schema real do banco.",
-          "en": "A command-line application that uses a local language model to generate SQL from natural language, based on the database's real schema."
+          "pt": "Aplicação de linha de comando que usa um modelo de linguagem local para gerar SQL a partir de linguagem natural, com base no schema real do banco. Projeto da disciplina de Banco de Dados.",
+          "en": "A command-line application that uses a local language model to generate SQL from natural language, based on the database's real schema. A Databases course project."
         },
         "features": [
           {

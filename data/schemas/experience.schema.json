@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Experiência",
-  "description": "Itens da timeline (empregos, formação, voluntariado, cursos), na ordem em que aparecem. O currículo em PDF usa o \"type\" para montar Experiência e Formação.",
+  "description": "Itens da timeline (empregos, empresa júnior, formação, voluntariado, cursos), na ordem em que aparecem. O currículo em PDF usa o \"type\" para montar Experiência, Empresa Júnior e Formação.",
   "type": "object",
   "required": ["items"],
   "additionalProperties": false,
@@ -19,8 +19,8 @@
       "additionalProperties": false,
       "properties": {
         "type": {
-          "description": "Tipo do item: \"work\" (entra em Experiência no currículo), \"education\" (entra em Formação), \"volunteering\" e \"courses\" (só no site).",
-          "enum": ["work", "education", "volunteering", "courses"]
+          "description": "Tipo do item: \"work\" (entra em Experiência no currículo), \"junior-enterprise\" (entra em Empresa Júnior), \"education\" (entra em Formação), \"volunteering\" e \"courses\" (só no site).",
+          "enum": ["work", "junior-enterprise", "education", "volunteering", "courses"]
         },
         "title": {
           "description": "Cargo, curso ou título do bloco.",
@@ -40,7 +40,7 @@
         },
         "highlights": {
           "type": "array",
-          "description": "Tópicos da lista do card (e do currículo, para \"work\" e \"education\").",
+          "description": "Tópicos da lista do card (e do currículo, para \"work\" e \"junior-enterprise\").",
           "items": { "$ref": "common.schema.json#/definitions/text" }
         }
       },
@@ -49,7 +49,7 @@
           "label": "Nova experiência",
           "description": "Item da timeline",
           "body": {
-            "type": "${1|work,education,volunteering,courses|}",
+            "type": "${1|work,junior-enterprise,education,volunteering,courses|}",
             "title": "${2:Cargo}",
             "organization": "${3:Empresa}",
             "start": "${4:2026-01}",

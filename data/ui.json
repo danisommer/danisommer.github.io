@@ -21,6 +21,7 @@
     "documentTitle": { "pt": "{name} - Currículo", "en": "{name} - Resume" },
     "summary": { "pt": "Resumo", "en": "Summary" },
     "experience": { "pt": "Experiência", "en": "Experience" },
+    "juniorEnterprise": { "pt": "Empresa Júnior", "en": "Junior Enterprise" },
     "education": { "pt": "Formação", "en": "Education" },
     "projects": { "pt": "Projetos", "en": "Projects" },
     "skills": { "pt": "Habilidades", "en": "Skills" },
@@ -38,7 +39,7 @@
     "present": { "pt": "Presente", "en": "Present" }
   },
   "projects": {
-    "title": { "pt": "Meus Projetos Pessoais", "en": "My Personal Projects" },
+    "title": { "pt": "Projetos", "en": "Projects" },
     "filterLabel": { "pt": "Filtrar projetos por tecnologia", "en": "Filter projects by technology" },
     "filterAll": { "pt": "Todos", "en": "All" },
     "details": { "pt": "Detalhes", "en": "Details" },

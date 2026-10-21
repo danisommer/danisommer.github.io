@@ -5,56 +5,52 @@
     "intermediate": { "pt": "Intermediário", "en": "Intermediate" },
     "advanced": { "pt": "Avançado", "en": "Advanced" },
     "fluent": { "pt": "Fluente", "en": "Fluent" },
-    "professional": { "pt": "Profissional completo", "en": "Full Professional" },
-    "native": { "pt": "Nativo ou bilíngue", "en": "Native or Bilingual" }
+    "professional": { "pt": "Fluência profissional", "en": "Full professional proficiency" },
+    "native": { "pt": "Nativo", "en": "Native" }
   },
   "categories": [
     {
-      "title": { "pt": "Linguagens e Frameworks", "en": "Languages and Frameworks" },
+      "title": { "pt": "Experiência profissional", "en": "Professional experience" },
       "items": [
         { "name": "Elixir" },
         { "name": "Phoenix (LiveView)" },
-        { "name": "Go" },
-        { "name": "Java (Spring Boot)" },
-        { "name": "Python" },
         { "name": "SQL" },
-        { "name": "TypeScript" },
-        { "name": "JavaScript" },
-        { "name": "React" },
-        { "name": "C/C++" }
-      ]
-    },
-    {
-      "title": { "pt": "Dados e Mensageria", "en": "Data and Messaging" },
-      "items": [
         { "name": "PostgreSQL" },
-        { "name": "MySQL" },
-        { "name": "MongoDB" },
-        { "name": "Redis" },
         { "name": "ClickHouse" },
+        { "name": "Redis" },
         { "name": "Apache Kafka / RedPanda" },
-        { "name": "RabbitMQ" }
+        { "name": "Docker" },
+        { "name": "Sentry" },
+        { "name": { "pt": "Integração de sistemas (SAP CPI, Groovy)", "en": "Systems integration (SAP CPI, Groovy)" } },
+        { "name": { "pt": "APIs REST", "en": "REST APIs" } },
+        { "name": "Java (Spring)" },
+        { "name": "Git / GitHub" },
+        { "name": "Bitbucket" },
+        { "name": "Postman" }
       ]
     },
     {
       "title": { "pt": "Arquitetura e Domínio", "en": "Architecture and Domain" },
       "items": [
-        { "name": { "pt": "Sistemas de pagamento", "en": "Payment systems" } },
+        { "name": { "pt": "Pix e pagamentos", "en": "Pix and payments" } },
+        { "name": { "pt": "Conciliação e reporte regulatório", "en": "Reconciliation and regulatory reporting" } },
         { "name": { "pt": "Microsserviços", "en": "Microservices" } },
-        { "name": { "pt": "Arquitetura orientada a eventos", "en": "Event-driven architecture" } },
-        { "name": { "pt": "APIs REST", "en": "REST APIs" } }
+        { "name": { "pt": "Arquitetura orientada a eventos", "en": "Event-driven architecture" } }
       ]
     },
     {
-      "title": { "pt": "Infraestrutura e Ferramentas", "en": "Infrastructure and Tools" },
+      "title": { "pt": "Projetos e graduação", "en": "Projects and coursework" },
       "items": [
-        { "name": "Docker" },
-        { "name": "Google Kubernetes Engine" },
-        { "name": "Linux" },
-        { "name": "Git / GitHub" },
+        { "name": "Go" },
+        { "name": "RabbitMQ" },
+        { "name": "Python" },
+        { "name": "TypeScript" },
+        { "name": "JavaScript" },
+        { "name": "React" },
+        { "name": "MySQL" },
+        { "name": "C/C++" },
         { "name": "GitHub Actions" },
-        { "name": "Bitbucket" },
-        { "name": "Postman" }
+        { "name": "Linux" }
       ]
     },
     {

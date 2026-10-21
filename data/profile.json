@@ -3,16 +3,16 @@
   "name": "Daniel Zaki Sommer",
   "shortName": "Daniel Z. Sommer",
   "headline": {
-    "pt": "Backend Developer · Elixir e sistemas distribuídos",
-    "en": "Backend Developer · Elixir and distributed systems"
+    "pt": "Desenvolvedor Backend · Elixir · Pix e sistemas financeiros",
+    "en": "Backend Developer · Elixir · Payments and financial systems"
   },
   "location": {
     "pt": "Curitiba, PR, Brasil",
     "en": "Curitiba, PR, Brazil"
   },
   "intro": {
-    "pt": "Desenvolvedor backend com experiência em banking-as-a-service com Pix na Trio: cerca de 900 commits em 18 repositórios Elixir, do core bancário ao backoffice. Estudante do 8º semestre de Sistemas de Informação na UTFPR e desenvolvedor na Hi Tech Consultoria, com projetos em Go e microsserviços orientados a eventos e experiência anterior com Java (Spring).",
-    "en": "Backend developer with banking-as-a-service and Pix experience at Trio: about 900 commits across 18 Elixir repositories, from core banking to the back office. 8th-semester Information Systems student at UTFPR and developer at Hi Tech Consultoria, with projects in Go and event-driven microservices, and previous experience with Java (Spring)."
+    "pt": "Desenvolvedor backend com cerca de 15 meses de experiência em produção como trainee na Trio, plataforma de banking-as-a-service com Pix: cerca de 900 commits em 18 repositórios Elixir. Estudante do 8º semestre de Sistemas de Informação na UTFPR.",
+    "en": "Backend developer with about 15 months of production experience as a trainee at Trio, a banking-as-a-service platform with Pix instant payments: about 900 commits across 18 Elixir repositories. 8th-semester Information Systems student at UTFPR."
   },
   "photo": {
     "src": "images/profile_picture.jpg",
@@ -25,26 +25,30 @@
     },
     "paragraphs": [
       {
-        "pt": "Trabalhei como Desenvolvedor Elixir na Trio de julho de 2025 a outubro de 2026, com cerca de 900 commits em 18 repositórios de uma plataforma de banking-as-a-service com Pix: reporte regulatório ao Bacen (CCS), conciliação, MED do Pix, saldos no core bancário e o backoffice usado por compliance, financeiro e suporte. Meu dia a dia envolvia Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker e ferramentas relacionadas.",
-        "en": "I worked as an Elixir Developer at Trio from July 2025 to October 2026, with about 900 commits across 18 repositories of a banking-as-a-service platform with Pix: regulatory reporting to the Central Bank (CCS), reconciliation, Pix MED, balances in core banking, and the back office used by compliance, finance, and support. My day-to-day involved Elixir, Postgres, RedPanda/Kafka, Redis, ClickHouse, Docker, and related tools."
+        "pt": "De julho de 2025 a setembro de 2026, fui desenvolvedor trainee na Trio, uma plataforma de banking-as-a-service com Pix, trabalhando 6 horas por dia em paralelo à graduação. Foram cerca de 900 commits em 18 repositórios Elixir, em áreas como reporte regulatório ao Bacen (CCS), conciliação, MED do Pix, saldos no core bancário e o backoffice usado por compliance, financeiro e suporte. O dia a dia envolvia Elixir, Phoenix LiveView, Postgres, RedPanda/Kafka, Redis, ClickHouse e Docker.",
+        "en": "From July 2025 to September 2026, I was a software developer trainee at Trio, a banking-as-a-service platform with Pix, working 6 hours a day alongside my degree. I made about 900 commits across 18 Elixir repositories, in areas such as regulatory reporting to the Central Bank (CCS), reconciliation, Pix MED, balances in core banking, and the back office used by compliance, finance, and support. My day-to-day involved Elixir, Phoenix LiveView, Postgres, RedPanda/Kafka, Redis, ClickHouse, and Docker."
       },
       {
-        "pt": "Estou no 8º semestre de Sistemas de Informação na Universidade Tecnológica Federal do Paraná (UTFPR) e atuo como desenvolvedor na Hi Tech Consultoria, a empresa júnior da UTFPR voltada para consultoria em tecnologia, participando de projetos reais que conectam aprendizado acadêmico e experiência de mercado.",
-        "en": "I am in the 8th semester of Information Systems at the Federal University of Technology - Paraná (UTFPR) and work as a developer at Hi Tech Consultoria, UTFPR's junior enterprise focused on technology consulting, on real projects that connect academic learning with market experience."
+        "pt": "Eu tinha autonomia para investigar problemas e propor abordagens, que discutia com os desenvolvedores do time antes de implementar. Foi assim que encontrei a causa de um problema no arquivo diário do CCS que estava aberto havia cerca de dois anos, e que propus levar a busca por trecho para uma biblioteca compartilhada, depois adotada em 8 serviços.",
+        "en": "I had the autonomy to investigate problems and propose approaches, which I discussed with the team's developers before implementing them. That is how I found the cause of a problem in the daily CCS file that had been open for about two years, and how I proposed moving partial-text search into a shared library, later adopted by 8 services."
       },
       {
-        "pt": "Anteriormente, estagiei na Meisters Solutions e na Digiu Digital, contribuindo para sistemas de E-Commerce com Java (Spring), Docker, TypeScript, SQL e SAP Hybris, além de integrações para grandes clientes via SCPI e desenvolvimento mobile com React Native e PHP. A colaboração com clientes internacionais e desenvolvedores sêniores fortaleceu minha comunicação técnica e o trabalho em equipe.",
-        "en": "Previously, I interned at Meisters Solutions and Digiu Digital, contributing to E-Commerce systems with Java (Spring), Docker, TypeScript, SQL, and SAP Hybris, plus integrations for large clients via SCPI and mobile development with React Native and PHP. Working with international clients and senior developers strengthened my technical communication and teamwork."
+        "pt": "Antes da Trio, estagiei na Meisters Solutions, de julho de 2024 a julho de 2025, em projetos conduzidos junto com a equipe da Digiu Digital na Espanha, em reuniões em inglês, para a operação europeia de um fabricante multinacional. Desenvolvi e mantive integrações no SAP CPI entre ERP, loja virtual, marketplace e transportadoras, com regras de negócio em Groovy, e contribuí para o backend de um e-commerce em Java (Spring).",
+        "en": "Before Trio, I interned at Meisters Solutions from July 2024 to July 2025, on projects run alongside Digiu Digital's team in Spain, in meetings held in English, for a multinational manufacturer's European operation. I built and maintained SAP CPI integrations between an ERP, an online store, a marketplace, and shipping carriers, with business rules in Groovy, and contributed to the backend of a Java (Spring) e-commerce platform."
       },
       {
-        "pt": "Nos projetos pessoais e acadêmicos, exploro sistemas distribuídos, desempenho e algoritmos: microsserviços em Go orientados a eventos, um comparativo de desempenho entre Python e Go na reconstrução de imagens e o Compass+, um planejador de grade para alunos da UTFPR.",
-        "en": "In personal and academic projects, I explore distributed systems, performance, and algorithms: event-driven microservices in Go, a Python vs Go performance comparison for image reconstruction, and Compass+, a course planner for UTFPR students."
+        "pt": "Hoje estou no 8º semestre de Sistemas de Informação na Universidade Tecnológica Federal do Paraná (UTFPR) e faço parte da equipe de projetos da Hi Tech Consultoria, a empresa júnior de tecnologia da universidade, onde elaboro escopo e orçamento de propostas, divido o trabalho da equipe em tarefas, participo das escolhas de tecnologia e reviso código.",
+        "en": "I am now in the 8th semester of Information Systems at the Federal University of Technology - Paraná (UTFPR) and part of the projects team at Hi Tech Consultoria, the university's technology junior enterprise, where I scope and price proposals, break the team's work down into tasks, take part in technology choices, and review code."
+      },
+      {
+        "pt": "Nos projetos de disciplina e pessoais, exploro sistemas distribuídos e desempenho: um e-commerce em Go com microsserviços que se comunicam só por eventos assinados, um comparativo de desempenho entre Python e Go na reconstrução de imagens e o Compass+, um planejador de grade para alunos da UTFPR.",
+        "en": "In course and personal projects, I explore distributed systems and performance: a Go e-commerce built from microservices that communicate only through signed events, a Python vs Go performance comparison for image reconstruction, and Compass+, a course planner for UTFPR students."
       }
     ]
   },
   "footerNote": {
-    "pt": "Backend Developer focado em Elixir e sistemas distribuídos, com experiência em pagamentos e E-Commerce.",
-    "en": "Backend Developer focused on Elixir and distributed systems, with experience in payments and E-Commerce."
+    "pt": "Desenvolvedor backend com experiência em Pix, sistemas financeiros e integrações.",
+    "en": "Backend developer with experience in payments, financial systems, and integrations."
   },
   "contacts": [
     {
