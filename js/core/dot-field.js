@@ -1,5 +1,6 @@
 const SPACING = 22;
 const FRAME_MS = 1000 / 60;
+const OVERSCAN = 0.5;
 const LOOK = {
   hero: { size: [1.4, 2.6], alpha: [0.22, 0.95] },
   page: { size: [1.4, 2.4], alpha: [0.2, 0.85] },
@@ -35,12 +36,12 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
  * desencontradas e espalhados. No auge de cada toque, e em volta do cursor aceso, pontos acesos soltos pulsam para
  * menos: perdem parte do brilho e voltam devagar, duas vezes, a segunda mais de leve, sem nunca ficar mais claros
  * do que estavam. Quanto mais perto da borda, mais o ponto pulsa; perto do centro, a pulsação é rara e fraca.
- * O canvas fica fixo atrás do conteúdo, do tamanho da janela, e também pinta o fundo
- * do topo. Pausa com a aba oculta; com movimento reduzido, a grade fica parada. Sem suporte a canvas, o site segue
- * com os fundos do CSS.
+ * O canvas fica atrás do conteúdo e rola com a página: cobre a janela com uma folga acima e abaixo (`OVERSCAN`, em
+ * janelas) e, a cada desenho, é reposicionado na rolagem atual; também pinta o fundo do topo. Pausa com a aba oculta;
+ * com movimento reduzido, a grade fica parada. Sem suporte a canvas, o site segue com os fundos do CSS.
  */
 export function initDotField() {
-  const canvas = document.querySelector(".dot-field");
+  const canvas = document.querySelector(".dot-field canvas");
   const context = canvas.getContext("2d");
   if (!context) {
     console.warn("Canvas 2D indisponível: o fundo de pontos foi desativado.");
@@ -50,8 +51,11 @@ export function initDotField() {
   const field = {
     hero: document.getElementById("home"),
     header: document.querySelector(".site-header"),
+    ratio: 1,
     width: 0,
     height: 0,
+    overscan: 0,
+    canvasHeight: 0,
     top: 0,
     columns: 0,
     offsetX: 0,
@@ -97,14 +101,18 @@ export function initDotField() {
   const resize = () => {
     const ratio = window.devicePixelRatio || 1;
 
+    field.ratio = ratio;
     field.width = window.innerWidth;
     field.height = window.innerHeight;
+    field.overscan = Math.round(field.height * OVERSCAN);
+    field.canvasHeight = field.height + 2 * field.overscan;
     field.top = field.header.getBoundingClientRect().height;
     field.columns = Math.floor(field.width / SPACING);
     field.offsetX = (field.width - (field.columns - 1) * SPACING) / 2;
     field.pulses.clear();
     canvas.width = Math.round(field.width * ratio);
-    canvas.height = Math.round(field.height * ratio);
+    canvas.height = Math.round(field.canvasHeight * ratio);
+    canvas.style.height = `${field.canvasHeight}px`;
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
     draw(context, field);
   };
@@ -259,19 +267,22 @@ function createDrop(x, pageY, now) {
 }
 
 function draw(context, field) {
-  const { width, height, columns, offsetX, pulses } = field;
+  const { ratio, width, overscan, canvasHeight, columns, offsetX, pulses } = field;
   const scroll = window.scrollY;
+  const canvasTop = Math.round(Math.max(0, scroll - overscan) * ratio) / ratio;
+  const shift = scroll - canvasTop;
   const heroBox = field.hero.getBoundingClientRect();
 
-  context.clearRect(0, 0, width, height);
-  if (heroBox.bottom > 0 && heroBox.top < height) {
+  context.canvas.style.transform = `translateY(${canvasTop}px)`;
+  context.clearRect(0, 0, width, canvasHeight);
+  if (heroBox.bottom + shift > 0 && heroBox.top + shift < canvasHeight) {
     context.fillStyle = field.colors.heroBg;
-    context.fillRect(0, heroBox.top, width, heroBox.height);
+    context.fillRect(0, heroBox.top + shift, width, heroBox.height);
   }
 
-  for (let row = Math.floor(scroll / SPACING); ; row += 1) {
+  for (let row = Math.floor(canvasTop / SPACING); ; row += 1) {
     const y = row * SPACING + SPACING / 2 - scroll;
-    if (y > height + SPACING) break;
+    if (y + shift > canvasHeight + SPACING) break;
 
     const region = y >= heroBox.top && y < heroBox.bottom ? "hero" : "page";
     const { size, alpha } = LOOK[region];
@@ -284,7 +295,7 @@ function draw(context, field) {
 
       context.globalAlpha = alpha[0] + (alpha[1] - alpha[0]) * level;
       context.beginPath();
-      context.arc(x, y, (size[0] + (size[1] - size[0]) * level) / 2, 0, Math.PI * 2);
+      context.arc(x, y + shift, (size[0] + (size[1] - size[0]) * level) / 2, 0, Math.PI * 2);
       context.fill();
     }
   }
