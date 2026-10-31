@@ -94,6 +94,14 @@
             "demo": {
               "description": "Versão online do projeto.",
               "$ref": "common.schema.json#/definitions/url"
+            },
+            "video": {
+              "description": "Gravação ou GIF do projeto funcionando.",
+              "$ref": "common.schema.json#/definitions/url"
+            },
+            "download": {
+              "description": "Executável ou release para baixar.",
+              "$ref": "common.schema.json#/definitions/url"
             }
           }
         }

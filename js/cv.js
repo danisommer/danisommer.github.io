@@ -105,6 +105,8 @@ function renderProject(project) {
   const links = [
     project.links.github && h("a", { href: project.links.github }, label("projects.links.github")),
     project.links.demo && h("a", { href: project.links.demo }, label("cv.demo")),
+    project.links.video && h("a", { href: project.links.video }, label("projects.links.video")),
+    project.links.download && h("a", { href: project.links.download }, label("projects.links.download")),
   ].filter(Boolean);
 
   return h(

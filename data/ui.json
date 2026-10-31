@@ -56,7 +56,9 @@
     },
     "links": {
       "github": { "pt": "GitHub", "en": "GitHub" },
-      "demo": { "pt": "Demo", "en": "Demo" }
+      "demo": { "pt": "Demo", "en": "Demo" },
+      "video": { "pt": "Vídeo", "en": "Video" },
+      "download": { "pt": "Download", "en": "Download" }
     }
   },
   "contact": {

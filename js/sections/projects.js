@@ -6,6 +6,8 @@ const DEFAULT_ICON = "fas fa-code";
 const LINK_TYPES = {
   github: "projects.links.github",
   demo: "projects.links.demo",
+  video: "projects.links.video",
+  download: "projects.links.download",
 };
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -140,13 +142,13 @@ function statusText(status) {
 }
 
 function renderLinks(links, className) {
-  return Object.entries(links).map(([type, url]) => {
-    if (!Object.hasOwn(LINK_TYPES, type)) {
-      console.warn(`Tipo de link "${type}" não suportado (data/projects.json).`);
-      return null;
-    }
-    return externalLink(url, label(LINK_TYPES[type]), className);
-  });
+  Object.keys(links)
+    .filter((type) => !Object.hasOwn(LINK_TYPES, type))
+    .forEach((type) => console.warn(`Tipo de link "${type}" não suportado (data/projects.json).`));
+
+  return Object.entries(LINK_TYPES)
+    .filter(([type]) => Object.hasOwn(links, type))
+    .map(([type, labelKey]) => externalLink(links[type], label(labelKey), className));
 }
 
 function openModal(dialog, project, trigger) {
