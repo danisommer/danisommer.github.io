@@ -275,7 +275,8 @@
         ]
       },
       "links": {
-        "github": "https://github.com/danisommer/grafo-quest"
+        "github": "https://github.com/danisommer/grafo-quest",
+        "demo": "https://danisommer.github.io/grafo-quest/"
       }
     },
     {
