@@ -452,6 +452,50 @@
       }
     },
     {
+      "id": "portfolio",
+      "title": {
+        "pt": "Portfólio pessoal",
+        "en": "Personal Portfolio"
+      },
+      "icon": "fas fa-id-card",
+      "tags": ["JavaScript", "JSON Schema", "Ajv", "GitHub Actions", "Cloudflare Workers", "Resend"],
+      "summary": {
+        "pt": "Este site, em JavaScript puro e sem framework: bilíngue, com o conteúdo em JSON validado antes de cada deploy, currículos em PDF gerados dos mesmos dados e formulário de contato num Cloudflare Worker.",
+        "en": "This site, in plain JavaScript with no framework: bilingual, with JSON content validated before every deploy, PDF résumés generated from the same data, and a contact form on a Cloudflare Worker."
+      },
+      "details": {
+        "intro": {
+          "pt": "Feito em HTML, CSS e JavaScript puros, com módulos nativos do navegador e sem framework. O HTML é só o esqueleto: os módulos leem o conteúdo em JSON e montam cada seção no idioma escolhido.",
+          "en": "Built with plain HTML, CSS, and JavaScript, using native browser modules and no framework. The HTML is just a skeleton: the modules read the JSON content and build each section in the chosen language."
+        },
+        "features": [
+          {
+            "pt": "Português e inglês, com o idioma inicial vindo do navegador, e tema claro ou escuro; as duas escolhas ficam salvas no navegador.",
+            "en": "Portuguese and English, with the initial language taken from the browser, and a light or dark theme; both choices are saved in the browser."
+          },
+          {
+            "pt": "Conteúdo (perfil, experiências, projetos e habilidades) em arquivos JSON, com os dois idiomas lado a lado e um JSON Schema para cada arquivo.",
+            "en": "Content (profile, experience, projects, and skills) in JSON files, with both languages side by side and a JSON Schema for each file."
+          },
+          {
+            "pt": "Validação com Ajv no GitHub Actions antes de cada deploy no GitHub Pages, incluindo checagens que o schema sozinho não cobre, como ids repetidos e imagens que faltam.",
+            "en": "Validation with Ajv in GitHub Actions before every GitHub Pages deploy, including checks the schema alone doesn't cover, such as duplicate ids and missing images."
+          },
+          {
+            "pt": "Currículos em PDF, em português e inglês, gerados no deploy a partir dos mesmos dados: uma página própria monta o currículo e o Chrome headless a imprime.",
+            "en": "PDF résumés in Portuguese and English, generated at deploy time from the same data: a dedicated page builds the résumé and headless Chrome prints it."
+          },
+          {
+            "pt": "Formulário de contato num Cloudflare Worker, que aceita só envios com a origem do site, descarta quem preenche um campo-armadilha escondido, valida os campos e envia a mensagem pelo Resend, sem expor a chave da API no navegador.",
+            "en": "Contact form on a Cloudflare Worker that only accepts submissions from the site's origin, discards anyone who fills in a hidden honeypot field, validates the fields, and sends the message through Resend without exposing the API key in the browser."
+          }
+        ]
+      },
+      "links": {
+        "github": "https://github.com/danisommer/danisommer.github.io"
+      }
+    },
+    {
       "id": "smart-metronome",
       "title": {
         "pt": "Metrônomo Progressivo",

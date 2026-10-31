@@ -53,15 +53,15 @@
       "start": "2024-07",
       "end": "2025-07",
       "note": { "pt": "Estágio · 30 h semanais", "en": "Internship · 30 h/week" },
-      "stack": ["SAP CPI", "Groovy", "SAP Business One", "XML/JSON", "FTP/SFTP"],
+      "stack": ["SAP CPI", "Groovy", "SAP Business One", "XML", "JSON", "REST APIs", "FTP/SFTP", "Postman"],
       "highlights": [
         {
-          "pt": "Desenvolvi e mantive integrações no SAP CPI entre o ERP SAP Business One, uma loja PrestaShop, a Amazon e transportadoras, sincronizando pedidos, clientes, preços, faturas e status da operação europeia de uma multinacional.",
-          "en": "Built and maintained SAP CPI integrations connecting the SAP Business One ERP to a PrestaShop store, Amazon, and shipping carriers, syncing orders, customers, prices, invoices, and statuses for a multinational's European operation."
+          "pt": "Desenvolvi e mantive integrações no SAP CPI entre o ERP SAP Business One, uma loja PrestaShop, a Amazon e transportadoras, sincronizando pedidos, clientes, preços, faturas e status em vários países da Europa.",
+          "en": "Built and maintained SAP CPI integrations connecting the SAP Business One ERP to a PrestaShop store, Amazon, and shipping carriers, syncing orders, customers, prices, invoices, and statuses across several European countries."
         },
         {
-          "pt": "Implementei em Groovy as regras de negócio desses fluxos (descontos em cascata com IVA, normalização de endereços por país e câmbio por data) e a troca de arquivos CSV via FTP/SFTP.",
-          "en": "Implemented the flows' business rules in Groovy (cascading discounts with VAT, per-country address normalization, and date-based exchange rates) and CSV file exchange over FTP/SFTP."
+          "pt": "Implementei em Groovy as regras de negócio desses fluxos (descontos em cascata com IVA, normalização de endereços por país e câmbio por data) e a troca de arquivos CSV via FTP/SFTP, e testei as integrações com Postman.",
+          "en": "Implemented the flows' business rules in Groovy (cascading discounts with VAT, per-country address normalization, and date-based exchange rates) and CSV file exchange over FTP/SFTP, and tested the integrations with Postman."
         }
       ]
     },
@@ -95,10 +95,11 @@
       },
       "organization": "Hi Tech Consultoria",
       "start": "2025-10",
+      "note": { "pt": "Meio período", "en": "Part-time" },
       "highlights": [
         {
-          "pt": "Elaboro escopo e orçamento de propostas, divido o trabalho da equipe em tarefas, ajudo a definir a stack e reviso código.",
-          "en": "I scope and price client proposals, split the team's work into tasks, help define the tech stack, and review code."
+          "pt": "Elaboro escopo e orçamento de propostas, divido o trabalho da equipe em tarefas, ajudo a definir a stack, reviso código e desenvolvo funcionalidades, principalmente de front-end.",
+          "en": "I scope and price client proposals, split the team's work into tasks, help define the tech stack, review code, and build features, mostly on the front end."
         }
       ]
     },
