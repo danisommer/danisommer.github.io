@@ -292,6 +292,10 @@
         "en": "Text-to-SQL with Llama"
       },
       "icon": "fas fa-robot",
+      "media": {
+        "video": "videos/text-to-sql-demo.mp4",
+        "poster": "videos/text-to-sql-poster.jpg"
+      },
       "tags": ["Python", "Llama 3.2", "Transformers", "MySQL", "PostgreSQL"],
       "summary": {
         "pt": "Converte perguntas em português em consultas SQL com o Llama 3.2 e as executa em bancos MySQL ou PostgreSQL.",
@@ -336,6 +340,10 @@
         "en": "TCP Chat with File Transfer"
       },
       "icon": "fas fa-comments",
+      "media": {
+        "video": "videos/tcp-chat-demo.mp4",
+        "poster": "videos/tcp-chat-poster.jpg"
+      },
       "tags": ["Python", "TCP", "Sockets", "Multithreading", "HTTP"],
       "summary": {
         "pt": "Cliente e servidor TCP com protocolo de aplicação próprio: chat, download de arquivos de qualquer tamanho conferidos por SHA-256 e um servidor HTTP mínimo escrito direto sobre sockets.",
@@ -380,6 +388,10 @@
         "en": "Reliable File Transfer over UDP"
       },
       "icon": "fas fa-right-left",
+      "media": {
+        "video": "videos/udp-transfer-demo.mp4",
+        "poster": "videos/udp-transfer-poster.jpg"
+      },
       "tags": ["Python", "UDP", "Sockets", "RDT", "CRC32"],
       "summary": {
         "pt": "Transferência de arquivos sobre UDP com a confiabilidade feita na aplicação: segmentação, CRC32 por segmento, retransmissão seletiva por NACK e simulação de perda de pacotes.",
