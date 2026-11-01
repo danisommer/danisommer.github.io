@@ -9,6 +9,11 @@
         "en": "Event-Driven E-commerce"
       },
       "image": "images/projects/event-driven-ecommerce.png",
+      "media": {
+        "video": "videos/ecommerce-demo.mp4",
+        "preview": "videos/ecommerce-preview.mp4",
+        "poster": "videos/ecommerce-poster.jpg"
+      },
       "status": "in-progress",
       "tags": ["Go", "RabbitMQ", "Microservices", "SSE", "SQLite", "RSA"],
       "summary": {
@@ -56,8 +61,7 @@
         }
       },
       "links": {
-        "github": "https://github.com/danisommer/event-driven-ecommerce",
-        "video": "https://danisommer.github.io/videos/ecommerce-demo.mp4"
+        "github": "https://github.com/danisommer/event-driven-ecommerce"
       }
     },
     {

@@ -52,10 +52,21 @@ Cada JSON aponta para um schema em `data/schemas/` (linha `"$schema"` no topo). 
 ### Adicionar um projeto
 
 1. Em `data/projects.json`, dentro de `"items"`, coloque o cursor na posição de relevância do projeto (mais relevantes no topo) e use **Ctrl+Espaço → Novo projeto**.
-2. `"links"` aceita `"github"`, `"demo"`, `"video"` (gravação ou GIF do projeto funcionando) e `"download"` (executável ou release para baixar). Os que existirem aparecem no índice, no destaque, no modal e no currículo, sempre nessa ordem, qualquer que seja a ordem no JSON.
+2. `"links"` aceita `"github"`, `"demo"`, `"video"` (vídeo hospedado fora do site, ex.: YouTube) e `"download"` (executável ou release para baixar). Os que existirem aparecem no índice, no destaque, no modal e no currículo, sempre nessa ordem, qualquer que seja a ordem no JSON.
 3. Se tiver uma imagem real do projeto (diagrama ou tela), salve em `images/projects/` e aponte em `"image"`. Ela aparece inteira no destaque e no modal, e recortada (pelo centro) na miniatura do índice, que tem a altura do texto ao lado. Sem imagem, a miniatura mostra o ícone de `"icon"`, uma classe do [Font Awesome 6 free](https://fontawesome.com/search?ic=free), ex.: `"fas fa-music"` (padrão: `"fas fa-code"`).
+4. Para um vídeo hospedado no próprio site, salve os arquivos em `videos/` e preencha `"media"` (no lugar de `links.video`; o validador acusa os dois juntos):
+   - `"video"`: o vídeo completo. Aparece no topo do modal, com controles, e só é baixado quando o visitante dá play. O "Vídeo" do destaque, do índice e do modal vira um botão que abre o modal já tocando, a miniatura do índice ganha um ícone de play e o currículo mostra o link "Vídeo" com o endereço completo (`https://danisommer.github.io/videos/...`).
+   - `"poster"`: imagem mostrada antes do vídeo carregar (um quadro do vídeo, em JPG).
+   - `"preview"` (opcional, só vale para o projeto em destaque): trecho curto e sem som que toca em loop no lugar da imagem enquanto pelo menos metade dele está na tela. Com "reduzir movimento" ativado no sistema, fica parado no poster com um botão de play. Clicar no vídeo abre o modal tocando o vídeo completo.
 
-`image`, `icon`, `details` e `status` são opcionais. Sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe "Em andamento" no destaque, ao lado do número no índice e no modal.
+   Use H.264 com `yuv420p` e `-movflags +faststart` (o vídeo começa a tocar antes de baixar inteiro). Ex.: prévia de 8 a 10 s, sem som, em 960x540, e poster de um quadro dela:
+
+   ```bash
+   ffmpeg -ss 20 -t 9 -i videos/projeto-demo.mp4 -an -vf scale=960:540,format=yuv420p -c:v libx264 -crf 28 -preset veryslow -movflags +faststart videos/projeto-preview.mp4
+   ffmpeg -ss 25 -i videos/projeto-demo.mp4 -frames:v 1 -vf scale=960:540 -q:v 3 videos/projeto-poster.jpg
+   ```
+
+`image`, `icon`, `media`, `details` e `status` são opcionais. Sem `details`, o modal mostra o resumo; `"status": "in-progress"` exibe "Em andamento" no destaque, ao lado do número no índice e no modal.
 
 ### Adicionar uma experiência, formação ou curso
 
@@ -108,7 +119,7 @@ O layout foi calibrado para caber em uma página com 6 projetos; se o conteúdo 
 
 Todo push dispara o workflow `.github/workflows/pages.yml`:
 
-1. **validate** — `scripts/validate-content.mjs` confere os JSON contra os schemas e também verifica o que o schema sozinho não pega: id de projeto repetido, posição `"cv"` repetida, nível de habilidade que não existe e imagem que não está na pasta.
+1. **validate** — `scripts/validate-content.mjs` confere os JSON contra os schemas e também verifica o que o schema sozinho não pega: id de projeto repetido, posição `"cv"` repetida, nível de habilidade que não existe, imagem ou vídeo que não está na pasta e `media` junto com `links.video`.
 2. **deploy** — só na `main` e só se a validação passar: gera os PDFs do currículo e publica o site no GitHub Pages.
 
 Se a validação falhar, o site no ar continua na versão anterior e o erro aparece na aba **Actions** do repositório, apontando arquivo e campo.

@@ -46,7 +46,7 @@ async function validateContent() {
     }
 
     validate.errors.forEach((error) => problems.push(`${path} ${error.instancePath || "/"}: ${error.message}`));
-    if (check) notes.push(`${path}: as checagens de referência (ids, categorias, níveis, imagens) rodam depois que os erros acima forem corrigidos.`);
+    if (check) notes.push(`${path}: as checagens de referência (ids, categorias, níveis, imagens, vídeos) rodam depois que os erros acima forem corrigidos.`);
   }
 }
 
@@ -82,6 +82,11 @@ async function checkProjects({ items }) {
     seenCvPositions.add(project.cv);
 
     if (project.image) await checkFile(where, project.image);
+    for (const path of Object.values(project.media ?? {})) await checkFile(where, path);
+
+    if (project.media && project.links.video) {
+      problems.push(`${where}: use "media" (vídeo no site) ou "links.video" (vídeo externo), não os dois`);
+    }
   }
 }
 

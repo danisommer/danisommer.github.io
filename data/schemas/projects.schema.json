@@ -37,12 +37,32 @@
           "$ref": "common.schema.json#/definitions/text"
         },
         "image": {
-          "description": "Imagem real do projeto (diagrama ou tela): inteira no destaque e no modal, recortada em quadrado na miniatura do índice. Opcional.",
+          "description": "Imagem real do projeto (diagrama ou tela): inteira no destaque (se não houver media.preview) e no modal, recortada em quadrado na miniatura do índice. Opcional.",
           "$ref": "common.schema.json#/definitions/imagePath"
         },
         "icon": {
           "description": "Ícone da miniatura do índice quando o projeto não tem imagem. Opcional (padrão: \"fas fa-code\").",
           "$ref": "common.schema.json#/definitions/icon"
+        },
+        "media": {
+          "type": "object",
+          "description": "Vídeo hospedado no próprio site (pasta videos/). Com ele, \"Vídeo\" vira um botão que abre o modal já tocando, e a miniatura do índice ganha um ícone de play. Não use junto com links.video. Opcional.",
+          "required": ["video", "poster"],
+          "additionalProperties": false,
+          "properties": {
+            "video": {
+              "description": "Vídeo completo, com controles, no topo do modal \"Detalhes\". Só é baixado quando o visitante dá play.",
+              "$ref": "common.schema.json#/definitions/videoPath"
+            },
+            "preview": {
+              "description": "Trecho curto e sem som que toca em loop no lugar da imagem do destaque (só vale para o primeiro projeto). Opcional.",
+              "$ref": "common.schema.json#/definitions/videoPath"
+            },
+            "poster": {
+              "description": "Imagem mostrada antes do vídeo carregar, no destaque e no modal.",
+              "$ref": "common.schema.json#/definitions/posterPath"
+            }
+          }
         },
         "status": {
           "description": "Opcional: \"in-progress\" exibe \"Em andamento\" no site e no modal.",
@@ -96,7 +116,7 @@
               "$ref": "common.schema.json#/definitions/url"
             },
             "video": {
-              "description": "Gravação ou GIF do projeto funcionando.",
+              "description": "Vídeo hospedado fora do site (ex.: YouTube), aberto em nova aba. Para vídeo na pasta videos/, use \"media\".",
               "$ref": "common.schema.json#/definitions/url"
             },
             "download": {

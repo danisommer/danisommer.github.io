@@ -59,6 +59,11 @@
       "demo": { "pt": "Demo", "en": "Demo" },
       "video": { "pt": "Vídeo", "en": "Video" },
       "download": { "pt": "Download", "en": "Download" }
+    },
+    "media": {
+      "play": { "pt": "Reproduzir prévia do vídeo", "en": "Play video preview" },
+      "hasVideo": { "pt": "Com vídeo de demonstração", "en": "Has a demo video" },
+      "video": { "pt": "Vídeo de demonstração: {title}", "en": "Demo video: {title}" }
     }
   },
   "contact": {

@@ -42,6 +42,16 @@
       "description": "Caminho a partir da raiz do site, ex.: images/projects/meu-projeto.jpg",
       "pattern": "^images/\\S+\\.(jpe?g|png|webp|gif|svg)$"
     },
+    "videoPath": {
+      "type": "string",
+      "description": "Caminho a partir da raiz do site, ex.: videos/meu-projeto-demo.mp4",
+      "pattern": "^videos/\\S+\\.(mp4|webm)$"
+    },
+    "posterPath": {
+      "type": "string",
+      "description": "Imagem de capa de um vídeo, na mesma pasta dele, ex.: videos/meu-projeto-poster.jpg",
+      "pattern": "^videos/\\S+\\.(jpe?g|png|webp)$"
+    },
     "icon": {
       "type": "string",
       "description": "Classe de ícone do Font Awesome 6 free (https://fontawesome.com/search?ic=free): \"fas fa-...\" para ícones sólidos, \"fab fa-...\" para marcas.",

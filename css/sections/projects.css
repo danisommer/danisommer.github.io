@@ -9,6 +9,38 @@
     background-color: var(--color-figure);
 }
 
+.project-feature-preview {
+    position: relative;
+}
+
+.project-feature-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2000 / 1152;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.project-feature-play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    padding-left: 4px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font-size: 20px;
+    transition: filter 0.2s ease;
+}
+
+.project-feature-play:hover {
+    filter: brightness(1.08);
+}
+
 .project-feature-body {
     grid-column: 9 / span 4;
 }
@@ -99,6 +131,22 @@
     background-color: var(--color-raised);
     color: var(--color-accent-text);
     font-size: clamp(26px, 2.6vw, 40px);
+}
+
+.project-row-thumb-play {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    padding-left: 2px;
+    border: 1px solid var(--color-line);
+    border-radius: 50%;
+    background-color: var(--color-raised);
+    color: var(--color-accent-text);
+    font-size: 9px;
 }
 
 .project-row-main {
@@ -251,6 +299,18 @@
     font-family: var(--font-mono);
     font-size: 12.5px;
     color: var(--color-text-2);
+}
+
+.project-details-video {
+    margin-top: 28px;
+    border: 1px solid var(--color-line);
+    background-color: var(--color-figure);
+}
+
+.project-details-video video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
 }
 
 .project-details-img {
