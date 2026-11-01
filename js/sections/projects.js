@@ -319,7 +319,8 @@ function openModal(dialog, project, trigger) {
 
 function playModalVideo(dialog) {
   const video = dialog.querySelector(".project-details-video video");
-  video.focus();
+  video.scrollIntoView({ block: "nearest" });
+  video.focus({ preventScroll: true });
   video.play().catch((error) => onModalPlayError(video, error));
 }
 
