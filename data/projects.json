@@ -56,7 +56,8 @@
         }
       },
       "links": {
-        "github": "https://github.com/danisommer/event-driven-ecommerce"
+        "github": "https://github.com/danisommer/event-driven-ecommerce",
+        "video": "https://danisommer.github.io/videos/ecommerce-demo.mp4"
       }
     },
     {
